@@ -1,0 +1,117 @@
+{
+  "summary": {
+    "task": "webgen",
+    "tag": "sla-naive-c2-wc-t1",
+    "phase": "apply",
+    "round": 1,
+    "language": "javascript",
+    "total_apps": 8,
+    "task_ids": [
+      "000015",
+      "000016",
+      "000019",
+      "000040",
+      "000064",
+      "000071",
+      "000072",
+      "000075"
+    ],
+    "lib_included": true,
+    "total_loc": 3089,
+    "file_count": 69,
+    "verbosity": 0.04985432178698608,
+    "erosion": 0.10586451985754529,
+    "mass.cc": 1759.0942631426256,
+    "per_app": [
+      {
+        "label": "000015",
+        "lib_included": true,
+        "total_loc": 410,
+        "file_count": 11,
+        "verbosity": 0.004878048780487805,
+        "erosion": 0.4050960639027112,
+        "mass.cc": 459.7074278077431,
+        "cc_threshold": 10
+      },
+      {
+        "label": "000016",
+        "lib_included": true,
+        "total_loc": 583,
+        "file_count": 13,
+        "verbosity": 0.003430531732418525,
+        "erosion": 0.39122223449962223,
+        "mass.cc": 476.00993279418606,
+        "cc_threshold": 10
+      },
+      {
+        "label": "000019",
+        "lib_included": true,
+        "total_loc": 803,
+        "file_count": 13,
+        "verbosity": 0.10460772104607721,
+        "erosion": 0.24114015011564413,
+        "mass.cc": 772.2715170511747,
+        "cc_threshold": 10
+      },
+      {
+        "label": "000040",
+        "lib_included": true,
+        "total_loc": 734,
+        "file_count": 14,
+        "verbosity": 0.0653950953678474,
+        "erosion": 0.3013444358351797,
+        "mass.cc": 617.9827712286434,
+        "cc_threshold": 10
+      },
+      {
+        "label": "000064",
+        "lib_included": true,
+        "total_loc": 748,
+        "file_count": 16,
+        "verbosity": 0.00267379679144385,
+        "erosion": 0.25109538645751694,
+        "mass.cc": 741.6530911979307,
+        "cc_threshold": 10
+      },
+      {
+        "label": "000071",
+        "lib_included": true,
+        "total_loc": 494,
+        "file_count": 12,
+        "verbosity": 0.07489878542510121,
+        "erosion": 0.32826503583810984,
+        "mass.cc": 567.3027865312991,
+        "cc_threshold": 10
+      },
+      {
+        "label": "000072",
+        "lib_included": true,
+        "total_loc": 541,
+        "file_count": 14,
+        "verbosity": 0.0036968576709796672,
+        "erosion": 0.3777191974991016,
+        "mass.cc": 493.0267531668136,
+        "cc_threshold": 10
+      },
+      {
+        "label": "000075",
+        "lib_included": true,
+        "total_loc": 400,
+        "file_count": 11,
+        "verbosity": 0.005,
+        "erosion": 0.4166906402885388,
+        "mass.cc": 446.91589286191765,
+        "cc_threshold": 10
+      }
+    ],
+    "lib_only": {
+      "total_loc": 232,
+      "file_count": 5,
+      "verbosity": 0.008620689655172414,
+      "erosion": 0.4629557637969577,
+      "mass.cc": 402.2537013567262,
+      "cc_threshold": 10
+    },
+    "cc_threshold": 10
+  }
+}

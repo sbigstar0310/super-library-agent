@@ -1,0 +1,30 @@
+{
+  "suite": "c2",
+  "derived_from": "behavior_c2.json (same acceptance criteria, phrased as WebVoyager checklist items)",
+  "targets": {
+    "000015": [
+      {"task": "Go to the Contact Us page. In the contact form, fill the Name and Message fields but leave Email empty (or whitespace only), then submit.", "expected_result": "An inline error message appears, no success/confirmation state is shown, and the values already typed in Name and Message remain in the fields."},
+      {"task": "On the same contact form, fill Name, a valid Email containing '@' and '.', and Message, then submit.", "expected_result": "An in-page confirmation appears on the Contact Us page without navigating away, containing the word 'Received' or 'Submitted' and including the submitted name or email."}
+    ],
+    "000016": [
+      {"task": "Go to the Contact page. In the contact form, enter a Name and Message but type an invalid email without '@' or '.' (e.g. 'testmail'), then submit.", "expected_result": "A clear inline error appears for the email field, no confirmation banner is shown, and the typed Name, Email, and Message values remain in the inputs."},
+      {"task": "Correct the email to a valid address containing '@' and '.', then submit the form.", "expected_result": "An in-page confirmation banner appears on the Contact page without navigating away, containing 'Received' or 'Submitted' together with the submitted name or email."}
+    ],
+    "000019": [
+      {"task": "Go to the Contact page. Submit the contact form with the 'How can we help?' field empty while Name and Email are filled.", "expected_result": "An inline error message appears, no confirmation is shown, and all values typed so far (including Company if entered) are preserved in the form."},
+      {"task": "Fill Name, a valid Email containing '@' and '.', and the 'How can we help?' field, then submit.", "expected_result": "An in-page confirmation appears on the Contact page without navigating away, including 'Received' or 'Submitted' plus the submitted name or email."}
+    ],
+    "000064": [
+      {"task": "Go to the Newsletter page. Enter an invalid email without '@' or '.' (e.g. 'newsfan') into the subscription input and click Subscribe.", "expected_result": "A clear inline error message appears, no success state is shown, and the typed value remains in the input."},
+      {"task": "Replace it with a valid email containing '@' and '.', then click Subscribe.", "expected_result": "An in-page confirmation appears on the same page without navigating away, containing 'Received' or 'Submitted' along with the submitted email address."}
+    ],
+    "000071": [
+      {"task": "Go to the Contact page's 'Get in Touch' form. Submit it with the Message field empty (or spaces only) while Name and Email are filled.", "expected_result": "A clear inline error message appears, no saved/confirmation line is shown, and the typed Name and Email values are preserved in the form."},
+      {"task": "Fill all three fields with valid values (email containing '@' and '.') and submit.", "expected_result": "An in-page confirmation appears beneath the form without navigating away, including 'Received' or 'Submitted' together with the submitted name or email."}
+    ],
+    "000075": [
+      {"task": "Scroll to the Contact Us section. Submit the contact form with all fields empty.", "expected_result": "A clear inline error message appears within the Contact Us section, no success state is shown."},
+      {"task": "Fill name, a valid email containing '@' and '.', and a message, then submit.", "expected_result": "An in-page confirmation appears within the Contact Us section — the page does not navigate away — and it includes 'Received' or 'Submitted' plus the submitted name or email."}
+    ]
+  }
+}

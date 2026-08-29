@@ -1,0 +1,35 @@
+{
+ "per_app": {
+  "bam": {
+   "app_nll": 7971.785,
+   "library_nll": 132.6663,
+   "app_tokens": 16197,
+   "library_tokens": 198
+  },
+  "bbox": {
+   "app_nll": 10012.9631,
+   "library_nll": 132.6663,
+   "app_tokens": 18739,
+   "library_tokens": 198
+  },
+  "lbcs": {
+   "app_nll": 9072.5664,
+   "library_nll": 132.6663,
+   "app_tokens": 20864,
+   "library_tokens": 198
+  },
+  "pinn": {
+   "app_nll": 6259.7879,
+   "library_nll": 132.6663,
+   "app_tokens": 16830,
+   "library_tokens": 198
+  }
+ },
+ "summary": {
+  "sum_app_nll": 33317.1024,
+  "avg_library_nll": 132.6663,
+  "mdl_nll": 33449.7687,
+  "total_tokens": 72828,
+  "total_apps": 4
+ }
+}

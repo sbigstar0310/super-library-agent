@@ -1,0 +1,31 @@
+{
+  "suite": "c2",
+  "policy_file": "policy_c2.md",
+  "provenance": "Drafted spec-blind (instruction + layout_specs only) by a fresh agent on 2026-07-10; reviewed for feature-level wording. See docs/analysis/2026-07-10-phase1-portfolio-inspection.md for target selection.",
+  "targets": {
+    "000015": {
+      "scope": "full",
+      "required_behavior": "The policy applies to the \"Send Us a Message\" contact form on the Contact Us page (fields: Name, Email, Message). After the update, Name, Email, and Message must each reject empty or whitespace-only input, and the Email field must additionally require a value containing both '@' and '.'. Submitting with any invalid field must show a clear inline error message, must not show the success confirmation, and must leave whatever the user typed still present in the fields. A valid submission must show an in-page confirmation on the same Contact Us page (no navigation away), rendered near the form. That confirmation must contain the word \"Received\" or \"Submitted\" and must include the submitted name or email address. The site's navigation menu, contact-info panel, and all other pages must remain intact."
+    },
+    "000016": {
+      "scope": "full",
+      "required_behavior": "The policy applies to the \"Send a Message\" contact form on the Contact page (fields: Name, Email, Message). After the update, all three fields must reject empty or whitespace-only values, showing inline per-field errors when a field is missing, and the Email field must additionally require both '@' and '.' in its value. An invalid submit must not display the confirmation banner and must keep the user's typed values in the inputs rather than clearing them. A valid submit must show an in-page confirmation banner on the Contact page without navigating away, and that banner must contain \"Received\" or \"Submitted\" together with the submitted name or email. The intro panel, the other contact details, and the site navigation must remain unchanged."
+    },
+    "000019": {
+      "scope": "full",
+      "required_behavior": "The policy applies to the \"Contact Us\" form on the Contact page (fields: Name, Email, Company, \"How can we help?\"). After the update, the Name, Email, and \"How can we help?\" fields must reject empty or whitespace-only values (Company stays optional), and the Email field must additionally require both '@' and '.'. An invalid submit must show a clear inline error message, must not show the confirmation banner or record the message as sent, and must preserve everything the user has typed in all four fields. A valid submit must show an in-page confirmation on the Contact page without navigating away, and the confirmation must include \"Received\" or \"Submitted\" plus the submitted name or email. The header search feature, solution filtering, news articles, and customer-story pages must keep working as before."
+    },
+    "000064": {
+      "scope": "full",
+      "required_behavior": "The policy applies to the newsletter subscription form on the Newsletter page (a single email input with a Subscribe button). After the update, the email field must reject empty or whitespace-only input and must require a value containing both '@' and '.'. An invalid subscribe attempt must show a clear inline error message, must not show any success state or increment the subscriber count, and must keep the user's typed value in the input. A valid subscribe must show an in-page confirmation on the same page without navigating away, and the confirmation must contain \"Received\" or \"Submitted\" along with the submitted email address. The news browsing, company profiles, events listing, and the admin ad-space management area must remain fully functional. The admin ad-space form is an internal management form and is out of scope."
+    },
+    "000071": {
+      "scope": "full",
+      "required_behavior": "The policy applies to the contact form in the \"Get in Touch\" section of the Contact page (fields: Name, Email, Message). After the update, Name, Email, and Message must each reject empty or whitespace-only values, and the Email field must additionally require both '@' and '.'. An invalid submit must show a clear inline error message, must not show the saved/confirmation line, and must preserve the user's typed values in the form. A valid submit must show an in-page confirmation beneath the form without navigating away, and that confirmation must include \"Received\" or \"Submitted\" together with the submitted name or email. The contact info card, the portfolio grid with its category filters and project detail modal, and the About page content must remain unchanged."
+    },
+    "000075": {
+      "scope": "full",
+      "required_behavior": "The policy applies to the contact form in the \"Contact Us\" section of the single-page site (inputs: name, email, message). After the update, all three inputs must reject empty or whitespace-only values, and the email input must additionally require both '@' and '.'. An invalid submit must show a clear inline error message within the Contact Us section, must not show any success state, and must keep the user's entered values in the inputs. A valid submit must show an in-page confirmation within the same section — the page must not navigate away — and the confirmation must include \"Received\" or \"Submitted\" plus the submitted name or email. The anchor navigation, team cards, project showcase, and skill progress bars must remain intact."
+    }
+  }
+}

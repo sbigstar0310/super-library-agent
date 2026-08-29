@@ -1,0 +1,35 @@
+{
+ "per_app": {
+  "lca-on-the-line": {
+   "app_nll": 9060.155,
+   "library_nll": 84.0038,
+   "app_tokens": 19720,
+   "library_tokens": 130
+  },
+  "robust-clip": {
+   "app_nll": 5282.1661,
+   "library_nll": 84.0038,
+   "app_tokens": 10520,
+   "library_tokens": 130
+  },
+  "sample-specific-masks": {
+   "app_nll": 5782.0746,
+   "library_nll": 84.0038,
+   "app_tokens": 14599,
+   "library_tokens": 130
+  },
+  "test-time-model-adaptation": {
+   "app_nll": 5653.8085,
+   "library_nll": 84.0038,
+   "app_tokens": 10523,
+   "library_tokens": 130
+  }
+ },
+ "summary": {
+  "sum_app_nll": 25778.2042,
+  "avg_library_nll": 84.0038,
+  "mdl_nll": 25862.208,
+  "total_tokens": 55492,
+  "total_apps": 4
+ }
+}

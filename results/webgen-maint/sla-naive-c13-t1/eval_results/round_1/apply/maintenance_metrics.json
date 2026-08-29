@@ -1,0 +1,63 @@
+{
+  "maint_tag": "sla-naive-c13-t1",
+  "protocol": "b",
+  "source_tag": "sla-naive-c13-t1",
+  "cost": {
+    "llm_calls": 110,
+    "cost_usd": 0.05272867040000002,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 40,
+  "files": [
+    "tasks/000027/submission/src/App.jsx",
+    "tasks/000027/submission/src/pages/AdminPage.css",
+    "tasks/000027/submission/src/pages/AdminPage.jsx",
+    "tasks/000027/submission/src/pages/BrowsePage.css",
+    "tasks/000027/submission/src/pages/BrowsePage.jsx",
+    "tasks/000051/submission/src/pages/Clients.css",
+    "tasks/000051/submission/src/pages/Clients.jsx",
+    "tasks/000051/submission/src/pages/Jobs.css",
+    "tasks/000051/submission/src/pages/Jobs.jsx",
+    "tasks/000051/submission/src/pages/PostJob.jsx",
+    "tasks/000051/submission/src/pages/Profile.css",
+    "tasks/000051/submission/src/pages/Profile.jsx",
+    "tasks/000052/submission/src/pages/JobsPage.css",
+    "tasks/000052/submission/src/pages/JobsPage.jsx",
+    "tasks/000053/submission/src/pages/CompanyListings.css",
+    "tasks/000053/submission/src/pages/CompanyListings.jsx",
+    "tasks/000053/submission/src/pages/CompanyPost.jsx",
+    "tasks/000053/submission/src/pages/StudentApplyForm.jsx",
+    "tasks/000053/submission/src/pages/StudentBrowse.css",
+    "tasks/000053/submission/src/pages/StudentBrowse.jsx",
+    "tasks/000053/submission/src/pages/StudentMyApplications.css",
+    "tasks/000053/submission/src/pages/StudentMyApplications.jsx",
+    "tasks/000077/submission/src/pages/Detail.css",
+    "tasks/000077/submission/src/pages/Detail.jsx",
+    "tasks/000077/submission/src/pages/Home.css",
+    "tasks/000077/submission/src/pages/Home.jsx",
+    "tasks/000090/submission/src/components/Feed.css",
+    "tasks/000090/submission/src/components/Feed.jsx",
+    "tasks/000091/submission/src/AuthContext.jsx",
+    "tasks/000091/submission/src/pages/ProfileDetail.css",
+    "tasks/000091/submission/src/pages/ProfileDetail.jsx",
+    "tasks/000091/submission/src/pages/Register.jsx",
+    "tasks/000091/submission/src/pages/Search.css",
+    "tasks/000091/submission/src/pages/Search.jsx",
+    "tasks/000092/submission/src/components/MemberCard.css",
+    "tasks/000092/submission/src/components/MemberCard.jsx",
+    "tasks/000092/submission/src/pages/Join.css",
+    "tasks/000092/submission/src/pages/Join.jsx",
+    "tasks/000092/submission/src/pages/Search.css",
+    "tasks/000092/submission/src/pages/Search.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 414,
+    "other": 0
+  },
+  "patch_location": "apps only"
+}

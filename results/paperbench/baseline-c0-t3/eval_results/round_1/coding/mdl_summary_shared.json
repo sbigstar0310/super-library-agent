@@ -1,0 +1,94 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c0-t3/final/round_1/coding/tasks/fre/submission",
+      "app_nll": 5219.6432,
+      "library_nll": 0.0,
+      "nll_per_token": 0.3528,
+      "perplexity": 1.423,
+      "total_tokens": 14795,
+      "library_tokens": 0,
+      "app_tokens": 14795,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 5219.6432,
+          "tokens": 14795,
+          "nll_per_token": 0.3528
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c0-t3/final/round_1/coding/tasks/ftrl/submission",
+      "app_nll": 8235.7056,
+      "library_nll": 0.0,
+      "nll_per_token": 0.354,
+      "perplexity": 1.4247,
+      "total_tokens": 23266,
+      "library_tokens": 0,
+      "app_tokens": 23266,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 8235.7056,
+          "tokens": 23266,
+          "nll_per_token": 0.354
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c0-t3/final/round_1/coding/tasks/rice/submission",
+      "app_nll": 5627.6942,
+      "library_nll": 0.0,
+      "nll_per_token": 0.4076,
+      "perplexity": 1.5032,
+      "total_tokens": 13808,
+      "library_tokens": 0,
+      "app_tokens": 13808,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 5627.6942,
+          "tokens": 13808,
+          "nll_per_token": 0.4076
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c0-t3/final/round_1/coding/tasks/sapg/submission",
+      "app_nll": 4394.642,
+      "library_nll": 0.0,
+      "nll_per_token": 0.3837,
+      "perplexity": 1.4677,
+      "total_tokens": 11453,
+      "library_tokens": 0,
+      "app_tokens": 11453,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 4394.642,
+          "tokens": 11453,
+          "nll_per_token": 0.3837
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "library_nll": 0.0,
+    "library_tokens": 0,
+    "sum_app_nll": 23477.685,
+    "sum_app_tokens": 63322,
+    "mdl_nll": 23477.685,
+    "total_tokens": 63322,
+    "nll_per_token": 0.3708,
+    "total_apps": 4
+  }
+}

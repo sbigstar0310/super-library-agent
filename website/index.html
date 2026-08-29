@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Super Library Agent</title>
+<meta name="description" content="An LLM agent that writes a set of related applications and keeps one shared library alongside them. Less code, less redundancy, smaller maintenance patches, same task accuracy. EMNLP 2026 Findings.">
+<link rel="canonical" href="https://sbigstar0310.github.io/super-library-agent/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Super Library Agent">
+<meta property="og:description" content="One shared library, built as the applications are written: 38% less redundant code, 9% fewer lines, 3.7x smaller maintenance patches, same task accuracy. EMNLP 2026 Findings.">
+<meta property="og:url" content="https://sbigstar0310.github.io/super-library-agent/">
+<meta property="og:image" content="https://sbigstar0310.github.io/super-library-agent/static/img/social_preview.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="static/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="static/css/style.css">
+
+<!-- Asset provenance (generators are not shipped; see below for sources).
+     static/img/{problem,method,abstraction_quality}.{webp,png}
+        <- paper figures/assets/{sla_problem,sla_naive_and_ours,
+           plot__abstraction_quality_bar}.pdf, PyMuPDF render at 2048px wide,
+           WebP quality 88.
+     data/library.json
+        <- backups/webgen/sla-ours-c2-t3/final/round_4/apply/tasks/000015/lib/src/**
+           (all 22 files: 12 modules + 10 stylesheets, 1078 lines). Reuse rates come from
+           the paper's Appendix I export listing for this same cell, not
+           recomputed, so page and paper cannot disagree.
+     data/migration.json
+        <- same tag, round_2/coding vs round_4/apply, src/pages/Contact.jsx.
+     Table numbers below carry data-src attributes naming the results/ cell
+     they were transcribed from. -->
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-mark">Super Library Agent</span>
+    <div class="nav-links">
+      <a href="#pipeline">How it works</a>
+      <a href="#problem">Problem</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#library">The library</a>
+      <a href="#limits">Limits</a>
+      <a href="#cite">Cite</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <span class="badge">EMNLP 2026 Findings</span>
+  <h1>Super Library Agent: Joint Generation and Maintenance of Multiple Applications Beyond the Single Codebase</h1>
+  <p class="authors">
+    Daegyu Sung<sup>1*</sup>, Yukyeong Lee<sup>1*</sup>, Geon Park<sup>1</sup>,
+    Yumin Choi<sup>1</sup>, Sung Ju Hwang<sup>1,2†</sup>
+  </p>
+  <p class="affil"><sup>1</sup>KAIST &nbsp;·&nbsp; <sup>2</sup>DeepAuto.ai</p>
+  <p class="affil-note">*Equal contribution &nbsp;·&nbsp; †Corresponding author</p>
+
+  <div class="buttons">
+    <a class="btn btn-primary" href="https://github.com/sbigstar0310/super-library-agent">Code</a>
+    <span class="btn" aria-disabled="true" title="Link added once the paper is posted">Paper (soon)</span>
+    <a class="btn" href="#cite">BibTeX</a>
+  </div>
+
+</header>
+
+<main class="wrap">
+
+<section id="pipeline">
+  <p class="kicker">How it works</p>
+  <h2>One round of SLA, end to end</h2>
+
+  <figure class="anim" id="sla-anim" data-step="1">
+    <svg viewBox="0 0 1000 344" role="img" aria-labelledby="anim-title anim-desc">
+      <title id="anim-title">One round of the Super Library Agent</title>
+      <desc id="anim-desc">A new request becomes an application, written against the Super
+        Library as it currently stands, so whatever the library already covers is imported
+        rather than rewritten. What the new application still shares with earlier ones is
+        extracted, the library grows by one symbol, and every application written so far is
+        migrated to import from it.</desc>
+
+      <!-- Super Library -->
+      <g class="lib" transform="translate(316,20)">
+        <rect class="libbox" width="368" height="82" rx="10"/>
+        <text class="libtitle" x="184" y="30">Super Lib. <tspan class="lsub">L</tspan></text>
+        <g class="lchip l1"><rect class="chip ui"    x="34"  y="44" width="86" height="26" rx="5"/><text class="chiplab" x="77"  y="62">UI</text></g>
+        <g class="lchip l2"><rect class="chip state" x="141" y="44" width="86" height="26" rx="5"/><text class="chiplab" x="184" y="62">State</text></g>
+        <g class="lchip l3"><rect class="chip chart" x="248" y="44" width="86" height="26" rx="5"/><text class="chiplab" x="291" y="62">Chart</text></g>
+      </g>
+
+      <!-- request -->
+      <g class="req" transform="translate(772,120)">
+        <rect class="bubble" width="46" height="32" rx="7"/>
+        <circle cx="14" cy="16" r="2.6"/><circle cx="23" cy="16" r="2.6"/><circle cx="32" cy="16" r="2.6"/>
+        <text class="reqlab" x="56" y="22">Request x₃</text>
+      </g>
+      <path class="codeflow" d="M795 156 C795 178 760 180 736 192" marker-end="url(#arP)"/>
+      <text class="phase phase-code" x="838" y="182">1. CODING</text>
+
+      <!-- coding reads the library as it stands -->
+      <path class="flowR" d="M620 104 C622 140 660 172 690 192" marker-end="url(#arB)"/>
+      <text class="refnote" x="618" y="148">reads L</text>
+
+      <!-- extract arrows -->
+      <g class="up">
+        <path class="flowB up2" d="M568 192 C568 152 588 132 604 118"/>
+        <path class="flowB up3" d="M716 192 C716 152 660 130 616 118"/>
+        <path class="flowB upm" d="M610 118 L607 108" marker-end="url(#arB)"/>
+      </g>
+      <text class="phase phase-cons" x="838" y="206">2. CONSOLIDATE</text>
+      <text class="phase phase-ex" x="120" y="150">3. EXTRACT</text>
+      <text class="phase phase-mi" x="120" y="174">4. MIGRATE</text>
+
+      <!-- migrate arrows -->
+      <g class="down">
+        <path class="flowB" d="M420 104 C400 150 338 150 338 192" marker-end="url(#arB)"/>
+        <path class="flowB" d="M490 104 C500 150 534 150 534 192" marker-end="url(#arB)"/>
+        <path class="flowB" d="M560 104 C620 150 730 150 730 192" marker-end="url(#arB)"/>
+      </g>
+      <text class="imports" x="172" y="252">Imports</text>
+      <path class="dash" d="M180 248 L244 248"/>
+
+      <g class="code c1" transform="translate(250,196)">
+        <rect class="cbox" width="176" height="118" rx="9"/>
+        <text class="ctitle" x="88" y="24">Code c₁</text>
+        <g class="own"><rect x="14" y="90" width="148" height="16" rx="4"/></g>
+        <g class="chips">
+          <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
+          <rect class="chip state shared imported" x="62" y="36" width="42" height="22" rx="4"/>
+          <rect class="chip form localonly" x="110" y="36" width="42" height="22" rx="4"/>
+        </g>
+      </g>
+      <g class="code c2" transform="translate(446,196)">
+        <rect class="cbox" width="176" height="118" rx="9"/>
+        <text class="ctitle" x="88" y="24">Code c₂</text>
+        <g class="own"><rect x="14" y="90" width="148" height="16" rx="4"/></g>
+        <g class="chips">
+          <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
+          <rect class="chip state shared imported" x="62" y="36" width="42" height="22" rx="4"/>
+          <rect class="chip chart shared pending" x="110" y="36" width="42" height="22" rx="4"/>
+        </g>
+      </g>
+      <g class="code c3" transform="translate(642,196)">
+        <rect class="cbox" width="176" height="118" rx="9"/>
+        <text class="ctitle" x="88" y="24">Code c₃</text>
+        <g class="own"><rect x="14" y="90" width="148" height="16" rx="4"/></g>
+        <g class="chips">
+          <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
+          <rect class="chip chart shared pending" x="62" y="36" width="42" height="22" rx="4"/>
+        </g>
+        <g class="dupchips">
+          <rect class="chip chart shared" x="14" y="62" width="42" height="22" rx="4"/>
+          <rect class="chip chart shared" x="62" y="62" width="42" height="22" rx="4"/>
+          <text class="dupnote" x="120" y="78">×3 alike</text>
+        </g>
+      </g>
+
+      <defs>
+        <marker id="arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="hB"/></marker>
+        <marker id="arP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="hP"/></marker>
+      </defs>
+    </svg>
+
+    <figcaption>
+      <ol class="anim-steps">
+        <li data-step="1"><b>Request</b><span>a new task arrives</span></li>
+        <li data-step="2"><b>Coding</b><span>c₃ written against&nbsp;L</span></li>
+        <li data-step="3"><b>Consolidate</b><span>repetition <em>inside</em> the new app</span></li>
+        <li data-step="4"><b>Extract</b><span>what repeats joins the library</span></li>
+        <li data-step="5"><b>Migrate</b><span>every application imports it</span></li>
+      </ol>
+      <p class="anim-hint">Plays on its own. Hover to pause, click a step to inspect it.</p>
+    </figcaption>
+  </figure>
+</section>
+
+<section id="problem">
+  <p class="kicker">The problem</p>
+  <h2>N isolated agents write the same logic N different ways.</h2>
+
+  <div class="two-col split">
+    <figure class="fig-flush">
+      <picture>
+        <source srcset="static/img/problem.webp" type="image/webp">
+        <img src="static/img/problem.png" width="2048" height="1205"
+             alt="Left: each application is generated on its own and the same header, form validation and storage logic is written again in every codebase. Right: the shared logic is factored into one Super Library that all applications import.">
+      </picture>
+      <figcaption>We introduce the <strong>Super Library Agent</strong> problem: sequentially generate
+      <em>N</em> related applications while maintaining one shared library they all use.</figcaption>
+    </figure>
+
+    <div class="payoff">
+      <p class="payoff-head">What SLA changes</p>
+      <ul class="ledger">
+        <li class="parity">
+          <b>no loss</b>
+          <span><em>task accuracy</em><i data-src="webgen:Zero-Shot:Acc">76.04</i> &rarr; <i data-src="webgen:SLA-Full:Acc">77.21</i></span>
+        </li>
+        <li>
+          <b data-src="webgen:SLA-Full:Verb:delta">&minus;38%</b>
+          <span><em>redundant code</em>verbosity: duplicated blocks and rule-flagged patterns</span>
+        </li>
+        <li>
+          <b data-src="webgen:SLA-Full:LOC:delta">&minus;9.0%</b>
+          <span><em>lines of code</em>the apps plus the shared library</span>
+        </li>
+        <li>
+          <b>3.7&times;</b>
+          <span><em>smaller maintenance patch</em><i data-src="maint:Zero-Shot:Total">936</i> &rarr; <i data-src="maint:SLA-Full:Total">256</i> patched lines</span>
+        </li>
+      </ul>
+      <p class="payoff-foot">WebGen-Bench, against the same eight applications generated independently.</p>
+    </div>
+  </div>
+
+  <p>
+    Organizations maintain <strong>portfolios</strong>: independently deployable codebases
+    sharing domain logic, interface patterns and operational conventions. Generate each
+    member on its own and those shared concerns get duplicated, twice over.
+  </p>
+
+  <div class="two-col">
+    <div class="cause">
+      <p class="cause-tag">Failure 1</p>
+      <b>The same logic is duplicated across codebases</b>
+      <p>
+        Writing each member on its own violates DRY and creates an inconsistency surface:
+        every bug fix, design change and policy update has to be propagated by hand across
+        near-duplicates.
+      </p>
+    </div>
+    <div class="cause">
+      <p class="cause-tag">Failure 2</p>
+      <b>Isolated agents compound slop</b>
+      <p>
+        Prolonged agentic coding produces <em>slop</em>: still correct, but increasingly
+        verbose and convoluted. With <em>N</em> isolated agents each re-derives shared logic
+        differently, accumulates its own dead code and drifts further from its siblings.
+      </p>
+    </div>
+  </div>
+
+  <div class="goal">
+    <p class="goal-tag">Our goal</p>
+    <p class="goal-claim">
+      Build the portfolio and <strong>one shared library</strong> together, so it stays
+      <strong>easier to maintain</strong> at <strong>no cost to accuracy</strong>.
+    </p>
+  </div>
+</section>
+
+<section id="method">
+  <p class="kicker">Method</p>
+  <h2>One round of SLA-Full</h2>
+  <p class="lede">Every round: write, consolidate, extract, migrate.</p>
+
+  <ol class="pipeline">
+    <li>
+      <span class="pnum">1</span>
+      <b>Coding</b>
+      <span>Write this round's new applications, then index their code blocks.</span>
+    </li>
+    <li>
+      <span class="pnum">2</span>
+      <b>Consolidate</b>
+      <span>Clean up repetition <em>inside</em> each new application.</span>
+    </li>
+    <li>
+      <span class="pnum">3</span>
+      <b>Library extract</b>
+      <span>Grow the shared library, recording an extraction trace.</span>
+    </li>
+    <li>
+      <span class="pnum">4</span>
+      <b>Migrate</b>
+      <span>Move every application so far onto the new library symbols.</span>
+    </li>
+  </ol>
+
+  <figure class="fig-wide">
+    <picture>
+      <source srcset="static/img/method.webp" type="image/webp">
+      <img src="static/img/method.png" width="2048" height="622" loading="lazy"
+           alt="Two workflows side by side. Left, SLA-Naive: one agent is handed all applications and asked to extract shared code and update callers. Right, SLA-Full: codebases are chunked and summarized, a selector proposes candidates, extraction records which local blocks each library symbol replaced, and migration receives that trace plus call-graph neighbors.">
+    </picture>
+    <figcaption><strong>SLA-Naive</strong> (left) versus <strong>SLA-Full</strong> (right).</figcaption>
+  </figure>
+
+  <h3>Two failures of the naive scaffold, and our fix for each</h3>
+
+  <div class="mapping">
+    <p class="rail rail-problem">Naive scaffold</p>
+    <div class="track">
+      <p class="ptitle">Low extraction recall</p>
+      <p class="pbody">
+        Blocks that do the same thing often look nothing alike, so grouping them by code
+        text or embedding similarity misses them. Reuse that is really there never gets
+        found.
+      </p>
+    </div>
+    <div class="track">
+      <p class="ptitle">Broken migration</p>
+      <p class="pbody">
+        Replacing a local implementation means editing its imports and call sites together.
+        The naive agent swaps the call and leaves the imports, the callers and the dead
+        helper behind.
+      </p>
+    </div>
+
+    <p class="rail rail-arrow" aria-hidden="true"></p>
+    <p class="arrow" aria-hidden="true">&darr;</p>
+    <p class="arrow" aria-hidden="true">&darr;</p>
+
+    <p class="rail rail-fix">Ours</p>
+    <div class="track fix-track">
+      <p class="ftitle">Index-based candidate extraction</p>
+      <dl class="fitems">
+        <dt>Code-summary indexes</dt>
+        <dd>Blocks are summarized in plain language and matched on what they <em>do</em>,
+          not on how they are written.</dd>
+        <dt>Pre-extraction consolidation</dt>
+        <dd>Each codebase is cleaned against itself first, so the cross-application step
+          sees clean units, not near-copies.</dd>
+      </dl>
+    </div>
+    <div class="track fix-track">
+      <p class="ftitle">Context-aware dependency migration</p>
+      <dl class="fitems">
+        <dt>Extraction traces</dt>
+        <dd>Extraction records where each symbol came from and how to replace it, so
+          migration does not rediscover it.</dd>
+        <dt>Call-graph conditioning</dt>
+        <dd>Each edit site arrives with its imports and callers attached, so dependents
+          are updated and the dead copy removed.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <p class="kicker">Results</p>
+  <h2>Building the portfolio, then maintaining it</h2>
+
+  <h3>1 &middot; Initial construction</h3>
+  <p>
+    Each method writes a suite of related applications from scratch, one after another.
+  </p>
+
+  <div class="tabs" role="tablist" aria-label="Benchmark">
+    <button role="tab" aria-selected="true" data-bench="webgen">WebGen-Bench</button>
+    <button role="tab" aria-selected="false" data-bench="paperbench">PaperBench</button>
+  </div>
+
+  <div class="table-scroll" data-bench-panel="webgen">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th colspan="2" class="grp gstart">Functionality</th>
+          <th colspan="5" class="grp gstart">Maintainability</th>
+        </tr>
+        <tr>
+          <th>Method</th>
+          <th class="gstart">Acc &uarr;</th><th>Appr &uarr;</th>
+          <th class="gstart">LOC &darr;</th><th>Tok &darr;</th><th>MDL &darr;</th>
+          <th>Eros &darr;</th><th>Verb &darr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Zero-Shot</td>
+          <td class="gstart" data-src="webgen:Zero-Shot:Acc">76.04</td>
+          <td data-src="webgen:Zero-Shot:Appear">3.84</td>
+          <td class="gstart" data-src="webgen:Zero-Shot:LOC">9393</td>
+          <td data-src="webgen:Zero-Shot:Tok">70364</td>
+          <td data-src="webgen:Zero-Shot:MDL">34875</td>
+          <td data-src="webgen:Zero-Shot:Eros">0.1032</td>
+          <td data-src="webgen:Zero-Shot:Verb">0.1603</td>
+        </tr>
+        <tr>
+          <td>Librarian (<i>K</i>=8)</td>
+          <td class="gstart" data-src="webgen:Librarian K=8:Acc">75.78</td>
+          <td data-src="webgen:Librarian K=8:Appear">3.89</td>
+          <td class="gstart" data-src="webgen:Librarian K=8:LOC">8973</td>
+          <td data-src="webgen:Librarian K=8:Tok">68159</td>
+          <td data-src="webgen:Librarian K=8:MDL" class="best">33919</td>
+          <td data-src="webgen:Librarian K=8:Eros">0.1352</td>
+          <td data-src="webgen:Librarian K=8:Verb">0.1472</td>
+        </tr>
+        <tr>
+          <td>Naive-Implicit</td>
+          <td class="gstart" data-src="webgen:Naive-Implicit:Acc">76.95</td>
+          <td data-src="webgen:Naive-Implicit:Appear">3.89</td>
+          <td class="gstart" data-src="webgen:Naive-Implicit:LOC">9133</td>
+          <td data-src="webgen:Naive-Implicit:Tok">69777</td>
+          <td data-src="webgen:Naive-Implicit:MDL">35103</td>
+          <td data-src="webgen:Naive-Implicit:Eros">0.1567</td>
+          <td data-src="webgen:Naive-Implicit:Verb">0.1408</td>
+        </tr>
+        <tr>
+          <td>Naive-Ward</td>
+          <td class="gstart" data-src="webgen:Naive-Ward:Acc">76.07</td>
+          <td data-src="webgen:Naive-Ward:Appear" class="best">3.90</td>
+          <td class="gstart" data-src="webgen:Naive-Ward:LOC">8786</td>
+          <td data-src="webgen:Naive-Ward:Tok">67774</td>
+          <td data-src="webgen:Naive-Ward:MDL">34675</td>
+          <td data-src="webgen:Naive-Ward:Eros">0.1250</td>
+          <td data-src="webgen:Naive-Ward:Verb">0.1370</td>
+        </tr>
+        <tr class="ours">
+          <td>SLA-Full</td>
+          <td data-src="webgen:SLA-Full:Acc" class="gstart best">77.21</td>
+          <td data-src="webgen:SLA-Full:Appear">3.86</td>
+          <td data-src="webgen:SLA-Full:LOC" class="gstart best">8552</td>
+          <td data-src="webgen:SLA-Full:Tok" class="best">65633</td>
+          <td data-src="webgen:SLA-Full:MDL">34195</td>
+          <td data-src="webgen:SLA-Full:Eros" class="best">0.0987</td>
+          <td data-src="webgen:SLA-Full:Verb" class="best">0.0994</td>
+        </tr>
+        <tr class="delta">
+          <td>&Delta; vs Zero-Shot</td>
+          <td class="gstart" data-src="webgen:SLA-Full:Acc:delta">+1.5%</td>
+          <td data-src="webgen:SLA-Full:Appear:delta">+0.5%</td>
+          <td class="gstart" data-src="webgen:SLA-Full:LOC:delta">&minus;9.0%</td>
+          <td data-src="webgen:SLA-Full:Tok:delta">&minus;6.7%</td>
+          <td data-src="webgen:SLA-Full:MDL:delta">&minus;1.9%</td>
+          <td data-src="webgen:SLA-Full:Eros:delta">&minus;4.4%</td>
+          <td data-src="webgen:SLA-Full:Verb:delta">&minus;38.0%</td>
+        </tr>
+      </tbody>
+      <caption>
+        Three 8-application suites, three trials each; maintainability metrics cover all
+        applications plus the shared library.
+        Acc is the WebVoyager UI-test pass rate (partial completions count half) and Appr
+        the VLM appearance grade (0&ndash;5). Eros is structural erosion: the share of
+        complexity mass in functions with cyclomatic complexity above 10. Verb is verbosity:
+        the fraction of logical lines covered by duplicated code or rule-flagged redundant
+        patterns. Lower is better for both.
+      </caption>
+    </table>
+  </div>
+
+  <div class="table-scroll" data-bench-panel="paperbench" hidden>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th colspan="2" class="grp gstart">Functionality</th>
+          <th colspan="5" class="grp gstart">Maintainability</th>
+        </tr>
+        <tr>
+          <th>Method</th>
+          <th class="gstart">Acc &uarr;</th><th>Appr &uarr;</th>
+          <th class="gstart">LOC &darr;</th><th>Tok &darr;</th><th>MDL &darr;</th>
+          <th>Eros &darr;</th><th>Verb &darr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Zero-Shot</td>
+          <td class="gstart" data-src="paperbench:Zero-Shot:Acc">0.4687</td>
+          <td>&mdash;</td>
+          <td class="gstart" data-src="paperbench:Zero-Shot:LOC">6578</td>
+          <td data-src="paperbench:Zero-Shot:Tok">68603</td>
+          <td data-src="paperbench:Zero-Shot:MDL">30342</td>
+          <td data-src="paperbench:Zero-Shot:Eros">0.2558</td>
+          <td data-src="paperbench:Zero-Shot:Verb">0.8665</td>
+        </tr>
+        <tr>
+          <td>Librarian (<i>K</i>=8)</td>
+          <td class="gstart" data-src="paperbench:Librarian K=8:Acc">0.4591</td>
+          <td>&mdash;</td>
+          <td class="gstart" data-src="paperbench:Librarian K=8:LOC">6551</td>
+          <td data-src="paperbench:Librarian K=8:Tok">68297</td>
+          <td data-src="paperbench:Librarian K=8:MDL">30400</td>
+          <td data-src="paperbench:Librarian K=8:Eros">0.2527</td>
+          <td data-src="paperbench:Librarian K=8:Verb">0.8628</td>
+        </tr>
+        <tr>
+          <td>Naive-Implicit</td>
+          <td class="gstart" data-src="paperbench:Naive-Implicit:Acc">0.4802</td>
+          <td>&mdash;</td>
+          <td class="gstart" data-src="paperbench:Naive-Implicit:LOC">6445</td>
+          <td data-src="paperbench:Naive-Implicit:Tok">66539</td>
+          <td data-src="paperbench:Naive-Implicit:MDL">29850</td>
+          <td data-src="paperbench:Naive-Implicit:Eros">0.2882</td>
+          <td data-src="paperbench:Naive-Implicit:Verb">0.8582</td>
+        </tr>
+        <tr>
+          <td>Naive-Ward</td>
+          <td class="gstart" data-src="paperbench:Naive-Ward:Acc">0.4720</td>
+          <td>&mdash;</td>
+          <td class="gstart" data-src="paperbench:Naive-Ward:LOC">6440</td>
+          <td data-src="paperbench:Naive-Ward:Tok">66028</td>
+          <td data-src="paperbench:Naive-Ward:MDL">29568</td>
+          <td data-src="paperbench:Naive-Ward:Eros">0.2761</td>
+          <td data-src="paperbench:Naive-Ward:Verb">0.8645</td>
+        </tr>
+        <tr class="ours">
+          <td>SLA-Full</td>
+          <td data-src="paperbench:SLA-Full:Acc" class="gstart best">0.4809</td>
+          <td>&mdash;</td>
+          <td data-src="paperbench:SLA-Full:LOC" class="gstart best">6252</td>
+          <td data-src="paperbench:SLA-Full:Tok" class="best">63514</td>
+          <td data-src="paperbench:SLA-Full:MDL" class="best">29489</td>
+          <td data-src="paperbench:SLA-Full:Eros" class="best">0.2291</td>
+          <td data-src="paperbench:SLA-Full:Verb" class="best">0.8490</td>
+        </tr>
+        <tr class="delta">
+          <td>&Delta; vs Zero-Shot</td>
+          <td class="gstart" data-src="paperbench:SLA-Full:Acc:delta">+2.6%</td>
+          <td>&mdash;</td>
+          <td class="gstart" data-src="paperbench:SLA-Full:LOC:delta">&minus;5.0%</td>
+          <td data-src="paperbench:SLA-Full:Tok:delta">&minus;7.4%</td>
+          <td data-src="paperbench:SLA-Full:MDL:delta">&minus;2.8%</td>
+          <td data-src="paperbench:SLA-Full:Eros:delta">&minus;10.4%</td>
+          <td data-src="paperbench:SLA-Full:Verb:delta">&minus;2.0%</td>
+        </tr>
+      </tbody>
+      <caption>
+        Five 4-paper suites, three trials each; maintainability metrics cover all
+        applications plus the shared library.
+        PaperBench Acc is the rubric-based Code-Dev score; appearance does not apply.
+      </caption>
+    </table>
+  </div>
+
+  <h3 id="maintenance">2 &middot; Post-construction maintenance</h3>
+  <p>
+    Each finished portfolio then absorbs one policy update that changes behavior shared by
+    several applications.
+  </p>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th></th>
+          <th colspan="3" class="grp gstart">Patch size</th>
+          <th colspan="3" class="grp gstart">Functionality after the patch</th></tr>
+        <tr>
+          <th>Method</th>
+          <th class="gstart">Total &darr;</th><th>App &darr;</th><th>Library</th>
+          <th class="gstart">Original &uarr;</th><th>Requested &uarr;</th><th>Appr &uarr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Zero-Shot</td><td class="gstart" data-src="maint:Zero-Shot:Total">936</td><td data-src="maint:Zero-Shot:App">936</td><td data-src="maint:Zero-Shot:Lib">0</td><td class="gstart best" data-src="maint:Zero-Shot:Orig">77.9</td><td data-src="maint:Zero-Shot:Req">81.9</td><td data-src="maint:Zero-Shot:Appear">3.93</td></tr>
+        <tr><td>Librarian</td><td class="gstart" data-src="maint:Librarian:Total">522</td><td data-src="maint:Librarian:App">500</td><td data-src="maint:Librarian:Lib">22</td><td class="gstart" data-src="maint:Librarian:Orig">74.0</td><td data-src="maint:Librarian:Req">76.9</td><td data-src="maint:Librarian:Appear">3.83</td></tr>
+        <tr><td>Naive-Implicit</td><td class="gstart" data-src="maint:Naive-Implicit:Total">632</td><td data-src="maint:Naive-Implicit:App">618</td><td data-src="maint:Naive-Implicit:Lib">14</td><td class="gstart" data-src="maint:Naive-Implicit:Orig">76.9</td><td class="best" data-src="maint:Naive-Implicit:Req">82.9</td><td data-src="maint:Naive-Implicit:Appear">3.82</td></tr>
+        <tr><td>Naive-Ward</td><td class="gstart" data-src="maint:Naive-Ward:Total">380</td><td data-src="maint:Naive-Ward:App">363</td><td data-src="maint:Naive-Ward:Lib">18</td><td class="gstart" data-src="maint:Naive-Ward:Orig">77.7</td><td data-src="maint:Naive-Ward:Req">81.1</td><td class="best" data-src="maint:Naive-Ward:Appear">3.95</td></tr>
+        <tr class="ours"><td>SLA-Full</td><td class="gstart best" data-src="maint:SLA-Full:Total">256</td><td class="best" data-src="maint:SLA-Full:App">232</td><td data-src="maint:SLA-Full:Lib">24</td><td class="gstart" data-src="maint:SLA-Full:Orig">77.4</td><td data-src="maint:SLA-Full:Req">80.0</td><td data-src="maint:SLA-Full:Appear">3.86</td></tr>
+      </tbody>
+      <caption>
+        Three WebGen suites, three trials. <em>Original</em> and <em>Requested</em> are
+        post-patch pass rates on the behaviors that already existed and the ones just asked
+        for.
+      </caption>
+    </table>
+  </div>
+</section>
+
+<section id="library">
+  <p class="kicker">What actually comes out</p>
+  <h2>The Super Library, for real</h2>
+  <p>
+    Not an illustration. A whole library SLA-Full extracted from one 8-application suite,
+    exactly as it exists in the run. Badges show how many of the 8 applications import each
+    symbol.
+  </p>
+
+  <div class="browser">
+    <div class="tree" id="tree" role="tablist" aria-label="Library files"></div>
+    <div class="viewer">
+      <div class="viewer-head">
+        <span class="fname" id="viewer-path">&nbsp;</span>
+        <span id="viewer-lines"></span>
+        <span class="sym" id="viewer-symbols"></span>
+      </div>
+      <pre><code id="viewer-code"></code></pre>
+    </div>
+  </div>
+  <p class="stat-note" style="margin-top:0.8rem" id="lib-source"></p>
+
+  <h3>Applications after dependency migration</h3>
+
+  <div class="ba">
+    <div class="ba-head">
+      <span class="fname" id="diff-file"></span>
+      <span id="diff-meta"></span>
+    </div>
+    <div class="ba-cols">
+      <div class="ba-col">
+        <div class="ba-label" id="ba-before-label"></div>
+        <pre><code id="ba-before"></code></pre>
+      </div>
+      <div class="ba-col ba-after">
+        <div class="ba-label" id="ba-after-label"></div>
+        <pre><code id="ba-after"></code></pre>
+      </div>
+    </div>
+  </div>
+  <h3>SLA-Full extracts higher-level abstractions</h3>
+  <div class="two-col abs">
+    <figure class="fig-flush">
+      <picture>
+        <source srcset="static/img/abstraction_quality.webp" type="image/webp">
+        <img src="static/img/abstraction_quality.png" width="2048" height="1053" loading="lazy"
+             alt="Bar chart of highly reused library symbols per method, in three categories: primitive UI components, behavioral hooks and utilities, and page or domain patterns. On primitives the two naive variants and SLA-Full sit close together (3.2 to 3.4) while Librarian is far lower (1.0). On the other two categories SLA-Full is highest by a wide margin.">
+      </picture>
+      <figcaption>Highly reused symbols (imported by 4+ of 8 applications) per run, by abstraction level.</figcaption>
+    </figure>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th class="gstart">Primitive UI</th>
+            <th class="gstart">Behavioral hooks / utils</th>
+            <th class="gstart">Page / domain patterns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Librarian</td>
+            <td class="gstart sym"><code>Footer</code><code>Header</code></td>
+            <td class="gstart sym"><code>useLocalStorage</code><code>saveToStorage</code></td>
+            <td class="gstart sym"><code>ContactForm</code><code>LoginForm</code></td>
+          </tr>
+          <tr>
+            <td>Naive-Implicit</td>
+            <td class="gstart sym"><code>Header</code><code>Footer</code></td>
+            <td class="gstart sym"><code>useLocalStorage</code><code>useFormValidation</code></td>
+            <td class="gstart sym"><code>ContactForm</code><code>KpiCard</code></td>
+          </tr>
+          <tr>
+            <td>Naive-Ward</td>
+            <td class="gstart sym"><code>Header</code><code>Card</code></td>
+            <td class="gstart sym"><code>useLocalStorage</code><code>createAuthContext</code></td>
+            <td class="gstart sym"><code>ContactForm</code></td>
+          </tr>
+          <tr class="ours">
+            <td>SLA-Full</td>
+            <td class="gstart sym"><code>NavigationBar</code><code>Section</code></td>
+            <td class="gstart sym"><code>useRouter</code><code>useFilteredList</code></td>
+            <td class="gstart sym"><code>FeatureCardGrid</code><code>MessageBanner</code></td>
+          </tr>
+        </tbody>
+        <caption>
+          Up to two examples per category. The complete export inventory, with per-symbol reuse
+          rates, is in the paper (Appendix I).
+        </caption>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="limits">
+  <p class="kicker">Limits</p>
+  <h2>Our limitations</h2>
+  <ul class="plain">
+    <li>
+      <b>No benchmark is built for this setting.</b> We adapt single-task coding benchmarks
+      into sequential suites, but they were not designed to test library growth over many
+      rounds or reuse across applications. The applications we maintain are benchmark
+      artifacts with no users, no commit history, and no production constraints, so we
+      cannot say whether the smaller patch holds on real software. We also measure one
+      maintenance round rather than a sequence, so we do not see how the library holds up as
+      requirements keep changing, or how errors compound.
+    </li>
+    <li>
+      <b>Maintainability is measured by proxy.</b> Code size, duplication, verbosity, and
+      library use are useful signals about abstraction and reuse, but they do not show that
+      a codebase is easier to read, change, or extend. Maintainability really shows up over
+      repeated future changes; what we have is static properties of the final codebases plus
+      one maintenance round.
+    </li>
+  </ul>
+</section>
+
+<section id="cite">
+  <p class="kicker">Cite</p>
+  <h2>BibTeX</h2>
+  <p class="stat-note">Provisional. <code>pages</code> and the Anthology <code>url</code> follow publication.</p>
+  <div class="bibtex-wrap">
+    <button class="copy" id="copy-bib" type="button">Copy</button>
+<pre><code id="bibtex">@inproceedings{sla2026,
+  title     = {{Super Library Agent}: Joint Generation and Maintenance of Multiple Applications Beyond the Single Codebase},
+  author    = {Sung, Daegyu and Lee, Yukyeong and Park, Geon and Choi, Yumin and Hwang, Sung Ju},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},
+  month     = oct,
+  year      = {2026},
+  address   = {Budapest, Hungary},
+  publisher = {Association for Computational Linguistics}
+}</code></pre>
+  </div>
+</section>
+
+</main>
+
+
+
+<script src="static/js/main.js"></script>
+</body>
+</html>

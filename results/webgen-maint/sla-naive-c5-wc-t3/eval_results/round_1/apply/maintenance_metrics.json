@@ -1,0 +1,50 @@
+{
+  "maint_tag": "sla-naive-c5-wc-t3",
+  "protocol": "b",
+  "source_tag": "sla-naive-c5-wc-t3",
+  "cost": {
+    "llm_calls": 73,
+    "cost_usd": 0.03923905439999998,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 27,
+  "files": [
+    "lib/src/index.js",
+    "lib/src/utils/recordId.js",
+    "tasks/000022/submission/src/App.css",
+    "tasks/000022/submission/src/App.jsx",
+    "tasks/000023/submission/src/App.jsx",
+    "tasks/000023/submission/src/screens/Leads.css",
+    "tasks/000023/submission/src/screens/Leads.jsx",
+    "tasks/000044/submission/src/App.jsx",
+    "tasks/000044/submission/src/components/Inquiry.jsx",
+    "tasks/000044/submission/src/components/Track.jsx",
+    "tasks/000046/submission/src/pages/Finance.css",
+    "tasks/000046/submission/src/pages/Finance.jsx",
+    "tasks/000046/submission/src/pages/Patients.css",
+    "tasks/000046/submission/src/pages/Patients.jsx",
+    "tasks/000046/submission/src/pages/Pharmacy.css",
+    "tasks/000046/submission/src/pages/Pharmacy.jsx",
+    "tasks/000080/submission/src/App.css",
+    "tasks/000080/submission/src/App.jsx",
+    "tasks/000083/submission/src/App.css",
+    "tasks/000083/submission/src/components/Cases.jsx",
+    "tasks/000083/submission/src/components/Reports.jsx",
+    "tasks/000083/submission/src/components/WorkHours.jsx",
+    "tasks/000085/submission/src/App.css",
+    "tasks/000085/submission/src/App.jsx",
+    "tasks/000085/submission/src/components/Documents.jsx",
+    "tasks/000085/submission/src/components/Projects.jsx",
+    "tasks/000085/submission/src/components/Schedule.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 36,
+    "apps": 359,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

@@ -1,0 +1,27 @@
+{
+  "maint_tag": "sla-naive-c2-wc-t1",
+  "protocol": "b",
+  "source_tag": "sla-naive-c2-wc-t1",
+  "cost": {
+    "llm_calls": 40,
+    "cost_usd": 0.014799422400000001,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 4,
+  "files": [
+    "lib/src/components/ContactSection.jsx",
+    "tasks/000019/submission/src/pages/Contact.jsx",
+    "tasks/000064/submission/src/pages/Newsletter.jsx",
+    "tasks/000071/submission/src/components/Contact.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 19,
+    "apps": 78,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

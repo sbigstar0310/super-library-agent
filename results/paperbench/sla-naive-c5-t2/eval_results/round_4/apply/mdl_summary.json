@@ -1,0 +1,803 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c5-t2/final/round_4/apply/tasks/bam/submission",
+      "app_nll": 8054.1506,
+      "library_nll": 309.6112,
+      "nll_per_token": 0.4973,
+      "perplexity": 1.6443,
+      "total_tokens": 16818,
+      "library_tokens": 595,
+      "app_tokens": 16223,
+      "file_details": [
+        {
+          "rel_path": "bam/__init__.py",
+          "nll": 20.4602,
+          "tokens": 86,
+          "nll_per_token": 0.2379,
+          "dep_paths": [
+            "bam/bam.py",
+            "bam/advi.py",
+            "bam/gsm.py",
+            "bam/fisher.py",
+            "bam/score_vi.py",
+            "bam/score_based_divergence.py",
+            "bam/utils.py"
+          ]
+        },
+        {
+          "rel_path": "bam/advi.py",
+          "nll": 330.3626,
+          "tokens": 573,
+          "nll_per_token": 0.5765,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bam/bam.py",
+          "nll": 593.3048,
+          "tokens": 1015,
+          "nll_per_token": 0.5845,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bam/convergence.py",
+          "nll": 697.9628,
+          "tokens": 1066,
+          "nll_per_token": 0.6547,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "bam/fisher.py",
+          "nll": 404.2929,
+          "tokens": 604,
+          "nll_per_token": 0.6694,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bam/gsm.py",
+          "nll": 482.5814,
+          "tokens": 748,
+          "nll_per_token": 0.6452,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bam/score_based_divergence.py",
+          "nll": 237.4459,
+          "tokens": 198,
+          "nll_per_token": 1.1992,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bam/score_vi.py",
+          "nll": 306.672,
+          "tokens": 582,
+          "nll_per_token": 0.5269,
+          "dep_paths": [
+            "bam/score_based_divergence.py"
+          ]
+        },
+        {
+          "rel_path": "bam/targets.py",
+          "nll": 541.0009,
+          "tokens": 954,
+          "nll_per_token": 0.5671,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bam/utils.py",
+          "nll": 695.6359,
+          "tokens": 1035,
+          "nll_per_token": 0.6721,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/gaussian_targets.py",
+          "nll": 478.77,
+          "tokens": 1331,
+          "nll_per_token": 0.3597,
+          "dep_paths": [
+            "utils/__init__.py",
+            "bam/bam.py",
+            "bam/advi.py",
+            "bam/gsm.py",
+            "bam/fisher.py",
+            "bam/score_vi.py",
+            "bam/targets.py",
+            "bam/utils.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/non_gaussian_targets.py",
+          "nll": 565.8416,
+          "tokens": 1558,
+          "nll_per_token": 0.3632,
+          "dep_paths": [
+            "utils/__init__.py",
+            "bam/bam.py",
+            "bam/advi.py",
+            "bam/gsm.py",
+            "bam/targets.py",
+            "bam/utils.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/plot_results.py",
+          "nll": 503.9559,
+          "tokens": 1059,
+          "nll_per_token": 0.4759,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/posteriordb_experiment.py",
+          "nll": 589.347,
+          "tokens": 1524,
+          "nll_per_token": 0.3867,
+          "dep_paths": [
+            "utils/__init__.py",
+            "bam/bam.py",
+            "bam/advi.py",
+            "bam/gsm.py",
+            "bam/targets.py",
+            "bam/utils.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/vae_experiment.py",
+          "nll": 854.3243,
+          "tokens": 2180,
+          "nll_per_token": 0.3919,
+          "dep_paths": [
+            "bam/bam.py",
+            "bam/advi.py",
+            "bam/gsm.py"
+          ]
+        },
+        {
+          "rel_path": "run_experiments.py",
+          "nll": 594.1808,
+          "tokens": 1610,
+          "nll_per_token": 0.3691,
+          "dep_paths": [
+            "utils/__init__.py",
+            "bam/bam.py",
+            "experiments/gaussian_targets.py",
+            "experiments/non_gaussian_targets.py",
+            "experiments/posteriordb_experiment.py",
+            "experiments/vae_experiment.py"
+          ]
+        },
+        {
+          "rel_path": "setup.py",
+          "nll": 158.0115,
+          "tokens": 100,
+          "nll_per_token": 1.5801,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c5-t2/final/round_4/apply/tasks/bbox/submission",
+      "app_nll": 9091.6717,
+      "library_nll": 309.5153,
+      "nll_per_token": 0.5778,
+      "perplexity": 1.7822,
+      "total_tokens": 16270,
+      "library_tokens": 595,
+      "app_tokens": 15675,
+      "file_details": [
+        {
+          "rel_path": "bbox_adapter/__init__.py",
+          "nll": 33.701,
+          "tokens": 108,
+          "nll_per_token": 0.312,
+          "dep_paths": [
+            "bbox_adapter/model.py",
+            "bbox_adapter/loss.py",
+            "bbox_adapter/inference.py",
+            "bbox_adapter/online_adaptation.py",
+            "bbox_adapter/config.py"
+          ]
+        },
+        {
+          "rel_path": "bbox_adapter/config.py",
+          "nll": 403.2482,
+          "tokens": 436,
+          "nll_per_token": 0.9249,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bbox_adapter/inference.py",
+          "nll": 533.3084,
+          "tokens": 956,
+          "nll_per_token": 0.5579,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bbox_adapter/loss.py",
+          "nll": 129.5205,
+          "tokens": 228,
+          "nll_per_token": 0.5681,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bbox_adapter/model.py",
+          "nll": 406.3904,
+          "tokens": 838,
+          "nll_per_token": 0.485,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "bbox_adapter/online_adaptation.py",
+          "nll": 962.1444,
+          "tokens": 2460,
+          "nll_per_token": 0.3911,
+          "dep_paths": [
+            "bbox_adapter/loss.py",
+            "bbox_adapter/inference.py",
+            "bbox_adapter/model.py"
+          ]
+        },
+        {
+          "rel_path": "bbox_adapter/prompts.py",
+          "nll": 859.4246,
+          "tokens": 919,
+          "nll_per_token": 0.9352,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "bbox_adapter/sft_lora_config.py",
+          "nll": 264.5789,
+          "tokens": 288,
+          "nll_per_token": 0.9187,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/ablation_study.py",
+          "nll": 529.143,
+          "tokens": 825,
+          "nll_per_token": 0.6414,
+          "dep_paths": [
+            "bbox_adapter/config.py",
+            "bbox_adapter/loss.py",
+            "bbox_adapter/model.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/cost_analysis.py",
+          "nll": 622.9053,
+          "tokens": 665,
+          "nll_per_token": 0.9367,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/main_experiment.py",
+          "nll": 1298.504,
+          "tokens": 3459,
+          "nll_per_token": 0.3754,
+          "dep_paths": [
+            "utils/__init__.py",
+            "bbox_adapter/config.py",
+            "bbox_adapter/model.py",
+            "bbox_adapter/loss.py",
+            "bbox_adapter/inference.py",
+            "bbox_adapter/online_adaptation.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/scale_analysis.py",
+          "nll": 766.9235,
+          "tokens": 836,
+          "nll_per_token": 0.9174,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/toxicity_reduction.py",
+          "nll": 441.6984,
+          "tokens": 366,
+          "nll_per_token": 1.2068,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/whitebox_extension.py",
+          "nll": 471.8802,
+          "tokens": 434,
+          "nll_per_token": 1.0873,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "run_experiments.py",
+          "nll": 246.3101,
+          "tokens": 880,
+          "nll_per_token": 0.2799,
+          "dep_paths": [
+            "experiments/main_experiment.py",
+            "experiments/ablation_study.py",
+            "experiments/cost_analysis.py",
+            "experiments/scale_analysis.py",
+            "experiments/whitebox_extension.py",
+            "experiments/toxicity_reduction.py"
+          ]
+        },
+        {
+          "rel_path": "setup.py",
+          "nll": 163.535,
+          "tokens": 135,
+          "nll_per_token": 1.2114,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "tests/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "tests/test_inference.py",
+          "nll": 313.7353,
+          "tokens": 679,
+          "nll_per_token": 0.4621,
+          "dep_paths": [
+            "bbox_adapter/inference.py"
+          ]
+        },
+        {
+          "rel_path": "tests/test_loss.py",
+          "nll": 391.8464,
+          "tokens": 711,
+          "nll_per_token": 0.5511,
+          "dep_paths": [
+            "bbox_adapter/loss.py"
+          ]
+        },
+        {
+          "rel_path": "tests/test_online_adaptation.py",
+          "nll": 252.8741,
+          "tokens": 452,
+          "nll_per_token": 0.5595,
+          "dep_paths": [
+            "bbox_adapter/online_adaptation.py",
+            "bbox_adapter/loss.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c5-t2/final/round_4/apply/tasks/lbcs/submission",
+      "app_nll": 8070.2467,
+      "library_nll": 309.4831,
+      "nll_per_token": 0.4216,
+      "perplexity": 1.5244,
+      "total_tokens": 19876,
+      "library_tokens": 595,
+      "app_tokens": 19281,
+      "file_details": [
+        {
+          "rel_path": "coreset_methods/__init__.py",
+          "nll": 33.0049,
+          "tokens": 131,
+          "nll_per_token": 0.2519,
+          "dep_paths": [
+            "coreset_methods/lbcs.py",
+            "coreset_methods/uniform.py",
+            "coreset_methods/el2n.py",
+            "coreset_methods/grand.py",
+            "coreset_methods/influential.py",
+            "coreset_methods/moderate.py",
+            "coreset_methods/ccs.py",
+            "coreset_methods/probabilistic.py"
+          ]
+        },
+        {
+          "rel_path": "coreset_methods/ccs.py",
+          "nll": 226.3514,
+          "tokens": 354,
+          "nll_per_token": 0.6394,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "coreset_methods/el2n.py",
+          "nll": 160.963,
+          "tokens": 256,
+          "nll_per_token": 0.6288,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "coreset_methods/grand.py",
+          "nll": 239.8671,
+          "tokens": 380,
+          "nll_per_token": 0.6312,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "coreset_methods/influential.py",
+          "nll": 168.9723,
+          "tokens": 254,
+          "nll_per_token": 0.6652,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "coreset_methods/lbcs.py",
+          "nll": 1365.1519,
+          "tokens": 2561,
+          "nll_per_token": 0.5331,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "coreset_methods/moderate.py",
+          "nll": 308.8595,
+          "tokens": 463,
+          "nll_per_token": 0.6671,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "coreset_methods/probabilistic.py",
+          "nll": 586.8381,
+          "tokens": 853,
+          "nll_per_token": 0.688,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "coreset_methods/uniform.py",
+          "nll": 89.19,
+          "tokens": 111,
+          "nll_per_token": 0.8035,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "datasets/__init__.py",
+          "nll": 36.9753,
+          "tokens": 91,
+          "nll_per_token": 0.4063,
+          "dep_paths": [
+            "datasets/dataset_utils.py"
+          ]
+        },
+        {
+          "rel_path": "datasets/dataset_utils.py",
+          "nll": 454.4028,
+          "tokens": 1746,
+          "nll_per_token": 0.2603,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/__init__.py",
+          "nll": 29.4994,
+          "tokens": 65,
+          "nll_per_token": 0.4538,
+          "dep_paths": [
+            "experiments/section_5_1.py",
+            "experiments/section_5_2.py",
+            "experiments/section_5_3.py",
+            "experiments/section_6.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/section_5_1.py",
+          "nll": 733.473,
+          "tokens": 1145,
+          "nll_per_token": 0.6406,
+          "dep_paths": [
+            "models/__init__.py",
+            "coreset_methods/__init__.py",
+            "datasets/__init__.py",
+            "utils/__init__.py",
+            "utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/section_5_2.py",
+          "nll": 859.5493,
+          "tokens": 2293,
+          "nll_per_token": 0.3749,
+          "dep_paths": [
+            "models/__init__.py",
+            "coreset_methods/__init__.py",
+            "datasets/__init__.py",
+            "utils/__init__.py",
+            "utils/__init__.py",
+            "utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/section_5_3.py",
+          "nll": 720.9947,
+          "tokens": 1844,
+          "nll_per_token": 0.391,
+          "dep_paths": [
+            "models/__init__.py",
+            "coreset_methods/__init__.py",
+            "datasets/__init__.py",
+            "utils/__init__.py",
+            "utils/__init__.py",
+            "utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/section_6.py",
+          "nll": 832.3878,
+          "tokens": 1944,
+          "nll_per_token": 0.4282,
+          "dep_paths": [
+            "models/__init__.py",
+            "coreset_methods/__init__.py",
+            "datasets/__init__.py",
+            "utils/__init__.py",
+            "utils/__init__.py",
+            "utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "main.py",
+          "nll": 451.0839,
+          "tokens": 1632,
+          "nll_per_token": 0.2764,
+          "dep_paths": [
+            "utils/__init__.py",
+            "experiments/section_5_1.py",
+            "experiments/section_5_2.py",
+            "experiments/section_5_3.py",
+            "experiments/section_6.py"
+          ]
+        },
+        {
+          "rel_path": "models/__init__.py",
+          "nll": 26.1732,
+          "tokens": 89,
+          "nll_per_token": 0.2941,
+          "dep_paths": [
+            "models/convnet.py",
+            "models/lenet.py",
+            "models/cnn_svhn.py",
+            "models/resnet.py"
+          ]
+        },
+        {
+          "rel_path": "models/cnn_cifar.py",
+          "nll": 26.464,
+          "tokens": 27,
+          "nll_per_token": 0.9801,
+          "dep_paths": [
+            "models/cnn_svhn.py"
+          ]
+        },
+        {
+          "rel_path": "models/cnn_svhn.py",
+          "nll": 146.1073,
+          "tokens": 676,
+          "nll_per_token": 0.2161,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "models/convnet.py",
+          "nll": 88.9406,
+          "tokens": 247,
+          "nll_per_token": 0.3601,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "models/lenet.py",
+          "nll": 51.2951,
+          "tokens": 275,
+          "nll_per_token": 0.1865,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "models/resnet.py",
+          "nll": 56.627,
+          "tokens": 999,
+          "nll_per_token": 0.0567,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "utils/__init__.py",
+          "nll": 32.0116,
+          "tokens": 62,
+          "nll_per_token": 0.5163,
+          "dep_paths": [
+            "utils/metrics.py",
+            "utils/training.py"
+          ]
+        },
+        {
+          "rel_path": "utils/metrics.py",
+          "nll": 115.7082,
+          "tokens": 163,
+          "nll_per_token": 0.7099,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "utils/training.py",
+          "nll": 229.3552,
+          "tokens": 620,
+          "nll_per_token": 0.3699,
+          "dep_paths": [
+            "utils/metrics.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c5-t2/final/round_4/apply/tasks/pinn/submission",
+      "app_nll": 6709.1184,
+      "library_nll": 309.3621,
+      "nll_per_token": 0.396,
+      "perplexity": 1.4859,
+      "total_tokens": 17723,
+      "library_tokens": 595,
+      "app_tokens": 17128,
+      "file_details": [
+        {
+          "rel_path": "pinn/__init__.py",
+          "nll": 46.7672,
+          "tokens": 105,
+          "nll_per_token": 0.4454,
+          "dep_paths": [
+            "pinn/pde.py",
+            "pinn/model.py",
+            "pinn/loss.py",
+            "pinn/optimizers.py",
+            "pinn/utils.py",
+            "pinn/train.py"
+          ]
+        },
+        {
+          "rel_path": "pinn/experiments.py",
+          "nll": 1163.3558,
+          "tokens": 3755,
+          "nll_per_token": 0.3098,
+          "dep_paths": [
+            "pinn/pde.py",
+            "pinn/model.py",
+            "pinn/loss.py",
+            "pinn/train.py",
+            "pinn/utils.py",
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "pinn/loss.py",
+          "nll": 168.2886,
+          "tokens": 482,
+          "nll_per_token": 0.3491,
+          "dep_paths": [
+            "pinn/pde.py"
+          ]
+        },
+        {
+          "rel_path": "pinn/model.py",
+          "nll": 102.6507,
+          "tokens": 209,
+          "nll_per_token": 0.4912,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "pinn/optimizers.py",
+          "nll": 1329.0973,
+          "tokens": 2451,
+          "nll_per_token": 0.5423,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "pinn/pde.py",
+          "nll": 320.3837,
+          "tokens": 760,
+          "nll_per_token": 0.4216,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "pinn/spectral.py",
+          "nll": 770.9809,
+          "tokens": 1434,
+          "nll_per_token": 0.5376,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "pinn/tests.py",
+          "nll": 821.343,
+          "tokens": 2322,
+          "nll_per_token": 0.3537,
+          "dep_paths": [
+            "utils/__init__.py",
+            "pinn/pde.py",
+            "pinn/model.py",
+            "pinn/loss.py",
+            "pinn/utils.py",
+            "pinn/train.py",
+            "pinn/spectral.py",
+            "pinn/optimizers.py"
+          ]
+        },
+        {
+          "rel_path": "pinn/train.py",
+          "nll": 361.5727,
+          "tokens": 1519,
+          "nll_per_token": 0.238,
+          "dep_paths": [
+            "pinn/model.py",
+            "pinn/loss.py",
+            "pinn/optimizers.py",
+            "pinn/utils.py"
+          ]
+        },
+        {
+          "rel_path": "pinn/utils.py",
+          "nll": 399.4131,
+          "tokens": 1032,
+          "nll_per_token": 0.387,
+          "dep_paths": [
+            "utils/__init__.py",
+            "pinn/pde.py"
+          ]
+        },
+        {
+          "rel_path": "pinn/visualization.py",
+          "nll": 907.7251,
+          "tokens": 2467,
+          "nll_per_token": 0.3679,
+          "dep_paths": [
+            "utils/__init__.py",
+            "pinn/pde.py",
+            "pinn/model.py",
+            "pinn/loss.py",
+            "pinn/utils.py",
+            "pinn/spectral.py"
+          ]
+        },
+        {
+          "rel_path": "run_experiments.py",
+          "nll": 317.5404,
+          "tokens": 592,
+          "nll_per_token": 0.5364,
+          "dep_paths": [
+            "pinn/experiments.py",
+            "pinn/tests.py",
+            "pinn/pde.py",
+            "pinn/model.py",
+            "pinn/loss.py",
+            "pinn/utils.py",
+            "pinn/train.py"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "sum_app_nll": 31925.1874,
+    "avg_library_nll": 309.4929,
+    "mdl_nll": 32234.6803,
+    "total_apps": 4
+  }
+}

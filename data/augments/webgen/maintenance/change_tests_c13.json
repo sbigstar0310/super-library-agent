@@ -1,0 +1,36 @@
+{
+  "suite": "c13",
+  "derived_from": "behavior_c13.json (same acceptance criteria, phrased as WebVoyager checklist items)",
+  "targets": {
+    "000027": [
+      {"task": "Share a new promotion using the share form with all necessary details.", "expected_result": "A confirmation message appears, and the new promotion is visible in the browse list carrying a visible 'Pending review' badge or status text — it is not hidden."},
+      {"task": "Search for that promotion using its title typed in MiXeD case with leading and trailing spaces; then search for a nonsense string like 'zzqqxx'.", "expected_result": "The mixed-case padded query still returns the promotion; the nonsense query shows a clear empty-state message instead of a blank area or all deals."}
+    ],
+    "000051": [
+      {"task": "Post a new job as a client with all required details.", "expected_result": "A confirmation appears, and the new listing shows a visible 'Pending review' badge while still appearing on the jobs board and in the client's active-postings list."},
+      {"task": "Search the jobs page for that job's title typed in MiXeD case with surrounding spaces; then search for a nonsense string.", "expected_result": "The padded mixed-case query returns the job; the nonsense query shows a clear empty-state message instead of a blank list or all jobs."}
+    ],
+    "000052": [
+      {"task": "On the jobs page, search for 'ELECTRICIAN  ' (upper case with trailing spaces); then search for a nonsense string like 'zzqqxx'.", "expected_result": "The padded upper-case query returns the electrician listings; the nonsense query shows a clear empty-state message such as 'No jobs match your search' instead of a blank grid or all listings."}
+    ],
+    "000053": [
+      {"task": "As a company, post a new internship position.", "expected_result": "A confirmation appears, and the new listing shows a visible 'Pending review' badge while remaining visible on the student browse list and in the company's listings."},
+      {"task": "On the student panel, search for that internship's role typed in MiXeD case with surrounding spaces; then search for a nonsense string.", "expected_result": "The padded mixed-case query returns the internship; the nonsense query shows a clear empty-state message instead of a blank list or all internships."}
+    ],
+    "000077": [
+      {"task": "As a logged-in user, add a comment and rating to a tool.", "expected_result": "A confirmation message appears, and the review is visible under the tool's reviews section with a visible 'Pending review' badge or status text."},
+      {"task": "Search for a tool by its name typed in MiXeD case with leading/trailing spaces; then search for a nonsense string.", "expected_result": "The padded mixed-case query returns the tool; the nonsense query shows a clear empty-state message instead of a blank grid or all tools."}
+    ],
+    "000090": [
+      {"task": "As a logged-in user, upload a picture post.", "expected_result": "A confirmation message appears, and the new post is visible in the updates feed carrying a visible 'Pending review' badge or status text — it is not hidden from the feed or the profile's own updates."}
+    ],
+    "000091": [
+      {"task": "Register a new member profile with valid details.", "expected_result": "A confirmation appears, and the newly registered profile appears in partner search results carrying a visible 'Pending review' badge or status text — it is not hidden from matches."},
+      {"task": "Search for that member using a keyword typed in MiXeD case with surrounding spaces; then search with criteria that match no one.", "expected_result": "The padded mixed-case query still returns the member; the no-match search shows a clear empty-state message instead of a blank panel or all profiles."}
+    ],
+    "000092": [
+      {"task": "Join as a new member with skills filled in.", "expected_result": "A confirmation appears, and the new member's card shows a visible 'Pending review' badge or status text in the browse-members grid — it is not hidden."},
+      {"task": "Search members for one of that member's skills typed in MiXeD case with surrounding spaces; then search for a nonsense skill.", "expected_result": "The padded mixed-case query returns the member; the nonsense query shows a clear empty-state message instead of a blank result area or all members."}
+    ]
+  }
+}

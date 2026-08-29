@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "task": "paperbench",
+    "tag": "librarian-c2-t1",
+    "phase": "apply",
+    "round": 1,
+    "language": "python",
+    "total_apps": 4,
+    "task_ids": [
+      "adaptive-pruning",
+      "mechanistic-understanding",
+      "stay-on-topic-with-classifier-free-guidance",
+      "what-will-my-model-forget"
+    ],
+    "lib_included": true,
+    "total_loc": 6797,
+    "file_count": 66,
+    "verbosity": 0.8387523907606297,
+    "erosion": 0.18972417712561057,
+    "mass.cc": 5324.8,
+    "per_app": [
+      {
+        "label": "adaptive-pruning",
+        "lib_included": true,
+        "total_loc": 1899,
+        "file_count": 20,
+        "verbosity": 0.8172722485518694,
+        "erosion": 0.0757615707616623,
+        "mass.cc": 1284.07
+      },
+      {
+        "label": "mechanistic-understanding",
+        "lib_included": true,
+        "total_loc": 1478,
+        "file_count": 15,
+        "verbosity": 0.8843031123139378,
+        "erosion": 0.24053973918936272,
+        "mass.cc": 1322.62
+      },
+      {
+        "label": "stay-on-topic-with-classifier-free-guidance",
+        "lib_included": true,
+        "total_loc": 1924,
+        "file_count": 20,
+        "verbosity": 0.7895010395010394,
+        "erosion": 0.37677503559292497,
+        "mass.cc": 1578.7
+      },
+      {
+        "label": "what-will-my-model-forget",
+        "lib_included": true,
+        "total_loc": 1700,
+        "file_count": 20,
+        "verbosity": 0.8717647058823529,
+        "erosion": 0.0,
+        "mass.cc": 1305.22
+      }
+    ],
+    "lib_only": {
+      "total_loc": 68,
+      "file_count": 3,
+      "verbosity": 0.7794117647058824,
+      "erosion": 0.0,
+      "mass.cc": 55.27
+    }
+  }
+}

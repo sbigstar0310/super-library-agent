@@ -1,0 +1,39 @@
+{
+  "suite": "c13",
+  "policy_file": "policy_c13.md",
+  "provenance": "Drafted spec-blind (instruction + layout_specs only) by a fresh agent on 2026-07-10; reviewed. Moderation limited to publicly visible content submissions per Phase 2 analysis (docs/analysis/2026-07-10-phase2-ui-instruct-analysis.md). 000052 search-only, 000090 moderation-only per Phase 1.",
+  "targets": {
+    "000027": {
+      "scope": "full",
+      "required_behavior": "Part A applies to the promotion-sharing flow: when a user posts a new promotion via the share form, a confirmation message must be shown, and the new deal must carry a visible \"Pending review\" badge or status text on its card. The pending promotion must remain visible in the browse list, in search/filter results, and in the admin promotions table — it must not be hidden while pending. Admin actions (managing users, editing settings) keep their current behavior. Part B applies to the promotion search input: queries must be trimmed of leading/trailing whitespace, matched case-insensitively, and when nothing matches a clear empty-state message must be shown instead of a blank list or all deals."
+    },
+    "000051": {
+      "scope": "full",
+      "required_behavior": "Part A applies to two flows: (1) posting a job — after publishing, show a confirmation, and the new listing must display a \"Pending review\" badge while remaining visible on the public jobs board and in the client's active-postings list; (2) submitting a job application — after submission, show a confirmation, and the application must display a \"Pending review\" status wherever applications are listed, without being hidden. Registration, edits to one's own profile/contact information, and the contact form are excluded and keep their original immediate behavior. Part B applies to the jobs search input: trim whitespace, match case-insensitively, and show a clear empty-state message when there are no results instead of a blank list or all jobs."
+    },
+    "000052": {
+      "scope": "search-only",
+      "required_behavior": "Part B only — no moderation items for this app. The job search input must trim leading/trailing whitespace from the query and match job listings case-insensitively. When no job matches the query (alone or combined with the selected category filter), the job grid must show a clear empty-state message such as \"No jobs match your search\" instead of a blank grid or silently showing all listings. All other behavior (profiles, job detail, applying) is unchanged."
+    },
+    "000053": {
+      "scope": "full",
+      "required_behavior": "Part A applies to two flows: (1) a company posting an internship — after posting, show a confirmation, and the new listing must display a \"Pending review\" badge while remaining visible on the student browse list and in the company's listings view; (2) a student submitting an internship application — after submission, show a confirmation, and the application must display a \"Pending review\" status wherever applications are listed (the student's applications view and the company's applications view), without being hidden. Part B applies to the student-panel search input: trim leading/trailing whitespace, match case-insensitively, and show a clear empty-state message when nothing matches instead of a blank list or all internships."
+    },
+    "000077": {
+      "scope": "full",
+      "required_behavior": "Part A applies to the tool comment/rating flow: after a logged-in user submits a review, show a confirmation message, and the review must appear under the tool's reviews section with a visible \"Pending review\" badge or status text. The pending review must remain visible in the reviews list — do not hide it. User registration and login are account flows, not publicly visible content submissions, and keep their original behavior. Part B applies to the tool search bar: trim leading/trailing whitespace, match case-insensitively, and show a clear empty-state message when nothing matches (alone or combined with the category filter) instead of a blank grid or all tools."
+    },
+    "000090": {
+      "scope": "moderation-only",
+      "required_behavior": "Part A only — this app has no search feature, so Part B does not apply. Part A applies to the picture upload/post flow: after a successful post, show a confirmation message, and the new post must display a visible \"Pending review\" badge or status text. The pending post must remain visible in the updates feed and in the profile's own updates section — do not hide it. Explicitly excluded: friend invitations and edits to one's own profile fields keep their original immediate behavior; registration/login, voting, and the points system are also unchanged."
+    },
+    "000091": {
+      "scope": "full",
+      "required_behavior": "Part A applies to the registration submission (the create-profile flow): after successful registration, show a confirmation message, and the newly registered member's profile card must display a visible \"Pending review\" badge or status text wherever it appears to other users — in partner search results and on the profile detail view — while remaining visible (do not hide pending profiles from matches). Part A does NOT apply to later edits of one's own profile, nor to one-to-one chat messages — these keep their original immediate behavior. Part B applies to the partner search: the keyword input and free-text filter fields must trim leading/trailing whitespace and match case-insensitively, and when no profiles match, the results panel must show a clear empty-state message instead of a blank panel or all profiles."
+    },
+    "000092": {
+      "scope": "full",
+      "required_behavior": "Part A applies to the profile registration submission (joining as a member): after successful creation, show a confirmation message, and the newly registered member's card must display a visible \"Pending review\" badge or status text where it appears to other users — in the browse-members grid and in member search results — while remaining visible (do not hide pending members). Part A does NOT apply to later edits of one's own profile (saving info, adding/removing skills or certifications) nor to contacting another member — these keep their original immediate behavior. Part B applies to the member search: the search input must trim leading/trailing whitespace and match case-insensitively across the selected search scope, and when no members match, show a clear empty-state message instead of a blank result area or all members."
+    }
+  }
+}

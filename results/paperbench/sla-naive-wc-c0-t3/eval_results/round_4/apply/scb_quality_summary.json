@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "task": "paperbench",
+    "tag": "sla-naive-wc-c0-t3",
+    "phase": "apply",
+    "round": 4,
+    "language": "python",
+    "total_apps": 4,
+    "task_ids": [
+      "fre",
+      "ftrl",
+      "rice",
+      "sapg"
+    ],
+    "lib_included": true,
+    "total_loc": 6574,
+    "file_count": 77,
+    "verbosity": 0.882871919683602,
+    "erosion": 0.2652323829761525,
+    "mass.cc": 4912.18,
+    "per_app": [
+      {
+        "label": "fre",
+        "lib_included": true,
+        "total_loc": 1665,
+        "file_count": 21,
+        "verbosity": 0.9051051051051051,
+        "erosion": 0.17207325848284122,
+        "mass.cc": 1224.22
+      },
+      {
+        "label": "ftrl",
+        "lib_included": true,
+        "total_loc": 2212,
+        "file_count": 41,
+        "verbosity": 0.8634719710669078,
+        "erosion": 0.06299252865199768,
+        "mass.cc": 1481.73
+      },
+      {
+        "label": "rice",
+        "lib_included": true,
+        "total_loc": 1579,
+        "file_count": 25,
+        "verbosity": 0.8543381887270425,
+        "erosion": 0.5144567348619993,
+        "mass.cc": 1293.14
+      },
+      {
+        "label": "sapg",
+        "lib_included": true,
+        "total_loc": 2228,
+        "file_count": 26,
+        "verbosity": 0.8806104129263914,
+        "erosion": 0.21152462911299508,
+        "mass.cc": 1577.18
+      }
+    ],
+    "lib_only": {
+      "total_loc": 370,
+      "file_count": 12,
+      "verbosity": 0.8324324324324325,
+      "erosion": 0.0,
+      "mass.cc": 221.36
+    }
+  }
+}

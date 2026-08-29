@@ -1,0 +1,29 @@
+{
+  "maint_tag": "librarian-c2-t2",
+  "protocol": "b",
+  "source_tag": "librarian-c2-t2",
+  "cost": {
+    "llm_calls": 24,
+    "cost_usd": 0.0129064712,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 6,
+  "files": [
+    "lib/src/components/ContactForm.jsx",
+    "tasks/000015/submission/src/pages/Contact.jsx",
+    "tasks/000019/submission/src/pages/Contact.jsx",
+    "tasks/000064/submission/src/pages/Newsletter.jsx",
+    "tasks/000071/submission/src/App.jsx",
+    "tasks/000071/submission/src/components/Contact.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 8,
+    "apps": 61,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

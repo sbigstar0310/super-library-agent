@@ -1,0 +1,656 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c1-t2/final/round_4/apply/tasks/lca-on-the-line/submission",
+      "app_nll": 7519.7595,
+      "library_nll": 580.1315,
+      "nll_per_token": 0.4155,
+      "perplexity": 1.5152,
+      "total_tokens": 19493,
+      "library_tokens": 1424,
+      "app_tokens": 18069,
+      "file_details": [
+        {
+          "rel_path": "lca/__init__.py",
+          "nll": 58.5207,
+          "tokens": 490,
+          "nll_per_token": 0.1194,
+          "dep_paths": [
+            "lca/taxonomy.py",
+            "lca/lca_distance.py",
+            "lca/latent_hierarchy.py",
+            "lca/metrics.py",
+            "lca/soft_labels.py",
+            "lca/prompt_engineering.py",
+            "lca/evaluation.py",
+            "lca/baselines.py",
+            "lca/feature_extraction.py"
+          ]
+        },
+        {
+          "rel_path": "lca/baselines.py",
+          "nll": 526.4779,
+          "tokens": 978,
+          "nll_per_token": 0.5383,
+          "dep_paths": [
+            "lca/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "lca/data_utils.py",
+          "nll": 333.5055,
+          "tokens": 556,
+          "nll_per_token": 0.5998,
+          "dep_paths": [
+            "lca/taxonomy.py"
+          ]
+        },
+        {
+          "rel_path": "lca/demo.py",
+          "nll": 1148.3658,
+          "tokens": 3060,
+          "nll_per_token": 0.3753,
+          "dep_paths": [
+            "utils/__init__.py",
+            "lca/taxonomy.py",
+            "lca/lca_distance.py",
+            "lca/latent_hierarchy.py",
+            "lca/metrics.py",
+            "lca/soft_labels.py",
+            "lca/prompt_engineering.py",
+            "lca/evaluation.py",
+            "lca/baselines.py",
+            "lca/experiments.py",
+            "lca/visualization.py"
+          ]
+        },
+        {
+          "rel_path": "lca/evaluation.py",
+          "nll": 345.3177,
+          "tokens": 1055,
+          "nll_per_token": 0.3273,
+          "dep_paths": [
+            "lca/taxonomy.py",
+            "lca/lca_distance.py",
+            "lca/metrics.py",
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "lca/experiments.py",
+          "nll": 745.724,
+          "tokens": 1986,
+          "nll_per_token": 0.3755,
+          "dep_paths": [
+            "lca/taxonomy.py",
+            "lca/lca_distance.py",
+            "lca/latent_hierarchy.py",
+            "lca/metrics.py",
+            "lca/soft_labels.py",
+            "lca/prompt_engineering.py",
+            "lca/evaluation.py"
+          ]
+        },
+        {
+          "rel_path": "lca/feature_extraction.py",
+          "nll": 387.046,
+          "tokens": 977,
+          "nll_per_token": 0.3962,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "lca/latent_hierarchy.py",
+          "nll": 347.757,
+          "tokens": 649,
+          "nll_per_token": 0.5358,
+          "dep_paths": [
+            "lca/taxonomy.py"
+          ]
+        },
+        {
+          "rel_path": "lca/lca_distance.py",
+          "nll": 588.2038,
+          "tokens": 1118,
+          "nll_per_token": 0.5261,
+          "dep_paths": [
+            "lca/taxonomy.py"
+          ]
+        },
+        {
+          "rel_path": "lca/metrics.py",
+          "nll": 271.8325,
+          "tokens": 691,
+          "nll_per_token": 0.3934,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "lca/prompt_engineering.py",
+          "nll": 310.2061,
+          "tokens": 637,
+          "nll_per_token": 0.487,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "lca/soft_labels.py",
+          "nll": 371.8117,
+          "tokens": 863,
+          "nll_per_token": 0.4308,
+          "dep_paths": [
+            "utils/__init__.py",
+            "lca/taxonomy.py",
+            "lca/lca_distance.py"
+          ]
+        },
+        {
+          "rel_path": "lca/taxonomy.py",
+          "nll": 456.9097,
+          "tokens": 1124,
+          "nll_per_token": 0.4065,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "lca/visualization.py",
+          "nll": 435.5167,
+          "tokens": 1369,
+          "nll_per_token": 0.3181,
+          "dep_paths": [
+            "lca/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "run.py",
+          "nll": 321.4641,
+          "tokens": 552,
+          "nll_per_token": 0.5824,
+          "dep_paths": [
+            "utils/__init__.py",
+            "lca/demo.py",
+            "lca/experiments.py",
+            "lca/visualization.py"
+          ]
+        },
+        {
+          "rel_path": "setup.py",
+          "nll": 187.5132,
+          "tokens": 140,
+          "nll_per_token": 1.3394,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "test_import.py",
+          "nll": 683.5871,
+          "tokens": 1824,
+          "nll_per_token": 0.3748,
+          "dep_paths": [
+            "lca/__init__.py",
+            "lca/taxonomy.py",
+            "lca/lca_distance.py",
+            "lca/latent_hierarchy.py",
+            "lca/metrics.py",
+            "lca/soft_labels.py",
+            "lca/prompt_engineering.py",
+            "lca/evaluation.py",
+            "lca/experiments.py",
+            "lca/visualization.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c1-t2/final/round_4/apply/tasks/robust-clip/submission",
+      "app_nll": 8660.2633,
+      "library_nll": 580.1315,
+      "nll_per_token": 0.4836,
+      "perplexity": 1.622,
+      "total_tokens": 19106,
+      "library_tokens": 1424,
+      "app_tokens": 17682,
+      "file_details": [
+        {
+          "rel_path": "fare/__init__.py",
+          "nll": 52.4506,
+          "tokens": 108,
+          "nll_per_token": 0.4857,
+          "dep_paths": [
+            "fare/fare_trainer.py",
+            "fare/attacks.py",
+            "fare/clip_model.py",
+            "fare/evaluation.py",
+            "fare/lvlm_eval.py",
+            "fare/config.py"
+          ]
+        },
+        {
+          "rel_path": "fare/attacks.py",
+          "nll": 1480.2783,
+          "tokens": 3330,
+          "nll_per_token": 0.4445,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "fare/clip_model.py",
+          "nll": 521.7287,
+          "tokens": 1624,
+          "nll_per_token": 0.3213,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "fare/config.py",
+          "nll": 879.1569,
+          "tokens": 726,
+          "nll_per_token": 1.211,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "fare/evaluation.py",
+          "nll": 1445.7218,
+          "tokens": 2575,
+          "nll_per_token": 0.5614,
+          "dep_paths": [
+            "fare/attacks.py",
+            "utils/__init__.py",
+            "fare/clip_model.py",
+            "fare/config.py"
+          ]
+        },
+        {
+          "rel_path": "fare/fare_trainer.py",
+          "nll": 635.9013,
+          "tokens": 1839,
+          "nll_per_token": 0.3458,
+          "dep_paths": [
+            "fare/attacks.py",
+            "fare/clip_model.py",
+            "fare/config.py"
+          ]
+        },
+        {
+          "rel_path": "fare/lvlm_eval.py",
+          "nll": 596.1069,
+          "tokens": 984,
+          "nll_per_token": 0.6058,
+          "dep_paths": [
+            "fare/evaluation.py"
+          ]
+        },
+        {
+          "rel_path": "fare/utils.py",
+          "nll": 458.4828,
+          "tokens": 806,
+          "nll_per_token": 0.5688,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/evaluate_lvlm.py",
+          "nll": 555.3271,
+          "tokens": 1087,
+          "nll_per_token": 0.5109,
+          "dep_paths": [
+            "fare/config.py",
+            "fare/clip_model.py",
+            "fare/lvlm_eval.py",
+            "fare/evaluation.py",
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/evaluate_zero_shot.py",
+          "nll": 550.5245,
+          "tokens": 990,
+          "nll_per_token": 0.5561,
+          "dep_paths": [
+            "fare/config.py",
+            "fare/clip_model.py",
+            "fare/evaluation.py",
+            "fare/attacks.py",
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/train_fare.py",
+          "nll": 517.947,
+          "tokens": 1247,
+          "nll_per_token": 0.4154,
+          "dep_paths": [
+            "fare/config.py",
+            "fare/fare_trainer.py",
+            "fare/clip_model.py",
+            "utils/__init__.py",
+            "fare/utils.py"
+          ]
+        },
+        {
+          "rel_path": "tests/test_dry_run.py",
+          "nll": 652.8383,
+          "tokens": 1712,
+          "nll_per_token": 0.3813,
+          "dep_paths": [
+            "fare/fare_trainer.py",
+            "fare/attacks.py",
+            "fare/clip_model.py",
+            "fare/lvlm_eval.py",
+            "fare/config.py"
+          ]
+        },
+        {
+          "rel_path": "tests/test_imports.py",
+          "nll": 313.7991,
+          "tokens": 654,
+          "nll_per_token": 0.4798,
+          "dep_paths": [
+            "fare/config.py",
+            "fare/clip_model.py",
+            "fare/attacks.py",
+            "fare/fare_trainer.py",
+            "fare/evaluation.py",
+            "fare/lvlm_eval.py",
+            "utils/__init__.py",
+            "fare/utils.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c1-t2/final/round_4/apply/tasks/sample-specific-masks/submission",
+      "app_nll": 4997.9427,
+      "library_nll": 580.1315,
+      "nll_per_token": 0.3621,
+      "perplexity": 1.4363,
+      "total_tokens": 15405,
+      "library_tokens": 1424,
+      "app_tokens": 13981,
+      "file_details": [
+        {
+          "rel_path": "reproduce_all.py",
+          "nll": 549.3936,
+          "tokens": 1412,
+          "nll_per_token": 0.3891,
+          "dep_paths": [
+            "smm/smm.py",
+            "smm/trainer.py",
+            "utils/__init__.py",
+            "smm/datasets.py"
+          ]
+        },
+        {
+          "rel_path": "run_ablation.py",
+          "nll": 474.964,
+          "tokens": 1126,
+          "nll_per_token": 0.4218,
+          "dep_paths": [
+            "utils/__init__.py",
+            "smm/smm.py",
+            "smm/trainer.py",
+            "smm/datasets.py",
+            "smm/mask_generator.py"
+          ]
+        },
+        {
+          "rel_path": "run_experiments.py",
+          "nll": 511.6113,
+          "tokens": 1386,
+          "nll_per_token": 0.3691,
+          "dep_paths": [
+            "smm/smm.py",
+            "smm/trainer.py",
+            "utils/__init__.py",
+            "smm/datasets.py"
+          ]
+        },
+        {
+          "rel_path": "run_visualization.py",
+          "nll": 468.5658,
+          "tokens": 989,
+          "nll_per_token": 0.4738,
+          "dep_paths": [
+            "utils/__init__.py",
+            "smm/smm.py",
+            "smm/datasets.py"
+          ]
+        },
+        {
+          "rel_path": "smm/__init__.py",
+          "nll": 33.919,
+          "tokens": 82,
+          "nll_per_token": 0.4136,
+          "dep_paths": [
+            "smm/mask_generator.py",
+            "smm/smm.py",
+            "smm/output_mapping.py",
+            "smm/trainer.py",
+            "smm/datasets.py"
+          ]
+        },
+        {
+          "rel_path": "smm/datasets.py",
+          "nll": 482.3141,
+          "tokens": 1300,
+          "nll_per_token": 0.371,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "smm/mask_generator.py",
+          "nll": 328.5671,
+          "tokens": 1227,
+          "nll_per_token": 0.2678,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "smm/output_mapping.py",
+          "nll": 535.0518,
+          "tokens": 1708,
+          "nll_per_token": 0.3133,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "smm/smm.py",
+          "nll": 371.3097,
+          "tokens": 878,
+          "nll_per_token": 0.4229,
+          "dep_paths": [
+            "utils/__init__.py",
+            "smm/mask_generator.py"
+          ]
+        },
+        {
+          "rel_path": "smm/trainer.py",
+          "nll": 608.6545,
+          "tokens": 1971,
+          "nll_per_token": 0.3088,
+          "dep_paths": [
+            "utils/__init__.py",
+            "smm/output_mapping.py"
+          ]
+        },
+        {
+          "rel_path": "tests/test_core.py",
+          "nll": 633.5918,
+          "tokens": 1902,
+          "nll_per_token": 0.3331,
+          "dep_paths": [
+            "smm/mask_generator.py",
+            "smm/smm.py",
+            "smm/output_mapping.py",
+            "smm/datasets.py",
+            "smm/trainer.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c1-t2/final/round_4/apply/tasks/test-time-model-adaptation/submission",
+      "app_nll": 9351.7567,
+      "library_nll": 580.1315,
+      "nll_per_token": 0.4353,
+      "perplexity": 1.5454,
+      "total_tokens": 22818,
+      "library_tokens": 1424,
+      "app_tokens": 21394,
+      "file_details": [
+        {
+          "rel_path": "foa/__init__.py",
+          "nll": 51.076,
+          "tokens": 298,
+          "nll_per_token": 0.1714,
+          "dep_paths": [
+            "foa/model.py",
+            "foa/cma_optimizer.py",
+            "foa/activation_shifting.py",
+            "foa/fitness.py",
+            "foa/adaptation.py",
+            "foa/utils.py",
+            "foa/eval.py",
+            "foa/baselines.py",
+            "foa/non_iid.py",
+            "foa/quantized.py"
+          ]
+        },
+        {
+          "rel_path": "foa/activation_shifting.py",
+          "nll": 240.063,
+          "tokens": 366,
+          "nll_per_token": 0.6559,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "foa/adaptation.py",
+          "nll": 687.0227,
+          "tokens": 2047,
+          "nll_per_token": 0.3356,
+          "dep_paths": [
+            "foa/model.py",
+            "foa/cma_optimizer.py",
+            "foa/activation_shifting.py",
+            "foa/fitness.py",
+            "foa/utils.py"
+          ]
+        },
+        {
+          "rel_path": "foa/baselines.py",
+          "nll": 899.601,
+          "tokens": 2224,
+          "nll_per_token": 0.4045,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "foa/cma_optimizer.py",
+          "nll": 783.6008,
+          "tokens": 1813,
+          "nll_per_token": 0.4322,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "foa/eval.py",
+          "nll": 226.0604,
+          "tokens": 465,
+          "nll_per_token": 0.4862,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "foa/fitness.py",
+          "nll": 203.4221,
+          "tokens": 372,
+          "nll_per_token": 0.5468,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "foa/model.py",
+          "nll": 810.6154,
+          "tokens": 1989,
+          "nll_per_token": 0.4075,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "foa/non_iid.py",
+          "nll": 441.3992,
+          "tokens": 866,
+          "nll_per_token": 0.5097,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "foa/quantized.py",
+          "nll": 275.7611,
+          "tokens": 413,
+          "nll_per_token": 0.6677,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "foa/utils.py",
+          "nll": 336.1196,
+          "tokens": 547,
+          "nll_per_token": 0.6145,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "scripts/reproduce_tables.py",
+          "nll": 2404.1514,
+          "tokens": 4851,
+          "nll_per_token": 0.4956,
+          "dep_paths": [
+            "foa/eval.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/run_imagenet_c.py",
+          "nll": 804.9867,
+          "tokens": 2351,
+          "nll_per_token": 0.3424,
+          "dep_paths": [
+            "utils/__init__.py",
+            "foa/model.py",
+            "foa/adaptation.py",
+            "foa/utils.py",
+            "foa/eval.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/test_full_pipeline.py",
+          "nll": 596.213,
+          "tokens": 1301,
+          "nll_per_token": 0.4583,
+          "dep_paths": [
+            "foa/model.py",
+            "foa/utils.py",
+            "foa/adaptation.py",
+            "foa/activation_shifting.py",
+            "foa/fitness.py",
+            "foa/eval.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/verify_implementation.py",
+          "nll": 591.6643,
+          "tokens": 1491,
+          "nll_per_token": 0.3968,
+          "dep_paths": [
+            "foa/fitness.py",
+            "foa/cma_optimizer.py",
+            "foa/activation_shifting.py",
+            "foa/eval.py",
+            "foa/adaptation.py"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "sum_app_nll": 30529.7222,
+    "avg_library_nll": 580.1315,
+    "mdl_nll": 31109.8537,
+    "total_apps": 4
+  }
+}

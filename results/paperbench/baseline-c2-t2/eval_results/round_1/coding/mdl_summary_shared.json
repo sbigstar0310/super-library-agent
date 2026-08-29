@@ -1,0 +1,94 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c2-t2/final/round_1/coding/tasks/adaptive-pruning/submission",
+      "app_nll": 6647.3261,
+      "library_nll": 0.0,
+      "nll_per_token": 0.3839,
+      "perplexity": 1.468,
+      "total_tokens": 17315,
+      "library_tokens": 0,
+      "app_tokens": 17315,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 6647.3261,
+          "tokens": 17315,
+          "nll_per_token": 0.3839
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c2-t2/final/round_1/coding/tasks/mechanistic-understanding/submission",
+      "app_nll": 9032.319,
+      "library_nll": 0.0,
+      "nll_per_token": 0.5277,
+      "perplexity": 1.695,
+      "total_tokens": 17117,
+      "library_tokens": 0,
+      "app_tokens": 17117,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 9032.319,
+          "tokens": 17117,
+          "nll_per_token": 0.5277
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c2-t2/final/round_1/coding/tasks/stay-on-topic-with-classifier-free-guidance/submission",
+      "app_nll": 9713.8438,
+      "library_nll": 0.0,
+      "nll_per_token": 0.4266,
+      "perplexity": 1.5321,
+      "total_tokens": 22768,
+      "library_tokens": 0,
+      "app_tokens": 22768,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 9713.8438,
+          "tokens": 22768,
+          "nll_per_token": 0.4266
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c2-t2/final/round_1/coding/tasks/what-will-my-model-forget/submission",
+      "app_nll": 7415.988,
+      "library_nll": 0.0,
+      "nll_per_token": 0.4067,
+      "perplexity": 1.5019,
+      "total_tokens": 18234,
+      "library_tokens": 0,
+      "app_tokens": 18234,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 7415.988,
+          "tokens": 18234,
+          "nll_per_token": 0.4067
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "library_nll": 0.0,
+    "library_tokens": 0,
+    "sum_app_nll": 32809.4769,
+    "sum_app_tokens": 75434,
+    "mdl_nll": 32809.4769,
+    "total_tokens": 75434,
+    "nll_per_token": 0.4349,
+    "total_apps": 4
+  }
+}

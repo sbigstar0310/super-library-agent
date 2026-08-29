@@ -1,0 +1,182 @@
+{
+  "maint_tag": "baseline-perapp-c13-t3",
+  "protocol": "c",
+  "source_tag": "baseline-c13-t3",
+  "cost": {
+    "llm_calls": 205,
+    "cost_usd": 0.05961169200000001,
+    "sessions": 8
+  },
+  "static_checks": {
+    "000027": {
+      "violations": [],
+      "clean": true
+    },
+    "000051": {
+      "violations": [],
+      "clean": true
+    },
+    "000052": {
+      "violations": [],
+      "clean": true
+    },
+    "000053": {
+      "violations": [],
+      "clean": true
+    },
+    "000077": {
+      "violations": [],
+      "clean": true
+    },
+    "000090": {
+      "violations": [],
+      "clean": true
+    },
+    "000091": {
+      "violations": [],
+      "clean": true
+    },
+    "000092": {
+      "violations": [],
+      "clean": true
+    }
+  },
+  "touched_files": 41,
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 804,
+    "other": 0
+  },
+  "patch_location": "apps only",
+  "per_app_analysis": {
+    "000027": {
+      "touched_files": 5,
+      "files": [
+        "submission/src/pages/Admin.jsx",
+        "submission/src/pages/Browse.css",
+        "submission/src/pages/Browse.jsx",
+        "submission/src/pages/Share.jsx",
+        "submission/src/utils/storage.js"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 114
+      },
+      "patch_location": "apps only"
+    },
+    "000051": {
+      "touched_files": 7,
+      "files": [
+        "submission/src/pages/Clients.jsx",
+        "submission/src/pages/Jobs.css",
+        "submission/src/pages/Jobs.jsx",
+        "submission/src/pages/JobsApply.css",
+        "submission/src/pages/JobsApply.jsx",
+        "submission/src/pages/PostJob.jsx",
+        "submission/src/pages/Profile.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 179
+      },
+      "patch_location": "apps only"
+    },
+    "000052": {
+      "touched_files": 1,
+      "files": [
+        "submission/src/components/JobsScreen.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 16
+      },
+      "patch_location": "apps only"
+    },
+    "000053": {
+      "touched_files": 6,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/App.jsx",
+        "submission/src/components/CompanyApplications.jsx",
+        "submission/src/components/CompanyListings.jsx",
+        "submission/src/components/StudentBrowse.jsx",
+        "submission/src/components/StudentMyApplications.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 201
+      },
+      "patch_location": "apps only"
+    },
+    "000077": {
+      "touched_files": 4,
+      "files": [
+        "submission/src/pages/Home.css",
+        "submission/src/pages/Home.jsx",
+        "submission/src/pages/ToolDetail.css",
+        "submission/src/pages/ToolDetail.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 55
+      },
+      "patch_location": "apps only"
+    },
+    "000090": {
+      "touched_files": 7,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/components/Feed/SharePicture.css",
+        "submission/src/components/Feed/SharePicture.jsx",
+        "submission/src/components/Feed/UpdatesFeed.css",
+        "submission/src/components/Feed/UpdatesFeed.jsx",
+        "submission/src/components/Profile/MyUpdates.css",
+        "submission/src/components/Profile/MyUpdates.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 53
+      },
+      "patch_location": "apps only"
+    },
+    "000091": {
+      "touched_files": 7,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/pages/ProfileDetail.css",
+        "submission/src/pages/ProfileDetail.jsx",
+        "submission/src/pages/Search.css",
+        "submission/src/pages/Search.jsx",
+        "submission/src/pages/SearchFiltered.css",
+        "submission/src/pages/SearchFiltered.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 146
+      },
+      "patch_location": "apps only"
+    },
+    "000092": {
+      "touched_files": 4,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/components/BrowseScreen.jsx",
+        "submission/src/components/SearchResultsScreen.jsx",
+        "submission/src/components/SearchScreen.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 40
+      },
+      "patch_location": "apps only"
+    }
+  }
+}

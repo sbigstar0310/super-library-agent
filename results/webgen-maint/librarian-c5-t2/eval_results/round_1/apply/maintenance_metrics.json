@@ -1,0 +1,56 @@
+{
+  "maint_tag": "librarian-c5-t2",
+  "protocol": "b",
+  "source_tag": "librarian-c5-t2",
+  "cost": {
+    "llm_calls": 78,
+    "cost_usd": 0.045196804800000004,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 33,
+  "files": [
+    "tasks/000022/submission/src/App.css",
+    "tasks/000022/submission/src/App.jsx",
+    "tasks/000022/submission/src/components/Clients.jsx",
+    "tasks/000022/submission/src/components/ClientsEdit.jsx",
+    "tasks/000022/submission/src/components/NewCall.jsx",
+    "tasks/000022/submission/src/components/OpenCalls.jsx",
+    "tasks/000022/submission/src/components/ToDoCalls.jsx",
+    "tasks/000022/submission/src/components/Wizard.jsx",
+    "tasks/000022/submission/src/context/AppContext.jsx",
+    "tasks/000023/submission/src/App.css",
+    "tasks/000023/submission/src/App.jsx",
+    "tasks/000023/submission/src/leads/Leads.jsx",
+    "tasks/000044/submission/src/App.css",
+    "tasks/000044/submission/src/pages/Inquiry.jsx",
+    "tasks/000044/submission/src/pages/Register.jsx",
+    "tasks/000044/submission/src/pages/Statistics.jsx",
+    "tasks/000044/submission/src/pages/Track.jsx",
+    "tasks/000046/submission/src/components/Finance.jsx",
+    "tasks/000046/submission/src/components/PatientRecords.jsx",
+    "tasks/000046/submission/src/components/Pharmacy.jsx",
+    "tasks/000046/submission/src/index.css",
+    "tasks/000080/submission/src/components/TodoApp.css",
+    "tasks/000080/submission/src/components/TodoApp.jsx",
+    "tasks/000083/submission/src/App.css",
+    "tasks/000083/submission/src/components/Cases.jsx",
+    "tasks/000083/submission/src/components/Reports.jsx",
+    "tasks/000083/submission/src/components/WorkHours.jsx",
+    "tasks/000085/submission/src/App.css",
+    "tasks/000085/submission/src/App.jsx",
+    "tasks/000085/submission/src/components/Dashboard/Dashboard.jsx",
+    "tasks/000085/submission/src/components/Documents/Documents.jsx",
+    "tasks/000085/submission/src/components/Projects/Projects.jsx",
+    "tasks/000085/submission/src/components/Schedule/Schedule.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 1116,
+    "other": 0
+  },
+  "patch_location": "apps only"
+}

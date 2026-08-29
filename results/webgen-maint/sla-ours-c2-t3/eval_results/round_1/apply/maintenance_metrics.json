@@ -1,0 +1,28 @@
+{
+  "maint_tag": "sla-ours-c2-t3",
+  "protocol": "b",
+  "source_tag": "sla-ours-c2-t3",
+  "cost": {
+    "llm_calls": 64,
+    "cost_usd": 0.0245385056,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 5,
+  "files": [
+    "lib/src/components/ContactForm.jsx",
+    "lib/src/index.js",
+    "lib/src/utils/validate.js",
+    "tasks/000015/submission/test-results/.last-run.json",
+    "tasks/000019/submission/src/pages/Contact.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 76,
+    "apps": 5,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

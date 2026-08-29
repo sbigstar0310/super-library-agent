@@ -1,0 +1,1553 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/super-library-agent/backups/webgen-k1/librarian-c5-t2-s1/final/round_1/apply/tasks/000022/submission",
+      "app_nll": 4837.1389,
+      "library_nll": 306.4207,
+      "nll_per_token": 0.4651,
+      "perplexity": 1.5922,
+      "total_tokens": 11059,
+      "library_tokens": 555,
+      "app_tokens": 10504,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 49.0941,
+          "tokens": 93,
+          "nll_per_token": 0.5279,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 235.7124,
+          "tokens": 369,
+          "nll_per_token": 0.6388,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 76.5356,
+          "tokens": 317,
+          "nll_per_token": 0.2414,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/Header.jsx",
+            "src/components/Nav.jsx",
+            "src/components/Login.jsx",
+            "src/components/NewCall.jsx",
+            "src/components/OpenCalls.jsx",
+            "src/components/ToDoCalls.jsx",
+            "src/components/Reports.jsx",
+            "src/components/Clients.jsx",
+            "src/components/ClientsEdit.jsx",
+            "src/components/Wizard.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Clients.css",
+          "nll": 149.0523,
+          "tokens": 206,
+          "nll_per_token": 0.7236,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Clients.jsx",
+          "nll": 124.9079,
+          "tokens": 267,
+          "nll_per_token": 0.4678,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/Clients.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/ClientsEdit.css",
+          "nll": 159.9646,
+          "tokens": 196,
+          "nll_per_token": 0.8161,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/ClientsEdit.jsx",
+          "nll": 285.3033,
+          "tokens": 724,
+          "nll_per_token": 0.3941,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/ClientsEdit.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Header.css",
+          "nll": 134.6333,
+          "tokens": 219,
+          "nll_per_token": 0.6148,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Header.jsx",
+          "nll": 73.4885,
+          "tokens": 178,
+          "nll_per_token": 0.4129,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/Header.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Login.css",
+          "nll": 260.3467,
+          "tokens": 531,
+          "nll_per_token": 0.4903,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Login.jsx",
+          "nll": 103.3919,
+          "tokens": 347,
+          "nll_per_token": 0.298,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/Login.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Nav.jsx",
+          "nll": 158.2524,
+          "tokens": 346,
+          "nll_per_token": 0.4574,
+          "dep_paths": [
+            "../lib/src/components/NavBar.jsx",
+            "src/context/AppContext.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/components/NewCall.css",
+          "nll": 178.4791,
+          "tokens": 306,
+          "nll_per_token": 0.5833,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/NewCall.jsx",
+          "nll": 276.6334,
+          "tokens": 805,
+          "nll_per_token": 0.3436,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/NewCall.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/OpenCalls.css",
+          "nll": 397.1205,
+          "tokens": 670,
+          "nll_per_token": 0.5927,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/OpenCalls.jsx",
+          "nll": 163.694,
+          "tokens": 538,
+          "nll_per_token": 0.3043,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/OpenCalls.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Reports.css",
+          "nll": 248.3085,
+          "tokens": 425,
+          "nll_per_token": 0.5843,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Reports.jsx",
+          "nll": 124.787,
+          "tokens": 667,
+          "nll_per_token": 0.1871,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/Reports.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/ToDoCalls.css",
+          "nll": 76.5567,
+          "tokens": 22,
+          "nll_per_token": 3.4799,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/ToDoCalls.jsx",
+          "nll": 280.8689,
+          "tokens": 541,
+          "nll_per_token": 0.5192,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/ToDoCalls.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Wizard.css",
+          "nll": 296.4653,
+          "tokens": 346,
+          "nll_per_token": 0.8568,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Wizard.jsx",
+          "nll": 306.105,
+          "tokens": 1196,
+          "nll_per_token": 0.2559,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/components/Wizard.css"
+          ]
+        },
+        {
+          "rel_path": "src/context/AppContext.jsx",
+          "nll": 621.269,
+          "tokens": 1090,
+          "nll_per_token": 0.57,
+          "dep_paths": [
+            "../lib/src/utils/storage.js"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 34.1053,
+          "tokens": 74,
+          "nll_per_token": 0.4609,
+          "dep_paths": [
+            "src/context/AppContext.jsx",
+            "src/App.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0633,
+          "tokens": 31,
+          "nll_per_token": 0.7117,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/super-library-agent/backups/webgen-k1/librarian-c5-t2-s1/final/round_1/apply/tasks/000023/submission",
+      "app_nll": 4029.3295,
+      "library_nll": 306.4207,
+      "nll_per_token": 0.3922,
+      "perplexity": 1.4802,
+      "total_tokens": 11055,
+      "library_tokens": 555,
+      "app_tokens": 10500,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 43.1425,
+          "tokens": 92,
+          "nll_per_token": 0.4689,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 276.3752,
+          "tokens": 487,
+          "nll_per_token": 0.5675,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 502.4154,
+          "tokens": 1968,
+          "nll_per_token": 0.2553,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/advice/Advice.jsx",
+            "src/leads/Leads.jsx",
+            "src/messages/Messages.jsx",
+            "src/reports/Reports.jsx",
+            "src/settings/Settings.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/advice/Advice.css",
+          "nll": 137.0719,
+          "tokens": 209,
+          "nll_per_token": 0.6558,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/advice/Advice.jsx",
+          "nll": 566.4399,
+          "tokens": 551,
+          "nll_per_token": 1.028,
+          "dep_paths": [
+            "src/advice/Advice.css"
+          ]
+        },
+        {
+          "rel_path": "src/leads/Leads.css",
+          "nll": 358.9078,
+          "tokens": 968,
+          "nll_per_token": 0.3708,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/leads/Leads.jsx",
+          "nll": 297.0078,
+          "tokens": 2078,
+          "nll_per_token": 0.1429,
+          "dep_paths": [
+            "src/leads/Leads.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 31.0579,
+          "tokens": 48,
+          "nll_per_token": 0.647,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/messages/Messages.css",
+          "nll": 334.772,
+          "tokens": 525,
+          "nll_per_token": 0.6377,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/messages/Messages.jsx",
+          "nll": 453.0205,
+          "tokens": 983,
+          "nll_per_token": 0.4609,
+          "dep_paths": [
+            "src/messages/Messages.css"
+          ]
+        },
+        {
+          "rel_path": "src/reports/Reports.css",
+          "nll": 262.4661,
+          "tokens": 472,
+          "nll_per_token": 0.5561,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/reports/Reports.jsx",
+          "nll": 252.7367,
+          "tokens": 956,
+          "nll_per_token": 0.2644,
+          "dep_paths": [
+            "src/reports/Reports.css"
+          ]
+        },
+        {
+          "rel_path": "src/settings/Settings.css",
+          "nll": 193.4208,
+          "tokens": 393,
+          "nll_per_token": 0.4922,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/settings/Settings.jsx",
+          "nll": 298.4317,
+          "tokens": 739,
+          "nll_per_token": 0.4038,
+          "dep_paths": [
+            "src/settings/Settings.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0633,
+          "tokens": 31,
+          "nll_per_token": 0.7117,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/super-library-agent/backups/webgen-k1/librarian-c5-t2-s1/final/round_1/apply/tasks/000044/submission",
+      "app_nll": 3898.7002,
+      "library_nll": 306.4207,
+      "nll_per_token": 0.569,
+      "perplexity": 1.7664,
+      "total_tokens": 7391,
+      "library_tokens": 555,
+      "app_tokens": 6836,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 45.397,
+          "tokens": 93,
+          "nll_per_token": 0.4881,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 21.4887,
+          "tokens": 33,
+          "nll_per_token": 0.6512,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 39.4318,
+          "tokens": 238,
+          "nll_per_token": 0.1657,
+          "dep_paths": [
+            "src/components/Header.jsx",
+            "src/components/Nav.jsx",
+            "src/components/Footer.jsx",
+            "src/pages/Register.jsx",
+            "src/pages/Track.jsx",
+            "src/pages/Inquiry.jsx",
+            "src/pages/Verify.jsx",
+            "src/pages/Statistics.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Footer.css",
+          "nll": 30.3379,
+          "tokens": 38,
+          "nll_per_token": 0.7984,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Footer.jsx",
+          "nll": 64.9823,
+          "tokens": 44,
+          "nll_per_token": 1.4769,
+          "dep_paths": [
+            "src/components/Footer.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Header.css",
+          "nll": 74.6671,
+          "tokens": 96,
+          "nll_per_token": 0.7778,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Header.jsx",
+          "nll": 62.5039,
+          "tokens": 75,
+          "nll_per_token": 0.8334,
+          "dep_paths": [
+            "src/components/Header.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Nav.jsx",
+          "nll": 119.8565,
+          "tokens": 87,
+          "nll_per_token": 1.3777,
+          "dep_paths": [
+            "../lib/src/components/NavBar.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/index.css",
+          "nll": 73.3917,
+          "tokens": 112,
+          "nll_per_token": 0.6553,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 27.4566,
+          "tokens": 54,
+          "nll_per_token": 0.5085,
+          "dep_paths": [
+            "src/App.jsx",
+            "src/index.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Inquiry.css",
+          "nll": 339.2268,
+          "tokens": 540,
+          "nll_per_token": 0.6282,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Inquiry.jsx",
+          "nll": 361.9049,
+          "tokens": 612,
+          "nll_per_token": 0.5913,
+          "dep_paths": [
+            "src/pages/Inquiry.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Register.css",
+          "nll": 240.4069,
+          "tokens": 421,
+          "nll_per_token": 0.571,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Register.jsx",
+          "nll": 207.6856,
+          "tokens": 567,
+          "nll_per_token": 0.3663,
+          "dep_paths": [
+            "src/pages/Register.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Statistics.css",
+          "nll": 320.3551,
+          "tokens": 487,
+          "nll_per_token": 0.6578,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Statistics.jsx",
+          "nll": 251.3025,
+          "tokens": 534,
+          "nll_per_token": 0.4706,
+          "dep_paths": [
+            "src/pages/Statistics.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Track.css",
+          "nll": 617.405,
+          "tokens": 1073,
+          "nll_per_token": 0.5754,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Track.jsx",
+          "nll": 500.5479,
+          "tokens": 892,
+          "nll_per_token": 0.5612,
+          "dep_paths": [
+            "src/pages/Track.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Verify.css",
+          "nll": 205.538,
+          "tokens": 347,
+          "nll_per_token": 0.5923,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Verify.jsx",
+          "nll": 272.7509,
+          "tokens": 462,
+          "nll_per_token": 0.5904,
+          "dep_paths": [
+            "src/pages/Verify.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0633,
+          "tokens": 31,
+          "nll_per_token": 0.7117,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/super-library-agent/backups/webgen-k1/librarian-c5-t2-s1/final/round_1/apply/tasks/000046/submission",
+      "app_nll": 3233.4824,
+      "library_nll": 306.4207,
+      "nll_per_token": 0.492,
+      "perplexity": 1.6356,
+      "total_tokens": 7195,
+      "library_tokens": 555,
+      "app_tokens": 6640,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 74.6076,
+          "tokens": 97,
+          "nll_per_token": 0.7692,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 439.6449,
+          "tokens": 842,
+          "nll_per_token": 0.5221,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 48.1378,
+          "tokens": 316,
+          "nll_per_token": 0.1523,
+          "dep_paths": [
+            "src/components/Header.jsx",
+            "src/components/NavBar.jsx",
+            "src/components/Footer.jsx",
+            "src/components/Finance.jsx",
+            "src/components/PatientRecords.jsx",
+            "src/components/Pharmacy.jsx",
+            "src/components/Laboratory.jsx",
+            "src/components/Theater.jsx",
+            "src/components/Claims.jsx",
+            "src/components/DailyReports.jsx",
+            "src/components/Reports.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Claims.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Claims.jsx",
+          "nll": 237.1686,
+          "tokens": 472,
+          "nll_per_token": 0.5025,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/Claims.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/DailyReports.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/DailyReports.jsx",
+          "nll": 272.9885,
+          "tokens": 438,
+          "nll_per_token": 0.6233,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/DailyReports.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Finance.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Finance.jsx",
+          "nll": 324.4447,
+          "tokens": 902,
+          "nll_per_token": 0.3597,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/Finance.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Footer.css",
+          "nll": 40.4601,
+          "tokens": 47,
+          "nll_per_token": 0.8609,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Footer.jsx",
+          "nll": 41.4837,
+          "tokens": 43,
+          "nll_per_token": 0.9647,
+          "dep_paths": [
+            "src/components/Footer.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Header.css",
+          "nll": 94.7359,
+          "tokens": 96,
+          "nll_per_token": 0.9868,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Header.jsx",
+          "nll": 69.8207,
+          "tokens": 73,
+          "nll_per_token": 0.9564,
+          "dep_paths": [
+            "src/components/Header.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Laboratory.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Laboratory.jsx",
+          "nll": 208.8921,
+          "tokens": 406,
+          "nll_per_token": 0.5145,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/Laboratory.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/NavBar.jsx",
+          "nll": 140.2423,
+          "tokens": 179,
+          "nll_per_token": 0.7835,
+          "dep_paths": [
+            "../lib/src/components/NavBar.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/components/PatientRecords.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/PatientRecords.jsx",
+          "nll": 222.8417,
+          "tokens": 456,
+          "nll_per_token": 0.4887,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/PatientRecords.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Pharmacy.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Pharmacy.jsx",
+          "nll": 203.0974,
+          "tokens": 400,
+          "nll_per_token": 0.5077,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/Pharmacy.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Reports.css",
+          "nll": 28.1161,
+          "tokens": 24,
+          "nll_per_token": 1.1715,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Reports.jsx",
+          "nll": 455.4351,
+          "tokens": 1193,
+          "nll_per_token": 0.3818,
+          "dep_paths": [
+            "../lib/src/utils/storage.js",
+            "src/components/Reports.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Theater.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Theater.jsx",
+          "nll": 228.7117,
+          "tokens": 458,
+          "nll_per_token": 0.4994,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/Theater.css"
+          ]
+        },
+        {
+          "rel_path": "src/index.css",
+          "nll": 52.8188,
+          "tokens": 113,
+          "nll_per_token": 0.4674,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 27.1933,
+          "tokens": 54,
+          "nll_per_token": 0.5036,
+          "dep_paths": [
+            "src/App.jsx",
+            "src/index.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.6415,
+          "tokens": 31,
+          "nll_per_token": 0.7304,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/super-library-agent/backups/webgen-k1/librarian-c5-t2-s1/final/round_1/apply/tasks/000047/submission",
+      "app_nll": 10082.3326,
+      "library_nll": 306.4207,
+      "nll_per_token": 0.5095,
+      "perplexity": 1.6644,
+      "total_tokens": 20392,
+      "library_tokens": 555,
+      "app_tokens": 19837,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 49.4681,
+          "tokens": 86,
+          "nll_per_token": 0.5752,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 977.6347,
+          "tokens": 2033,
+          "nll_per_token": 0.4809,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 294.1594,
+          "tokens": 1777,
+          "nll_per_token": 0.1655,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/Header.jsx",
+            "src/components/Sidebar.jsx",
+            "src/pages/Dashboard.jsx",
+            "src/pages/Status.jsx",
+            "src/pages/Office.jsx",
+            "src/pages/Infrastructure.jsx",
+            "src/pages/Procurement.jsx",
+            "src/pages/Personnel.jsx",
+            "src/pages/Financial.jsx",
+            "src/pages/Decision.jsx",
+            "src/pages/Leave.jsx",
+            "src/pages/ShenzhenLeave.jsx",
+            "src/pages/Attendance.jsx",
+            "src/pages/FivePowers.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Header.css",
+          "nll": 98.4946,
+          "tokens": 156,
+          "nll_per_token": 0.6314,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Header.jsx",
+          "nll": 114.6093,
+          "tokens": 115,
+          "nll_per_token": 0.9966,
+          "dep_paths": [
+            "src/components/Header.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Sidebar.css",
+          "nll": 201.8688,
+          "tokens": 321,
+          "nll_per_token": 0.6289,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Sidebar.jsx",
+          "nll": 247.7302,
+          "tokens": 379,
+          "nll_per_token": 0.6536,
+          "dep_paths": [
+            "src/components/Sidebar.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 30.3314,
+          "tokens": 48,
+          "nll_per_token": 0.6319,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Attendance.css",
+          "nll": 31.5988,
+          "tokens": 4,
+          "nll_per_token": 7.8997,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Attendance.jsx",
+          "nll": 363.367,
+          "tokens": 1034,
+          "nll_per_token": 0.3514,
+          "dep_paths": [
+            "src/pages/Attendance.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Dashboard.css",
+          "nll": 11.4116,
+          "tokens": 2,
+          "nll_per_token": 5.7058,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Dashboard.jsx",
+          "nll": 663.0342,
+          "tokens": 816,
+          "nll_per_token": 0.8125,
+          "dep_paths": [
+            "src/pages/Dashboard.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Decision.css",
+          "nll": 27.9149,
+          "tokens": 4,
+          "nll_per_token": 6.9787,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Decision.jsx",
+          "nll": 711.7577,
+          "tokens": 1493,
+          "nll_per_token": 0.4767,
+          "dep_paths": [
+            "src/pages/Decision.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Financial.css",
+          "nll": 26.2506,
+          "tokens": 4,
+          "nll_per_token": 6.5626,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Financial.jsx",
+          "nll": 577.9574,
+          "tokens": 1315,
+          "nll_per_token": 0.4395,
+          "dep_paths": [
+            "src/pages/Financial.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/FivePowers.css",
+          "nll": 26.3443,
+          "tokens": 4,
+          "nll_per_token": 6.5861,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/FivePowers.jsx",
+          "nll": 726.5326,
+          "tokens": 1327,
+          "nll_per_token": 0.5475,
+          "dep_paths": [
+            "src/pages/FivePowers.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Infrastructure.css",
+          "nll": 30.0842,
+          "tokens": 5,
+          "nll_per_token": 6.0168,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Infrastructure.jsx",
+          "nll": 536.8412,
+          "tokens": 1086,
+          "nll_per_token": 0.4943,
+          "dep_paths": [
+            "src/pages/Infrastructure.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Leave.css",
+          "nll": 23.2918,
+          "tokens": 4,
+          "nll_per_token": 5.8229,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Leave.jsx",
+          "nll": 696.5785,
+          "tokens": 1292,
+          "nll_per_token": 0.5391,
+          "dep_paths": [
+            "src/pages/Leave.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Office.css",
+          "nll": 19.5573,
+          "tokens": 3,
+          "nll_per_token": 6.5191,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Office.jsx",
+          "nll": 549.8268,
+          "tokens": 1010,
+          "nll_per_token": 0.5444,
+          "dep_paths": [
+            "src/pages/Office.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Personnel.css",
+          "nll": 30.0042,
+          "tokens": 5,
+          "nll_per_token": 6.0008,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Personnel.jsx",
+          "nll": 628.192,
+          "tokens": 1647,
+          "nll_per_token": 0.3814,
+          "dep_paths": [
+            "src/pages/Personnel.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Procurement.css",
+          "nll": 28.5804,
+          "tokens": 4,
+          "nll_per_token": 7.1451,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Procurement.jsx",
+          "nll": 796.3581,
+          "tokens": 1360,
+          "nll_per_token": 0.5856,
+          "dep_paths": [
+            "src/pages/Procurement.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/ShenzhenLeave.css",
+          "nll": 25.8387,
+          "tokens": 4,
+          "nll_per_token": 6.4597,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/ShenzhenLeave.jsx",
+          "nll": 856.3166,
+          "tokens": 1472,
+          "nll_per_token": 0.5817,
+          "dep_paths": [
+            "src/pages/ShenzhenLeave.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Status.css",
+          "nll": 22.6251,
+          "tokens": 3,
+          "nll_per_token": 7.5417,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Status.jsx",
+          "nll": 635.7087,
+          "tokens": 993,
+          "nll_per_token": 0.6402,
+          "dep_paths": [
+            "src/pages/Status.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0633,
+          "tokens": 31,
+          "nll_per_token": 0.7117,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/super-library-agent/backups/webgen-k1/librarian-c5-t2-s1/final/round_1/apply/tasks/000080/submission",
+      "app_nll": 1073.5614,
+      "library_nll": 306.4207,
+      "nll_per_token": 0.4198,
+      "perplexity": 1.5217,
+      "total_tokens": 3287,
+      "library_tokens": 555,
+      "app_tokens": 2732,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 34.1161,
+          "tokens": 92,
+          "nll_per_token": 0.3708,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 54.9678,
+          "tokens": 89,
+          "nll_per_token": 0.6176,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 28.1444,
+          "tokens": 32,
+          "nll_per_token": 0.8795,
+          "dep_paths": [
+            "src/components/TodoApp.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/components/TodoApp.css",
+          "nll": 573.124,
+          "tokens": 979,
+          "nll_per_token": 0.5854,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/TodoApp.jsx",
+          "nll": 330.8017,
+          "tokens": 1456,
+          "nll_per_token": 0.2272,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/TodoApp.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 30.3441,
+          "tokens": 53,
+          "nll_per_token": 0.5725,
+          "dep_paths": [
+            "src/App.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0633,
+          "tokens": 31,
+          "nll_per_token": 0.7117,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/super-library-agent/backups/webgen-k1/librarian-c5-t2-s1/final/round_1/apply/tasks/000083/submission",
+      "app_nll": 5033.2301,
+      "library_nll": 306.4207,
+      "nll_per_token": 0.5865,
+      "perplexity": 1.7976,
+      "total_tokens": 9105,
+      "library_tokens": 555,
+      "app_tokens": 8550,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 63.4797,
+          "tokens": 94,
+          "nll_per_token": 0.6753,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 122.903,
+          "tokens": 183,
+          "nll_per_token": 0.6716,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 65.4992,
+          "tokens": 259,
+          "nll_per_token": 0.2529,
+          "dep_paths": [
+            "src/components/Header.jsx",
+            "src/components/Cases.jsx",
+            "src/components/Reports.jsx",
+            "src/components/WorkHours.jsx",
+            "src/components/ExpenseSheet.jsx",
+            "src/components/AssignmentSheet.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/AssignmentSheet.css",
+          "nll": 229.0379,
+          "tokens": 262,
+          "nll_per_token": 0.8742,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/AssignmentSheet.jsx",
+          "nll": 674.8693,
+          "tokens": 856,
+          "nll_per_token": 0.7884,
+          "dep_paths": [
+            "src/components/AssignmentSheet.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Cases.css",
+          "nll": 417.2469,
+          "tokens": 753,
+          "nll_per_token": 0.5541,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Cases.jsx",
+          "nll": 346.9589,
+          "tokens": 761,
+          "nll_per_token": 0.4559,
+          "dep_paths": [
+            "src/components/Cases.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/ExpenseSheet.css",
+          "nll": 335.6506,
+          "tokens": 419,
+          "nll_per_token": 0.8011,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/ExpenseSheet.jsx",
+          "nll": 638.0433,
+          "tokens": 1354,
+          "nll_per_token": 0.4712,
+          "dep_paths": [
+            "src/components/ExpenseSheet.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Header.css",
+          "nll": 237.2398,
+          "tokens": 313,
+          "nll_per_token": 0.758,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Header.jsx",
+          "nll": 239.1012,
+          "tokens": 264,
+          "nll_per_token": 0.9057,
+          "dep_paths": [
+            "src/components/Header.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Reports.css",
+          "nll": 400.5038,
+          "tokens": 706,
+          "nll_per_token": 0.5673,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Reports.jsx",
+          "nll": 456.9432,
+          "tokens": 832,
+          "nll_per_token": 0.5492,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/Reports.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/WorkHours.css",
+          "nll": 202.6894,
+          "tokens": 259,
+          "nll_per_token": 0.7826,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/WorkHours.jsx",
+          "nll": 551.3345,
+          "tokens": 1155,
+          "nll_per_token": 0.4773,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/WorkHours.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 29.6662,
+          "tokens": 49,
+          "nll_per_token": 0.6054,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0633,
+          "tokens": 31,
+          "nll_per_token": 0.7117,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/super-library-agent/backups/webgen-k1/librarian-c5-t2-s1/final/round_1/apply/tasks/000085/submission",
+      "app_nll": 5493.5874,
+      "library_nll": 306.4207,
+      "nll_per_token": 0.4664,
+      "perplexity": 1.5942,
+      "total_tokens": 12437,
+      "library_tokens": 555,
+      "app_tokens": 11882,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 53.2525,
+          "tokens": 94,
+          "nll_per_token": 0.5665,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 975.1829,
+          "tokens": 1989,
+          "nll_per_token": 0.4903,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 571.3757,
+          "tokens": 1931,
+          "nll_per_token": 0.2959,
+          "dep_paths": [
+            "../lib/src/hooks/useLocalStorage.js",
+            "src/components/Sidebar/Sidebar.jsx",
+            "src/components/Dashboard/Dashboard.jsx",
+            "src/components/Projects/Projects.jsx",
+            "src/components/Schedule/Schedule.jsx",
+            "src/components/Documents/Documents.jsx",
+            "src/components/Communication/Communication.jsx",
+            "src/components/Estimates/Estimates.jsx",
+            "src/components/TimeTracking/TimeTracking.jsx",
+            "src/components/Resources/Resources.jsx",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Communication/Communication.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Communication/Communication.jsx",
+          "nll": 486.3568,
+          "tokens": 705,
+          "nll_per_token": 0.6899,
+          "dep_paths": [
+            "src/components/Communication/Communication.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Dashboard/Dashboard.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Dashboard/Dashboard.jsx",
+          "nll": 528.2467,
+          "tokens": 933,
+          "nll_per_token": 0.5662,
+          "dep_paths": [
+            "src/components/Dashboard/Dashboard.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Documents/Documents.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Documents/Documents.jsx",
+          "nll": 346.8952,
+          "tokens": 786,
+          "nll_per_token": 0.4413,
+          "dep_paths": [
+            "src/components/Documents/Documents.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Estimates/Estimates.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Estimates/Estimates.jsx",
+          "nll": 570.8713,
+          "tokens": 1321,
+          "nll_per_token": 0.4322,
+          "dep_paths": [
+            "src/components/Estimates/Estimates.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Projects/Projects.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Projects/Projects.jsx",
+          "nll": 290.388,
+          "tokens": 465,
+          "nll_per_token": 0.6245,
+          "dep_paths": [
+            "src/components/Projects/Projects.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Resources/Resources.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Resources/Resources.jsx",
+          "nll": 406.8714,
+          "tokens": 985,
+          "nll_per_token": 0.4131,
+          "dep_paths": [
+            "src/components/Resources/Resources.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Schedule/Schedule.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Schedule/Schedule.jsx",
+          "nll": 306.6711,
+          "tokens": 850,
+          "nll_per_token": 0.3608,
+          "dep_paths": [
+            "src/components/Schedule/Schedule.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Sidebar/Sidebar.css",
+          "nll": 286.3475,
+          "tokens": 547,
+          "nll_per_token": 0.5235,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Sidebar/Sidebar.jsx",
+          "nll": 217.2481,
+          "tokens": 266,
+          "nll_per_token": 0.8167,
+          "dep_paths": [
+            "src/components/Sidebar/Sidebar.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/TimeTracking/TimeTracking.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/TimeTracking/TimeTracking.jsx",
+          "nll": 402.1502,
+          "tokens": 931,
+          "nll_per_token": 0.432,
+          "dep_paths": [
+            "src/components/TimeTracking/TimeTracking.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 29.6668,
+          "tokens": 48,
+          "nll_per_token": 0.6181,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0633,
+          "tokens": 31,
+          "nll_per_token": 0.7117,
+          "dep_paths": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "sum_app_nll": 37681.3625,
+    "avg_library_nll": 306.4207,
+    "mdl_nll": 37987.7832,
+    "total_apps": 8
+  }
+}

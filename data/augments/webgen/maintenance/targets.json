@@ -1,0 +1,48 @@
+{
+  "targets": {
+    "c2": [
+      "000015",
+      "000016",
+      "000019",
+      "000064",
+      "000071",
+      "000075"
+    ],
+    "c5": [
+      "000022",
+      "000023",
+      "000044",
+      "000046",
+      "000080",
+      "000083",
+      "000085"
+    ],
+    "c13": [
+      "000027",
+      "000051",
+      "000052",
+      "000053",
+      "000077",
+      "000090",
+      "000091",
+      "000092"
+    ]
+  },
+  "excluded": {
+    "c2": {
+      "000040": "no qualifying form generated (layout spec lacks checkout screen)",
+      "000072": "task spec has no forms (layout spec: 'Forms: none')"
+    },
+    "c5": {
+      "000047": "baseline generated static app — no create workflow; method-asymmetric"
+    },
+    "c13": {}
+  },
+  "partial_scope": {
+    "c13": {
+      "000052": "search-normalization only (no user-gen submission enters a list)",
+      "000090": "moderation only (app has no search feature)"
+    }
+  },
+  "note": "Canonical maintenance-experiment inputs. See docs/analysis/2026-07-10-phase1-portfolio-inspection.md (targets) and phase2 (ui_instruct classification). docs/ copy is gitignored scratch; this is the tracked source of truth."
+}

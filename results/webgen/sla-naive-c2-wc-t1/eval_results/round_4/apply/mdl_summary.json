@@ -1,0 +1,1152 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/webgen/sla-naive-c2-wc-t1/final/round_4/apply/tasks/000015/submission",
+      "app_nll": 1342.8505,
+      "library_nll": 1279.546,
+      "nll_per_token": 0.4523,
+      "perplexity": 1.5719,
+      "total_tokens": 5798,
+      "library_tokens": 3428,
+      "app_tokens": 2370,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 57.2727,
+          "tokens": 93,
+          "nll_per_token": 0.6158,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 77.5373,
+          "tokens": 142,
+          "nll_per_token": 0.546,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 199.5937,
+          "tokens": 543,
+          "nll_per_token": 0.3676,
+          "dep_paths": [
+            "../lib/src/components/Header.jsx",
+            "../lib/src/components/ContactSection.jsx",
+            "../lib/src/components/Footer.jsx",
+            "src/components/Home.jsx",
+            "src/components/About.jsx",
+            "src/components/Services.jsx",
+            "../lib/src/global.css",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/About.css",
+          "nll": 16.5178,
+          "tokens": 22,
+          "nll_per_token": 0.7508,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/About.jsx",
+          "nll": 210.4589,
+          "tokens": 252,
+          "nll_per_token": 0.8352,
+          "dep_paths": [
+            "src/components/About.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Home.css",
+          "nll": 227.8425,
+          "tokens": 365,
+          "nll_per_token": 0.6242,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Home.jsx",
+          "nll": 150.8094,
+          "tokens": 290,
+          "nll_per_token": 0.52,
+          "dep_paths": [
+            "src/components/Home.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Services.css",
+          "nll": 152.4124,
+          "tokens": 267,
+          "nll_per_token": 0.5708,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Services.jsx",
+          "nll": 199.6418,
+          "tokens": 317,
+          "nll_per_token": 0.6298,
+          "dep_paths": [
+            "src/components/Services.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 28.7261,
+          "tokens": 48,
+          "nll_per_token": 0.5985,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0377,
+          "tokens": 31,
+          "nll_per_token": 0.7109,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/webgen/sla-naive-c2-wc-t1/final/round_4/apply/tasks/000016/submission",
+      "app_nll": 3769.748,
+      "library_nll": 1279.546,
+      "nll_per_token": 0.6084,
+      "perplexity": 1.8375,
+      "total_tokens": 8299,
+      "library_tokens": 3428,
+      "app_tokens": 4871,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 56.7672,
+          "tokens": 86,
+          "nll_per_token": 0.6601,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 235.5183,
+          "tokens": 393,
+          "nll_per_token": 0.5993,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 126.1108,
+          "tokens": 359,
+          "nll_per_token": 0.3513,
+          "dep_paths": [
+            "../lib/src/components/Header.jsx",
+            "src/pages/Home.jsx",
+            "src/pages/About.jsx",
+            "src/pages/Products.jsx",
+            "src/pages/News.jsx",
+            "src/pages/Contact.jsx",
+            "../lib/src/global.css",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 29.6313,
+          "tokens": 49,
+          "nll_per_token": 0.6047,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/pages/About.css",
+          "nll": 208.9697,
+          "tokens": 298,
+          "nll_per_token": 0.7012,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/About.jsx",
+          "nll": 563.7802,
+          "tokens": 710,
+          "nll_per_token": 0.7941,
+          "dep_paths": [
+            "../lib/src/components/Footer.jsx",
+            "src/pages/About.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Contact.css",
+          "nll": 79.2836,
+          "tokens": 91,
+          "nll_per_token": 0.8712,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Contact.jsx",
+          "nll": 357.8909,
+          "tokens": 392,
+          "nll_per_token": 0.913,
+          "dep_paths": [
+            "../lib/src/components/ContactSection.jsx",
+            "../lib/src/components/Footer.jsx",
+            "src/pages/Contact.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Home.css",
+          "nll": 288.5804,
+          "tokens": 401,
+          "nll_per_token": 0.7197,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Home.jsx",
+          "nll": 319.2057,
+          "tokens": 433,
+          "nll_per_token": 0.7372,
+          "dep_paths": [
+            "../lib/src/components/Footer.jsx",
+            "src/pages/Home.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/News.css",
+          "nll": 103.1439,
+          "tokens": 167,
+          "nll_per_token": 0.6176,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/News.jsx",
+          "nll": 531.7177,
+          "tokens": 500,
+          "nll_per_token": 1.0634,
+          "dep_paths": [
+            "../lib/src/components/Footer.jsx",
+            "src/pages/News.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Products.css",
+          "nll": 217.0289,
+          "tokens": 332,
+          "nll_per_token": 0.6537,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Products.jsx",
+          "nll": 630.0819,
+          "tokens": 629,
+          "nll_per_token": 1.0017,
+          "dep_paths": [
+            "../lib/src/components/Footer.jsx",
+            "src/pages/Products.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0377,
+          "tokens": 31,
+          "nll_per_token": 0.7109,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/webgen/sla-naive-c2-wc-t1/final/round_4/apply/tasks/000019/submission",
+      "app_nll": 5064.3887,
+      "library_nll": 1279.546,
+      "nll_per_token": 0.5506,
+      "perplexity": 1.7343,
+      "total_tokens": 11522,
+      "library_tokens": 3428,
+      "app_tokens": 8094,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 57.7115,
+          "tokens": 95,
+          "nll_per_token": 0.6075,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 413.4133,
+          "tokens": 767,
+          "nll_per_token": 0.539,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 393.7346,
+          "tokens": 1372,
+          "nll_per_token": 0.287,
+          "dep_paths": [
+            "../lib/src/components/Header.jsx",
+            "../lib/src/components/Footer.jsx",
+            "src/pages/Home.jsx",
+            "src/pages/Solutions.jsx",
+            "src/pages/News.jsx",
+            "src/pages/Cases.jsx",
+            "src/pages/Contact.jsx",
+            "../lib/src/global.css",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 36.0201,
+          "tokens": 53,
+          "nll_per_token": 0.6796,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Cases.css",
+          "nll": 193.7963,
+          "tokens": 235,
+          "nll_per_token": 0.8247,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Cases.jsx",
+          "nll": 505.7222,
+          "tokens": 443,
+          "nll_per_token": 1.1416,
+          "dep_paths": [
+            "src/pages/Cases.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Contact.css",
+          "nll": 379.4333,
+          "tokens": 632,
+          "nll_per_token": 0.6004,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Contact.jsx",
+          "nll": 332.961,
+          "tokens": 846,
+          "nll_per_token": 0.3936,
+          "dep_paths": [
+            "src/pages/Contact.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Home.css",
+          "nll": 301.3774,
+          "tokens": 496,
+          "nll_per_token": 0.6076,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Home.jsx",
+          "nll": 610.1897,
+          "tokens": 829,
+          "nll_per_token": 0.7361,
+          "dep_paths": [
+            "src/pages/Home.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/News.css",
+          "nll": 217.9019,
+          "tokens": 346,
+          "nll_per_token": 0.6298,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/News.jsx",
+          "nll": 906.1149,
+          "tokens": 984,
+          "nll_per_token": 0.9208,
+          "dep_paths": [
+            "src/pages/News.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Solutions.css",
+          "nll": 193.1557,
+          "tokens": 221,
+          "nll_per_token": 0.874,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Solutions.jsx",
+          "nll": 500.819,
+          "tokens": 744,
+          "nll_per_token": 0.6731,
+          "dep_paths": [
+            "src/pages/Solutions.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0377,
+          "tokens": 31,
+          "nll_per_token": 0.7109,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/webgen/sla-naive-c2-wc-t1/final/round_4/apply/tasks/000040/submission",
+      "app_nll": 3882.2156,
+      "library_nll": 1279.546,
+      "nll_per_token": 0.494,
+      "perplexity": 1.6389,
+      "total_tokens": 10448,
+      "library_tokens": 3428,
+      "app_tokens": 7020,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 52.0879,
+          "tokens": 93,
+          "nll_per_token": 0.5601,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 285.0161,
+          "tokens": 409,
+          "nll_per_token": 0.6969,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 261.3979,
+          "tokens": 846,
+          "nll_per_token": 0.309,
+          "dep_paths": [
+            "../lib/src/components/Header.jsx",
+            "../lib/src/components/Footer.jsx",
+            "src/pages/Home.jsx",
+            "src/pages/Workshops.jsx",
+            "src/pages/Classes.jsx",
+            "src/pages/Podcasts.jsx",
+            "src/pages/Blog.jsx",
+            "src/pages/Cart.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 39.8801,
+          "tokens": 61,
+          "nll_per_token": 0.6538,
+          "dep_paths": [
+            "src/App.jsx",
+            "../lib/src/global.css",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Blog.css",
+          "nll": 315.0914,
+          "tokens": 607,
+          "nll_per_token": 0.5191,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Blog.jsx",
+          "nll": 445.3486,
+          "tokens": 687,
+          "nll_per_token": 0.6483,
+          "dep_paths": [
+            "src/pages/Blog.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Cart.css",
+          "nll": 382.5759,
+          "tokens": 733,
+          "nll_per_token": 0.5219,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Cart.jsx",
+          "nll": 181.1487,
+          "tokens": 464,
+          "nll_per_token": 0.3904,
+          "dep_paths": [
+            "src/pages/Cart.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Classes.css",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Classes.jsx",
+          "nll": 234.1739,
+          "tokens": 361,
+          "nll_per_token": 0.6487,
+          "dep_paths": [
+            "src/pages/Workshops.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Home.css",
+          "nll": 318.6344,
+          "tokens": 606,
+          "nll_per_token": 0.5258,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Home.jsx",
+          "nll": 287.4913,
+          "tokens": 452,
+          "nll_per_token": 0.636,
+          "dep_paths": [
+            "src/pages/Home.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Podcasts.css",
+          "nll": 248.4478,
+          "tokens": 415,
+          "nll_per_token": 0.5987,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Podcasts.jsx",
+          "nll": 313.1631,
+          "tokens": 357,
+          "nll_per_token": 0.8772,
+          "dep_paths": [
+            "src/pages/Podcasts.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Workshops.css",
+          "nll": 289.3484,
+          "tokens": 516,
+          "nll_per_token": 0.5608,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Workshops.jsx",
+          "nll": 206.3726,
+          "tokens": 382,
+          "nll_per_token": 0.5402,
+          "dep_paths": [
+            "src/pages/Workshops.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0377,
+          "tokens": 31,
+          "nll_per_token": 0.7109,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/webgen/sla-naive-c2-wc-t1/final/round_4/apply/tasks/000064/submission",
+      "app_nll": 6304.0043,
+      "library_nll": 1279.546,
+      "nll_per_token": 0.5192,
+      "perplexity": 1.6806,
+      "total_tokens": 14607,
+      "library_tokens": 3428,
+      "app_tokens": 11179,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 49.1208,
+          "tokens": 92,
+          "nll_per_token": 0.5339,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 39.632,
+          "tokens": 69,
+          "nll_per_token": 0.5744,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 1979.3865,
+          "tokens": 2953,
+          "nll_per_token": 0.6703,
+          "dep_paths": [
+            "../lib/src/components/Footer.jsx",
+            "src/components/Header.jsx",
+            "src/pages/Home.jsx",
+            "src/pages/News.jsx",
+            "src/pages/NewsDetail.jsx",
+            "src/pages/Companies.jsx",
+            "src/pages/Events.jsx",
+            "src/pages/Newsletter.jsx",
+            "src/pages/Admin.jsx",
+            "../lib/src/global.css",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Header.css",
+          "nll": 312.2952,
+          "tokens": 515,
+          "nll_per_token": 0.6064,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Header.jsx",
+          "nll": 169.9626,
+          "tokens": 314,
+          "nll_per_token": 0.5413,
+          "dep_paths": [
+            "src/components/Header.css"
+          ]
+        },
+        {
+          "rel_path": "src/index.css",
+          "nll": 56.4045,
+          "tokens": 92,
+          "nll_per_token": 0.6131,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 27.5935,
+          "tokens": 54,
+          "nll_per_token": 0.511,
+          "dep_paths": [
+            "src/App.jsx",
+            "src/index.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Admin.css",
+          "nll": 648.4764,
+          "tokens": 1231,
+          "nll_per_token": 0.5268,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Admin.jsx",
+          "nll": 422.3318,
+          "tokens": 1245,
+          "nll_per_token": 0.3392,
+          "dep_paths": [
+            "src/pages/Admin.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Companies.css",
+          "nll": 235.5077,
+          "tokens": 375,
+          "nll_per_token": 0.628,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Companies.jsx",
+          "nll": 103.2816,
+          "tokens": 246,
+          "nll_per_token": 0.4198,
+          "dep_paths": [
+            "src/pages/Companies.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Events.css",
+          "nll": 246.9433,
+          "tokens": 394,
+          "nll_per_token": 0.6268,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Events.jsx",
+          "nll": 58.5594,
+          "tokens": 196,
+          "nll_per_token": 0.2988,
+          "dep_paths": [
+            "src/pages/Events.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Home.css",
+          "nll": 474.4387,
+          "tokens": 745,
+          "nll_per_token": 0.6368,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Home.jsx",
+          "nll": 230.613,
+          "tokens": 452,
+          "nll_per_token": 0.5102,
+          "dep_paths": [
+            "src/pages/Home.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/News.css",
+          "nll": 321.2257,
+          "tokens": 556,
+          "nll_per_token": 0.5777,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/News.jsx",
+          "nll": 167.7646,
+          "tokens": 306,
+          "nll_per_token": 0.5483,
+          "dep_paths": [
+            "src/pages/News.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/NewsDetail.css",
+          "nll": 251.185,
+          "tokens": 425,
+          "nll_per_token": 0.591,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/NewsDetail.jsx",
+          "nll": 57.3809,
+          "tokens": 146,
+          "nll_per_token": 0.393,
+          "dep_paths": [
+            "src/pages/NewsDetail.css"
+          ]
+        },
+        {
+          "rel_path": "src/pages/Newsletter.css",
+          "nll": 255.7251,
+          "tokens": 449,
+          "nll_per_token": 0.5695,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/pages/Newsletter.jsx",
+          "nll": 174.1388,
+          "tokens": 293,
+          "nll_per_token": 0.5943,
+          "dep_paths": [
+            "src/pages/Newsletter.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0377,
+          "tokens": 31,
+          "nll_per_token": 0.7109,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/webgen/sla-naive-c2-wc-t1/final/round_4/apply/tasks/000071/submission",
+      "app_nll": 2736.9448,
+      "library_nll": 1279.546,
+      "nll_per_token": 0.4884,
+      "perplexity": 1.6297,
+      "total_tokens": 8224,
+      "library_tokens": 3428,
+      "app_tokens": 4796,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 60.7555,
+          "tokens": 93,
+          "nll_per_token": 0.6533,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 255.5654,
+          "tokens": 454,
+          "nll_per_token": 0.5629,
+          "dep_paths": [
+            "../lib/src/components/Header.jsx",
+            "../lib/src/components/Footer.jsx",
+            "src/components/Portfolio.jsx",
+            "src/components/About.jsx",
+            "src/components/Contact.jsx",
+            "src/components/ProjectModal.jsx"
+          ]
+        },
+        {
+          "rel_path": "src/components/About.css",
+          "nll": 326.9267,
+          "tokens": 494,
+          "nll_per_token": 0.6618,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/About.jsx",
+          "nll": 320.337,
+          "tokens": 506,
+          "nll_per_token": 0.6331,
+          "dep_paths": [
+            "src/components/About.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Contact.css",
+          "nll": 383.5313,
+          "tokens": 721,
+          "nll_per_token": 0.5319,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Contact.jsx",
+          "nll": 196.9464,
+          "tokens": 536,
+          "nll_per_token": 0.3674,
+          "dep_paths": [
+            "src/components/Contact.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Portfolio.css",
+          "nll": 349.5029,
+          "tokens": 597,
+          "nll_per_token": 0.5854,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Portfolio.jsx",
+          "nll": 410.3994,
+          "tokens": 645,
+          "nll_per_token": 0.6363,
+          "dep_paths": [
+            "src/components/Portfolio.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/ProjectModal.css",
+          "nll": 227.8994,
+          "tokens": 396,
+          "nll_per_token": 0.5755,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/ProjectModal.jsx",
+          "nll": 54.7892,
+          "tokens": 141,
+          "nll_per_token": 0.3886,
+          "dep_paths": [
+            "src/components/ProjectModal.css"
+          ]
+        },
+        {
+          "rel_path": "src/index.css",
+          "nll": 88.9639,
+          "tokens": 121,
+          "nll_per_token": 0.7352,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 39.2899,
+          "tokens": 61,
+          "nll_per_token": 0.6441,
+          "dep_paths": [
+            "src/App.jsx",
+            "../lib/src/global.css",
+            "src/index.css"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0377,
+          "tokens": 31,
+          "nll_per_token": 0.7109,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/webgen/sla-naive-c2-wc-t1/final/round_4/apply/tasks/000072/submission",
+      "app_nll": 3340.5409,
+      "library_nll": 1279.546,
+      "nll_per_token": 0.5455,
+      "perplexity": 1.7254,
+      "total_tokens": 8470,
+      "library_tokens": 3428,
+      "app_tokens": 5042,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 59.0044,
+          "tokens": 94,
+          "nll_per_token": 0.6277,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 346.7893,
+          "tokens": 421,
+          "nll_per_token": 0.8237,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 212.6601,
+          "tokens": 480,
+          "nll_per_token": 0.443,
+          "dep_paths": [
+            "../lib/src/components/SkillsSection.jsx",
+            "../lib/src/components/Footer.jsx",
+            "src/components/ProfileCard.jsx",
+            "src/components/NavBar.jsx",
+            "src/components/About.jsx",
+            "src/components/Experience.jsx",
+            "src/components/Education.jsx",
+            "src/components/Projects.jsx",
+            "../lib/src/global.css",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/About.css",
+          "nll": 186.3727,
+          "tokens": 331,
+          "nll_per_token": 0.5631,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/About.jsx",
+          "nll": 220.8613,
+          "tokens": 325,
+          "nll_per_token": 0.6796,
+          "dep_paths": [
+            "src/components/About.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Education.css",
+          "nll": 245.0617,
+          "tokens": 370,
+          "nll_per_token": 0.6623,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Education.jsx",
+          "nll": 236.0044,
+          "tokens": 362,
+          "nll_per_token": 0.6519,
+          "dep_paths": [
+            "src/components/Education.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Experience.css",
+          "nll": 310.4382,
+          "tokens": 482,
+          "nll_per_token": 0.6441,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Experience.jsx",
+          "nll": 476.1045,
+          "tokens": 547,
+          "nll_per_token": 0.8704,
+          "dep_paths": [
+            "src/components/Experience.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/NavBar.css",
+          "nll": 149.7247,
+          "tokens": 211,
+          "nll_per_token": 0.7096,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/NavBar.jsx",
+          "nll": 40.6385,
+          "tokens": 109,
+          "nll_per_token": 0.3728,
+          "dep_paths": [
+            "src/components/NavBar.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/ProfileCard.css",
+          "nll": 185.4781,
+          "tokens": 319,
+          "nll_per_token": 0.5814,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/ProfileCard.jsx",
+          "nll": 80.9756,
+          "tokens": 145,
+          "nll_per_token": 0.5585,
+          "dep_paths": [
+            "src/components/ProfileCard.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Projects.css",
+          "nll": 245.7085,
+          "tokens": 413,
+          "nll_per_token": 0.5949,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Projects.jsx",
+          "nll": 295.288,
+          "tokens": 349,
+          "nll_per_token": 0.8461,
+          "dep_paths": [
+            "src/components/Projects.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 27.3933,
+          "tokens": 53,
+          "nll_per_token": 0.5169,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0377,
+          "tokens": 31,
+          "nll_per_token": 0.7109,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/webgen/sla-naive-c2-wc-t1/final/round_4/apply/tasks/000075/submission",
+      "app_nll": 1553.3478,
+      "library_nll": 1279.546,
+      "nll_per_token": 0.467,
+      "perplexity": 1.5952,
+      "total_tokens": 6066,
+      "library_tokens": 3428,
+      "app_tokens": 2638,
+      "file_details": [
+        {
+          "rel_path": "index.html",
+          "nll": 48.4545,
+          "tokens": 92,
+          "nll_per_token": 0.5267,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.css",
+          "nll": 136.4311,
+          "tokens": 214,
+          "nll_per_token": 0.6375,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/App.jsx",
+          "nll": 238.8523,
+          "tokens": 492,
+          "nll_per_token": 0.4855,
+          "dep_paths": [
+            "../lib/src/components/SkillsSection.jsx",
+            "../lib/src/components/ContactSection.jsx",
+            "../lib/src/components/Footer.jsx",
+            "src/components/Header/Header.jsx",
+            "src/components/AboutTeam/AboutTeam.jsx",
+            "src/components/ProjectShowcase/ProjectShowcase.jsx",
+            "../lib/src/global.css",
+            "src/App.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/AboutTeam/AboutTeam.css",
+          "nll": 224.7655,
+          "tokens": 366,
+          "nll_per_token": 0.6141,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/AboutTeam/AboutTeam.jsx",
+          "nll": 165.6703,
+          "tokens": 260,
+          "nll_per_token": 0.6372,
+          "dep_paths": [
+            "src/components/AboutTeam/AboutTeam.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/Header/Header.css",
+          "nll": 163.2551,
+          "tokens": 237,
+          "nll_per_token": 0.6888,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/Header/Header.jsx",
+          "nll": 135.7801,
+          "tokens": 232,
+          "nll_per_token": 0.5853,
+          "dep_paths": [
+            "src/components/Header/Header.css"
+          ]
+        },
+        {
+          "rel_path": "src/components/ProjectShowcase/ProjectShowcase.css",
+          "nll": 220.197,
+          "tokens": 358,
+          "nll_per_token": 0.6151,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/components/ProjectShowcase/ProjectShowcase.jsx",
+          "nll": 169.8309,
+          "tokens": 308,
+          "nll_per_token": 0.5514,
+          "dep_paths": [
+            "src/components/ProjectShowcase/ProjectShowcase.css"
+          ]
+        },
+        {
+          "rel_path": "src/main.jsx",
+          "nll": 28.0733,
+          "tokens": 48,
+          "nll_per_token": 0.5849,
+          "dep_paths": [
+            "src/App.jsx"
+          ]
+        },
+        {
+          "rel_path": "vite.config.js",
+          "nll": 22.0377,
+          "tokens": 31,
+          "nll_per_token": 0.7109,
+          "dep_paths": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "sum_app_nll": 27994.0406,
+    "avg_library_nll": 1279.546,
+    "mdl_nll": 29273.5866,
+    "total_apps": 8
+  }
+}

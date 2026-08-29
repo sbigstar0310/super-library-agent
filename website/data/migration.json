@@ -1,0 +1,661 @@
+{
+ "before": {
+  "label": "as first written",
+  "lines": 89,
+  "code": "import { useState } from 'react';\nimport './Contact.css';\n\nexport default function Contact() {\n  const [name, setName] = useState('');\n  const [email, setEmail] = useState('');\n  const [message, setMessage] = useState('');\n  const [errors, setErrors] = useState({});\n  const [submitted, setSubmitted] = useState(false);\n\n  const validate = () => {\n    const errs = {};\n    if (!name.trim()) errs.name = 'Name is required';\n    if (!email.trim()) errs.email = 'Email is required';\n    if (!message.trim()) errs.message = 'Message is required';\n    return errs;\n  };\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    const errs = validate();\n    setErrors(errs);\n    if (Object.keys(errs).length === 0) {\n      // In-memory submission (no backend)\n      setSubmitted(true);\n      setName('');\n      setEmail('');\n      setMessage('');\n    }\n  };\n\n  return (\n    <div className=\"main-content\">\n      <div className=\"contact-panel\">\n        <h2 className=\"contact-panel-heading\">Contact Us</h2>\n        <div className=\"contact-info-line\">\n          <strong>Address:</strong> 123 Wellness Way, Riverside, CA 92501\n        </div>\n        <div className=\"contact-info-line\">\n          <strong>Phone:</strong> (555) 123-4567\n        </div>\n        <div className=\"contact-info-line\">\n          <strong>Email:</strong> info@riversideclinical.example\n        </div>\n      </div>\n\n      <div className=\"contact-panel\">\n        <h2 className=\"contact-panel-heading\">Send Us a Message</h2>\n        {submitted && (\n          <p style={{ color: '#2e7d32', marginBottom: '1rem', fontWeight: 600 }}>\n            Thank you! Your message has been sent.\n          </p>\n        )}\n        <form className=\"contact-form\" onSubmit={handleSubmit}>\n          <div>\n            <label htmlFor=\"name\">Name</label>\n            <input\n              id=\"name\"\n              type=\"text\"\n              value={name}\n              onChange={(e) => setName(e.target.value)}\n            />\n            {errors.name && <div className=\"contact-form-error\">{errors.name}</div>}\n          </div>\n          <div>\n            <label htmlFor=\"email\">Email</label>\n            <input\n              id=\"email\"\n              type=\"email\"\n              value={email}\n              onChange={(e) => setEmail(e.target.value)}\n            />\n            {errors.email && <div className=\"contact-form-error\">{errors.email}</div>}\n          </div>\n          <div>\n            <label htmlFor=\"message\">Message</label>\n            <textarea\n              id=\"message\"\n              value={message}\n              onChange={(e) => setMessage(e.target.value)}\n            />\n            {errors.message && <div className=\"contact-form-error\">{errors.message}</div>}\n          </div>\n          <button type=\"submit\" className=\"contact-submit-btn\">Send Message</button>\n        </form>\n      </div>\n    </div>\n  );\n}\n",
+  "folded": [
+   {
+    "t": "del",
+    "n": 1,
+    "s": "import { useState } from 'react';"
+   },
+   {
+    "t": "ctx",
+    "n": 2,
+    "s": "import './Contact.css';"
+   },
+   {
+    "t": "ctx",
+    "n": 3,
+    "s": ""
+   },
+   {
+    "t": "ctx",
+    "n": 4,
+    "s": "export default function Contact() {"
+   },
+   {
+    "t": "del",
+    "n": 5,
+    "s": "  const [name, setName] = useState('');"
+   },
+   {
+    "t": "del",
+    "n": 6,
+    "s": "  const [email, setEmail] = useState('');"
+   },
+   {
+    "t": "del",
+    "n": 7,
+    "s": "  const [message, setMessage] = useState('');"
+   },
+   {
+    "t": "fold",
+    "hidden": 21,
+    "kind": "del"
+   },
+   {
+    "t": "del",
+    "n": 29,
+    "s": "    }"
+   },
+   {
+    "t": "del",
+    "n": 30,
+    "s": "  };"
+   },
+   {
+    "t": "del",
+    "n": 31,
+    "s": ""
+   },
+   {
+    "t": "ctx",
+    "n": 32,
+    "s": "  return ("
+   },
+   {
+    "t": "ctx",
+    "n": 33,
+    "s": "    <div className=\"main-content\">"
+   },
+   {
+    "t": "del",
+    "n": 34,
+    "s": "      <div className=\"contact-panel\">"
+   },
+   {
+    "t": "del",
+    "n": 35,
+    "s": "        <h2 className=\"contact-panel-heading\">Contact Us</h2>"
+   },
+   {
+    "t": "ctx",
+    "n": 36,
+    "s": "        <div className=\"contact-info-line\">"
+   },
+   {
+    "t": "ctx",
+    "n": 37,
+    "s": "          <strong>Address:</strong> 123 Wellness Way, Riverside, CA 92501"
+   },
+   {
+    "t": "fold",
+    "hidden": 5
+   },
+   {
+    "t": "ctx",
+    "n": 43,
+    "s": "          <strong>Email:</strong> info@riversideclinical.example"
+   },
+   {
+    "t": "ctx",
+    "n": 44,
+    "s": "        </div>"
+   },
+   {
+    "t": "del",
+    "n": 45,
+    "s": "      </div>"
+   },
+   {
+    "t": "ctx",
+    "n": 46,
+    "s": ""
+   },
+   {
+    "t": "del",
+    "n": 47,
+    "s": "      <div className=\"contact-panel\">"
+   },
+   {
+    "t": "del",
+    "n": 48,
+    "s": "        <h2 className=\"contact-panel-heading\">Send Us a Message</h2>"
+   },
+   {
+    "t": "del",
+    "n": 49,
+    "s": "        {submitted && ("
+   },
+   {
+    "t": "fold",
+    "hidden": 34,
+    "kind": "del"
+   },
+   {
+    "t": "del",
+    "n": 84,
+    "s": "          <button type=\"submit\" className=\"contact-submit-btn\">Send Message</button>"
+   },
+   {
+    "t": "del",
+    "n": 85,
+    "s": "        </form>"
+   },
+   {
+    "t": "del",
+    "n": 86,
+    "s": "      </div>"
+   },
+   {
+    "t": "ctx",
+    "n": 87,
+    "s": "    </div>"
+   },
+   {
+    "t": "ctx",
+    "n": 88,
+    "s": "  );"
+   },
+   {
+    "t": "ctx",
+    "n": 89,
+    "s": "}"
+   }
+  ]
+ },
+ "after": {
+  "label": "after migrating to the library",
+  "lines": 24,
+  "code": "import { Section, ContactForm } from '/home/lib/src/index.js';\nimport './Contact.css';\n\nexport default function Contact() {\n  return (\n    <div className=\"main-content\">\n      <Section heading=\"Contact Us\">\n        <div className=\"contact-info-line\">\n          <strong>Address:</strong> 123 Wellness Way, Riverside, CA 92501\n        </div>\n        <div className=\"contact-info-line\">\n          <strong>Phone:</strong> (555) 123-4567\n        </div>\n        <div className=\"contact-info-line\">\n          <strong>Email:</strong> info@riversideclinical.example\n        </div>\n      </Section>\n\n      <Section heading=\"Send Us a Message\">\n        <ContactForm submitLabel=\"Send Message\" />\n      </Section>\n    </div>\n  );\n}\n",
+  "folded": [
+   {
+    "t": "add",
+    "n": 1,
+    "s": "import { Section, ContactForm } from '/home/lib/src/index.js';"
+   },
+   {
+    "t": "ctx",
+    "n": 2,
+    "s": "import './Contact.css';"
+   },
+   {
+    "t": "ctx",
+    "n": 3,
+    "s": ""
+   },
+   {
+    "t": "ctx",
+    "n": 4,
+    "s": "export default function Contact() {"
+   },
+   {
+    "t": "ctx",
+    "n": 5,
+    "s": "  return ("
+   },
+   {
+    "t": "ctx",
+    "n": 6,
+    "s": "    <div className=\"main-content\">"
+   },
+   {
+    "t": "add",
+    "n": 7,
+    "s": "      <Section heading=\"Contact Us\">"
+   },
+   {
+    "t": "ctx",
+    "n": 8,
+    "s": "        <div className=\"contact-info-line\">"
+   },
+   {
+    "t": "ctx",
+    "n": 9,
+    "s": "          <strong>Address:</strong> 123 Wellness Way, Riverside, CA 92501"
+   },
+   {
+    "t": "fold",
+    "hidden": 5
+   },
+   {
+    "t": "ctx",
+    "n": 15,
+    "s": "          <strong>Email:</strong> info@riversideclinical.example"
+   },
+   {
+    "t": "ctx",
+    "n": 16,
+    "s": "        </div>"
+   },
+   {
+    "t": "add",
+    "n": 17,
+    "s": "      </Section>"
+   },
+   {
+    "t": "ctx",
+    "n": 18,
+    "s": ""
+   },
+   {
+    "t": "add",
+    "n": 19,
+    "s": "      <Section heading=\"Send Us a Message\">"
+   },
+   {
+    "t": "add",
+    "n": 20,
+    "s": "        <ContactForm submitLabel=\"Send Message\" />"
+   },
+   {
+    "t": "add",
+    "n": 21,
+    "s": "      </Section>"
+   },
+   {
+    "t": "ctx",
+    "n": 22,
+    "s": "    </div>"
+   },
+   {
+    "t": "ctx",
+    "n": 23,
+    "s": "  );"
+   },
+   {
+    "t": "ctx",
+    "n": 24,
+    "s": "}"
+   }
+  ]
+ },
+ "diff": [
+  {
+   "header": "@@ -1,38 +1,10 @@",
+   "lines": [
+    {
+     "t": "del",
+     "s": "import { useState } from 'react';"
+    },
+    {
+     "t": "add",
+     "s": "import { Section, ContactForm } from '/home/lib/src/index.js';"
+    },
+    {
+     "t": "ctx",
+     "s": "import './Contact.css';"
+    },
+    {
+     "t": "ctx",
+     "s": ""
+    },
+    {
+     "t": "ctx",
+     "s": "export default function Contact() {"
+    },
+    {
+     "t": "del",
+     "s": "  const [name, setName] = useState('');"
+    },
+    {
+     "t": "del",
+     "s": "  const [email, setEmail] = useState('');"
+    },
+    {
+     "t": "del",
+     "s": "  const [message, setMessage] = useState('');"
+    },
+    {
+     "t": "del",
+     "s": "  const [errors, setErrors] = useState({});"
+    },
+    {
+     "t": "del",
+     "s": "  const [submitted, setSubmitted] = useState(false);"
+    },
+    {
+     "t": "del",
+     "s": ""
+    },
+    {
+     "t": "del",
+     "s": "  const validate = () => {"
+    },
+    {
+     "t": "del",
+     "s": "    const errs = {};"
+    },
+    {
+     "t": "del",
+     "s": "    if (!name.trim()) errs.name = 'Name is required';"
+    },
+    {
+     "t": "del",
+     "s": "    if (!email.trim()) errs.email = 'Email is required';"
+    },
+    {
+     "t": "del",
+     "s": "    if (!message.trim()) errs.message = 'Message is required';"
+    },
+    {
+     "t": "del",
+     "s": "    return errs;"
+    },
+    {
+     "t": "del",
+     "s": "  };"
+    },
+    {
+     "t": "del",
+     "s": ""
+    },
+    {
+     "t": "del",
+     "s": "  const handleSubmit = (e) => {"
+    },
+    {
+     "t": "del",
+     "s": "    e.preventDefault();"
+    },
+    {
+     "t": "del",
+     "s": "    const errs = validate();"
+    },
+    {
+     "t": "del",
+     "s": "    setErrors(errs);"
+    },
+    {
+     "t": "del",
+     "s": "    if (Object.keys(errs).length === 0) {"
+    },
+    {
+     "t": "del",
+     "s": "      // In-memory submission (no backend)"
+    },
+    {
+     "t": "del",
+     "s": "      setSubmitted(true);"
+    },
+    {
+     "t": "del",
+     "s": "      setName('');"
+    },
+    {
+     "t": "del",
+     "s": "      setEmail('');"
+    },
+    {
+     "t": "del",
+     "s": "      setMessage('');"
+    },
+    {
+     "t": "del",
+     "s": "    }"
+    },
+    {
+     "t": "del",
+     "s": "  };"
+    },
+    {
+     "t": "del",
+     "s": ""
+    },
+    {
+     "t": "ctx",
+     "s": "  return ("
+    },
+    {
+     "t": "ctx",
+     "s": "    <div className=\"main-content\">"
+    },
+    {
+     "t": "del",
+     "s": "      <div className=\"contact-panel\">"
+    },
+    {
+     "t": "del",
+     "s": "        <h2 className=\"contact-panel-heading\">Contact Us</h2>"
+    },
+    {
+     "t": "add",
+     "s": "      <Section heading=\"Contact Us\">"
+    },
+    {
+     "t": "ctx",
+     "s": "        <div className=\"contact-info-line\">"
+    },
+    {
+     "t": "ctx",
+     "s": "          <strong>Address:</strong> 123 Wellness Way, Riverside, CA 92501"
+    },
+    {
+     "t": "ctx",
+     "s": "        </div>"
+    }
+   ]
+  },
+  {
+   "header": "@@ -42,48 +14,11 @@",
+   "lines": [
+    {
+     "t": "ctx",
+     "s": "        <div className=\"contact-info-line\">"
+    },
+    {
+     "t": "ctx",
+     "s": "          <strong>Email:</strong> info@riversideclinical.example"
+    },
+    {
+     "t": "ctx",
+     "s": "        </div>"
+    },
+    {
+     "t": "del",
+     "s": "      </div>"
+    },
+    {
+     "t": "add",
+     "s": "      </Section>"
+    },
+    {
+     "t": "ctx",
+     "s": ""
+    },
+    {
+     "t": "del",
+     "s": "      <div className=\"contact-panel\">"
+    },
+    {
+     "t": "del",
+     "s": "        <h2 className=\"contact-panel-heading\">Send Us a Message</h2>"
+    },
+    {
+     "t": "del",
+     "s": "        {submitted && ("
+    },
+    {
+     "t": "del",
+     "s": "          <p style={{ color: '#2e7d32', marginBottom: '1rem', fontWeight: 600 }}>"
+    },
+    {
+     "t": "del",
+     "s": "            Thank you! Your message has been sent."
+    },
+    {
+     "t": "del",
+     "s": "          </p>"
+    },
+    {
+     "t": "del",
+     "s": "        )}"
+    },
+    {
+     "t": "del",
+     "s": "        <form className=\"contact-form\" onSubmit={handleSubmit}>"
+    },
+    {
+     "t": "del",
+     "s": "          <div>"
+    },
+    {
+     "t": "del",
+     "s": "            <label htmlFor=\"name\">Name</label>"
+    },
+    {
+     "t": "del",
+     "s": "            <input"
+    },
+    {
+     "t": "del",
+     "s": "              id=\"name\""
+    },
+    {
+     "t": "del",
+     "s": "              type=\"text\""
+    },
+    {
+     "t": "del",
+     "s": "              value={name}"
+    },
+    {
+     "t": "del",
+     "s": "              onChange={(e) => setName(e.target.value)}"
+    },
+    {
+     "t": "del",
+     "s": "            />"
+    },
+    {
+     "t": "del",
+     "s": "            {errors.name && <div className=\"contact-form-error\">{errors.name}</div>}"
+    },
+    {
+     "t": "del",
+     "s": "          </div>"
+    },
+    {
+     "t": "del",
+     "s": "          <div>"
+    },
+    {
+     "t": "del",
+     "s": "            <label htmlFor=\"email\">Email</label>"
+    },
+    {
+     "t": "del",
+     "s": "            <input"
+    },
+    {
+     "t": "del",
+     "s": "              id=\"email\""
+    },
+    {
+     "t": "del",
+     "s": "              type=\"email\""
+    },
+    {
+     "t": "del",
+     "s": "              value={email}"
+    },
+    {
+     "t": "del",
+     "s": "              onChange={(e) => setEmail(e.target.value)}"
+    },
+    {
+     "t": "del",
+     "s": "            />"
+    },
+    {
+     "t": "del",
+     "s": "            {errors.email && <div className=\"contact-form-error\">{errors.email}</div>}"
+    },
+    {
+     "t": "del",
+     "s": "          </div>"
+    },
+    {
+     "t": "del",
+     "s": "          <div>"
+    },
+    {
+     "t": "del",
+     "s": "            <label htmlFor=\"message\">Message</label>"
+    },
+    {
+     "t": "del",
+     "s": "            <textarea"
+    },
+    {
+     "t": "del",
+     "s": "              id=\"message\""
+    },
+    {
+     "t": "del",
+     "s": "              value={message}"
+    },
+    {
+     "t": "del",
+     "s": "              onChange={(e) => setMessage(e.target.value)}"
+    },
+    {
+     "t": "del",
+     "s": "            />"
+    },
+    {
+     "t": "del",
+     "s": "            {errors.message && <div className=\"contact-form-error\">{errors.message}</div>}"
+    },
+    {
+     "t": "del",
+     "s": "          </div>"
+    },
+    {
+     "t": "del",
+     "s": "          <button type=\"submit\" className=\"contact-submit-btn\">Send Message</button>"
+    },
+    {
+     "t": "del",
+     "s": "        </form>"
+    },
+    {
+     "t": "del",
+     "s": "      </div>"
+    },
+    {
+     "t": "add",
+     "s": "      <Section heading=\"Send Us a Message\">"
+    },
+    {
+     "t": "add",
+     "s": "        <ContactForm submitLabel=\"Send Message\" />"
+    },
+    {
+     "t": "add",
+     "s": "      </Section>"
+    },
+    {
+     "t": "ctx",
+     "s": "    </div>"
+    },
+    {
+     "t": "ctx",
+     "s": "  );"
+    },
+    {
+     "t": "ctx",
+     "s": "}"
+    }
+   ]
+  }
+ ],
+ "stats": {
+  "added": 6,
+  "removed": 71
+ },
+ "file": "src/pages/Contact.jsx",
+ "app": "task 000015",
+ "tag": "sla-ours-c2-t3"
+}

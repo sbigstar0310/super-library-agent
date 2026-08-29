@@ -1,0 +1,12 @@
+name: webgen
+language: js
+code_extensions: ["*.js", "*.jsx", "*.ts", "*.tsx", "*.css", "*.html"]
+ignore_dirs: ["node_modules", "dist", "shots", "embeddings", ".cocoindex_code"]
+ignore_files: ["package-lock.json", "pnpm-lock.yaml", "yarn.lock", "bun.lockb"]
+marker_files: ["package.json"]
+dep_strategy: js_es6_with_barrel
+lib_layout:
+  src_subdir: src
+  barrel_specifier: null
+joiner: "\n"
+max_file_size_kb: null

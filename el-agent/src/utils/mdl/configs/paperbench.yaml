@@ -1,0 +1,26 @@
+name: paperbench
+language: python
+code_extensions: ["*.py"]
+ignore_dirs:
+  - "__pycache__"
+  - ".venv"
+  - "venv"
+  - ".git"
+  - ".pytest_cache"
+  - ".mypy_cache"
+  - "node_modules"
+  - ".ruff_cache"
+  - "/data/"
+ignore_files: []
+marker_files:
+  - "requirements.txt"
+  - "pyproject.toml"
+  - "README.md"
+  - "setup.cfg"
+  - "setup.py"
+dep_strategy: python_ast
+lib_layout:
+  src_subdir: null
+  barrel_specifier: null
+joiner: "\n"
+max_file_size_kb: 100

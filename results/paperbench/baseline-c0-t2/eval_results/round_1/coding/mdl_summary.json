@@ -1,0 +1,872 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c0-t2/final/round_1/coding/tasks/fre/submission",
+      "app_nll": 4875.8116,
+      "library_nll": 0.0,
+      "nll_per_token": 0.4132,
+      "perplexity": 1.5117,
+      "total_tokens": 11800,
+      "library_tokens": 0,
+      "app_tokens": 11800,
+      "file_details": [
+        {
+          "rel_path": "evaluate.py",
+          "nll": 612.4481,
+          "tokens": 1223,
+          "nll_per_token": 0.5008,
+          "dep_paths": [
+            "fre/config.py",
+            "fre/agent.py",
+            "fre/reward_functions.py",
+            "fre/utils.py"
+          ]
+        },
+        {
+          "rel_path": "fre/__init__.py",
+          "nll": 28.1589,
+          "tokens": 70,
+          "nll_per_token": 0.4023,
+          "dep_paths": [
+            "fre/encoder.py",
+            "fre/decoder.py",
+            "fre/reward_functions.py",
+            "fre/iql.py",
+            "fre/agent.py",
+            "fre/config.py"
+          ]
+        },
+        {
+          "rel_path": "fre/agent.py",
+          "nll": 455.1725,
+          "tokens": 1369,
+          "nll_per_token": 0.3325,
+          "dep_paths": [
+            "fre/encoder.py",
+            "fre/decoder.py",
+            "fre/iql.py",
+            "fre/reward_functions.py",
+            "fre/config.py"
+          ]
+        },
+        {
+          "rel_path": "fre/config.py",
+          "nll": 412.167,
+          "tokens": 409,
+          "nll_per_token": 1.0077,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "fre/decoder.py",
+          "nll": 119.4797,
+          "tokens": 192,
+          "nll_per_token": 0.6223,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "fre/encoder.py",
+          "nll": 356.8213,
+          "tokens": 560,
+          "nll_per_token": 0.6372,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "fre/iql.py",
+          "nll": 479.9176,
+          "tokens": 1307,
+          "nll_per_token": 0.3672,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "fre/reward_functions.py",
+          "nll": 824.545,
+          "tokens": 2136,
+          "nll_per_token": 0.386,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "fre/utils.py",
+          "nll": 263.1058,
+          "tokens": 564,
+          "nll_per_token": 0.4665,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "run_experiment.py",
+          "nll": 711.4404,
+          "tokens": 2173,
+          "nll_per_token": 0.3274,
+          "dep_paths": [
+            "fre/config.py",
+            "fre/agent.py",
+            "fre/reward_functions.py",
+            "fre/utils.py"
+          ]
+        },
+        {
+          "rel_path": "train_encoder.py",
+          "nll": 277.3829,
+          "tokens": 795,
+          "nll_per_token": 0.3489,
+          "dep_paths": [
+            "fre/config.py",
+            "fre/agent.py",
+            "fre/reward_functions.py",
+            "fre/utils.py"
+          ]
+        },
+        {
+          "rel_path": "train_policy.py",
+          "nll": 335.1725,
+          "tokens": 1002,
+          "nll_per_token": 0.3345,
+          "dep_paths": [
+            "fre/config.py",
+            "fre/agent.py",
+            "fre/reward_functions.py",
+            "fre/utils.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c0-t2/final/round_1/coding/tasks/ftrl/submission",
+      "app_nll": 8145.4241,
+      "library_nll": 0.0,
+      "nll_per_token": 0.3543,
+      "perplexity": 1.4252,
+      "total_tokens": 22991,
+      "library_tokens": 0,
+      "app_tokens": 22991,
+      "file_details": [
+        {
+          "rel_path": "experiments/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/montezuma.py",
+          "nll": 685.72,
+          "tokens": 2148,
+          "nll_per_token": 0.3192,
+          "dep_paths": [
+            "src/models/cnn.py",
+            "src/models/mlp.py",
+            "src/agents/rnd_agent.py",
+            "src/retention/behavioral_cloning.py",
+            "src/retention/ewc.py",
+            "src/utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/net_hack.py",
+          "nll": 768.3768,
+          "tokens": 2338,
+          "nll_per_token": 0.3286,
+          "dep_paths": [
+            "src/models/nethack_model.py",
+            "src/retention/behavioral_cloning.py",
+            "src/retention/kickstarting.py",
+            "src/retention/ewc.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/robotic_sequence.py",
+          "nll": 797.3284,
+          "tokens": 2397,
+          "nll_per_token": 0.3326,
+          "dep_paths": [
+            "src/models/mlp.py",
+            "src/algorithms/sac.py",
+            "src/retention/behavioral_cloning.py",
+            "src/retention/ewc.py",
+            "src/retention/episodic_memory.py",
+            "src/utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/toy_examples.py",
+          "nll": 732.4845,
+          "tokens": 1597,
+          "nll_per_token": 0.4587,
+          "dep_paths": [
+            "src/environments/toy_mdp.py",
+            "src/environments/apple_retrieval.py",
+            "src/algorithms/reinforce.py",
+            "src/models/mlp.py"
+          ]
+        },
+        {
+          "rel_path": "run_toy_experiments.py",
+          "nll": 53.187,
+          "tokens": 89,
+          "nll_per_token": 0.5976,
+          "dep_paths": [
+            "experiments/toy_examples.py"
+          ]
+        },
+        {
+          "rel_path": "src/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/agents/__init__.py",
+          "nll": 24.8494,
+          "tokens": 47,
+          "nll_per_token": 0.5287,
+          "dep_paths": [
+            "src/agents/ppo_agent.py",
+            "src/agents/sac_agent.py",
+            "src/agents/rnd_agent.py"
+          ]
+        },
+        {
+          "rel_path": "src/agents/ppo_agent.py",
+          "nll": 319.2638,
+          "tokens": 1486,
+          "nll_per_token": 0.2148,
+          "dep_paths": [
+            "src/algorithms/ppo.py",
+            "src/models/mlp.py",
+            "src/retention/behavioral_cloning.py",
+            "src/retention/kickstarting.py",
+            "src/retention/ewc.py"
+          ]
+        },
+        {
+          "rel_path": "src/agents/rnd_agent.py",
+          "nll": 365.2865,
+          "tokens": 1071,
+          "nll_per_token": 0.3411,
+          "dep_paths": [
+            "src/algorithms/ppo.py",
+            "src/models/cnn.py",
+            "src/models/mlp.py"
+          ]
+        },
+        {
+          "rel_path": "src/agents/sac_agent.py",
+          "nll": 360.118,
+          "tokens": 1740,
+          "nll_per_token": 0.207,
+          "dep_paths": [
+            "src/algorithms/sac.py",
+            "src/models/mlp.py",
+            "src/retention/behavioral_cloning.py",
+            "src/retention/ewc.py",
+            "src/retention/episodic_memory.py"
+          ]
+        },
+        {
+          "rel_path": "src/algorithms/__init__.py",
+          "nll": 21.8953,
+          "tokens": 42,
+          "nll_per_token": 0.5213,
+          "dep_paths": [
+            "src/algorithms/ppo.py",
+            "src/algorithms/sac.py",
+            "src/algorithms/reinforce.py"
+          ]
+        },
+        {
+          "rel_path": "src/algorithms/ppo.py",
+          "nll": 340.9824,
+          "tokens": 1127,
+          "nll_per_token": 0.3026,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/algorithms/reinforce.py",
+          "nll": 144.5325,
+          "tokens": 396,
+          "nll_per_token": 0.365,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/algorithms/sac.py",
+          "nll": 340.7096,
+          "tokens": 1242,
+          "nll_per_token": 0.2743,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/environments/__init__.py",
+          "nll": 27.6128,
+          "tokens": 70,
+          "nll_per_token": 0.3945,
+          "dep_paths": [
+            "src/environments/toy_mdp.py",
+            "src/environments/apple_retrieval.py"
+          ]
+        },
+        {
+          "rel_path": "src/environments/apple_retrieval.py",
+          "nll": 297.0697,
+          "tokens": 543,
+          "nll_per_token": 0.5471,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/environments/toy_mdp.py",
+          "nll": 387.3956,
+          "tokens": 629,
+          "nll_per_token": 0.6159,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/models/__init__.py",
+          "nll": 28.0073,
+          "tokens": 74,
+          "nll_per_token": 0.3785,
+          "dep_paths": [
+            "src/models/mlp.py",
+            "src/models/cnn.py",
+            "src/models/nethack_model.py"
+          ]
+        },
+        {
+          "rel_path": "src/models/cnn.py",
+          "nll": 173.3775,
+          "tokens": 525,
+          "nll_per_token": 0.3302,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/models/mlp.py",
+          "nll": 208.8696,
+          "tokens": 1168,
+          "nll_per_token": 0.1788,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/models/nethack_model.py",
+          "nll": 294.0051,
+          "tokens": 782,
+          "nll_per_token": 0.376,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/retention/__init__.py",
+          "nll": 24.5006,
+          "tokens": 64,
+          "nll_per_token": 0.3828,
+          "dep_paths": [
+            "src/retention/behavioral_cloning.py",
+            "src/retention/kickstarting.py",
+            "src/retention/ewc.py",
+            "src/retention/episodic_memory.py"
+          ]
+        },
+        {
+          "rel_path": "src/retention/behavioral_cloning.py",
+          "nll": 184.8519,
+          "tokens": 336,
+          "nll_per_token": 0.5502,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/retention/episodic_memory.py",
+          "nll": 170.1275,
+          "tokens": 573,
+          "nll_per_token": 0.2969,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/retention/ewc.py",
+          "nll": 227.114,
+          "tokens": 422,
+          "nll_per_token": 0.5382,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/retention/kickstarting.py",
+          "nll": 247.9659,
+          "tokens": 449,
+          "nll_per_token": 0.5523,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/utils/__init__.py",
+          "nll": 45.3499,
+          "tokens": 67,
+          "nll_per_token": 0.6769,
+          "dep_paths": [
+            "src/utils/cka.py",
+            "src/utils/metrics.py",
+            "src/utils/visualization.py"
+          ]
+        },
+        {
+          "rel_path": "src/utils/cka.py",
+          "nll": 208.3663,
+          "tokens": 434,
+          "nll_per_token": 0.4801,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/utils/metrics.py",
+          "nll": 292.2612,
+          "tokens": 353,
+          "nll_per_token": 0.8279,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/utils/visualization.py",
+          "nll": 373.8149,
+          "tokens": 782,
+          "nll_per_token": 0.478,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c0-t2/final/round_1/coding/tasks/rice/submission",
+      "app_nll": 7697.6991,
+      "library_nll": 0.0,
+      "nll_per_token": 0.3854,
+      "perplexity": 1.4703,
+      "total_tokens": 19971,
+      "library_tokens": 0,
+      "app_tokens": 19971,
+      "file_details": [
+        {
+          "rel_path": "rice/__init__.py",
+          "nll": 12.7419,
+          "tokens": 10,
+          "nll_per_token": 1.2742,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/core/__init__.py",
+          "nll": 25.4703,
+          "tokens": 73,
+          "nll_per_token": 0.3489,
+          "dep_paths": [
+            "rice/core/mask_network.py",
+            "rice/core/rice_refine.py",
+            "rice/core/state_mask.py",
+            "rice/core/baselines.py",
+            "rice/core/fidelity.py",
+            "rice/core/rnd.py"
+          ]
+        },
+        {
+          "rel_path": "rice/core/baselines.py",
+          "nll": 307.083,
+          "tokens": 2941,
+          "nll_per_token": 0.1044,
+          "dep_paths": [
+            "rice/utils/buffer.py",
+            "rice/utils/helpers.py",
+            "rice/core/rice_refine.py"
+          ]
+        },
+        {
+          "rel_path": "rice/core/fidelity.py",
+          "nll": 518.0227,
+          "tokens": 934,
+          "nll_per_token": 0.5546,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/core/mask_network.py",
+          "nll": 476.3053,
+          "tokens": 1197,
+          "nll_per_token": 0.3979,
+          "dep_paths": [
+            "rice/utils/buffer.py",
+            "rice/utils/helpers.py"
+          ]
+        },
+        {
+          "rel_path": "rice/core/rice_refine.py",
+          "nll": 742.8921,
+          "tokens": 2032,
+          "nll_per_token": 0.3656,
+          "dep_paths": [
+            "rice/core/rnd.py",
+            "rice/utils/buffer.py",
+            "rice/utils/helpers.py"
+          ]
+        },
+        {
+          "rel_path": "rice/core/rnd.py",
+          "nll": 205.9521,
+          "tokens": 611,
+          "nll_per_token": 0.3371,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/core/state_mask.py",
+          "nll": 585.0106,
+          "tokens": 1288,
+          "nll_per_token": 0.4542,
+          "dep_paths": [
+            "rice/utils/buffer.py",
+            "rice/utils/helpers.py"
+          ]
+        },
+        {
+          "rel_path": "rice/envs/__init__.py",
+          "nll": 31.0005,
+          "tokens": 44,
+          "nll_per_token": 0.7046,
+          "dep_paths": [
+            "rice/envs/mujoco_wrappers.py",
+            "rice/envs/cage_challenge.py",
+            "rice/envs/driving_env.py"
+          ]
+        },
+        {
+          "rel_path": "rice/envs/cage_challenge.py",
+          "nll": 212.7674,
+          "tokens": 318,
+          "nll_per_token": 0.6691,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/envs/driving_env.py",
+          "nll": 444.7945,
+          "tokens": 922,
+          "nll_per_token": 0.4824,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/envs/mujoco_wrappers.py",
+          "nll": 236.1426,
+          "tokens": 496,
+          "nll_per_token": 0.4761,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/experiments/__init__.py",
+          "nll": 12.08,
+          "tokens": 21,
+          "nll_per_token": 0.5752,
+          "dep_paths": [
+            "rice/experiments/config.py"
+          ]
+        },
+        {
+          "rel_path": "rice/experiments/config.py",
+          "nll": 359.0793,
+          "tokens": 372,
+          "nll_per_token": 0.9653,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/experiments/experiment_1.py",
+          "nll": 319.8312,
+          "tokens": 845,
+          "nll_per_token": 0.3785,
+          "dep_paths": [
+            "rice/core/mask_network.py",
+            "rice/core/state_mask.py",
+            "rice/core/fidelity.py",
+            "rice/core/rice_refine.py",
+            "rice/envs/mujoco_wrappers.py",
+            "rice/utils/helpers.py",
+            "rice/utils/logger.py",
+            "rice/experiments/config.py"
+          ]
+        },
+        {
+          "rel_path": "rice/experiments/experiment_2.py",
+          "nll": 338.2376,
+          "tokens": 1062,
+          "nll_per_token": 0.3185,
+          "dep_paths": [
+            "rice/core/mask_network.py",
+            "rice/core/rice_refine.py",
+            "rice/core/baselines.py",
+            "rice/envs/mujoco_wrappers.py",
+            "rice/utils/helpers.py",
+            "rice/utils/logger.py",
+            "rice/experiments/config.py"
+          ]
+        },
+        {
+          "rel_path": "rice/experiments/experiment_3.py",
+          "nll": 428.6739,
+          "tokens": 967,
+          "nll_per_token": 0.4433,
+          "dep_paths": [
+            "rice/core/mask_network.py",
+            "rice/core/state_mask.py",
+            "rice/core/rice_refine.py",
+            "rice/envs/mujoco_wrappers.py",
+            "rice/utils/helpers.py",
+            "rice/utils/logger.py",
+            "rice/experiments/config.py"
+          ]
+        },
+        {
+          "rel_path": "rice/experiments/experiment_4.py",
+          "nll": 497.9835,
+          "tokens": 1063,
+          "nll_per_token": 0.4685,
+          "dep_paths": [
+            "rice/core/mask_network.py",
+            "rice/core/rice_refine.py",
+            "rice/core/baselines.py",
+            "rice/envs/mujoco_wrappers.py",
+            "rice/utils/helpers.py",
+            "rice/utils/logger.py",
+            "rice/experiments/config.py"
+          ]
+        },
+        {
+          "rel_path": "rice/experiments/experiment_5.py",
+          "nll": 392.4199,
+          "tokens": 1243,
+          "nll_per_token": 0.3157,
+          "dep_paths": [
+            "rice/core/mask_network.py",
+            "rice/core/rice_refine.py",
+            "rice/envs/mujoco_wrappers.py",
+            "rice/utils/helpers.py",
+            "rice/utils/logger.py",
+            "rice/experiments/config.py"
+          ]
+        },
+        {
+          "rel_path": "rice/experiments/visualize.py",
+          "nll": 519.7525,
+          "tokens": 1013,
+          "nll_per_token": 0.5131,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/run_all_experiments.py",
+          "nll": 540.7299,
+          "tokens": 1162,
+          "nll_per_token": 0.4653,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/utils/__init__.py",
+          "nll": 16.4368,
+          "tokens": 30,
+          "nll_per_token": 0.5479,
+          "dep_paths": [
+            "rice/utils/buffer.py",
+            "rice/utils/logger.py",
+            "rice/utils/helpers.py"
+          ]
+        },
+        {
+          "rel_path": "rice/utils/buffer.py",
+          "nll": 243.1121,
+          "tokens": 816,
+          "nll_per_token": 0.2979,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/utils/helpers.py",
+          "nll": 106.0177,
+          "tokens": 212,
+          "nll_per_token": 0.5001,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "rice/utils/logger.py",
+          "nll": 125.1619,
+          "tokens": 299,
+          "nll_per_token": 0.4186,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/baseline-c0-t2/final/round_1/coding/tasks/sapg/submission",
+      "app_nll": 5915.6454,
+      "library_nll": 0.0,
+      "nll_per_token": 0.367,
+      "perplexity": 1.4434,
+      "total_tokens": 16119,
+      "library_tokens": 0,
+      "app_tokens": 16119,
+      "file_details": [
+        {
+          "rel_path": "sapg/__init__.py",
+          "nll": 31.3458,
+          "tokens": 55,
+          "nll_per_token": 0.5699,
+          "dep_paths": [
+            "sapg/core/sapg.py",
+            "sapg/core/ppo.py",
+            "sapg/core/networks.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/analysis/__init__.py",
+          "nll": 19.5347,
+          "tokens": 32,
+          "nll_per_token": 0.6105,
+          "dep_paths": [
+            "sapg/analysis/diversity.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/analysis/diversity.py",
+          "nll": 392.5356,
+          "tokens": 772,
+          "nll_per_token": 0.5085,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "sapg/analysis/plotting.py",
+          "nll": 765.0937,
+          "tokens": 1646,
+          "nll_per_token": 0.4648,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "sapg/config/__init__.py",
+          "nll": 10.2174,
+          "tokens": 8,
+          "nll_per_token": 1.2772,
+          "dep_paths": [
+            "sapg/config/defaults.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/config/defaults.py",
+          "nll": 496.0349,
+          "tokens": 926,
+          "nll_per_token": 0.5357,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "sapg/core/__init__.py",
+          "nll": 27.3419,
+          "tokens": 61,
+          "nll_per_token": 0.4482,
+          "dep_paths": [
+            "sapg/core/sapg.py",
+            "sapg/core/ppo.py",
+            "sapg/core/networks.py",
+            "sapg/core/storage.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/core/networks.py",
+          "nll": 503.3555,
+          "tokens": 1862,
+          "nll_per_token": 0.2703,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "sapg/core/ppo.py",
+          "nll": 900.3179,
+          "tokens": 2320,
+          "nll_per_token": 0.3881,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "sapg/core/sapg.py",
+          "nll": 1059.5216,
+          "tokens": 2795,
+          "nll_per_token": 0.3791,
+          "dep_paths": [
+            "sapg/core/ppo.py",
+            "sapg/core/networks.py",
+            "sapg/core/storage.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/core/storage.py",
+          "nll": 189.1206,
+          "tokens": 786,
+          "nll_per_token": 0.2406,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "sapg/envs/__init__.py",
+          "nll": 15.4831,
+          "tokens": 17,
+          "nll_per_token": 0.9108,
+          "dep_paths": [
+            "sapg/envs/base_env.py",
+            "sapg/envs/synthetic_env.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/envs/base_env.py",
+          "nll": 83.7449,
+          "tokens": 124,
+          "nll_per_token": 0.6754,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "sapg/envs/synthetic_env.py",
+          "nll": 339.8084,
+          "tokens": 787,
+          "nll_per_token": 0.4318,
+          "dep_paths": [
+            "sapg/envs/base_env.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/run_experiments.py",
+          "nll": 382.5913,
+          "tokens": 1249,
+          "nll_per_token": 0.3063,
+          "dep_paths": [
+            "sapg/core/sapg.py",
+            "sapg/core/ppo.py",
+            "sapg/core/networks.py",
+            "sapg/analysis/diversity.py",
+            "sapg/config/defaults.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/train.py",
+          "nll": 577.5028,
+          "tokens": 2198,
+          "nll_per_token": 0.2627,
+          "dep_paths": [
+            "sapg/core/sapg.py",
+            "sapg/core/ppo.py",
+            "sapg/core/networks.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/utils/__init__.py",
+          "nll": 13.5527,
+          "tokens": 14,
+          "nll_per_token": 0.968,
+          "dep_paths": [
+            "sapg/utils/norm.py"
+          ]
+        },
+        {
+          "rel_path": "sapg/utils/norm.py",
+          "nll": 108.5426,
+          "tokens": 467,
+          "nll_per_token": 0.2324,
+          "dep_paths": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "sum_app_nll": 26634.5802,
+    "avg_library_nll": 0.0,
+    "mdl_nll": 26634.5802,
+    "total_apps": 4
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "task": "paperbench",
+    "tag": "baseline-c0-t1",
+    "phase": "coding",
+    "round": 1,
+    "language": "python",
+    "total_apps": 4,
+    "task_ids": [
+      "fre",
+      "ftrl",
+      "rice",
+      "sapg"
+    ],
+    "lib_included": false,
+    "total_loc": 7870,
+    "file_count": 74,
+    "verbosity": 0.8841168996188056,
+    "erosion": 0.2083376606708,
+    "mass.cc": 5402.7,
+    "per_app": [
+      {
+        "label": "fre",
+        "lib_included": false,
+        "total_loc": 2040,
+        "file_count": 17,
+        "verbosity": 0.9308823529411765,
+        "erosion": 0.2515432488415086,
+        "mass.cc": 1794.46
+      },
+      {
+        "label": "ftrl",
+        "lib_included": false,
+        "total_loc": 2416,
+        "file_count": 33,
+        "verbosity": 0.8948675496688742,
+        "erosion": 0.18911231643657317,
+        "mass.cc": 1390.03
+      },
+      {
+        "label": "rice",
+        "lib_included": false,
+        "total_loc": 1611,
+        "file_count": 14,
+        "verbosity": 0.904407200496586,
+        "erosion": 0.18216418090454273,
+        "mass.cc": 1304.82
+      },
+      {
+        "label": "sapg",
+        "lib_included": false,
+        "total_loc": 1803,
+        "file_count": 10,
+        "verbosity": 0.7986688851913477,
+        "erosion": 0.19010342246726247,
+        "mass.cc": 913.38
+      }
+    ],
+    "lib_only": null
+  }
+}

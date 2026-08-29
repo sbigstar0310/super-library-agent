@@ -1,0 +1,94 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-wc-c0-t2/final/round_4/apply/tasks/fre/submission",
+      "app_nll": 3930.6082,
+      "library_nll": 914.2647,
+      "nll_per_token": 0.3292,
+      "perplexity": 1.3899,
+      "total_tokens": 14715,
+      "library_tokens": 2920,
+      "app_tokens": 11795,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 3930.6082,
+          "tokens": 11795,
+          "nll_per_token": 0.3332
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-wc-c0-t2/final/round_4/apply/tasks/ftrl/submission",
+      "app_nll": 7326.8938,
+      "library_nll": 914.2647,
+      "nll_per_token": 0.318,
+      "perplexity": 1.3744,
+      "total_tokens": 25912,
+      "library_tokens": 2920,
+      "app_tokens": 22992,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 7326.8938,
+          "tokens": 22992,
+          "nll_per_token": 0.3187
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-wc-c0-t2/final/round_4/apply/tasks/rice/submission",
+      "app_nll": 5363.8521,
+      "library_nll": 914.2647,
+      "nll_per_token": 0.2953,
+      "perplexity": 1.3435,
+      "total_tokens": 21261,
+      "library_tokens": 2920,
+      "app_tokens": 18341,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 5363.8521,
+          "tokens": 18341,
+          "nll_per_token": 0.2925
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-wc-c0-t2/final/round_4/apply/tasks/sapg/submission",
+      "app_nll": 5325.6104,
+      "library_nll": 914.2647,
+      "nll_per_token": 0.2713,
+      "perplexity": 1.3116,
+      "total_tokens": 23002,
+      "library_tokens": 2920,
+      "app_tokens": 20082,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 5325.6104,
+          "tokens": 20082,
+          "nll_per_token": 0.2652
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "library_nll": 914.2647,
+    "library_tokens": 2920,
+    "sum_app_nll": 21946.9645,
+    "sum_app_tokens": 73210,
+    "mdl_nll": 22861.2292,
+    "total_tokens": 76130,
+    "nll_per_token": 0.3003,
+    "total_apps": 4
+  }
+}

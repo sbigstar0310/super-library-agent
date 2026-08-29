@@ -1,0 +1,216 @@
+{
+  "method": "manual_categorization",
+  "n_clusters": 6,
+  "clusters": [
+    {
+      "id": 0,
+      "size": 4,
+      "tasks": [
+        "fre",
+        "rice",
+        "sapg",
+        "ftrl"
+      ],
+      "members": [
+        {
+          "paper_id": "fre",
+          "title": "Unsupervised Zero-Shot Reinforcement Learning via Functional Reward Encodings"
+        },
+        {
+          "paper_id": "rice",
+          "title": "RICE: Breaking Through the Training Bottlenecks of Reinforcement Learning with Explanation"
+        },
+        {
+          "paper_id": "sapg",
+          "title": "SAPG: Split and Aggregate Policy Gradients"
+        },
+        {
+          "paper_id": "ftrl",
+          "title": "Fine-tuning Reinforcement Learning Models is Secretly a Forgetting Mitigation Problem"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "size": 4,
+      "tasks": [
+        "robust-clip",
+        "sample-specific-masks",
+        "lca-on-the-line",
+        "test-time-model-adaptation"
+      ],
+      "members": [
+        {
+          "paper_id": "robust-clip",
+          "title": "Robust CLIP: Unsupervised Adversarial Fine-Tuning of Vision Embeddings for Robust Large Vision-Language Models"
+        },
+        {
+          "paper_id": "sample-specific-masks",
+          "title": "Sample-specific Masks for Visual Reprogramming-based Prompting"
+        },
+        {
+          "paper_id": "lca-on-the-line",
+          "title": "LCA-on-the-Line: Benchmarking Out-of-Distribution Generalization with Class Taxonomies"
+        },
+        {
+          "paper_id": "test-time-model-adaptation",
+          "title": "Test-Time Model Adaptation with Only Forward Passes"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "size": 4,
+      "tasks": [
+        "mechanistic-understanding",
+        "what-will-my-model-forget",
+        "stay-on-topic-with-classifier-free-guidance",
+        "adaptive-pruning"
+      ],
+      "members": [
+        {
+          "paper_id": "mechanistic-understanding",
+          "title": "A Mechanistic Understanding of Alignment Algorithms: A Case Study on DPO and Toxicity"
+        },
+        {
+          "paper_id": "what-will-my-model-forget",
+          "title": "What Will My Model Forget? Forecasting Forgotten Examples in Language Model Refinement"
+        },
+        {
+          "paper_id": "stay-on-topic-with-classifier-free-guidance",
+          "title": "Stay on topic with Classifier-Free Guidance"
+        },
+        {
+          "paper_id": "adaptive-pruning",
+          "title": "APT: Adaptive Pruning and Tuning Pretrained Language Models for Efficient Training and Inference"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "size": 12,
+      "tasks": [
+        "fre",
+        "rice",
+        "sapg",
+        "ftrl",
+        "robust-clip",
+        "sample-specific-masks",
+        "lca-on-the-line",
+        "test-time-model-adaptation",
+        "mechanistic-understanding",
+        "what-will-my-model-forget",
+        "stay-on-topic-with-classifier-free-guidance",
+        "adaptive-pruning"
+      ],
+      "members": [
+        {
+          "paper_id": "robust-clip",
+          "title": "Robust CLIP: Unsupervised Adversarial Fine-Tuning of Vision Embeddings for Robust Large Vision-Language Models"
+        },
+        {
+          "paper_id": "sample-specific-masks",
+          "title": "Sample-specific Masks for Visual Reprogramming-based Prompting"
+        },
+        {
+          "paper_id": "lca-on-the-line",
+          "title": "LCA-on-the-Line: Benchmarking Out-of-Distribution Generalization with Class Taxonomies"
+        },
+        {
+          "paper_id": "test-time-model-adaptation",
+          "title": "Test-Time Model Adaptation with Only Forward Passes"
+        },
+        {
+          "paper_id": "mechanistic-understanding",
+          "title": "A Mechanistic Understanding of Alignment Algorithms: A Case Study on DPO and Toxicity"
+        },
+        {
+          "paper_id": "what-will-my-model-forget",
+          "title": "What Will My Model Forget? Forecasting Forgotten Examples in Language Model Refinement"
+        },
+        {
+          "paper_id": "stay-on-topic-with-classifier-free-guidance",
+          "title": "Stay on topic with Classifier-Free Guidance"
+        },
+        {
+          "paper_id": "adaptive-pruning",
+          "title": "APT: Adaptive Pruning and Tuning Pretrained Language Models for Efficient Training and Inference"
+        },
+        {
+          "paper_id": "mechanistic-understanding",
+          "title": "A Mechanistic Understanding of Alignment Algorithms: A Case Study on DPO and Toxicity"
+        },
+        {
+          "paper_id": "what-will-my-model-forget",
+          "title": "What Will My Model Forget? Forecasting Forgotten Examples in Language Model Refinement"
+        },
+        {
+          "paper_id": "stay-on-topic-with-classifier-free-guidance",
+          "title": "Stay on topic with Classifier-Free Guidance"
+        },
+        {
+          "paper_id": "adaptive-pruning",
+          "title": "APT: Adaptive Pruning and Tuning Pretrained Language Models for Efficient Training and Inference"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "size": 4,
+      "category": "Generative / Probabilistic Inference (diffusion & score-based)",
+      "tasks": [
+        "bridging-data-gaps",
+        "sequential-neural-score-estimation",
+        "stochastic-interpolants",
+        "all-in-one"
+      ],
+      "members": [
+        {
+          "paper_id": "bridging-data-gaps",
+          "title": "Bridging Data Gaps in Diffusion Models with Adversarial Noise-Based Transfer Learning"
+        },
+        {
+          "paper_id": "sequential-neural-score-estimation",
+          "title": "Sequential Neural Score Estimation: Likelihood-Free Inference with Conditional Score Based Diffusion Models"
+        },
+        {
+          "paper_id": "stochastic-interpolants",
+          "title": "Stochastic Interpolants with Data-Dependent Couplings"
+        },
+        {
+          "paper_id": "all-in-one",
+          "title": "All-in-one simulation-based inference"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "size": 4,
+      "category": "Diverse / Residual (low cross-task reuse; reported separately as a robustness probe)",
+      "tasks": [
+        "bam",
+        "pinn",
+        "lbcs",
+        "bbox"
+      ],
+      "members": [
+        {
+          "paper_id": "bam",
+          "title": "Batch and match: black-box variational inference with a score-based divergence"
+        },
+        {
+          "paper_id": "pinn",
+          "title": "Challenges in Training PINNs: A Loss Landscape Perspective"
+        },
+        {
+          "paper_id": "lbcs",
+          "title": "Refined Coreset Selection: Towards Minimal Coreset Size under Model Performance Constraints"
+        },
+        {
+          "paper_id": "bbox",
+          "title": "BBox-Adapter: Lightweight Adapting for Black-Box Large Language Models"
+        }
+      ]
+    }
+  ]
+}

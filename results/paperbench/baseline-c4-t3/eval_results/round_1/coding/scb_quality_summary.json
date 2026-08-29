@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "task": "paperbench",
+    "tag": "baseline-c4-t3",
+    "phase": "coding",
+    "round": 1,
+    "language": "python",
+    "total_apps": 4,
+    "task_ids": [
+      "all-in-one",
+      "bridging-data-gaps",
+      "sequential-neural-score-estimation",
+      "stochastic-interpolants"
+    ],
+    "lib_included": false,
+    "total_loc": 5597,
+    "file_count": 56,
+    "verbosity": 0.8665356440950509,
+    "erosion": 0.10429795445613209,
+    "mass.cc": 4067.01,
+    "per_app": [
+      {
+        "label": "all-in-one",
+        "lib_included": false,
+        "total_loc": 1973,
+        "file_count": 23,
+        "verbosity": 0.8819057273188039,
+        "erosion": 0.08771956475157505,
+        "mass.cc": 1521.8
+      },
+      {
+        "label": "bridging-data-gaps",
+        "lib_included": false,
+        "total_loc": 1205,
+        "file_count": 9,
+        "verbosity": 0.8248962655601659,
+        "erosion": 0.0,
+        "mass.cc": 776.24
+      },
+      {
+        "label": "sequential-neural-score-estimation",
+        "lib_included": false,
+        "total_loc": 977,
+        "file_count": 11,
+        "verbosity": 0.90992835209826,
+        "erosion": 0.0,
+        "mass.cc": 641.92
+      },
+      {
+        "label": "stochastic-interpolants",
+        "lib_included": false,
+        "total_loc": 1442,
+        "file_count": 13,
+        "verbosity": 0.8509015256588072,
+        "erosion": 0.2579211158368825,
+        "mass.cc": 1127.05
+      }
+    ],
+    "lib_only": null
+  }
+}

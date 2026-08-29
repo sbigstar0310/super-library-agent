@@ -1,0 +1,35 @@
+{
+ "per_app": {
+  "fre": {
+   "app_nll": 4816.3005,
+   "library_nll": 528.709,
+   "app_tokens": 11405,
+   "library_tokens": 1663
+  },
+  "ftrl": {
+   "app_nll": 8070.7836,
+   "library_nll": 528.709,
+   "app_tokens": 22377,
+   "library_tokens": 1663
+  },
+  "rice": {
+   "app_nll": 7583.7787,
+   "library_nll": 528.709,
+   "app_tokens": 19153,
+   "library_tokens": 1663
+  },
+  "sapg": {
+   "app_nll": 5837.9503,
+   "library_nll": 528.709,
+   "app_tokens": 15659,
+   "library_tokens": 1663
+  }
+ },
+ "summary": {
+  "sum_app_nll": 26308.8131,
+  "avg_library_nll": 528.709,
+  "mdl_nll": 26837.5221,
+  "total_tokens": 70257,
+  "total_apps": 4
+ }
+}

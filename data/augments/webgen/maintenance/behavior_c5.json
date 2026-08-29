@@ -1,0 +1,35 @@
+{
+  "suite": "c5",
+  "policy_file": "policy_c5.md",
+  "provenance": "Drafted spec-blind (instruction + layout_specs only) by a fresh agent on 2026-07-10; reviewed for feature-level wording. 000044/000083 keep their spec-native ID schemes (SCT-/C-) per policy's 'keep existing scheme' clause.",
+  "targets": {
+    "000022": {
+      "scope": "full",
+      "required_behavior": "Primary record types: customer service call logs (created via the New Call form) and clients (created via the New Client wizard, edited via the Clients screen) — prefixes CALL- for call logs and CLIENT- for clients. Creating a call log must produce a visible human-readable ID such as CALL-001; creating or saving a client must show an ID such as CLIENT-001. Every created or edited call log and client must display a \"Last updated\" timestamp that refreshes when the record changes (e.g. a call is closed or marked done, or a client is saved). Each create and update action must show a confirmation message. New call logs must be findable on the Open Calls and To-Do Calls views and counted in the call log reports; new clients must appear in the Clients list and in the New Call form's client selection. Existing call-type selection, recording flows, open/to-do views, reports, wizard steps, and permission control must remain intact."
+    },
+    "000023": {
+      "scope": "full",
+      "required_behavior": "Primary record type: sales leads, created via the \"New Lead\" modal and updated via the \"Edit Lead\" modal or the inline status control on the leads table — prefix LEAD-. Saving a new lead must display a human-readable ID such as LEAD-001 with the lead, and saving an edit or changing a lead's status must keep that ID visible. Each lead must show a \"Last updated\" timestamp or date that refreshes whenever the lead is edited or its status changes. Save actions in both modals and status updates must show a confirmation message. A created or updated lead must be findable via the leads table's search input and filter dropdowns, and must be reflected in the Reports view's pipeline tables. Automated message sending, templates, settings, reports, and advice content must not be removed or weakened."
+    },
+    "000044": {
+      "scope": "full",
+      "required_behavior": "Primary record type: registered products, created via the \"Register a New Product\" form and updated by logging checkpoints on the Track screen. The app already assigns products IDs of the form SCT-1001, which satisfies the prefixed-ID rule — keep the SCT- scheme and show the ID immediately upon registration along with the authentication code. Each product must display a \"Last updated\" line that refreshes whenever a new checkpoint is added. Registering a product and adding a checkpoint must each show a confirmation message. A newly registered or updated product must be findable via the Inquiry screen's search and category filter, selectable on the Track screen with its timeline updated, and reflected in the Statistics tiles and breakdowns. Verification by product ID + authentication code and all existing tracking/inquiry/statistics behavior must remain intact."
+    },
+    "000046": {
+      "scope": "full",
+      "required_behavior": "Per the instruction's emphasis on finances, patient information, and pharmacy inventory, the policy applies to three primary record types: patient electronic files (prefix PAT-), collected patient fees (prefix FEE-), and pharmacy medicines (prefix MED-). Adding a patient record, collecting a fee, or adding a medicine must display the new record with a human-readable ID (e.g. PAT-001, FEE-001, MED-001). Each such record must show a \"Last updated\" timestamp or date that refreshes if the record is modified. The add-patient, fee-collection, and add-medicine actions must each show a confirmation message. Created records must be findable in their own section's list (patient files, fees collected, pharmacy inventory) and reflected in the corresponding report tabs. Claims, daily reports, laboratory, theater, expenses, and all report tabs must keep their original behavior."
+    },
+    "000080": {
+      "scope": "full",
+      "required_behavior": "Primary record type: to-do tasks, created via the add-task input and updated via the per-row edit flow and the completion checkbox — prefix TASK-. Adding a task must display a human-readable ID such as TASK-001 on the task's row, and the ID must persist through edits and completion toggles. Each task must show a \"Last updated\" timestamp or date on its row, refreshed when the task is edited or its completed state changes. Adding a task, saving an edit, and completing/deleting a task must show a confirmation message. A created or updated task must be findable via the search input and under the correct All/Active/Completed filter, with the remaining-items counter still accurate. Existing add/edit/delete, filtering, searching, and clear-completed behavior must not be removed or weakened."
+    },
+    "000083": {
+      "scope": "full",
+      "required_behavior": "Primary record types: cases (browsed on the Case Files screen), real-time field reports, and work-hours entries. Cases already carry IDs of the form C-1001 — keep the C- scheme; reports and hours entries gain their own prefixed IDs, e.g. RPT-001 and HRS-001, displayed with each entry. Submitting a report or logging hours must show the new entry with its ID and a \"Last updated\" timestamp, and any case update must refresh a \"Last updated\" date on the case detail. Submit-report and log-hours actions must show a confirmation message. New reports must appear in the selected case's report history, new hours entries in the hours table with the total updated and reflected in the estimated expense sheet's labor line; cases remain findable in the case list with their status badges. Expense-sheet and service-assignment-sheet behavior must not be removed or weakened."
+    },
+    "000085": {
+      "scope": "full",
+      "required_behavior": "Per the instruction's emphasis on managing projects and documents, the policy applies to three primary record types: projects (prefix PRJ-), documents (prefix DOC-), and schedule tasks (prefix TASK-). Creating a project, adding a document, or adding a schedule task must display the new record with a human-readable ID (e.g. PRJ-001, DOC-001, TASK-001) in its row. Each project, document, and task must show a \"Last updated\" date or timestamp, refreshed when the record is edited (project edit, task done-toggle). Create and update actions for these types must show a confirmation message. New or updated projects must be findable in the Projects table and reflected in the dashboard KPI cards and progress panel; documents in the Documents table; tasks in the Schedule table and the dashboard's upcoming-tasks panel. Communication, estimates & job costing, time tracking, and resource management must keep their original behavior."
+    }
+  }
+}

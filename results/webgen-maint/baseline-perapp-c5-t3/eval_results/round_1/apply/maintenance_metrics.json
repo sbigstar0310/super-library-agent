@@ -1,0 +1,159 @@
+{
+  "maint_tag": "baseline-perapp-c5-t3",
+  "protocol": "c",
+  "source_tag": "baseline-c5-t3",
+  "cost": {
+    "llm_calls": 158,
+    "cost_usd": 0.0566949376,
+    "sessions": 7
+  },
+  "static_checks": {
+    "000022": {
+      "violations": [],
+      "clean": true
+    },
+    "000023": {
+      "violations": [],
+      "clean": true
+    },
+    "000044": {
+      "violations": [],
+      "clean": true
+    },
+    "000046": {
+      "violations": [],
+      "clean": true
+    },
+    "000080": {
+      "violations": [],
+      "clean": true
+    },
+    "000083": {
+      "violations": [],
+      "clean": true
+    },
+    "000085": {
+      "violations": [],
+      "clean": true
+    }
+  },
+  "touched_files": 33,
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 2412,
+    "other": 0
+  },
+  "patch_location": "apps only",
+  "per_app_analysis": {
+    "000022": {
+      "touched_files": 2,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/App.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 141
+      },
+      "patch_location": "apps only"
+    },
+    "000023": {
+      "touched_files": 3,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/App.jsx",
+        "submission/src/App.jsx.bak"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 855
+      },
+      "patch_location": "apps only"
+    },
+    "000044": {
+      "touched_files": 7,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/components/Footer.jsx",
+        "submission/src/components/Inquiry.jsx",
+        "submission/src/components/Register.jsx",
+        "submission/src/components/Statistics.jsx",
+        "submission/src/components/Track.jsx",
+        "submission/src/components/Verify.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 548
+      },
+      "patch_location": "apps only"
+    },
+    "000046": {
+      "touched_files": 8,
+      "files": [
+        "submission/src/pages/Finance.css",
+        "submission/src/pages/Finance.jsx",
+        "submission/src/pages/PatientRecords.css",
+        "submission/src/pages/PatientRecords.jsx",
+        "submission/src/pages/Pharmacy.css",
+        "submission/src/pages/Pharmacy.jsx",
+        "submission/src/pages/Reports.css",
+        "submission/src/pages/Reports.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 551
+      },
+      "patch_location": "apps only"
+    },
+    "000080": {
+      "touched_files": 2,
+      "files": [
+        "submission/src/components/TodoApp.css",
+        "submission/src/components/TodoApp.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 101
+      },
+      "patch_location": "apps only"
+    },
+    "000083": {
+      "touched_files": 6,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/App.jsx",
+        "submission/src/components/Cases.jsx",
+        "submission/src/components/Reports.css",
+        "submission/src/components/Reports.jsx",
+        "submission/src/components/WorkHours.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 87
+      },
+      "patch_location": "apps only"
+    },
+    "000085": {
+      "touched_files": 5,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/components/Dashboard.jsx",
+        "submission/src/components/Documents.jsx",
+        "submission/src/components/Projects.jsx",
+        "submission/src/components/Schedule.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 129
+      },
+      "patch_location": "apps only"
+    }
+  }
+}

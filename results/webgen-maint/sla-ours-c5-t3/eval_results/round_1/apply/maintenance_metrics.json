@@ -1,0 +1,41 @@
+{
+  "maint_tag": "sla-ours-c5-t3",
+  "protocol": "b",
+  "source_tag": "sla-ours-c5-t3",
+  "cost": {
+    "llm_calls": 54,
+    "cost_usd": 0.037587754400000006,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 18,
+  "files": [
+    "lib/src/index.js",
+    "lib/src/utils/generateId.js",
+    "tasks/000022/submission/src/App.jsx",
+    "tasks/000022/submission/src/components/ClientCard.jsx",
+    "tasks/000023/submission/src/App.jsx",
+    "tasks/000023/submission/src/pages/Leads.jsx",
+    "tasks/000044/submission/src/components/Register.jsx",
+    "tasks/000044/submission/src/components/Track.jsx",
+    "tasks/000046/submission/src/screens/Finance.jsx",
+    "tasks/000046/submission/src/screens/Patients.jsx",
+    "tasks/000046/submission/src/screens/Pharmacy.jsx",
+    "tasks/000080/submission/src/App.jsx",
+    "tasks/000083/submission/src/App.jsx",
+    "tasks/000085/submission/src/App.jsx",
+    "tasks/000085/submission/src/components/Dashboard.jsx",
+    "tasks/000085/submission/src/components/Documents.jsx",
+    "tasks/000085/submission/src/components/Projects.jsx",
+    "tasks/000085/submission/src/components/Schedule.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 34,
+    "apps": 277,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

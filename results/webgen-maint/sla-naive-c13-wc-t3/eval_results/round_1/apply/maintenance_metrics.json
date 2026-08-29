@@ -1,0 +1,52 @@
+{
+  "maint_tag": "sla-naive-c13-wc-t3",
+  "protocol": "b",
+  "source_tag": "sla-naive-c13-wc-t3",
+  "cost": {
+    "llm_calls": 67,
+    "cost_usd": 0.0329859432,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 29,
+  "files": [
+    "tasks/000027/submission/src/App.jsx",
+    "tasks/000027/submission/src/App.jsx.bak",
+    "tasks/000027/submission/src/components/AdminPromos.jsx",
+    "tasks/000027/submission/src/components/AdminPromos.jsx.bak",
+    "tasks/000027/submission/src/components/PromotionCard.jsx",
+    "tasks/000027/submission/src/components/PromotionCard.jsx.bak",
+    "tasks/000051/submission/src/pages/Clients.jsx",
+    "tasks/000051/submission/src/pages/Jobs.jsx",
+    "tasks/000051/submission/src/pages/PostJob.jsx",
+    "tasks/000051/submission/src/pages/Profile.jsx",
+    "tasks/000052/submission/src/components/JobsScreen.jsx",
+    "tasks/000053/submission/src/pages/CompanyListingsPage.jsx",
+    "tasks/000053/submission/src/pages/CompanyPostPage.jsx",
+    "tasks/000053/submission/src/pages/StudentBrowsePage.jsx",
+    "tasks/000053/submission/src/pages/StudentMyApplicationsPage.jsx",
+    "tasks/000077/submission/src/App.jsx",
+    "tasks/000077/submission/src/components/Detail.jsx",
+    "tasks/000077/submission/src/components/Home.jsx",
+    "tasks/000090/submission/src/App.jsx",
+    "tasks/000090/submission/src/components/Feed/SharePicture.jsx",
+    "tasks/000090/submission/src/components/Feed/UpdatesFeed.jsx",
+    "tasks/000090/submission/src/components/Profile/MyUpdates.jsx",
+    "tasks/000091/submission/src/App.jsx",
+    "tasks/000091/submission/src/components/ProfileDetailPage.jsx",
+    "tasks/000091/submission/src/components/RegisterPage.jsx",
+    "tasks/000091/submission/src/components/SearchPage.jsx",
+    "tasks/000092/submission/src/components/BrowseScreen.jsx",
+    "tasks/000092/submission/src/components/JoinScreen.jsx",
+    "tasks/000092/submission/src/components/SearchScreen.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 647,
+    "other": 0
+  },
+  "patch_location": "apps only"
+}

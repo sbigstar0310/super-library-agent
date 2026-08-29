@@ -1,0 +1,133 @@
+# ============================================================================
+# Secrets / credentials — NEVER commit
+# ============================================================================
+.env
+*.env.local
+superlibraryagent-*.json
+*-credentials.json
+*-service-account*.json
+client_secret*.json
+*.apps.googleusercontent.com.json
+
+
+# ============================================================================
+# Python — build artifacts, caches, virtualenvs
+# ============================================================================
+__pycache__/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+*.egg-info/
+.venv/
+**/.venv/
+venv/
+build/
+dist/
+
+
+# ============================================================================
+# Node / web pipeline (out of scope for paperbench experiment)
+# ============================================================================
+/node_modules/
+apps/
+package/ui-lib/
+
+
+# ============================================================================
+# Run-time outputs (regenerated each experiment)
+# ============================================================================
+/runs/
+/logs/
+/overnight_logs/
+/cache/
+/data/*
+# …but keep our small text augmentations (layout specs, future extras)
+!/data/augments/
+/libraries/
+
+
+# ============================================================================
+# Auxiliary repo content (analysis / eval / tests / notebooks not used by
+# the paperbench experiment runner)
+# ============================================================================
+docs/
+analysis/
+tests/
+/eval/
+*.ipynb
+
+
+# ============================================================================
+# data/frontier-evals/ — separate sub-repo (paperbench upstream + LFS, ~2.2 GB)
+# Re-clone on the target machine instead of pushing through this repo:
+#   cd <repo-root>/data
+#   git clone <frontier-evals-source-url> frontier-evals
+# ============================================================================
+/data/frontier-evals/
+
+
+# ============================================================================
+# backups/ — large (~259 GB total). Whitelist only the two assets the
+# paperbench coding-exp / apply-exp experiment needs; ignore everything
+# else inside whitelisted backups except the artifacts we actually consume.
+# ============================================================================
+/backups/*
+
+# Drop bulky eval/log subtrees inside whitelisted backups
+# (regenerated at evaluation time; not experiment inputs)
+/backups/*/final/eval_results*/
+/backups/*/final/eval_logs*/
+/backups/*/final/logs/
+
+
+# ============================================================================
+# IDE / editor scratch
+# ============================================================================
+.idea/
+.DS_Store
+/memory/
+.claude/
+
+# ============================================================================
+# Misc
+# ============================================================================
+*.log
+*.swp
+*~
+el-agent/experiments/
+experiments/
+
+
+
+
+
+# ============================================================================
+# Local-only operational scripts (not needed to reproduce paper results)
+# ============================================================================
+scripts/local/
+
+# Local figure scratch (paper has its own figures dir)
+figures/
+
+# Agent-facing working notes, not part of the public release. CLAUDE.md is
+# instructions to Claude Code, not documentation for a reader of this repo;
+# the README is standalone.
+/CLAUDE.md
+/MEMORY.md
+
+# Embedded paper repo + local scratch (not part of the code archive).
+# Anchored: an unanchored `paper/` also swallowed `scripts/paper/`, the
+# tracked table-regeneration scripts.
+/paper/
+compare/
+notebooks/
+
+.docs
+.omc/
+
+# baselines/claudecode runtime + debug artifacts
+baselines/claudecode/proxy_port.txt
+baselines/claudecode/smoke/
+
+# Local editor scratch (not part of the public release)
+/.cursorignore

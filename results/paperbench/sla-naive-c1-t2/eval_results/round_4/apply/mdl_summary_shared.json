@@ -1,0 +1,94 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c1-t2/final/round_4/apply/tasks/lca-on-the-line/submission",
+      "app_nll": 6533.8004,
+      "library_nll": 552.8909,
+      "nll_per_token": 0.3821,
+      "perplexity": 1.4653,
+      "total_tokens": 18547,
+      "library_tokens": 1424,
+      "app_tokens": 17123,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 6533.8004,
+          "tokens": 17123,
+          "nll_per_token": 0.3816
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c1-t2/final/round_4/apply/tasks/robust-clip/submission",
+      "app_nll": 7798.27,
+      "library_nll": 552.8909,
+      "nll_per_token": 0.434,
+      "perplexity": 1.5434,
+      "total_tokens": 19243,
+      "library_tokens": 1424,
+      "app_tokens": 17819,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 7798.27,
+          "tokens": 17819,
+          "nll_per_token": 0.4376
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c1-t2/final/round_4/apply/tasks/sample-specific-masks/submission",
+      "app_nll": 4631.653,
+      "library_nll": 552.8909,
+      "nll_per_token": 0.3341,
+      "perplexity": 1.3967,
+      "total_tokens": 15518,
+      "library_tokens": 1424,
+      "app_tokens": 14094,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 4631.653,
+          "tokens": 14094,
+          "nll_per_token": 0.3286
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-c1-t2/final/round_4/apply/tasks/test-time-model-adaptation/submission",
+      "app_nll": 8521.8127,
+      "library_nll": 552.8909,
+      "nll_per_token": 0.3946,
+      "perplexity": 1.4837,
+      "total_tokens": 23000,
+      "library_tokens": 1424,
+      "app_tokens": 21576,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 8521.8127,
+          "tokens": 21576,
+          "nll_per_token": 0.395
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "library_nll": 552.8909,
+    "library_tokens": 1424,
+    "sum_app_nll": 27485.5361,
+    "sum_app_tokens": 70612,
+    "mdl_nll": 28038.427,
+    "total_tokens": 72036,
+    "nll_per_token": 0.3892,
+    "total_apps": 4
+  }
+}

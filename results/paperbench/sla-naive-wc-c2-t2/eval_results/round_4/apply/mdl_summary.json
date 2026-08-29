@@ -1,0 +1,642 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-wc-c2-t2/final/round_4/apply/tasks/adaptive-pruning/submission",
+      "app_nll": 7075.5375,
+      "library_nll": 528.7326,
+      "nll_per_token": 0.4727,
+      "perplexity": 1.6044,
+      "total_tokens": 16086,
+      "library_tokens": 1347,
+      "app_tokens": 14739,
+      "file_details": [
+        {
+          "rel_path": "apt/__init__.py",
+          "nll": 45.3109,
+          "tokens": 168,
+          "nll_per_token": 0.2697,
+          "dep_paths": [
+            "apt/adapter.py",
+            "apt/pruning.py",
+            "apt/tuning.py",
+            "apt/distillation.py",
+            "apt/model.py",
+            "apt/trainer.py",
+            "apt/utils.py"
+          ]
+        },
+        {
+          "rel_path": "apt/adapter.py",
+          "nll": 547.2769,
+          "tokens": 939,
+          "nll_per_token": 0.5828,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "apt/distillation.py",
+          "nll": 542.0088,
+          "tokens": 848,
+          "nll_per_token": 0.6392,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "apt/model.py",
+          "nll": 488.0847,
+          "tokens": 1460,
+          "nll_per_token": 0.3343,
+          "dep_paths": [
+            "apt/adapter.py"
+          ]
+        },
+        {
+          "rel_path": "apt/pruning.py",
+          "nll": 885.6207,
+          "tokens": 1706,
+          "nll_per_token": 0.5191,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "apt/trainer.py",
+          "nll": 796.3347,
+          "tokens": 2391,
+          "nll_per_token": 0.3331,
+          "dep_paths": [
+            "apt/adapter.py",
+            "apt/distillation.py",
+            "apt/model.py",
+            "apt/pruning.py",
+            "apt/tuning.py",
+            "apt/utils.py"
+          ]
+        },
+        {
+          "rel_path": "apt/tuning.py",
+          "nll": 344.2663,
+          "tokens": 421,
+          "nll_per_token": 0.8177,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "apt/utils.py",
+          "nll": 456.4734,
+          "tokens": 701,
+          "nll_per_token": 0.6512,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "scripts/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "scripts/reproduce_results.py",
+          "nll": 1610.0918,
+          "tokens": 2136,
+          "nll_per_token": 0.7538,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "scripts/run_glue.py",
+          "nll": 733.4816,
+          "tokens": 3024,
+          "nll_per_token": 0.2426,
+          "dep_paths": [
+            "utils/__init__.py",
+            "apt/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/run_squad.py",
+          "nll": 306.6807,
+          "tokens": 464,
+          "nll_per_token": 0.6609,
+          "dep_paths": [
+            "utils/__init__.py",
+            "apt/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/run_summarization.py",
+          "nll": 319.907,
+          "tokens": 481,
+          "nll_per_token": 0.6651,
+          "dep_paths": [
+            "utils/__init__.py",
+            "apt/__init__.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-wc-c2-t2/final/round_4/apply/tasks/mechanistic-understanding/submission",
+      "app_nll": 8938.6873,
+      "library_nll": 528.7326,
+      "nll_per_token": 0.548,
+      "perplexity": 1.7299,
+      "total_tokens": 17275,
+      "library_tokens": 1347,
+      "app_tokens": 15928,
+      "file_details": [
+        {
+          "rel_path": "scripts/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "scripts/generate_figures.py",
+          "nll": 877.1683,
+          "tokens": 1761,
+          "nll_per_token": 0.4981,
+          "dep_paths": [
+            "utils/__init__.py",
+            "src/config.py",
+            "src/model_utils.py",
+            "src/probe.py",
+            "src/toxic_vectors.py",
+            "src/analysis.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/run_reproduction.py",
+          "nll": 1284.6872,
+          "tokens": 1956,
+          "nll_per_token": 0.6568,
+          "dep_paths": [
+            "utils/__init__.py",
+            "src/config.py",
+            "src/model_utils.py",
+            "src/probe.py",
+            "src/toxic_vectors.py",
+            "src/vocabulary_projection.py",
+            "src/intervention.py",
+            "src/evaluation.py",
+            "src/dataset_creation.py",
+            "src/dpo_train.py",
+            "src/analysis.py",
+            "src/unalign.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/validate_implementation.py",
+          "nll": 855.0333,
+          "tokens": 1819,
+          "nll_per_token": 0.4701,
+          "dep_paths": [
+            "src/__init__.py",
+            "src/config.py",
+            "src/model_utils.py",
+            "src/probe.py",
+            "src/toxic_vectors.py",
+            "src/vocabulary_projection.py",
+            "src/intervention.py",
+            "src/evaluation.py",
+            "src/dataset_creation.py",
+            "src/dpo_train.py",
+            "src/analysis.py",
+            "src/unalign.py"
+          ]
+        },
+        {
+          "rel_path": "src/__init__.py",
+          "nll": 170.8644,
+          "tokens": 77,
+          "nll_per_token": 2.219,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "src/analysis.py",
+          "nll": 845.9878,
+          "tokens": 1652,
+          "nll_per_token": 0.5121,
+          "dep_paths": [
+            "src/config.py",
+            "src/model_utils.py"
+          ]
+        },
+        {
+          "rel_path": "src/config.py",
+          "nll": 751.279,
+          "tokens": 722,
+          "nll_per_token": 1.0406,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "src/dataset_creation.py",
+          "nll": 591.6268,
+          "tokens": 1010,
+          "nll_per_token": 0.5858,
+          "dep_paths": [
+            "src/config.py"
+          ]
+        },
+        {
+          "rel_path": "src/dpo_train.py",
+          "nll": 529.9526,
+          "tokens": 1430,
+          "nll_per_token": 0.3706,
+          "dep_paths": [
+            "utils/__init__.py",
+            "src/config.py"
+          ]
+        },
+        {
+          "rel_path": "src/evaluation.py",
+          "nll": 412.4719,
+          "tokens": 808,
+          "nll_per_token": 0.5105,
+          "dep_paths": [
+            "eval/__init__.py",
+            "src/intervention.py"
+          ]
+        },
+        {
+          "rel_path": "src/intervention.py",
+          "nll": 252.1244,
+          "tokens": 560,
+          "nll_per_token": 0.4502,
+          "dep_paths": [
+            "src/config.py",
+            "src/model_utils.py"
+          ]
+        },
+        {
+          "rel_path": "src/model_utils.py",
+          "nll": 816.5674,
+          "tokens": 1456,
+          "nll_per_token": 0.5608,
+          "dep_paths": [
+            "src/config.py"
+          ]
+        },
+        {
+          "rel_path": "src/probe.py",
+          "nll": 401.5595,
+          "tokens": 901,
+          "nll_per_token": 0.4457,
+          "dep_paths": [
+            "utils/__init__.py",
+            "src/config.py",
+            "src/model_utils.py"
+          ]
+        },
+        {
+          "rel_path": "src/toxic_vectors.py",
+          "nll": 441.8102,
+          "tokens": 766,
+          "nll_per_token": 0.5768,
+          "dep_paths": [
+            "src/config.py",
+            "src/model_utils.py"
+          ]
+        },
+        {
+          "rel_path": "src/unalign.py",
+          "nll": 460.9959,
+          "tokens": 698,
+          "nll_per_token": 0.6605,
+          "dep_paths": [
+            "src/config.py",
+            "src/model_utils.py"
+          ]
+        },
+        {
+          "rel_path": "src/vocabulary_projection.py",
+          "nll": 246.5586,
+          "tokens": 312,
+          "nll_per_token": 0.7903,
+          "dep_paths": []
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-wc-c2-t2/final/round_4/apply/tasks/stay-on-topic-with-classifier-free-guidance/submission",
+      "app_nll": 6007.9529,
+      "library_nll": 528.7326,
+      "nll_per_token": 0.5223,
+      "perplexity": 1.686,
+      "total_tokens": 12514,
+      "library_tokens": 1347,
+      "app_tokens": 11167,
+      "file_details": [
+        {
+          "rel_path": "cfg_lm/__init__.py",
+          "nll": 31.8037,
+          "tokens": 144,
+          "nll_per_token": 0.2209,
+          "dep_paths": [
+            "cfg_lm/cfg.py",
+            "cfg_lm/entropy.py",
+            "cfg_lm/flops.py"
+          ]
+        },
+        {
+          "rel_path": "cfg_lm/cfg.py",
+          "nll": 341.0294,
+          "tokens": 644,
+          "nll_per_token": 0.5295,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "cfg_lm/entropy.py",
+          "nll": 377.507,
+          "tokens": 827,
+          "nll_per_token": 0.4565,
+          "dep_paths": [
+            "cfg_lm/cfg.py"
+          ]
+        },
+        {
+          "rel_path": "cfg_lm/flops.py",
+          "nll": 307.1617,
+          "tokens": 825,
+          "nll_per_token": 0.3723,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/__init__.py",
+          "nll": 30.4877,
+          "tokens": 118,
+          "nll_per_token": 0.2584,
+          "dep_paths": [
+            "experiments/basic_prompting.py",
+            "experiments/cot_prompting.py",
+            "experiments/long_form.py",
+            "experiments/code_generation.py",
+            "experiments/entropy_experiment.py",
+            "experiments/instruction_tuning.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/basic_prompting.py",
+          "nll": 477.8444,
+          "tokens": 783,
+          "nll_per_token": 0.6103,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/code_generation.py",
+          "nll": 519.7179,
+          "tokens": 753,
+          "nll_per_token": 0.6902,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/cot_prompting.py",
+          "nll": 390.4023,
+          "tokens": 503,
+          "nll_per_token": 0.7761,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/entropy_experiment.py",
+          "nll": 374.4465,
+          "tokens": 686,
+          "nll_per_token": 0.5458,
+          "dep_paths": [
+            "cfg_lm/entropy.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/flops_analysis.py",
+          "nll": 483.7498,
+          "tokens": 1001,
+          "nll_per_token": 0.4833,
+          "dep_paths": [
+            "cfg_lm/flops.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/instruction_tuning.py",
+          "nll": 741.0958,
+          "tokens": 1183,
+          "nll_per_token": 0.6265,
+          "dep_paths": [
+            "cfg_lm/cfg.py"
+          ]
+        },
+        {
+          "rel_path": "experiments/long_form.py",
+          "nll": 369.3516,
+          "tokens": 410,
+          "nll_per_token": 0.9009,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "experiments/vocabulary_visualization.py",
+          "nll": 449.2737,
+          "tokens": 780,
+          "nll_per_token": 0.576,
+          "dep_paths": [
+            "cfg_lm/cfg.py"
+          ]
+        },
+        {
+          "rel_path": "run_experiments.py",
+          "nll": 602.7902,
+          "tokens": 1141,
+          "nll_per_token": 0.5283,
+          "dep_paths": [
+            "experiments/basic_prompting.py",
+            "experiments/cot_prompting.py",
+            "experiments/long_form.py",
+            "experiments/code_generation.py",
+            "experiments/entropy_experiment.py",
+            "experiments/instruction_tuning.py",
+            "experiments/vocabulary_visualization.py",
+            "experiments/flops_analysis.py"
+          ]
+        },
+        {
+          "rel_path": "test_imports.py",
+          "nll": 202.3932,
+          "tokens": 962,
+          "nll_per_token": 0.2104,
+          "dep_paths": [
+            "cfg_lm/__init__.py",
+            "cfg_lm/cfg.py",
+            "cfg_lm/entropy.py",
+            "cfg_lm/flops.py",
+            "experiments/__init__.py",
+            "experiments/basic_prompting.py",
+            "experiments/cot_prompting.py",
+            "experiments/long_form.py",
+            "experiments/code_generation.py",
+            "experiments/entropy_experiment.py",
+            "experiments/instruction_tuning.py",
+            "experiments/vocabulary_visualization.py",
+            "experiments/flops_analysis.py",
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "utils/__init__.py",
+          "nll": 27.2996,
+          "tokens": 40,
+          "nll_per_token": 0.6825,
+          "dep_paths": [
+            "utils/data_utils.py"
+          ]
+        },
+        {
+          "rel_path": "utils/data_utils.py",
+          "nll": 281.5985,
+          "tokens": 367,
+          "nll_per_token": 0.7673,
+          "dep_paths": [
+            "eval/__init__.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-naive-wc-c2-t2/final/round_4/apply/tasks/what-will-my-model-forget/submission",
+      "app_nll": 7611.6437,
+      "library_nll": 528.7326,
+      "nll_per_token": 0.4438,
+      "perplexity": 1.5586,
+      "total_tokens": 18344,
+      "library_tokens": 1347,
+      "app_tokens": 16997,
+      "file_details": [
+        {
+          "rel_path": "forgetting_forecast/__init__.py",
+          "nll": 37.7552,
+          "tokens": 47,
+          "nll_per_token": 0.8033,
+          "dep_paths": [
+            "forgetting_forecast/data.py",
+            "forgetting_forecast/models.py",
+            "forgetting_forecast/training.py",
+            "forgetting_forecast/inference.py",
+            "forgetting_forecast/refinement.py",
+            "forgetting_forecast/metrics.py",
+            "forgetting_forecast/utils.py"
+          ]
+        },
+        {
+          "rel_path": "forgetting_forecast/data.py",
+          "nll": 1179.4728,
+          "tokens": 2091,
+          "nll_per_token": 0.5641,
+          "dep_paths": [
+            "forgetting_forecast/utils.py"
+          ]
+        },
+        {
+          "rel_path": "forgetting_forecast/experiments.py",
+          "nll": 2373.508,
+          "tokens": 5470,
+          "nll_per_token": 0.4339,
+          "dep_paths": [
+            "forgetting_forecast/data.py",
+            "forgetting_forecast/models.py",
+            "forgetting_forecast/training.py",
+            "forgetting_forecast/inference.py",
+            "forgetting_forecast/refinement.py",
+            "forgetting_forecast/utils.py",
+            "forgetting_forecast/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "forgetting_forecast/inference.py",
+          "nll": 498.2005,
+          "tokens": 1667,
+          "nll_per_token": 0.2989,
+          "dep_paths": [
+            "forgetting_forecast/models.py",
+            "forgetting_forecast/data.py",
+            "forgetting_forecast/utils.py"
+          ]
+        },
+        {
+          "rel_path": "forgetting_forecast/metrics.py",
+          "nll": 300.0996,
+          "tokens": 444,
+          "nll_per_token": 0.6759,
+          "dep_paths": [
+            "eval/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "forgetting_forecast/models.py",
+          "nll": 851.8714,
+          "tokens": 2001,
+          "nll_per_token": 0.4257,
+          "dep_paths": [
+            "forgetting_forecast/utils.py",
+            "forgetting_forecast/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "forgetting_forecast/refinement.py",
+          "nll": 900.6518,
+          "tokens": 1940,
+          "nll_per_token": 0.4643,
+          "dep_paths": [
+            "forgetting_forecast/models.py",
+            "forgetting_forecast/data.py",
+            "forgetting_forecast/utils.py",
+            "forgetting_forecast/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "forgetting_forecast/training.py",
+          "nll": 600.6369,
+          "tokens": 2211,
+          "nll_per_token": 0.2717,
+          "dep_paths": [
+            "forgetting_forecast/models.py",
+            "forgetting_forecast/data.py",
+            "forgetting_forecast/utils.py",
+            "forgetting_forecast/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "forgetting_forecast/utils.py",
+          "nll": 526.8359,
+          "tokens": 787,
+          "nll_per_token": 0.6694,
+          "dep_paths": [
+            "utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "run_experiments.py",
+          "nll": 189.828,
+          "tokens": 219,
+          "nll_per_token": 0.8668,
+          "dep_paths": [
+            "forgetting_forecast/experiments.py"
+          ]
+        },
+        {
+          "rel_path": "setup.py",
+          "nll": 152.7836,
+          "tokens": 120,
+          "nll_per_token": 1.2732,
+          "dep_paths": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "sum_app_nll": 29633.8214,
+    "avg_library_nll": 528.7326,
+    "mdl_nll": 30162.554,
+    "total_apps": 4
+  }
+}

@@ -1,0 +1,11 @@
+# Placeholder. webgen support requires a JS/TS counter
+# (utils/mdl/parsers/js.py already exists). Stub this out when porting.
+# For now a Python counter called against webgen will return zero exports.
+lib_package_name: lib
+code_extensions:
+  - "*.ts"
+  - "*.tsx"
+ignore_dirs:
+  - "node_modules"
+  - ".next"
+  - "dist"

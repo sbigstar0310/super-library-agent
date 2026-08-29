@@ -1,0 +1,228 @@
+{
+  "_note": "Constructed evaluation suite (NOT a Ward clustering output). Derived deterministically from cluster.json: the centroid-closest representative of each Ward cluster, excluding tasks already used in the reported suites (tightest-8 of clusters 2/5/13). Cluster 13 is fully consumed by its reported suite and thus omitted; to reach 16, the next-closest available task from the largest clusters (2,5,1) is added. Kept in a separate file so cluster.json stays a pure embedding-clustering artifact.",
+  "kind": "constructed_suite",
+  "derived_from": "cluster.json (ward, k=14, text-embedding-3-small)",
+  "disjoint_from": [
+    "cluster 2 (tightest-8)",
+    "cluster 5 (tightest-8)",
+    "cluster 13 (tightest-8)"
+  ],
+  "order": "ascending task_id (== round boundaries at m=2: R_i = tasks[2i-2:2i])",
+  "clusters": [
+    {
+      "id": 20,
+      "name": "diverse16",
+      "size": 16,
+      "tasks": [
+        "000002",
+        "000004",
+        "000009",
+        "000020",
+        "000025",
+        "000029",
+        "000030",
+        "000034",
+        "000037",
+        "000042",
+        "000045",
+        "000066",
+        "000069",
+        "000087",
+        "000093",
+        "000096"
+      ],
+      "source_clusters": [
+        6,
+        8,
+        3,
+        2,
+        5,
+        0,
+        2,
+        1,
+        7,
+        12,
+        5,
+        1,
+        4,
+        11,
+        10,
+        9
+      ],
+      "members": [
+        {
+          "task_id": "000002",
+          "application_type": "Analytics Platforms/Dashboards",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Data Visualization",
+            "Static Page Generation"
+          ],
+          "source_cluster": 6
+        },
+        {
+          "task_id": "000004",
+          "application_type": "Analytics Platforms/Dashboards",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "Data Visualization",
+            "API Integration",
+            "Big Data"
+          ],
+          "source_cluster": 8
+        },
+        {
+          "task_id": "000009",
+          "application_type": "Browser-Based Games",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Real-time Features",
+            "Form Systems",
+            "AI Integration"
+          ],
+          "source_cluster": 3
+        },
+        {
+          "task_id": "000020",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "User Interaction"
+          ],
+          "source_cluster": 2
+        },
+        {
+          "task_id": "000025",
+          "application_type": "CRM Systems",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "Big Data",
+            "Data Visualization"
+          ],
+          "source_cluster": 5
+        },
+        {
+          "task_id": "000029",
+          "application_type": "Discussion Forums",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Authentication",
+            "Real-time Features"
+          ],
+          "source_cluster": 0
+        },
+        {
+          "task_id": "000030",
+          "application_type": "Discussion Forums",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "User Interaction"
+          ],
+          "source_cluster": 2
+        },
+        {
+          "task_id": "000034",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Data Visualization"
+          ],
+          "source_cluster": 1
+        },
+        {
+          "task_id": "000037",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "AI Integration",
+            "Form Systems"
+          ],
+          "source_cluster": 7
+        },
+        {
+          "task_id": "000042",
+          "application_type": "Email Clients",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "File Handling",
+            "E-commerce"
+          ],
+          "source_cluster": 12
+        },
+        {
+          "task_id": "000045",
+          "application_type": "ERP Platforms",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "Big Data"
+          ],
+          "source_cluster": 5
+        },
+        {
+          "task_id": "000066",
+          "application_type": "News and Information Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Data Visualization",
+            "Media Display"
+          ],
+          "source_cluster": 1
+        },
+        {
+          "task_id": "000069",
+          "application_type": "Personal Blog Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Data Visualization",
+            "Static Page Generation"
+          ],
+          "source_cluster": 4
+        },
+        {
+          "task_id": "000087",
+          "application_type": "Publishing/Blogging Platforms",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Media Display",
+            "User Interaction"
+          ],
+          "source_cluster": 11
+        },
+        {
+          "task_id": "000093",
+          "application_type": "Social Media Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Real-time Features",
+            "AI Integration"
+          ],
+          "source_cluster": 10
+        },
+        {
+          "task_id": "000096",
+          "application_type": "Travel Booking Portals",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "API Integration",
+            "CRUD Operations"
+          ],
+          "source_cluster": 9
+        }
+      ]
+    }
+  ]
+}

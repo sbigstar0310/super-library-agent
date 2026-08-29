@@ -1,0 +1,34 @@
+{
+  "suite": "c5",
+  "derived_from": "behavior_c5.json (same acceptance criteria, phrased as WebVoyager checklist items)",
+  "targets": {
+    "000022": [
+      {"task": "Create a new call log via the New Call form with required fields filled.", "expected_result": "A confirmation message appears, and the new call log displays a human-readable ID with the CALL- prefix (e.g. CALL-001) and a 'Last updated' timestamp. The call appears in the Open Calls or To-Do Calls view."},
+      {"task": "Modify an existing client's information (or close/mark done an existing call).", "expected_result": "A confirmation message appears and the record's 'Last updated' timestamp refreshes to reflect the change."}
+    ],
+    "000023": [
+      {"task": "Create a new lead via the New Lead form/modal with valid details.", "expected_result": "A confirmation message appears, and the new lead is shown with a LEAD- prefixed ID (e.g. LEAD-001) and a 'Last updated' timestamp or date, visible in the leads table."},
+      {"task": "Change that lead's status (or edit it), then locate it using the leads search or filters.", "expected_result": "A confirmation appears, the 'Last updated' value refreshes, and the lead is findable via search/filter with its LEAD- ID still displayed."}
+    ],
+    "000044": [
+      {"task": "Register a new product via the registration form.", "expected_result": "A confirmation message appears and the product's SCT- prefixed ID is displayed immediately upon registration."},
+      {"task": "Add a checkpoint to that product on the Track screen, then look it up on the Inquiry screen.", "expected_result": "A confirmation appears for the checkpoint, the product's 'Last updated' line refreshes, and the product is findable via the Inquiry search with its updated status."}
+    ],
+    "000046": [
+      {"task": "Create a new patient electronic file in the patient management section.", "expected_result": "A confirmation message appears and the new patient record displays a PAT- prefixed ID (e.g. PAT-001) and a 'Last updated' timestamp or date, visible in the patient files list."},
+      {"task": "Add a new medicine in the pharmacy section (or collect a patient fee in finances).", "expected_result": "A confirmation appears and the new record shows its prefixed ID (MED- or FEE-) with a 'Last updated' value, findable in the corresponding section list."}
+    ],
+    "000080": [
+      {"task": "Add a new task via the Add Task input.", "expected_result": "A confirmation message appears and the new task row displays a TASK- prefixed ID (e.g. TASK-001) and a 'Last updated' timestamp or date."},
+      {"task": "Edit that task's description (or toggle it complete), then find it via search and the matching filter.", "expected_result": "A confirmation appears, the 'Last updated' value refreshes, the ID persists, and the task is findable via search and under the correct All/Active/Completed filter."}
+    ],
+    "000083": [
+      {"task": "Submit a real-time report on a case.", "expected_result": "A confirmation message appears and the new report entry displays an RPT- prefixed ID with a timestamp, visible in the selected case's report history."},
+      {"task": "Log work hours for the same case.", "expected_result": "A confirmation appears, the new hours entry shows an HRS- prefixed ID with a 'Last updated' timestamp, and the case's total hours update."}
+    ],
+    "000085": [
+      {"task": "Create a new project via the New Project action.", "expected_result": "A confirmation message appears and the new project row displays a PRJ- prefixed ID (e.g. PRJ-001) and a 'Last updated' date, visible in the Projects table and reflected on the dashboard."},
+      {"task": "Add a schedule task (or a document), then mark the task complete.", "expected_result": "A confirmation appears on create, the record shows its prefixed ID (TASK- or DOC-) with a 'Last updated' value that refreshes on the completion toggle."}
+    ]
+  }
+}

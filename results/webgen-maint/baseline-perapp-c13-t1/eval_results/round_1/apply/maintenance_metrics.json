@@ -1,0 +1,189 @@
+{
+  "maint_tag": "baseline-perapp-c13-t1",
+  "protocol": "c",
+  "source_tag": "baseline-c13-t1",
+  "cost": {
+    "llm_calls": 226,
+    "cost_usd": 0.0644769384,
+    "sessions": 8
+  },
+  "static_checks": {
+    "000027": {
+      "violations": [],
+      "clean": true
+    },
+    "000051": {
+      "violations": [],
+      "clean": true
+    },
+    "000052": {
+      "violations": [],
+      "clean": true
+    },
+    "000053": {
+      "violations": [],
+      "clean": true
+    },
+    "000077": {
+      "violations": [],
+      "clean": true
+    },
+    "000090": {
+      "violations": [],
+      "clean": true
+    },
+    "000091": {
+      "violations": [],
+      "clean": true
+    },
+    "000092": {
+      "violations": [],
+      "clean": true
+    }
+  },
+  "touched_files": 48,
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 888,
+    "other": 0
+  },
+  "patch_location": "apps only",
+  "per_app_analysis": {
+    "000027": {
+      "touched_files": 9,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/components/AdminScreen.css",
+        "submission/src/components/AdminScreen.jsx",
+        "submission/src/components/BrowseScreen.css",
+        "submission/src/components/BrowseScreen.jsx",
+        "submission/src/components/PromotionCard.css",
+        "submission/src/components/PromotionCard.jsx",
+        "submission/src/components/ShareScreen.css",
+        "submission/src/components/ShareScreen.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 114
+      },
+      "patch_location": "apps only"
+    },
+    "000051": {
+      "touched_files": 8,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/App.jsx",
+        "submission/src/pages/Clients.jsx",
+        "submission/src/pages/JobApply.jsx",
+        "submission/src/pages/Jobs.jsx",
+        "submission/src/pages/PostJob.jsx",
+        "submission/src/pages/Profile.css",
+        "submission/src/pages/Profile.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 67
+      },
+      "patch_location": "apps only"
+    },
+    "000052": {
+      "touched_files": 3,
+      "files": [
+        "submission/src/pages/JobsPage.css",
+        "submission/src/pages/JobsPage.jsx",
+        "submission/src/pages/JobsPage.jsx.bak"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 188
+      },
+      "patch_location": "apps only"
+    },
+    "000053": {
+      "touched_files": 9,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/components/InternshipCard/InternshipCard.css",
+        "submission/src/components/InternshipCard/InternshipCard.jsx",
+        "submission/src/data/store.js",
+        "submission/src/pages/CompanyApplications.jsx",
+        "submission/src/pages/CompanyPost.jsx",
+        "submission/src/pages/StudentApplyForm.jsx",
+        "submission/src/pages/StudentBrowse.jsx",
+        "submission/src/pages/StudentMyApplications.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 152
+      },
+      "patch_location": "apps only"
+    },
+    "000077": {
+      "touched_files": 5,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/pages/DetailPage.css",
+        "submission/src/pages/DetailPage.jsx",
+        "submission/src/pages/HomePage.css",
+        "submission/src/pages/HomePage.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 85
+      },
+      "patch_location": "apps only"
+    },
+    "000090": {
+      "touched_files": 4,
+      "files": [
+        "submission/src/components/Feed.css",
+        "submission/src/components/Feed.jsx",
+        "submission/src/components/Profile.css",
+        "submission/src/components/Profile.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 49
+      },
+      "patch_location": "apps only"
+    },
+    "000091": {
+      "touched_files": 5,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/components/ProfileDetailScreen.css",
+        "submission/src/components/ProfileDetailScreen.jsx",
+        "submission/src/components/SearchScreen.css",
+        "submission/src/components/SearchScreen.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 134
+      },
+      "patch_location": "apps only"
+    },
+    "000092": {
+      "touched_files": 5,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/components/Browse.css",
+        "submission/src/components/Browse.jsx",
+        "submission/src/components/Search.css",
+        "submission/src/components/Search.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 99
+      },
+      "patch_location": "apps only"
+    }
+  }
+}

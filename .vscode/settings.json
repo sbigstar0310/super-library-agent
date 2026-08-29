@@ -1,0 +1,57 @@
+{
+  "files.associations": {
+    "*.jsonl": "json"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  "files.watcherExclude": {
+    "**/runs/**": true,
+    "**/backups/**": true,
+    "**/eval/**": true,
+    "**/experiments/**": true,
+    "**/analysis/**": true,
+    "**/logs/**": true,
+    "**/node_modules/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/__pycache__/**": true,
+    "**/.venv/**": true,
+    "**/data/WebGen-Bench/**": true,
+    "**/data/frontier-evals/**": true,
+    "**/data/slop-code-bench/**": true
+  },
+  "search.exclude": {
+    "**/runs": true,
+    "**/backups": true,
+    "**/eval": true,
+    "**/experiments": true,
+    "**/node_modules": true,
+    "**/__pycache__": true,
+    "**/.venv": true,
+    "**/data/WebGen-Bench": true,
+    "**/data/frontier-evals": true,
+    "**/data/slop-code-bench": true
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.venv": true
+  },
+  "python.analysis.exclude": [
+    "**/runs/**",
+    "**/backups/**",
+    "**/eval/**",
+    "**/experiments/**",
+    "**/node_modules/**",
+    "**/__pycache__/**",
+    "**/.venv/**",
+    "**/data/WebGen-Bench/**",
+    "**/data/frontier-evals/**",
+    "**/data/slop-code-bench/**"
+  ],
+  "python.analysis.indexing": false,
+  "typescript.tsserver.maxTsServerMemory": 3072,
+  "npm.autoDetect": "off",
+  "task.autoDetect": "off"
+}

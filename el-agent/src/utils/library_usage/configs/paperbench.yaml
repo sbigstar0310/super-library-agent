@@ -1,0 +1,43 @@
+# Library-usage counter knobs for paperbench (paper-replication submissions).
+#
+# Schema: see utils/library_usage/counter.py:LibraryUsageConfig.
+#
+# Paperbench is Python like RAL, so this is mostly a RAL clone with two
+# additions to `ignore_dirs`:
+#   - `paper` — the read-only paper/ snapshot lives as a sibling of
+#     submission/ in the SLA full-mode layout, but a caller pointing the
+#     scanner at the per-task root (`tasks/<pid>/`) would otherwise pick it
+#     up. The snapshot contains no submission code.
+#   - ML training artifact dirs (`wandb`, `lightning_logs`, `mlruns`,
+#     `checkpoints`, `outputs`, `runs`) — typically free of .py files but
+#     defensive in case an agent dumps inline scripts there.
+#
+# Inventory model (matches the deleted standalone analyzer):
+#   `__all__` in each `lib/<subpkg>/__init__.py` defines the symbol surface,
+#   submission imports of `from lib... import ...` and `import lib...` are
+#   counted against that surface. See utils/library_usage/counter.py.
+
+lib_package_name: lib
+code_extensions:
+  - "*.py"
+ignore_dirs:
+  - "__pycache__"
+  - ".venv"
+  - "venv"
+  - ".git"
+  - "build"
+  - "dist"
+  - ".pytest_cache"
+  - ".mypy_cache"
+  - "node_modules"
+  - ".ruff_cache"
+  - "embeddings"
+  - "tests"
+  # Paperbench-specific.
+  - "paper"
+  - "wandb"
+  - "lightning_logs"
+  - "mlruns"
+  - "checkpoints"
+  - "outputs"
+  - "runs"

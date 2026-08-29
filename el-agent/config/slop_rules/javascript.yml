@@ -1,0 +1,372 @@
+# SlopCodeBench Verbosity rules — JavaScript (covers .js and .jsx) subset.
+# 34 rule docs. Auto-generated from slop_rules.yaml; edit the
+# master file if restructuring. Otherwise just edit this file directly.
+
+id: boolean-return-if-else-js
+language: JavaScript
+severity: warning
+message: "if/else returning true/false - simplify to `return !!cond`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "if ($COND) { return true; } else { return false; }"
+    - pattern: "if ($COND) { return false; } else { return true; }"
+
+---
+id: redundant-bool-ternary-js
+language: JavaScript
+severity: warning
+message: "Ternary `c ? true : false` is redundant - just use `c` (or `!!c`)"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$COND ? true : false"
+    - pattern: "$COND ? false : true"
+
+---
+id: ternary-same-value-js
+language: JavaScript
+severity: warning
+message: "Ternary returns same value for both branches - drop the condition"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "$COND ? $VAL : $VAL"
+
+---
+id: explicit-bool-cast-if-js
+language: JavaScript
+severity: warning
+message: "Boolean() cast before `if` is redundant - drop the wrapper"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "if (Boolean($X)) { $$$ }"
+
+---
+id: json-parse-stringify-js
+language: JavaScript
+severity: warning
+message: "JSON.parse(JSON.stringify(x)) is a noisy deep clone - use structuredClone"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "JSON.parse(JSON.stringify($X))"
+
+---
+id: length-gt-zero-compare-js
+language: JavaScript
+severity: warning
+message: "`x.length > 0` is verbose - use truthiness `x.length` or `!!x.length`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X.length > 0"
+    - pattern: "$X.length !== 0"
+    - pattern: "$X.length != 0"
+
+---
+id: length-eq-zero-compare-js
+language: JavaScript
+severity: warning
+message: "`x.length === 0` is verbose - use `!x.length`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X.length === 0"
+    - pattern: "$X.length == 0"
+
+---
+id: unnecessary-arrow-wrapper-js
+language: JavaScript
+severity: warning
+message: "Arrow wrapper `(x) => fn(x)` is redundant - use `fn` directly"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "($ARG) => $FN($ARG)"
+    - pattern: "$ARG => $FN($ARG)"
+
+---
+id: explicit-true-compare-js
+language: JavaScript
+severity: warning
+message: "`x === true` is noisy - use `x` (or `!!x`)"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X === true"
+    - pattern: "$X == true"
+
+---
+id: explicit-false-compare-js
+language: JavaScript
+severity: warning
+message: "`x === false` is noisy - use `!x`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X === false"
+    - pattern: "$X == false"
+
+---
+id: empty-useeffect-js
+language: JavaScript
+severity: warning
+message: "Empty useEffect body - remove the hook"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "useEffect(() => {}, $$$)"
+    - pattern: "useEffect(() => {})"
+
+---
+id: usememo-empty-deps-js
+language: JavaScript
+severity: warning
+message: "useMemo with empty deps - the value never changes, hoist it out"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useMemo($FN, [])"
+
+---
+id: usecallback-empty-deps-js
+language: JavaScript
+severity: warning
+message: "useCallback with empty deps - the callback never changes, hoist it out"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useCallback($FN, [])"
+
+---
+id: redundant-return-undefined-js
+language: JavaScript
+severity: warning
+message: "`return undefined` / `return null` at the end - fall off or drop"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "return undefined;"
+    - pattern: "return undefined"
+
+---
+id: usestate-lazy-literal-js
+language: JavaScript
+severity: warning
+message: "useState initializer wrapped in a lambda for a cheap literal is wasteful"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "useState(() => [])"
+    - pattern: "useState(() => {})"
+    - pattern: "useState(() => '')"
+    - pattern: "useState(() => 0)"
+    - pattern: "useState(() => false)"
+
+---
+id: manual-min-max-js
+language: JavaScript
+severity: warning
+message: "Manual min/max branching - use Math.min / Math.max"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($A > $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A < $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A >= $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A <= $B) { $M = $A; } else { $M = $B; }"
+
+---
+id: empty-catch-js
+language: JavaScript
+severity: warning
+message: "Empty catch block silently swallows errors"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "try { $$$ } catch ($E) {}"
+    - pattern: "try { $$$ } catch {}"
+
+---
+id: var-declaration-js
+language: JavaScript
+severity: warning
+message: "`var` is legacy - use `const` or `let`"
+metadata: { weight: 2, category: verbose }
+rule:
+  pattern: "var $X = $Y"
+
+---
+id: double-cast-string-number-js
+language: JavaScript
+severity: warning
+message: "String(Number(x)) / Number(String(x)) double cast - parse once"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "String(Number($X))"
+    - pattern: "Number(String($X))"
+    - pattern: "parseInt(String($X))"
+
+---
+id: guard-return-same-js
+language: JavaScript
+severity: warning
+message: "Guarded return of the same value is dead ceremony"
+metadata: { weight: 3, category: verbose }
+rule:
+  pattern: "if ($X === null) { return null; }"
+
+---
+id: verbose-none-default-js
+language: JavaScript
+severity: warning
+message: "`if (x === undefined) x = default` - use `x = x ?? default`"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($X === undefined) { $X = $DEFAULT; }"
+    - pattern: "if ($X == null) { $X = $DEFAULT; }"
+
+---
+id: array-from-then-map-js
+language: JavaScript
+severity: warning
+message: "Array.from(x).map - combine with Array.from(x, fn)"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "Array.from($X).map($FN)"
+
+---
+id: object-keys-foreach-js
+language: JavaScript
+severity: warning
+message: "Object.keys(obj).forEach - prefer `for (const key in obj)` or Object.entries"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "Object.keys($OBJ).forEach($FN)"
+
+---
+id: length-minus-one-index-js
+language: JavaScript
+severity: warning
+message: "`arr[arr.length - 1]` - use `arr.at(-1)`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "$ARR[$ARR.length - 1]"
+
+---
+id: array-filter-identity-js
+language: JavaScript
+severity: warning
+message: "`arr.filter(x => x)` - use `arr.filter(Boolean)`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$ARR.filter(($X) => $X)"
+    - pattern: "$ARR.filter($X => $X)"
+
+---
+id: spread-copy-in-call-js
+language: JavaScript
+severity: warning
+message: "Spreading into a function call just to copy is wasteful"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$FN([...$ARR])"
+    - pattern: "return [...$ARR];"
+
+---
+# Extended 2026-04-10: also flag console.warn / console.info.
+# console.error is deliberately NOT flagged — it's often legitimate in production
+# error reporting paths. Surveyed WA backup: 23 console.log, 14 console.warn/info/error.
+id: console-log-leftover-js
+language: JavaScript
+severity: warning
+message: "Leftover console.log / debug / warn / info - strip before ship"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "console.log($$$)"
+    - pattern: "console.debug($$$)"
+    - pattern: "console.warn($$$)"
+    - pattern: "console.info($$$)"
+
+---
+id: array-isarray-fallback-js
+language: JavaScript
+severity: warning
+message: "`Array.isArray(x) ? x : []` is over-defensive - validate at data boundary"
+metadata: { weight: 2, category: verbose }
+rule:
+  any:
+    - pattern: "Array.isArray($X) ? $X : []"
+    - pattern: "Array.isArray($X) ? $X : null"
+    - pattern: "Array.isArray($X) ? $X : undefined"
+
+---
+id: nested-ternary-js
+language: JavaScript
+severity: warning
+message: "Nested ternary - extract to if/else or a helper for readability"
+metadata: { weight: 3, category: verbose }
+rule:
+  kind: ternary_expression
+  has:
+    stopBy: end
+    kind: ternary_expression
+
+---
+id: if-else-assign-same-var-js
+language: JavaScript
+severity: warning
+message: "`if (c) x = a; else x = b;` - use `x = c ? a : b`"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($COND) { $X = $A; } else { $X = $B; }"
+    - pattern: "if ($COND) $X = $A; else $X = $B;"
+
+---
+id: redundant-double-bang-js
+language: JavaScript
+severity: warning
+message: "Redundant `!!` inside a boolean context - just use `x`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "if (!!$X) { $$$ }"
+    - pattern: "while (!!$X) { $$$ }"
+    - pattern: "!!$X ? $A : $B"
+
+---
+id: usestate-eager-function-call-js
+language: JavaScript
+severity: warning
+message: "useState with eager function call - use `useState(() => fn())` for lazy init"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useState($FN($$$))"
+  not:
+    any:
+      - pattern: "useState(useState($$$))"
+      - pattern: "useState(require($$$))"
+
+---
+id: optional-chain-or-fallback-js
+language: JavaScript
+severity: warning
+message: "`x?.y || fallback` - use `??` so 0/'' are preserved"
+metadata: { weight: 2, category: verbose }
+rule:
+  pattern: "$OBJ?.$PROP || $DEFAULT"
+
+---
+id: map-identity-js
+language: JavaScript
+severity: warning
+message: "`arr.map(x => x)` - pointless identity map, use `[...arr]`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$ARR.map($X => $X)"
+    - pattern: "$ARR.map(($X) => $X)"
+    - pattern: "$ARR.map(function ($X) { return $X; })"

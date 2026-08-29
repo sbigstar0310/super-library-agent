@@ -1,0 +1,21 @@
+{
+  "backup_tag": "sla-naive-v4-t2",
+  "task": "webgen",
+  "round": 4,
+  "phase": "apply",
+  "task_ids": null,
+  "result": {
+    "source": "/c2/daegyu/el-poc/backups/webgen/sla-naive-v4-t2/final/round_4/apply",
+    "label": "sla-naive-v4-t2",
+    "exports": 12,
+    "app_imports": 76,
+    "live_symbols": 11,
+    "dead_symbols": 1,
+    "dead_pct": 8.333333333333334,
+    "apps_used": 8,
+    "total_tasks": 8,
+    "apps_coverage_pct": 100.0,
+    "avg_per_sym_all": 6.333333333333333,
+    "avg_per_sym_live": 6.909090909090909
+  }
+}

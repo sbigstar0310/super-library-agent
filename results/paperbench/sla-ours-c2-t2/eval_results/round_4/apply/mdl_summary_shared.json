@@ -1,0 +1,94 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-ours-c2-t2/final/round_4/apply/tasks/adaptive-pruning/submission",
+      "app_nll": 8271.2105,
+      "library_nll": 452.7739,
+      "nll_per_token": 0.383,
+      "perplexity": 1.4667,
+      "total_tokens": 22779,
+      "library_tokens": 867,
+      "app_tokens": 21912,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 8271.2105,
+          "tokens": 21912,
+          "nll_per_token": 0.3775
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-ours-c2-t2/final/round_4/apply/tasks/mechanistic-understanding/submission",
+      "app_nll": 9031.2442,
+      "library_nll": 452.7739,
+      "nll_per_token": 0.5293,
+      "perplexity": 1.6978,
+      "total_tokens": 17917,
+      "library_tokens": 867,
+      "app_tokens": 17050,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 9031.2442,
+          "tokens": 17050,
+          "nll_per_token": 0.5297
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-ours-c2-t2/final/round_4/apply/tasks/stay-on-topic-with-classifier-free-guidance/submission",
+      "app_nll": 6060.7382,
+      "library_nll": 452.7739,
+      "nll_per_token": 0.4228,
+      "perplexity": 1.5262,
+      "total_tokens": 15407,
+      "library_tokens": 867,
+      "app_tokens": 14540,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 6060.7382,
+          "tokens": 14540,
+          "nll_per_token": 0.4168
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-ours-c2-t2/final/round_4/apply/tasks/what-will-my-model-forget/submission",
+      "app_nll": 4519.9671,
+      "library_nll": 452.7739,
+      "nll_per_token": 0.4496,
+      "perplexity": 1.5676,
+      "total_tokens": 11061,
+      "library_tokens": 867,
+      "app_tokens": 10194,
+      "file_details": [
+        {
+          "rel_path": "<app-concat>",
+          "nll": 4519.9671,
+          "tokens": 10194,
+          "nll_per_token": 0.4434
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "library_nll": 452.7739,
+    "library_tokens": 867,
+    "sum_app_nll": 27883.16,
+    "sum_app_tokens": 63696,
+    "mdl_nll": 28335.9339,
+    "total_tokens": 64563,
+    "nll_per_token": 0.4389,
+    "total_apps": 4
+  }
+}

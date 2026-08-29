@@ -1,0 +1,30 @@
+{
+  "per_model": {
+    "deepseek/deepseek-v4-flash": {
+      "calls": 104,
+      "input_tokens": 2897867,
+      "cached_input_tokens": 1231025,
+      "output_tokens": 128602,
+      "input_usd": 0.23335787999999996,
+      "cached_usd": 0.0034468699999999977,
+      "output_usd": 0.03600856000000001
+    },
+    "gpt-5-mini": {
+      "calls": 52,
+      "input_tokens": 40436,
+      "cached_input_tokens": 0,
+      "output_tokens": 10883,
+      "input_usd": 0.010109000000000002,
+      "cached_usd": 0.0,
+      "output_usd": 0.021766000000000004
+    }
+  },
+  "totals": {
+    "calls": 156,
+    "input_tokens": 2938303,
+    "cached_input_tokens": 1231025,
+    "output_tokens": 139485,
+    "usd": 0.30468830999999996
+  },
+  "elapsed_sec": 197.2
+}

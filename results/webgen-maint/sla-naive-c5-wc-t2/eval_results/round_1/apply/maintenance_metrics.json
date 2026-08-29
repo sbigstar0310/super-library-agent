@@ -1,0 +1,47 @@
+{
+  "maint_tag": "sla-naive-c5-wc-t2",
+  "protocol": "b",
+  "source_tag": "sla-naive-c5-wc-t2",
+  "cost": {
+    "llm_calls": 53,
+    "cost_usd": 0.033610959200000005,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 24,
+  "files": [
+    "lib/src/index.js",
+    "lib/src/utils/recordAudit.js",
+    "tasks/000022/submission/src/components/Clients.jsx",
+    "tasks/000022/submission/src/components/ClientsEdit.jsx",
+    "tasks/000022/submission/src/components/NewCall.jsx",
+    "tasks/000022/submission/src/components/OpenCalls.jsx",
+    "tasks/000022/submission/src/components/ToDoCalls.jsx",
+    "tasks/000022/submission/src/components/Wizard.jsx",
+    "tasks/000022/submission/src/context/AppContext.jsx",
+    "tasks/000023/submission/src/App.jsx",
+    "tasks/000023/submission/src/screens/Leads.jsx",
+    "tasks/000044/submission/src/screens/Track.jsx",
+    "tasks/000046/submission/src/pages/Finance.jsx",
+    "tasks/000046/submission/src/pages/Patients.jsx",
+    "tasks/000046/submission/src/pages/Pharmacy.jsx",
+    "tasks/000080/submission/src/components/TodoApp.jsx",
+    "tasks/000083/submission/src/App.jsx",
+    "tasks/000083/submission/src/pages/CasesPage.jsx",
+    "tasks/000083/submission/src/pages/HoursPage.jsx",
+    "tasks/000083/submission/src/pages/ReportsPage.jsx",
+    "tasks/000085/submission/src/App.jsx",
+    "tasks/000085/submission/src/components/Documents/Documents.jsx",
+    "tasks/000085/submission/src/components/Projects/Projects.jsx",
+    "tasks/000085/submission/src/components/Schedule/Schedule.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 41,
+    "apps": 720,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

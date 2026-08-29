@@ -1,0 +1,49 @@
+{
+  "maint_tag": "sla-naive-c5-t1",
+  "protocol": "b",
+  "source_tag": "sla-naive-c5-t1",
+  "cost": {
+    "llm_calls": 50,
+    "cost_usd": 0.04129102879999998,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 26,
+  "files": [
+    "lib/src/index.js",
+    "lib/src/utils/audit.js",
+    "tasks/000022/submission/src/App.jsx",
+    "tasks/000022/submission/src/components/Clients.jsx",
+    "tasks/000022/submission/src/components/ClientsEdit.jsx",
+    "tasks/000022/submission/src/components/NewCall.jsx",
+    "tasks/000022/submission/src/components/OpenCalls.jsx",
+    "tasks/000022/submission/src/components/TodoCalls.jsx",
+    "tasks/000022/submission/src/components/WizardDone.jsx",
+    "tasks/000022/submission/src/components/WizardReview.jsx",
+    "tasks/000022/submission/src/store.js",
+    "tasks/000023/submission/src/components/LeadsScreen.jsx",
+    "tasks/000044/submission/src/App.jsx",
+    "tasks/000044/submission/src/screens/Inquiry.jsx",
+    "tasks/000044/submission/src/screens/Register.jsx",
+    "tasks/000044/submission/src/screens/Track.jsx",
+    "tasks/000046/submission/src/screens/Finance.jsx",
+    "tasks/000046/submission/src/screens/Patients.jsx",
+    "tasks/000046/submission/src/screens/Pharmacy.jsx",
+    "tasks/000080/submission/src/App.jsx",
+    "tasks/000083/submission/src/components/Cases.jsx",
+    "tasks/000083/submission/src/components/Reports.jsx",
+    "tasks/000083/submission/src/components/WorkHours.jsx",
+    "tasks/000085/submission/src/components/Documents.jsx",
+    "tasks/000085/submission/src/components/Projects.jsx",
+    "tasks/000085/submission/src/components/Schedule.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 51,
+    "apps": 533,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

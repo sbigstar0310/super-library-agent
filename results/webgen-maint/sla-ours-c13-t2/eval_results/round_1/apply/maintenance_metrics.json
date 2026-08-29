@@ -1,0 +1,49 @@
+{
+  "maint_tag": "sla-ours-c13-t2",
+  "protocol": "b",
+  "source_tag": "sla-ours-c13-t2",
+  "cost": {
+    "llm_calls": 88,
+    "cost_usd": 0.0330125264,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 26,
+  "files": [
+    "lib/src/components/Pill.css",
+    "tasks/000027/submission/src/AdminPage.jsx",
+    "tasks/000027/submission/src/BrowsePage.jsx",
+    "tasks/000027/submission/src/SharePage.jsx",
+    "tasks/000051/submission/src/context/AuthContext.jsx",
+    "tasks/000051/submission/src/pages/Clients.jsx",
+    "tasks/000051/submission/src/pages/Jobs.jsx",
+    "tasks/000051/submission/src/pages/PostJob.jsx",
+    "tasks/000052/submission/src/components/JobsPage.jsx",
+    "tasks/000053/submission/src/pages/CompanyPanel.jsx",
+    "tasks/000053/submission/src/pages/StudentBrowse.jsx",
+    "tasks/000053/submission/src/pages/StudentMyApplications.jsx",
+    "tasks/000077/submission/src/pages/Detail.jsx",
+    "tasks/000077/submission/src/pages/Home.jsx",
+    "tasks/000090/submission/src/pages/Feed.jsx",
+    "tasks/000090/submission/src/pages/Profile.jsx",
+    "tasks/000091/submission/src/App.jsx",
+    "tasks/000091/submission/src/contexts/AuthContext.jsx",
+    "tasks/000091/submission/src/pages/ProfileDetail.jsx",
+    "tasks/000091/submission/src/pages/Register.jsx",
+    "tasks/000091/submission/src/pages/Search.jsx",
+    "tasks/000092/submission/src/App.jsx",
+    "tasks/000092/submission/src/components/MemberCard.jsx",
+    "tasks/000092/submission/src/pages/Join.jsx",
+    "tasks/000092/submission/src/pages/ProfileView.jsx",
+    "tasks/000092/submission/src/pages/Search.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 7,
+    "apps": 92,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

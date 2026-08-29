@@ -1,0 +1,68 @@
+# Project-root .dockerignore.
+#
+# Applies to any Docker build whose context is the project root: keeps the
+# context small by excluding backups, runs, external data, caches, and
+# secrets. Everything else under the root is bloat for such builds.
+
+# Largest offenders (bind-mounted at runtime, never baked into images)
+backups/
+runs/
+data/frontier-evals/
+analysis/
+notebooks/
+
+# Workspace deps (npm — used by webgen)
+node_modules/
+**/node_modules/
+package-lock.json
+
+# Python virtualenvs (each subproject has its own; container uses conda)
+**/.venv/
+**/venv/
+
+# Python caches / build artifacts
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.pytest_cache
+**/.ruff_cache
+**/.mypy_cache
+**/.ipynb_checkpoints
+**/*.egg-info
+
+# VCS + dev tooling
+.git/
+.github/
+.gitignore
+.gitattributes
+.cursor/
+.vscode/
+.idea/
+.claude/
+.pre-commit-config.yaml
+
+# Local logs / caches
+logs/
+**/logs/
+cache/
+**/cache/
+
+# Secrets — defensive deny (Dockerfile must use --build-arg / env_vars instead)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+superlibraryagent-*.json
+
+# Test/experiment dirs not used by mswe build
+tests/
+**/tests/
+el-agent/experiments/
+el-agent/uv.lock
+
+# OS junk
+.DS_Store
+
+# Self
+.dockerignore

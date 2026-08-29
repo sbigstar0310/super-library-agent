@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "task": "paperbench",
+    "tag": "sla-naive-c1-t1",
+    "phase": "apply",
+    "round": 4,
+    "language": "python",
+    "total_apps": 4,
+    "task_ids": [
+      "lca-on-the-line",
+      "robust-clip",
+      "sample-specific-masks",
+      "test-time-model-adaptation"
+    ],
+    "lib_included": true,
+    "total_loc": 6238,
+    "file_count": 82,
+    "verbosity": 0.8259057390189163,
+    "erosion": 0.19995939301145949,
+    "mass.cc": 5686.62,
+    "per_app": [
+      {
+        "label": "lca-on-the-line",
+        "lib_included": true,
+        "total_loc": 2552,
+        "file_count": 40,
+        "verbosity": 0.7997648902821317,
+        "erosion": 0.041077655051649335,
+        "mass.cc": 2365.02
+      },
+      {
+        "label": "robust-clip",
+        "lib_included": true,
+        "total_loc": 1360,
+        "file_count": 27,
+        "verbosity": 0.8161764705882353,
+        "erosion": 0.09538586578901384,
+        "mass.cc": 964.85
+      },
+      {
+        "label": "sample-specific-masks",
+        "lib_included": true,
+        "total_loc": 1864,
+        "file_count": 25,
+        "verbosity": 0.7746781115879828,
+        "erosion": 0.2260385988687609,
+        "mass.cc": 1678.51
+      },
+      {
+        "label": "test-time-model-adaptation",
+        "lib_included": true,
+        "total_loc": 1371,
+        "file_count": 20,
+        "verbosity": 0.8198395331874544,
+        "erosion": 0.40539309777008825,
+        "mass.cc": 1402.35
+      }
+    ],
+    "lib_only": {
+      "total_loc": 303,
+      "file_count": 10,
+      "verbosity": 0.6237623762376238,
+      "erosion": 0.0,
+      "mass.cc": 241.37
+    }
+  }
+}

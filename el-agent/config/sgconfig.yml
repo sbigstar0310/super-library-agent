@@ -1,0 +1,15 @@
+# ast-grep project config for SlopCodeBench Verbosity metric rules.
+#
+# Used by el-agent/src/utils/verbosity.py via:
+#   ast-grep scan -c el-agent/config/sgconfig.yml <target>
+#
+# Each file in ./slop_rules/ contains rules pinned to ONE language:
+#   - slop_rules/javascript.yml   -> .js and .jsx
+#   - slop_rules/typescript.yml   -> .ts
+#   - slop_rules/tsx.yml          -> .tsx
+#
+# Split rationale: ast-grep's `language` field is single-value and strict,
+# so rules cannot cross-apply. Splitting by language file makes the rule set
+# easier to maintain than interleaving all 3 languages in one giant file.
+ruleDirs:
+  - ./slop_rules

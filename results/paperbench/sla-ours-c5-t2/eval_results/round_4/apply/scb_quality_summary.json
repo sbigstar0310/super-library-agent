@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "task": "paperbench",
+    "tag": "sla-ours-c5-t2",
+    "phase": "apply",
+    "round": 4,
+    "language": "python",
+    "total_apps": 4,
+    "task_ids": [
+      "bam",
+      "bbox",
+      "lbcs",
+      "pinn"
+    ],
+    "lib_included": true,
+    "total_loc": 5510,
+    "file_count": 58,
+    "verbosity": 0.8493647912885662,
+    "erosion": 0.22485684624369973,
+    "mass.cc": 4713.03,
+    "per_app": [
+      {
+        "label": "bam",
+        "lib_included": true,
+        "total_loc": 1430,
+        "file_count": 24,
+        "verbosity": 0.8608391608391608,
+        "erosion": 0.338514406089998,
+        "mass.cc": 1268.08
+      },
+      {
+        "label": "bbox",
+        "lib_included": true,
+        "total_loc": 1653,
+        "file_count": 18,
+        "verbosity": 0.793708408953418,
+        "erosion": 0.1693512251525077,
+        "mass.cc": 1361.82
+      },
+      {
+        "label": "lbcs",
+        "lib_included": true,
+        "total_loc": 1443,
+        "file_count": 17,
+        "verbosity": 0.8177408177408177,
+        "erosion": 0.34246746382636867,
+        "mass.cc": 1277.2
+      },
+      {
+        "label": "pinn",
+        "lib_included": true,
+        "total_loc": 1287,
+        "file_count": 17,
+        "verbosity": 0.9254079254079254,
+        "erosion": 0.21500035959202857,
+        "mass.cc": 1343.09
+      }
+    ],
+    "lib_only": {
+      "total_loc": 101,
+      "file_count": 6,
+      "verbosity": 0.7722772277227723,
+      "erosion": 0.6074411951845359,
+      "mass.cc": 179.06
+    }
+  }
+}

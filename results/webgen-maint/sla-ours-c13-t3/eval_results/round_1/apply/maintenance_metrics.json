@@ -1,0 +1,48 @@
+{
+  "maint_tag": "sla-ours-c13-t3",
+  "protocol": "b",
+  "source_tag": "sla-ours-c13-t3",
+  "cost": {
+    "llm_calls": 58,
+    "cost_usd": 0.0300285776,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 25,
+  "files": [
+    "tasks/000027/submission/src/pages/Admin.jsx",
+    "tasks/000027/submission/src/pages/Browse.jsx",
+    "tasks/000027/submission/src/pages/Share.jsx",
+    "tasks/000051/submission/src/pages/Clients.jsx",
+    "tasks/000051/submission/src/pages/Jobs.jsx",
+    "tasks/000051/submission/src/pages/JobsApply.jsx",
+    "tasks/000051/submission/src/pages/PostJob.jsx",
+    "tasks/000051/submission/src/pages/Profile.jsx",
+    "tasks/000052/submission/src/components/JobsScreen.jsx",
+    "tasks/000053/submission/src/App.jsx",
+    "tasks/000053/submission/src/components/CompanyPanel.jsx",
+    "tasks/000053/submission/src/components/StudentPanel.jsx",
+    "tasks/000077/submission/src/pages/Detail.jsx",
+    "tasks/000077/submission/src/pages/Home.jsx",
+    "tasks/000090/submission/src/App.jsx",
+    "tasks/000090/submission/src/components/Feed/SharePicture.jsx",
+    "tasks/000090/submission/src/components/Feed/UpdatesFeed.jsx",
+    "tasks/000090/submission/src/components/Profile/MyUpdates.jsx",
+    "tasks/000091/submission/src/App.jsx",
+    "tasks/000091/submission/src/pages/ProfileDetail.jsx",
+    "tasks/000091/submission/src/pages/Register.jsx",
+    "tasks/000091/submission/src/pages/Search.jsx",
+    "tasks/000092/submission/src/App.jsx",
+    "tasks/000092/submission/src/components/Join.jsx",
+    "tasks/000092/submission/src/components/UserCard.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 417,
+    "other": 0
+  },
+  "patch_location": "apps only"
+}

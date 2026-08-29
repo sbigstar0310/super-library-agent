@@ -1,0 +1,799 @@
+# SlopCodeBench-style rules for JavaScript/TypeScript/JSX/TSX slop detection.
+#
+# Inspired by SprocketLab/slop-code-bench (arXiv:2603.24755).
+# Used by el-agent/src/utils/verbosity.py via `ast-grep scan --json=stream`.
+#
+# Rule coverage strategy
+# ----------------------
+# ast-grep treats each rule's `language` field as a strict parser selector:
+#   - `JavaScript` matches .js and .jsx only
+#   - `Tsx`        matches .tsx only
+#   - `TypeScript` matches .ts only (rarely used in our React apps, omitted)
+#
+# Every semantic rule is therefore duplicated across `JavaScript` (id suffix
+# `-js`) and `Tsx` (id suffix `-tsx`). Keep the two versions in sync.
+#
+# Categories & weights (for future per-category analysis)
+# -------------------------------------------------------
+#   trivial      - simplifications of redundant boilerplate              (weight 2)
+#   react        - React/JSX-specific slop patterns                       (weight 2)
+#   verbose      - verbose guards / expansions                            (weight 3)
+#   clone-ish    - single-statement patterns suggesting copy-paste intent (weight 2)
+
+# ============================================================================
+# TRIVIAL SIMPLIFICATIONS (10 patterns × 2 languages = 20 docs)
+# ============================================================================
+
+---
+id: boolean-return-if-else-js
+language: JavaScript
+severity: warning
+message: "if/else returning true/false - simplify to `return !!cond`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "if ($COND) { return true; } else { return false; }"
+    - pattern: "if ($COND) { return false; } else { return true; }"
+---
+id: boolean-return-if-else-tsx
+language: Tsx
+severity: warning
+message: "if/else returning true/false - simplify to `return !!cond`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "if ($COND) { return true; } else { return false; }"
+    - pattern: "if ($COND) { return false; } else { return true; }"
+
+---
+id: redundant-bool-ternary-js
+language: JavaScript
+severity: warning
+message: "Ternary `c ? true : false` is redundant - just use `c` (or `!!c`)"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$COND ? true : false"
+    - pattern: "$COND ? false : true"
+---
+id: redundant-bool-ternary-tsx
+language: Tsx
+severity: warning
+message: "Ternary `c ? true : false` is redundant - just use `c` (or `!!c`)"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$COND ? true : false"
+    - pattern: "$COND ? false : true"
+
+---
+id: ternary-same-value-js
+language: JavaScript
+severity: warning
+message: "Ternary returns same value for both branches - drop the condition"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "$COND ? $VAL : $VAL"
+---
+id: ternary-same-value-tsx
+language: Tsx
+severity: warning
+message: "Ternary returns same value for both branches - drop the condition"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "$COND ? $VAL : $VAL"
+
+---
+id: explicit-bool-cast-if-js
+language: JavaScript
+severity: warning
+message: "Boolean() cast before `if` is redundant - drop the wrapper"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "if (Boolean($X)) { $$$ }"
+---
+id: explicit-bool-cast-if-tsx
+language: Tsx
+severity: warning
+message: "Boolean() cast before `if` is redundant - drop the wrapper"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "if (Boolean($X)) { $$$ }"
+
+---
+id: json-parse-stringify-js
+language: JavaScript
+severity: warning
+message: "JSON.parse(JSON.stringify(x)) is a noisy deep clone - use structuredClone"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "JSON.parse(JSON.stringify($X))"
+---
+id: json-parse-stringify-tsx
+language: Tsx
+severity: warning
+message: "JSON.parse(JSON.stringify(x)) is a noisy deep clone - use structuredClone"
+metadata: { weight: 2, category: trivial }
+rule:
+  pattern: "JSON.parse(JSON.stringify($X))"
+
+---
+id: length-gt-zero-compare-js
+language: JavaScript
+severity: warning
+message: "`x.length > 0` is verbose - use truthiness `x.length` or `!!x.length`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X.length > 0"
+    - pattern: "$X.length !== 0"
+    - pattern: "$X.length != 0"
+---
+id: length-gt-zero-compare-tsx
+language: Tsx
+severity: warning
+message: "`x.length > 0` is verbose - use truthiness `x.length` or `!!x.length`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X.length > 0"
+    - pattern: "$X.length !== 0"
+    - pattern: "$X.length != 0"
+
+---
+id: length-eq-zero-compare-js
+language: JavaScript
+severity: warning
+message: "`x.length === 0` is verbose - use `!x.length`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X.length === 0"
+    - pattern: "$X.length == 0"
+---
+id: length-eq-zero-compare-tsx
+language: Tsx
+severity: warning
+message: "`x.length === 0` is verbose - use `!x.length`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X.length === 0"
+    - pattern: "$X.length == 0"
+
+---
+id: unnecessary-arrow-wrapper-js
+language: JavaScript
+severity: warning
+message: "Arrow wrapper `(x) => fn(x)` is redundant - use `fn` directly"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "($ARG) => $FN($ARG)"
+    - pattern: "$ARG => $FN($ARG)"
+---
+id: unnecessary-arrow-wrapper-tsx
+language: Tsx
+severity: warning
+message: "Arrow wrapper `(x) => fn(x)` is redundant - use `fn` directly"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "($ARG) => $FN($ARG)"
+    - pattern: "$ARG => $FN($ARG)"
+
+---
+id: explicit-true-compare-js
+language: JavaScript
+severity: warning
+message: "`x === true` is noisy - use `x` (or `!!x`)"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X === true"
+    - pattern: "$X == true"
+---
+id: explicit-true-compare-tsx
+language: Tsx
+severity: warning
+message: "`x === true` is noisy - use `x` (or `!!x`)"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X === true"
+    - pattern: "$X == true"
+
+---
+id: explicit-false-compare-js
+language: JavaScript
+severity: warning
+message: "`x === false` is noisy - use `!x`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X === false"
+    - pattern: "$X == false"
+---
+id: explicit-false-compare-tsx
+language: Tsx
+severity: warning
+message: "`x === false` is noisy - use `!x`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "$X === false"
+    - pattern: "$X == false"
+
+# ============================================================================
+# REACT / JSX-SPECIFIC SLOP (6 patterns × 2 languages = 12 docs)
+# ============================================================================
+
+---
+id: empty-useeffect-js
+language: JavaScript
+severity: warning
+message: "Empty useEffect body - remove the hook"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "useEffect(() => {}, $$$)"
+    - pattern: "useEffect(() => {})"
+---
+id: empty-useeffect-tsx
+language: Tsx
+severity: warning
+message: "Empty useEffect body - remove the hook"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "useEffect(() => {}, $$$)"
+    - pattern: "useEffect(() => {})"
+
+---
+id: usememo-empty-deps-js
+language: JavaScript
+severity: warning
+message: "useMemo with empty deps - the value never changes, hoist it out"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useMemo($FN, [])"
+---
+id: usememo-empty-deps-tsx
+language: Tsx
+severity: warning
+message: "useMemo with empty deps - the value never changes, hoist it out"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useMemo($FN, [])"
+
+---
+id: usecallback-empty-deps-js
+language: JavaScript
+severity: warning
+message: "useCallback with empty deps - the callback never changes, hoist it out"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useCallback($FN, [])"
+---
+id: usecallback-empty-deps-tsx
+language: Tsx
+severity: warning
+message: "useCallback with empty deps - the callback never changes, hoist it out"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useCallback($FN, [])"
+
+---
+# FIX (2026-04-10): previous version used pattern `$COND ? $JSX : null` which
+# had $JSX as a plain metavariable, matching any expression (e.g. `x ? x.id : null`).
+# Now we enumerate explicit JSX element / self-closing / fragment patterns so
+# only actual JSX render ternaries are flagged.
+id: ternary-render-null-js
+language: JavaScript
+severity: warning
+message: "`cond ? <X/> : null` is noisier than `cond && <X/>`"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "$COND ? <$TAG>$$$</$TAG> : null"
+    - pattern: "$COND ? <$TAG $$$>$$$</$TAG> : null"
+    - pattern: "$COND ? <$TAG /> : null"
+    - pattern: "$COND ? <$TAG $$$ /> : null"
+    - pattern: "$COND ? <>$$$</> : null"
+    - pattern: "$COND ? null : <$TAG>$$$</$TAG>"
+    - pattern: "$COND ? null : <$TAG $$$>$$$</$TAG>"
+    - pattern: "$COND ? null : <$TAG />"
+    - pattern: "$COND ? null : <$TAG $$$ />"
+    - pattern: "$COND ? null : <>$$$</>"
+---
+id: ternary-render-null-tsx
+language: Tsx
+severity: warning
+message: "`cond ? <X/> : null` is noisier than `cond && <X/>`"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "$COND ? <$TAG>$$$</$TAG> : null"
+    - pattern: "$COND ? <$TAG $$$>$$$</$TAG> : null"
+    - pattern: "$COND ? <$TAG /> : null"
+    - pattern: "$COND ? <$TAG $$$ /> : null"
+    - pattern: "$COND ? <>$$$</> : null"
+    - pattern: "$COND ? null : <$TAG>$$$</$TAG>"
+    - pattern: "$COND ? null : <$TAG $$$>$$$</$TAG>"
+    - pattern: "$COND ? null : <$TAG />"
+    - pattern: "$COND ? null : <$TAG $$$ />"
+    - pattern: "$COND ? null : <>$$$</>"
+
+---
+id: redundant-return-undefined-js
+language: JavaScript
+severity: warning
+message: "`return undefined` / `return null` at the end - fall off or drop"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "return undefined;"
+    - pattern: "return undefined"
+---
+id: redundant-return-undefined-tsx
+language: Tsx
+severity: warning
+message: "`return undefined` at the end - fall off instead"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "return undefined;"
+
+---
+id: usestate-lazy-literal-js
+language: JavaScript
+severity: warning
+message: "useState initializer wrapped in a lambda for a cheap literal is wasteful"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "useState(() => [])"
+    - pattern: "useState(() => {})"
+    - pattern: "useState(() => '')"
+    - pattern: "useState(() => 0)"
+    - pattern: "useState(() => false)"
+---
+id: usestate-lazy-literal-tsx
+language: Tsx
+severity: warning
+message: "useState initializer wrapped in a lambda for a cheap literal is wasteful"
+metadata: { weight: 2, category: react }
+rule:
+  any:
+    - pattern: "useState(() => [])"
+    - pattern: "useState(() => {})"
+    - pattern: "useState(() => '')"
+    - pattern: "useState(() => 0)"
+    - pattern: "useState(() => false)"
+
+# ============================================================================
+# VERBOSE GUARDS (6 patterns × 2 languages = 12 docs)
+# ============================================================================
+
+---
+id: manual-min-max-js
+language: JavaScript
+severity: warning
+message: "Manual min/max branching - use Math.min / Math.max"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($A > $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A < $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A >= $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A <= $B) { $M = $A; } else { $M = $B; }"
+---
+id: manual-min-max-tsx
+language: Tsx
+severity: warning
+message: "Manual min/max branching - use Math.min / Math.max"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($A > $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A < $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A >= $B) { $M = $A; } else { $M = $B; }"
+    - pattern: "if ($A <= $B) { $M = $A; } else { $M = $B; }"
+
+---
+id: empty-catch-js
+language: JavaScript
+severity: warning
+message: "Empty catch block silently swallows errors"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "try { $$$ } catch ($E) {}"
+    - pattern: "try { $$$ } catch {}"
+---
+id: empty-catch-tsx
+language: Tsx
+severity: warning
+message: "Empty catch block silently swallows errors"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "try { $$$ } catch ($E) {}"
+    - pattern: "try { $$$ } catch {}"
+
+---
+id: var-declaration-js
+language: JavaScript
+severity: warning
+message: "`var` is legacy - use `const` or `let`"
+metadata: { weight: 2, category: verbose }
+rule:
+  pattern: "var $X = $Y"
+---
+id: var-declaration-tsx
+language: Tsx
+severity: warning
+message: "`var` is legacy - use `const` or `let`"
+metadata: { weight: 2, category: verbose }
+rule:
+  pattern: "var $X = $Y"
+
+---
+id: double-cast-string-number-js
+language: JavaScript
+severity: warning
+message: "String(Number(x)) / Number(String(x)) double cast - parse once"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "String(Number($X))"
+    - pattern: "Number(String($X))"
+    - pattern: "parseInt(String($X))"
+---
+id: double-cast-string-number-tsx
+language: Tsx
+severity: warning
+message: "String(Number(x)) / Number(String(x)) double cast - parse once"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "String(Number($X))"
+    - pattern: "Number(String($X))"
+    - pattern: "parseInt(String($X))"
+
+---
+id: guard-return-same-js
+language: JavaScript
+severity: warning
+message: "Guarded return of the same value is dead ceremony"
+metadata: { weight: 3, category: verbose }
+rule:
+  pattern: "if ($X === null) { return null; }"
+---
+id: guard-return-same-tsx
+language: Tsx
+severity: warning
+message: "Guarded return of the same value is dead ceremony"
+metadata: { weight: 3, category: verbose }
+rule:
+  pattern: "if ($X === null) { return null; }"
+
+---
+id: verbose-none-default-js
+language: JavaScript
+severity: warning
+message: "`if (x === undefined) x = default` - use `x = x ?? default`"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($X === undefined) { $X = $DEFAULT; }"
+    - pattern: "if ($X == null) { $X = $DEFAULT; }"
+---
+id: verbose-none-default-tsx
+language: Tsx
+severity: warning
+message: "`if (x === undefined) x = default` - use `x = x ?? default`"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($X === undefined) { $X = $DEFAULT; }"
+    - pattern: "if ($X == null) { $X = $DEFAULT; }"
+
+# ============================================================================
+# CLONE-ISH PATTERNS (6 patterns × 2 languages = 12 docs)
+# ============================================================================
+
+---
+id: array-from-then-map-js
+language: JavaScript
+severity: warning
+message: "Array.from(x).map - combine with Array.from(x, fn)"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "Array.from($X).map($FN)"
+---
+id: array-from-then-map-tsx
+language: Tsx
+severity: warning
+message: "Array.from(x).map - combine with Array.from(x, fn)"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "Array.from($X).map($FN)"
+
+---
+id: object-keys-foreach-js
+language: JavaScript
+severity: warning
+message: "Object.keys(obj).forEach - prefer `for (const key in obj)` or Object.entries"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "Object.keys($OBJ).forEach($FN)"
+---
+id: object-keys-foreach-tsx
+language: Tsx
+severity: warning
+message: "Object.keys(obj).forEach - prefer `for (const key in obj)` or Object.entries"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "Object.keys($OBJ).forEach($FN)"
+
+---
+id: length-minus-one-index-js
+language: JavaScript
+severity: warning
+message: "`arr[arr.length - 1]` - use `arr.at(-1)`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "$ARR[$ARR.length - 1]"
+---
+id: length-minus-one-index-tsx
+language: Tsx
+severity: warning
+message: "`arr[arr.length - 1]` - use `arr.at(-1)`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  pattern: "$ARR[$ARR.length - 1]"
+
+---
+id: array-filter-identity-js
+language: JavaScript
+severity: warning
+message: "`arr.filter(x => x)` - use `arr.filter(Boolean)`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$ARR.filter(($X) => $X)"
+    - pattern: "$ARR.filter($X => $X)"
+---
+id: array-filter-identity-tsx
+language: Tsx
+severity: warning
+message: "`arr.filter(x => x)` - use `arr.filter(Boolean)`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$ARR.filter(($X) => $X)"
+    - pattern: "$ARR.filter($X => $X)"
+
+---
+id: spread-copy-in-call-js
+language: JavaScript
+severity: warning
+message: "Spreading into a function call just to copy is wasteful"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$FN([...$ARR])"
+    - pattern: "return [...$ARR];"
+---
+id: spread-copy-in-call-tsx
+language: Tsx
+severity: warning
+message: "Spreading into a function call just to copy is wasteful"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$FN([...$ARR])"
+    - pattern: "return [...$ARR];"
+
+---
+# Extended 2026-04-10: also flag console.warn / console.info.
+# console.error is deliberately NOT flagged — it's often legitimate in production
+# error reporting paths. Surveyed WA backup: 23 console.log, 14 console.warn/info/error.
+id: console-log-leftover-js
+language: JavaScript
+severity: warning
+message: "Leftover console.log / debug / warn / info - strip before ship"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "console.log($$$)"
+    - pattern: "console.debug($$$)"
+    - pattern: "console.warn($$$)"
+    - pattern: "console.info($$$)"
+---
+id: console-log-leftover-tsx
+language: Tsx
+severity: warning
+message: "Leftover console.log / debug / warn / info - strip before ship"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "console.log($$$)"
+    - pattern: "console.debug($$$)"
+    - pattern: "console.warn($$$)"
+    - pattern: "console.info($$$)"
+
+# ============================================================================
+# NEW RULES (added 2026-04-10 after surveying WA_gpt-5-mini backup)
+# Patterns found empirically in real LLM-generated React apps.
+# ============================================================================
+
+# Defensive Array.isArray fallback — found in ProfileForm.jsx (2 occurrences).
+# Over-defensive: if you don't trust the type, fix the data layer, not the consumer.
+---
+id: array-isarray-fallback-js
+language: JavaScript
+severity: warning
+message: "`Array.isArray(x) ? x : []` is over-defensive - validate at data boundary"
+metadata: { weight: 2, category: verbose }
+rule:
+  any:
+    - pattern: "Array.isArray($X) ? $X : []"
+    - pattern: "Array.isArray($X) ? $X : null"
+    - pattern: "Array.isArray($X) ? $X : undefined"
+---
+id: array-isarray-fallback-tsx
+language: Tsx
+severity: warning
+message: "`Array.isArray(x) ? x : []` is over-defensive - validate at data boundary"
+metadata: { weight: 2, category: verbose }
+rule:
+  any:
+    - pattern: "Array.isArray($X) ? $X : []"
+    - pattern: "Array.isArray($X) ? $X : null"
+    - pattern: "Array.isArray($X) ? $X : undefined"
+
+# Nested ternary — hard to read, prefer early returns or if/else.
+# Matches `a ? b : c ? d : e` or `a ? (c ? d : e) : b`.
+---
+id: nested-ternary-js
+language: JavaScript
+severity: warning
+message: "Nested ternary - extract to if/else or a helper for readability"
+metadata: { weight: 3, category: verbose }
+rule:
+  kind: ternary_expression
+  has:
+    stopBy: end
+    kind: ternary_expression
+---
+id: nested-ternary-tsx
+language: Tsx
+severity: warning
+message: "Nested ternary - extract to if/else or a helper for readability"
+metadata: { weight: 3, category: verbose }
+rule:
+  kind: ternary_expression
+  has:
+    stopBy: end
+    kind: ternary_expression
+
+# If/else that only assigns the same variable — use a single conditional assignment.
+# Found in several WA apps as verbose state updates.
+---
+id: if-else-assign-same-var-js
+language: JavaScript
+severity: warning
+message: "`if (c) x = a; else x = b;` - use `x = c ? a : b`"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($COND) { $X = $A; } else { $X = $B; }"
+    - pattern: "if ($COND) $X = $A; else $X = $B;"
+---
+id: if-else-assign-same-var-tsx
+language: Tsx
+severity: warning
+message: "`if (c) x = a; else x = b;` - use `x = c ? a : b`"
+metadata: { weight: 3, category: verbose }
+rule:
+  any:
+    - pattern: "if ($COND) { $X = $A; } else { $X = $B; }"
+    - pattern: "if ($COND) $X = $A; else $X = $B;"
+
+# Redundant double-bang inside a condition that already coerces.
+# `if (!!x)` / `return !!x ? ... : ...` / `while (!!x)` — the `!!` is dead ceremony.
+---
+id: redundant-double-bang-js
+language: JavaScript
+severity: warning
+message: "Redundant `!!` inside a boolean context - just use `x`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "if (!!$X) { $$$ }"
+    - pattern: "while (!!$X) { $$$ }"
+    - pattern: "!!$X ? $A : $B"
+---
+id: redundant-double-bang-tsx
+language: Tsx
+severity: warning
+message: "Redundant `!!` inside a boolean context - just use `x`"
+metadata: { weight: 2, category: trivial }
+rule:
+  any:
+    - pattern: "if (!!$X) { $$$ }"
+    - pattern: "while (!!$X) { $$$ }"
+    - pattern: "!!$X ? $A : $B"
+
+# useState initialized by calling a function eagerly — should use lazy initializer.
+# `useState(currentUser())` runs currentUser on every render but result is discarded
+# after first; `useState(() => currentUser())` runs it once. Common anti-pattern in
+# WA apps (seen in 000056 Login.jsx equivalents).
+---
+id: usestate-eager-function-call-js
+language: JavaScript
+severity: warning
+message: "useState with eager function call - use `useState(() => fn())` for lazy init"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useState($FN($$$))"
+  not:
+    any:
+      - pattern: "useState(useState($$$))"
+      - pattern: "useState(require($$$))"
+---
+id: usestate-eager-function-call-tsx
+language: Tsx
+severity: warning
+message: "useState with eager function call - use `useState(() => fn())` for lazy init"
+metadata: { weight: 2, category: react }
+rule:
+  pattern: "useState($FN($$$))"
+  not:
+    any:
+      - pattern: "useState(useState($$$))"
+      - pattern: "useState(require($$$))"
+
+# `x?.y || fallback` is almost always a bug or noise — `||` treats "" and 0 as falsy.
+# Correct form is `x?.y ?? fallback`. Extremely common in LLM-generated JS.
+---
+id: optional-chain-or-fallback-js
+language: JavaScript
+severity: warning
+message: "`x?.y || fallback` - use `??` so 0/'' are preserved"
+metadata: { weight: 2, category: verbose }
+rule:
+  pattern: "$OBJ?.$PROP || $DEFAULT"
+---
+id: optional-chain-or-fallback-tsx
+language: Tsx
+severity: warning
+message: "`x?.y || fallback` - use `??` so 0/'' are preserved"
+metadata: { weight: 2, category: verbose }
+rule:
+  pattern: "$OBJ?.$PROP || $DEFAULT"
+
+# Array literal identity map `[1,2,3].map(x => x)` - pointless.
+---
+id: map-identity-js
+language: JavaScript
+severity: warning
+message: "`arr.map(x => x)` - pointless identity map, use `[...arr]`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$ARR.map($X => $X)"
+    - pattern: "$ARR.map(($X) => $X)"
+    - pattern: "$ARR.map(function ($X) { return $X; })"
+---
+id: map-identity-tsx
+language: Tsx
+severity: warning
+message: "`arr.map(x => x)` - pointless identity map, use `[...arr]`"
+metadata: { weight: 2, category: clone-ish }
+rule:
+  any:
+    - pattern: "$ARR.map($X => $X)"
+    - pattern: "$ARR.map(($X) => $X)"
+    - pattern: "$ARR.map(function ($X) { return $X; })"

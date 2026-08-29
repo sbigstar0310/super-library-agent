@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "task": "paperbench",
+    "tag": "baseline-c5-t3",
+    "phase": "coding",
+    "round": 1,
+    "language": "python",
+    "total_apps": 4,
+    "task_ids": [
+      "bam",
+      "bbox",
+      "lbcs",
+      "pinn"
+    ],
+    "lib_included": false,
+    "total_loc": 6931,
+    "file_count": 70,
+    "verbosity": 0.871302842302698,
+    "erosion": 0.34511096924180373,
+    "mass.cc": 6099.7,
+    "per_app": [
+      {
+        "label": "bam",
+        "lib_included": false,
+        "total_loc": 1778,
+        "file_count": 15,
+        "verbosity": 0.9094488188976378,
+        "erosion": 0.43886488116177136,
+        "mass.cc": 1897.79
+      },
+      {
+        "label": "bbox",
+        "lib_included": false,
+        "total_loc": 2056,
+        "file_count": 12,
+        "verbosity": 0.8365758754863813,
+        "erosion": 0.2065618340676109,
+        "mass.cc": 1464.7
+      },
+      {
+        "label": "lbcs",
+        "lib_included": false,
+        "total_loc": 1505,
+        "file_count": 30,
+        "verbosity": 0.8850498338870432,
+        "erosion": 0.5570994706784544,
+        "mass.cc": 1533.31
+      },
+      {
+        "label": "pinn",
+        "lib_included": false,
+        "total_loc": 1592,
+        "file_count": 13,
+        "verbosity": 0.8605527638190955,
+        "erosion": 0.09589340249370436,
+        "mass.cc": 1203.91
+      }
+    ],
+    "lib_only": null
+  }
+}

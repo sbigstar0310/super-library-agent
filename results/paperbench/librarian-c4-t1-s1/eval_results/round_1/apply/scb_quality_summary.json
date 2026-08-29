@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "task": "paperbench",
+    "tag": "librarian-c4-t1-s1",
+    "phase": "apply",
+    "round": 1,
+    "language": "python",
+    "total_apps": 4,
+    "task_ids": [
+      "all-in-one",
+      "bridging-data-gaps",
+      "sequential-neural-score-estimation",
+      "stochastic-interpolants"
+    ],
+    "lib_included": true,
+    "total_loc": 6026,
+    "file_count": 67,
+    "verbosity": 0.8518088284102223,
+    "erosion": 0.3377177028464044,
+    "mass.cc": 4956.39,
+    "per_app": [
+      {
+        "label": "all-in-one",
+        "lib_included": true,
+        "total_loc": 1051,
+        "file_count": 21,
+        "verbosity": 0.8677450047573739,
+        "erosion": 0.3878051572503109,
+        "mass.cc": 1100.6
+      },
+      {
+        "label": "bridging-data-gaps",
+        "lib_included": true,
+        "total_loc": 2025,
+        "file_count": 29,
+        "verbosity": 0.8607407407407407,
+        "erosion": 0.32618681098371893,
+        "mass.cc": 1543.34
+      },
+      {
+        "label": "sequential-neural-score-estimation",
+        "lib_included": true,
+        "total_loc": 2035,
+        "file_count": 21,
+        "verbosity": 0.831941031941032,
+        "erosion": 0.3802276865310987,
+        "mass.cc": 1717.17
+      },
+      {
+        "label": "stochastic-interpolants",
+        "lib_included": true,
+        "total_loc": 1053,
+        "file_count": 14,
+        "verbosity": 0.8309591642924976,
+        "erosion": 0.1378131458431876,
+        "mass.cc": 658.2
+      }
+    ],
+    "lib_only": {
+      "total_loc": 46,
+      "file_count": 6,
+      "verbosity": 0.6521739130434783,
+      "erosion": 0.0,
+      "mass.cc": 20.97
+    }
+  }
+}

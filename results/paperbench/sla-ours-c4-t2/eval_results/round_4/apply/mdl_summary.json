@@ -1,0 +1,730 @@
+{
+  "apps": [
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-ours-c4-t2/final/round_4/apply/tasks/all-in-one/submission",
+      "app_nll": 8289.0882,
+      "library_nll": 2039.5981,
+      "nll_per_token": 0.4392,
+      "perplexity": 1.5515,
+      "total_tokens": 23515,
+      "library_tokens": 5387,
+      "app_tokens": 18128,
+      "file_details": [
+        {
+          "rel_path": "setup.py",
+          "nll": 71.554,
+          "tokens": 101,
+          "nll_per_token": 0.7085,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "simformer/__init__.py",
+          "nll": 42.6337,
+          "tokens": 94,
+          "nll_per_token": 0.4535,
+          "dep_paths": [
+            "simformer/simformer.py",
+            "simformer/tokenizer.py",
+            "simformer/training.py",
+            "simformer/sampling.py",
+            "simformer/guidance.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/evaluation/__init__.py",
+          "nll": 25.4192,
+          "tokens": 48,
+          "nll_per_token": 0.5296,
+          "dep_paths": [
+            "simformer/evaluation/metrics.py",
+            "simformer/evaluation/calibration.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/evaluation/calibration.py",
+          "nll": 217.1134,
+          "tokens": 310,
+          "nll_per_token": 0.7004,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "simformer/evaluation/metrics.py",
+          "nll": 46.5928,
+          "tokens": 42,
+          "nll_per_token": 1.1094,
+          "dep_paths": [
+            "lib/utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/experiments.py",
+          "nll": 708.9547,
+          "tokens": 2627,
+          "nll_per_token": 0.2699,
+          "dep_paths": [
+            "lib/utils/seed.py",
+            "simformer/simformer.py",
+            "simformer/training.py",
+            "simformer/sampling.py",
+            "simformer/evaluation/metrics.py",
+            "simformer/evaluation/calibration.py",
+            "simformer/guidance.py",
+            "simformer/tasks/benchmark.py",
+            "simformer/tasks/lotka_volterra.py",
+            "simformer/tasks/sird.py",
+            "simformer/tasks/hodgkin_huxley.py",
+            "simformer/utils/graph_inversion.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/guidance.py",
+          "nll": 682.4083,
+          "tokens": 750,
+          "nll_per_token": 0.9099,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "simformer/nn/__init__.py",
+          "nll": 41.1594,
+          "tokens": 67,
+          "nll_per_token": 0.6143,
+          "dep_paths": [
+            "simformer/nn/transformer.py",
+            "simformer/nn/embedding.py",
+            "lib/nn/embedding.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/nn/embedding.py",
+          "nll": 53.498,
+          "tokens": 235,
+          "nll_per_token": 0.2277,
+          "dep_paths": [
+            "lib/nn/embedding.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/nn/transformer.py",
+          "nll": 441.9509,
+          "tokens": 1141,
+          "nll_per_token": 0.3873,
+          "dep_paths": [
+            "lib/nn/embedding.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/sampling.py",
+          "nll": 410.047,
+          "tokens": 1121,
+          "nll_per_token": 0.3658,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "simformer/sde/__init__.py",
+          "nll": 20.7114,
+          "tokens": 35,
+          "nll_per_token": 0.5918,
+          "dep_paths": [
+            "simformer/sde/base.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/sde/base.py",
+          "nll": 31.1752,
+          "tokens": 46,
+          "nll_per_token": 0.6777,
+          "dep_paths": [
+            "lib/sde/base.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/simformer.py",
+          "nll": 549.8676,
+          "tokens": 1799,
+          "nll_per_token": 0.3057,
+          "dep_paths": [
+            "simformer/tokenizer.py",
+            "simformer/nn/transformer.py",
+            "lib/sde/base.py",
+            "simformer/sampling.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/tasks/__init__.py",
+          "nll": 30.1709,
+          "tokens": 135,
+          "nll_per_token": 0.2235,
+          "dep_paths": [
+            "simformer/tasks/benchmark.py",
+            "simformer/tasks/lotka_volterra.py",
+            "simformer/tasks/sird.py",
+            "simformer/tasks/hodgkin_huxley.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/tasks/benchmark.py",
+          "nll": 788.4723,
+          "tokens": 1780,
+          "nll_per_token": 0.443,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "simformer/tasks/hodgkin_huxley.py",
+          "nll": 994.1377,
+          "tokens": 1860,
+          "nll_per_token": 0.5345,
+          "dep_paths": [
+            "simformer/utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/tasks/lotka_volterra.py",
+          "nll": 539.7188,
+          "tokens": 1038,
+          "nll_per_token": 0.52,
+          "dep_paths": [
+            "simformer/utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/tasks/sird.py",
+          "nll": 601.6284,
+          "tokens": 1006,
+          "nll_per_token": 0.598,
+          "dep_paths": [
+            "simformer/utils/__init__.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/tokenizer.py",
+          "nll": 391.4141,
+          "tokens": 687,
+          "nll_per_token": 0.5697,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "simformer/training.py",
+          "nll": 562.6698,
+          "tokens": 1250,
+          "nll_per_token": 0.4501,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "simformer/utils/__init__.py",
+          "nll": 106.4101,
+          "tokens": 213,
+          "nll_per_token": 0.4996,
+          "dep_paths": [
+            "simformer/utils/graph_inversion.py"
+          ]
+        },
+        {
+          "rel_path": "simformer/utils/graph_inversion.py",
+          "nll": 442.8827,
+          "tokens": 735,
+          "nll_per_token": 0.6026,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "test_smoke.py",
+          "nll": 488.4979,
+          "tokens": 1008,
+          "nll_per_token": 0.4846,
+          "dep_paths": [
+            "simformer/sde/base.py",
+            "simformer/tokenizer.py",
+            "simformer/nn/transformer.py",
+            "simformer/simformer.py",
+            "simformer/sampling.py",
+            "simformer/evaluation/metrics.py",
+            "simformer/tasks/benchmark.py",
+            "simformer/tasks/lotka_volterra.py",
+            "simformer/tasks/sird.py",
+            "simformer/tasks/hodgkin_huxley.py",
+            "simformer/utils/graph_inversion.py",
+            "simformer/guidance.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-ours-c4-t2/final/round_4/apply/tasks/bridging-data-gaps/submission",
+      "app_nll": 9642.0021,
+      "library_nll": 2039.5164,
+      "nll_per_token": 0.4961,
+      "perplexity": 1.6423,
+      "total_tokens": 23548,
+      "library_tokens": 5387,
+      "app_tokens": 18161,
+      "file_details": [
+        {
+          "rel_path": "dpm_ant/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "dpm_ant/configs/__init__.py",
+          "nll": 16.849,
+          "tokens": 14,
+          "nll_per_token": 1.2035,
+          "dep_paths": [
+            "dpm_ant/configs/config.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/configs/config.py",
+          "nll": 802.9633,
+          "tokens": 1367,
+          "nll_per_token": 0.5874,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "dpm_ant/evaluation/__init__.py",
+          "nll": 16.7556,
+          "tokens": 17,
+          "nll_per_token": 0.9856,
+          "dep_paths": [
+            "dpm_ant/evaluation/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/evaluation/metrics.py",
+          "nll": 473.2866,
+          "tokens": 737,
+          "nll_per_token": 0.6422,
+          "dep_paths": [
+            "lib/utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/experiments.py",
+          "nll": 1236.0618,
+          "tokens": 2794,
+          "nll_per_token": 0.4424,
+          "dep_paths": [
+            "lib/utils/seed.py",
+            "dpm_ant/models/ddpm.py",
+            "dpm_ant/models/unet.py",
+            "dpm_ant/models/adaptor.py",
+            "dpm_ant/models/classifier.py",
+            "dpm_ant/models/ldm.py",
+            "dpm_ant/training/ant_trainer.py",
+            "dpm_ant/evaluation/metrics.py",
+            "dpm_ant/utils/data.py",
+            "dpm_ant/utils/common.py",
+            "dpm_ant/utils/visualization.py",
+            "dpm_ant/configs/config.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/models/__init__.py",
+          "nll": 22.7478,
+          "tokens": 50,
+          "nll_per_token": 0.455,
+          "dep_paths": [
+            "dpm_ant/models/unet.py",
+            "dpm_ant/models/ddpm.py",
+            "dpm_ant/models/ldm.py",
+            "dpm_ant/models/adaptor.py",
+            "dpm_ant/models/classifier.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/models/adaptor.py",
+          "nll": 469.5225,
+          "tokens": 874,
+          "nll_per_token": 0.5372,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "dpm_ant/models/classifier.py",
+          "nll": 288.8261,
+          "tokens": 608,
+          "nll_per_token": 0.475,
+          "dep_paths": [
+            "lib/nn/embedding.py",
+            "lib/nn/resnet.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/models/ddpm.py",
+          "nll": 782.16,
+          "tokens": 2222,
+          "nll_per_token": 0.352,
+          "dep_paths": [
+            "dpm_ant/models/unet.py",
+            "lib/sde/schedule.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/models/ldm.py",
+          "nll": 238.4732,
+          "tokens": 362,
+          "nll_per_token": 0.6588,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "dpm_ant/models/unet.py",
+          "nll": 290.4128,
+          "tokens": 907,
+          "nll_per_token": 0.3202,
+          "dep_paths": [
+            "lib/nn/embedding.py",
+            "lib/nn/resnet.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/training/__init__.py",
+          "nll": 16.348,
+          "tokens": 15,
+          "nll_per_token": 1.0899,
+          "dep_paths": [
+            "dpm_ant/training/ant_trainer.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/training/ant_trainer.py",
+          "nll": 986.3754,
+          "tokens": 1672,
+          "nll_per_token": 0.5899,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "dpm_ant/utils/__init__.py",
+          "nll": 19.8982,
+          "tokens": 60,
+          "nll_per_token": 0.3316,
+          "dep_paths": [
+            "dpm_ant/utils/data.py",
+            "dpm_ant/utils/visualization.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/utils/common.py",
+          "nll": 74.0929,
+          "tokens": 57,
+          "nll_per_token": 1.2999,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "dpm_ant/utils/data.py",
+          "nll": 937.4981,
+          "tokens": 1548,
+          "nll_per_token": 0.6056,
+          "dep_paths": [
+            "lib/utils/seed.py"
+          ]
+        },
+        {
+          "rel_path": "dpm_ant/utils/visualization.py",
+          "nll": 500.8622,
+          "tokens": 1022,
+          "nll_per_token": 0.4901,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "run_experiments.py",
+          "nll": 204.4221,
+          "tokens": 467,
+          "nll_per_token": 0.4377,
+          "dep_paths": [
+            "dpm_ant/experiments.py",
+            "dpm_ant/configs/config.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/__init__.py",
+          "nll": -0.0,
+          "tokens": 0,
+          "nll_per_token": NaN,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "scripts/reproduce_figures.py",
+          "nll": 321.5774,
+          "tokens": 332,
+          "nll_per_token": 0.9686,
+          "dep_paths": [
+            "dpm_ant/utils/common.py",
+            "dpm_ant/experiments.py",
+            "dpm_ant/configs/config.py"
+          ]
+        },
+        {
+          "rel_path": "scripts/reproduce_tables.py",
+          "nll": 1942.8693,
+          "tokens": 3036,
+          "nll_per_token": 0.6399,
+          "dep_paths": [
+            "dpm_ant/utils/common.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-ours-c4-t2/final/round_4/apply/tasks/sequential-neural-score-estimation/submission",
+      "app_nll": 5197.29,
+      "library_nll": 2039.5981,
+      "nll_per_token": 0.4347,
+      "perplexity": 1.5445,
+      "total_tokens": 16648,
+      "library_tokens": 5387,
+      "app_tokens": 11261,
+      "file_details": [
+        {
+          "rel_path": "evaluate_results.py",
+          "nll": 364.7542,
+          "tokens": 671,
+          "nll_per_token": 0.5436,
+          "dep_paths": [
+            "lib/utils/metrics.py",
+            "lib/utils/data.py",
+            "snpse/benchmarks.py",
+            "snpse/utils.py"
+          ]
+        },
+        {
+          "rel_path": "run_experiments.py",
+          "nll": 857.2092,
+          "tokens": 2513,
+          "nll_per_token": 0.3411,
+          "dep_paths": [
+            "lib/utils/seed.py",
+            "lib/utils/data.py",
+            "lib/utils/metrics.py",
+            "lib/sde/base.py",
+            "snpse/score_network.py",
+            "snpse/trainer.py",
+            "snpse/sampler.py",
+            "snpse/benchmarks.py",
+            "snpse/utils.py"
+          ]
+        },
+        {
+          "rel_path": "snpse/__init__.py",
+          "nll": 70.4021,
+          "tokens": 267,
+          "nll_per_token": 0.2637,
+          "dep_paths": [
+            "snpse/score_network.py",
+            "snpse/sde.py",
+            "snpse/trainer.py",
+            "snpse/sampler.py",
+            "snpse/benchmarks.py",
+            "snpse/c2st.py",
+            "snpse/utils.py",
+            "lib/utils/data.py"
+          ]
+        },
+        {
+          "rel_path": "snpse/benchmarks.py",
+          "nll": 1084.0693,
+          "tokens": 2895,
+          "nll_per_token": 0.3745,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "snpse/c2st.py",
+          "nll": 32.0008,
+          "tokens": 28,
+          "nll_per_token": 1.1429,
+          "dep_paths": [
+            "lib/utils/metrics.py"
+          ]
+        },
+        {
+          "rel_path": "snpse/nlse.py",
+          "nll": 217.5622,
+          "tokens": 267,
+          "nll_per_token": 0.8148,
+          "dep_paths": [
+            "snpse/score_network.py"
+          ]
+        },
+        {
+          "rel_path": "snpse/sampler.py",
+          "nll": 529.889,
+          "tokens": 991,
+          "nll_per_token": 0.5347,
+          "dep_paths": [
+            "lib/sde/base.py"
+          ]
+        },
+        {
+          "rel_path": "snpse/score_network.py",
+          "nll": 196.621,
+          "tokens": 432,
+          "nll_per_token": 0.4551,
+          "dep_paths": [
+            "lib/nn/embedding.py"
+          ]
+        },
+        {
+          "rel_path": "snpse/sde.py",
+          "nll": 29.0604,
+          "tokens": 46,
+          "nll_per_token": 0.6317,
+          "dep_paths": [
+            "lib/sde/base.py"
+          ]
+        },
+        {
+          "rel_path": "snpse/sequential_alternatives.py",
+          "nll": 387.5183,
+          "tokens": 497,
+          "nll_per_token": 0.7797,
+          "dep_paths": [
+            "snpse/score_network.py",
+            "lib/sde/base.py"
+          ]
+        },
+        {
+          "rel_path": "snpse/trainer.py",
+          "nll": 561.9359,
+          "tokens": 1114,
+          "nll_per_token": 0.5044,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "snpse/utils.py",
+          "nll": 866.2676,
+          "tokens": 1540,
+          "nll_per_token": 0.5625,
+          "dep_paths": [
+            "lib/utils/data.py",
+            "snpse/sampler.py",
+            "lib/sde/base.py",
+            "snpse/benchmarks.py"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "provider": "openai_completions",
+      "app_path": "/c2/daegyu/el-poc/backups/paperbench/sla-ours-c4-t2/final/round_4/apply/tasks/stochastic-interpolants/submission",
+      "app_nll": 3354.4602,
+      "library_nll": 2039.5981,
+      "nll_per_token": 0.3613,
+      "perplexity": 1.4352,
+      "total_tokens": 14930,
+      "library_tokens": 5387,
+      "app_tokens": 9543,
+      "file_details": [
+        {
+          "rel_path": "stochastic_interpolant/__init__.py",
+          "nll": 33.5089,
+          "tokens": 41,
+          "nll_per_token": 0.8173,
+          "dep_paths": [
+            "stochastic_interpolant/interpolant.py",
+            "stochastic_interpolant/data.py"
+          ]
+        },
+        {
+          "rel_path": "stochastic_interpolant/baseline.py",
+          "nll": 134.4841,
+          "tokens": 273,
+          "nll_per_token": 0.4926,
+          "dep_paths": [
+            "stochastic_interpolant/interpolant.py",
+            "stochastic_interpolant/models/__init__.py",
+            "stochastic_interpolant/train.py"
+          ]
+        },
+        {
+          "rel_path": "stochastic_interpolant/data.py",
+          "nll": 307.7507,
+          "tokens": 590,
+          "nll_per_token": 0.5216,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "stochastic_interpolant/evaluate.py",
+          "nll": 325.1268,
+          "tokens": 881,
+          "nll_per_token": 0.369,
+          "dep_paths": [
+            "lib/utils/metrics.py",
+            "stochastic_interpolant/interpolant.py",
+            "stochastic_interpolant/sample.py"
+          ]
+        },
+        {
+          "rel_path": "stochastic_interpolant/experiments.py",
+          "nll": 387.5754,
+          "tokens": 2026,
+          "nll_per_token": 0.1913,
+          "dep_paths": [
+            "lib/utils/data.py",
+            "stochastic_interpolant/interpolant.py",
+            "stochastic_interpolant/models/__init__.py",
+            "stochastic_interpolant/train.py",
+            "stochastic_interpolant/data.py",
+            "stochastic_interpolant/evaluate.py"
+          ]
+        },
+        {
+          "rel_path": "stochastic_interpolant/interpolant.py",
+          "nll": 638.9331,
+          "tokens": 1639,
+          "nll_per_token": 0.3898,
+          "dep_paths": []
+        },
+        {
+          "rel_path": "stochastic_interpolant/models/__init__.py",
+          "nll": 16.917,
+          "tokens": 12,
+          "nll_per_token": 1.4097,
+          "dep_paths": [
+            "stochastic_interpolant/models/unet.py"
+          ]
+        },
+        {
+          "rel_path": "stochastic_interpolant/models/unet.py",
+          "nll": 444.8866,
+          "tokens": 1242,
+          "nll_per_token": 0.3582,
+          "dep_paths": [
+            "lib/nn/embedding.py",
+            "lib/nn/resnet.py"
+          ]
+        },
+        {
+          "rel_path": "stochastic_interpolant/sample.py",
+          "nll": 398.8794,
+          "tokens": 1002,
+          "nll_per_token": 0.3981,
+          "dep_paths": [
+            "stochastic_interpolant/interpolant.py"
+          ]
+        },
+        {
+          "rel_path": "stochastic_interpolant/train.py",
+          "nll": 666.3982,
+          "tokens": 1837,
+          "nll_per_token": 0.3628,
+          "dep_paths": [
+            "stochastic_interpolant/interpolant.py",
+            "stochastic_interpolant/models/__init__.py",
+            "stochastic_interpolant/data.py"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "sum_app_nll": 26482.8405,
+    "avg_library_nll": 2039.5777,
+    "mdl_nll": 28522.4182,
+    "total_apps": 4
+  }
+}

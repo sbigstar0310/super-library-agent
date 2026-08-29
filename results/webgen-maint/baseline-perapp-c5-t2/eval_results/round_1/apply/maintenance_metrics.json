@@ -1,0 +1,164 @@
+{
+  "maint_tag": "baseline-perapp-c5-t2",
+  "protocol": "c",
+  "source_tag": "baseline-c5-t2",
+  "cost": {
+    "llm_calls": 133,
+    "cost_usd": 0.05619628,
+    "sessions": 7
+  },
+  "static_checks": {
+    "000022": {
+      "violations": [],
+      "clean": true
+    },
+    "000023": {
+      "violations": [],
+      "clean": true
+    },
+    "000044": {
+      "violations": [],
+      "clean": true
+    },
+    "000046": {
+      "violations": [],
+      "clean": true
+    },
+    "000080": {
+      "violations": [],
+      "clean": true
+    },
+    "000083": {
+      "violations": [],
+      "clean": true
+    },
+    "000085": {
+      "violations": [],
+      "clean": true
+    }
+  },
+  "touched_files": 38,
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 1812,
+    "other": 0
+  },
+  "patch_location": "apps only",
+  "per_app_analysis": {
+    "000022": {
+      "touched_files": 12,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/App.jsx",
+        "submission/src/components/Clients.css",
+        "submission/src/components/Clients.jsx",
+        "submission/src/components/ClientsEdit.css",
+        "submission/src/components/ClientsEdit.jsx",
+        "submission/src/components/OpenCalls.css",
+        "submission/src/components/OpenCalls.jsx",
+        "submission/src/components/ToDoCalls.css",
+        "submission/src/components/ToDoCalls.jsx",
+        "submission/src/components/Wizard.jsx",
+        "submission/src/context/AppContext.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 425
+      },
+      "patch_location": "apps only"
+    },
+    "000023": {
+      "touched_files": 3,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/leads/Leads.css",
+        "submission/src/leads/Leads.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 117
+      },
+      "patch_location": "apps only"
+    },
+    "000044": {
+      "touched_files": 7,
+      "files": [
+        "submission/src/App.jsx",
+        "submission/src/contexts/ProductContext.jsx",
+        "submission/src/pages/Inquiry.jsx",
+        "submission/src/pages/Register.jsx",
+        "submission/src/pages/Statistics.jsx",
+        "submission/src/pages/Track.jsx",
+        "submission/src/pages/Verify.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 279
+      },
+      "patch_location": "apps only"
+    },
+    "000046": {
+      "touched_files": 4,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/components/Finance.jsx",
+        "submission/src/components/PatientRecords.jsx",
+        "submission/src/components/Pharmacy.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 414
+      },
+      "patch_location": "apps only"
+    },
+    "000080": {
+      "touched_files": 2,
+      "files": [
+        "submission/src/components/TodoApp.css",
+        "submission/src/components/TodoApp.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 143
+      },
+      "patch_location": "apps only"
+    },
+    "000083": {
+      "touched_files": 5,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/components/Cases.jsx",
+        "submission/src/components/ExpenseSheet.jsx",
+        "submission/src/components/Reports.jsx",
+        "submission/src/components/WorkHours.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 134
+      },
+      "patch_location": "apps only"
+    },
+    "000085": {
+      "touched_files": 5,
+      "files": [
+        "submission/src/App.css",
+        "submission/src/App.jsx",
+        "submission/src/components/Documents/Documents.jsx",
+        "submission/src/components/Projects/Projects.jsx",
+        "submission/src/components/Schedule/Schedule.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 300
+      },
+      "patch_location": "apps only"
+    }
+  }
+}

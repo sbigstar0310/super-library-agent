@@ -1,0 +1,121 @@
+{
+  "maint_tag": "baseline-perapp-c2-t2",
+  "protocol": "c",
+  "source_tag": "baseline-c2-t2",
+  "cost": {
+    "llm_calls": 86,
+    "cost_usd": 0.0254216928,
+    "sessions": 6
+  },
+  "static_checks": {
+    "000015": {
+      "violations": [],
+      "clean": true
+    },
+    "000016": {
+      "violations": [],
+      "clean": true
+    },
+    "000019": {
+      "violations": [],
+      "clean": true
+    },
+    "000064": {
+      "violations": [],
+      "clean": true
+    },
+    "000071": {
+      "violations": [],
+      "clean": true
+    },
+    "000075": {
+      "violations": [],
+      "clean": true
+    }
+  },
+  "touched_files": 10,
+  "added_loc_by_location": {
+    "lib": 0,
+    "apps": 182,
+    "other": 0
+  },
+  "patch_location": "apps only",
+  "per_app_analysis": {
+    "000015": {
+      "touched_files": 2,
+      "files": [
+        "submission/src/pages/Contact.css",
+        "submission/src/pages/Contact.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 53
+      },
+      "patch_location": "apps only"
+    },
+    "000016": {
+      "touched_files": 1,
+      "files": [
+        "submission/src/pages/Contact.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 5
+      },
+      "patch_location": "apps only"
+    },
+    "000019": {
+      "touched_files": 1,
+      "files": [
+        "submission/src/pages/Contact.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 4
+      },
+      "patch_location": "apps only"
+    },
+    "000064": {
+      "touched_files": 2,
+      "files": [
+        "submission/src/pages/Newsletter.css",
+        "submission/src/pages/Newsletter.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 23
+      },
+      "patch_location": "apps only"
+    },
+    "000071": {
+      "touched_files": 2,
+      "files": [
+        "submission/src/components/Contact.css",
+        "submission/src/components/Contact.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 43
+      },
+      "patch_location": "apps only"
+    },
+    "000075": {
+      "touched_files": 2,
+      "files": [
+        "submission/src/components/ContactSection.css",
+        "submission/src/components/ContactSection.jsx"
+      ],
+      "added_loc_by_location": {
+        "lib": 0,
+        "apps": 0,
+        "other": 54
+      },
+      "patch_location": "apps only"
+    }
+  }
+}

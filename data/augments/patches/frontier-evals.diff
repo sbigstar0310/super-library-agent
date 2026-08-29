@@ -1,0 +1,100 @@
+diff --git a/.lfsconfig b/.lfsconfig
+index 82a9b55..6a38dab 100644
+--- a/.lfsconfig
++++ b/.lfsconfig
+@@ -1,3 +1,2 @@
+ [lfs]
+-	fetchexclude = project/paperbench/data/**
+ 	skipdownloaderrors = true
+diff --git a/project/paperbench/paperbench/Dockerfile.base b/project/paperbench/paperbench/Dockerfile.base
+index 32d56fe..624d30e 100644
+--- a/project/paperbench/paperbench/Dockerfile.base
++++ b/project/paperbench/paperbench/Dockerfile.base
+@@ -63,6 +63,15 @@ RUN /opt/conda/bin/conda tos accept --override-channels --channel https://repo.a
+     /opt/conda/bin/conda create -n ${CONDA_ENV_NAME} python=${PYTHON_VERSION} -y
+ ENV PATH="/opt/conda/bin:${PATH}"
+ 
++# Install RL-domain whitelist into conda env "agent". This is the dependency
++# policy enforcement entry point: forbidden frameworks (sb3, cleanrl, ray,
++# tianshou, ...) are deliberately absent so the agent's `import sb3` fails
++# at runtime. Keep agent_requirements.txt in sync with
++# el-agent/src/utils/whitelist.py (_ALLOWED_RAW).
++COPY paperbench/agent_requirements.txt ${REQUIREMENTS}
++RUN /opt/conda/envs/${CONDA_ENV_NAME}/bin/pip install --no-cache-dir \
++    -r ${REQUIREMENTS}
++
+ # Reset DEBIAN_FRONTEND
+ ENV DEBIAN_FRONTEND=
+ 
+
+diff --git a/project/paperbench/paperbench/agent_requirements.txt b/project/paperbench/paperbench/agent_requirements.txt
+new file mode 100644
+index 0000000..950d81b
+--- /dev/null
++++ b/project/paperbench/paperbench/agent_requirements.txt
+@@ -0,0 +1,65 @@
++# RL agent runtime requirements — installed into conda env "agent" by
++# Dockerfile.base. This is the WHITELIST that paperbench RL submissions
++# may depend on without violating the dependency policy.
++#
++# KEEP IN SYNC WITH: el-agent/src/utils/whitelist.py (_ALLOWED_RAW)
++# Forbidden frameworks (sb3, sb3_contrib, cleanrl, ray/rllib, tianshou,
++# torchrl, d3rlpy, DI-engine, ...) are deliberately NOT installed; agents
++# should reach for the provided lib/ or torch primitives instead.
++#
++# Scope: RL-common core only. Paper-specific environment packages (d4rl,
++# nle, isaacgym, metadrive) are NOT pre-installed for two reasons:
++#   1) baseline code rarely imports them (≤4 imports per trial across all
++#      three baseline trials, often 0); paperbench grading is code-only,
++#      so a `from d4rl import ...` line scores even if d4rl is absent at
++#      install time.
++#   2) several of those packages (mujoco_py-via-d4rl, NLE autoconf build,
++#      isaacgym NVIDIA-account wheel) are heavy / fragile; bundling them
++#      into the base image makes it slow to build and easy to break.
++# If a future experiment needs them per-paper, build a paper-specific
++# image on top of paperbench-base.
++
++# --- Numerical / DL core ------------------------------------------------
++# PyTorch CPU build (paperbench host has no GPU per code_only_instructions).
++# Pulls a ~200MB wheel rather than the ~2GB CUDA build.
++--extra-index-url https://download.pytorch.org/whl/cpu
++torch
++torchvision
++numpy
++scipy
++scikit-learn
++pandas
++numba
++
++# --- RL env interface (NOT a trainer framework) -------------------------
++gymnasium
++gym
++Shimmy
++mujoco
++
++# --- Visualization / logging -------------------------------------------
++matplotlib
++seaborn
++tqdm
++wandb
++tensorboard
++tensorboardX
++
++# --- Image / IO / config -----------------------------------------------
++Pillow
++opencv-python
++h5py
++joblib
++PyYAML
++omegaconf
++hydra-core
++
++# --- Misc utilities common in RL repos ---------------------------------
++einops
++absl-py
++cloudpickle
++dill
++rich
++typer
++click
++moviepy

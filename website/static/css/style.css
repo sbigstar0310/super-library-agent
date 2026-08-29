@@ -1,0 +1,951 @@
+/* Super Library Agent — project page.
+   No external requests: system fonts, no CDN, no analytics. */
+
+:root {
+  --bg: #fbfbf9;
+  --surface: #ffffff;
+  --surface-2: #f4f4f1;
+  --ink: #17181a;
+  --ink-2: #4a4d52;
+  --ink-3: #7c8087;
+  --line: #e2e2dd;
+  --accent: #1f6f68;
+  --accent-soft: #e6f0ee;
+  --add: #1f7a3f;
+  --add-bg: #e7f5ec;
+  --del: #a5321f;
+  --del-bg: #fbeae7;
+  --radius: 10px;
+  --page: min(92vw, 1120px);
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans KR", sans-serif;
+}
+
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+p { max-width: none; }
+/* long measures need more leading */
+main p, main li { line-height: 1.7; }
+a { color: var(--accent); }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- nav ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-mark { font-weight: 700; letter-spacing: -0.01em; }
+.nav-links {
+  display: flex;
+  gap: 1.1rem;
+  margin-left: auto;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+.nav-links a {
+  color: var(--ink-2);
+  text-decoration: none;
+  white-space: nowrap;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+/* ---------- layout ---------- */
+
+.wrap { max-width: var(--page); margin: 0 auto; padding: 0 1.5rem; }
+
+section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+section:first-of-type { border-top: 0; }
+
+h1, h2, h3 { line-height: 1.25; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.3rem, 2.05vw, 1.9rem); margin: 0 0 0.5rem; }
+h3 { font-size: 1.35rem; margin: 2.1rem 0 0.5rem; }
+/* h4 groups content inside an h3 section, so it must read a step down from it */
+h4 { font-size: 1.02rem; font-weight: 650; line-height: 1.3; margin: 1.7rem 0 0.6rem; }
+
+.kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--accent);
+}
+.lede { color: var(--ink-2); margin-top: 0; }
+
+/* ---------- hero ---------- */
+
+.hero { padding: 3.2rem 0 2.5rem; text-align: center; }
+.hero h1 {
+  font-size: clamp(1.5rem, 2.55vw, 2rem);
+  margin: 0.7rem auto 1.2rem;
+  max-width: 54ch;
+  text-wrap: balance;
+}
+.badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.28rem 0.85rem;
+}
+.authors {
+  margin: 0 auto 0.35rem;
+  max-width: 72ch;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.authors sup { color: var(--ink-3); }
+.affil { margin: 0 auto; color: var(--ink-2); font-size: 0.94rem; }
+.affil-note { color: var(--ink-3); font-size: 0.84rem; margin-top: 0.35rem; }
+
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.7rem 0 0;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 550;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn[aria-disabled="true"] { opacity: 0.45; pointer-events: none; }
+
+/* ---------- figures ---------- */
+
+figure { margin: 1.8rem 0 0; }
+figure img {
+  /* cap by height, not width: these are paper figures with very different
+     aspect ratios, and letting them fill 1200px makes them dominate the page */
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 380px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+/* the method figure is 3.3:1 — width-bound long before it gets tall */
+figure.fig-wide img { max-height: none; width: 100%; }
+/* the LOC-dynamics panel is a 3-column grid of line charts; it needs the room */
+figure.fig-tall img { max-height: 560px; }
+/* inside a two-column block the figure should fill its column */
+figure.fig-flush { margin-top: 0; }
+figure.fig-flush img { max-height: none; width: 100%; }
+figcaption {
+  margin-top: 0.7rem;
+  margin-inline: auto;
+  font-size: 0.88rem;
+  color: var(--ink-3);
+  max-width: min(80ch, 100%);
+  text-align: center;
+}
+
+/* ---------- notes ---------- */
+
+.stat-note { color: var(--ink-2); font-size: 0.93rem; margin: 0; }
+
+.goal {
+  margin-top: 1.8rem;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid var(--accent);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+.goal-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+  font-weight: 650;
+}
+.goal-claim {
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+  max-width: none;
+}
+/* ---------- pipeline ---------- */
+
+.pipeline {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  counter-reset: none;
+}
+.pipeline li {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.95rem 1rem 0.85rem;
+}
+.pipeline li + li::before {
+  content: "";
+  position: absolute;
+  left: -0.55rem;
+  top: 50%;
+  width: 0.4rem;
+  height: 1px;
+  background: var(--line);
+}
+.pnum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+.pipeline b { display: block; font-size: 0.95rem; }
+.pipeline li > span:not(.pnum) {
+  display: block;
+  color: var(--ink-2);
+  font-size: 0.86rem;
+  margin-top: 0.2rem;
+  line-height: 1.55;
+}
+
+/* ---------- problem -> fix mapping ---------- */
+
+.mapping {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr 1fr;
+  gap: 0.7rem 1.2rem;
+  align-items: start;
+  margin-top: 1.4rem;
+}
+.rail {
+  margin: 0;
+  padding-top: 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 650;
+  text-align: right;
+}
+.rail-problem { color: var(--del); }
+.rail-fix { color: var(--accent); }
+.rail-arrow { padding: 0; }
+
+.track {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 0.95rem 1.1rem 1rem;
+}
+.track.fix-track { border-color: var(--accent); background: var(--accent-soft); }
+
+.ptitle {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--del);
+}
+.pbody { margin: 0; font-size: 0.92rem; color: var(--ink-2); }
+
+.arrow {
+  margin: 0;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.ftitle {
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent);
+}
+.fitems { margin: 0; font-size: 0.9rem; }
+.fitems dt { font-weight: 650; color: var(--ink); margin-top: 0.55rem; }
+.fitems dt:first-of-type { margin-top: 0; }
+.fitems dd { margin: 0.1rem 0 0; color: var(--ink-2); line-height: 1.6; }
+
+/* ---------- pipeline animation ---------- */
+/* Animated version of Figure 2(a): one Super Library that grows, rather than
+   the paper's two static snapshots L2 and L3. */
+
+.anim { margin: 1.4rem 0 0; }
+.anim svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.anim .cbox { fill: #fff; stroke: #9aa3ab; stroke-width: 1.5; }
+.anim .code.c3 .cbox { stroke: #8e4787; stroke-width: 2.4; }
+.anim .ctitle { fill: #17181a; font: 700 14px var(--sans); text-anchor: middle; }
+.anim .own rect { fill: #d5d7d9; transform-box: fill-box; transform-origin: 50% 100%; }
+
+.anim .libbox { fill: #d9dbdd; stroke: #17181a; stroke-width: 2.2; }
+.anim .libtitle { fill: #17181a; font: 700 15px var(--sans); text-anchor: middle; }
+.anim .lsub { font-style: italic; }
+
+.anim .chip { stroke-width: 1.2; }
+.anim .chip.ui    { fill: #cfe4f5; stroke: #6ba8c6; }
+.anim .chip.state { fill: #f8ded0; stroke: #cf8f6c; }
+.anim .chip.chart { fill: #c9edcf; stroke: #74b57c; }
+.anim .chip.form  { fill: #f0d4ef; stroke: #b57cb0; }
+.anim .dupnote { fill: #8e4787; font: 600 11px var(--sans); }
+.anim .chiplab { fill: #17181a; font: 600 12px var(--sans); text-anchor: middle; }
+
+.anim .bubble { fill: #7c8087; }
+.anim .req circle { fill: #fff; }
+.anim .reqlab { fill: #17181a; font: 700 14px var(--sans); }
+
+.anim .flowB { fill: none; stroke: #2b5f9e; stroke-width: 2.4; stroke-linecap: round; }
+.anim .hB { fill: #2b5f9e; }
+.anim .codeflow { fill: none; stroke: #8e4787; stroke-width: 2.4; stroke-linecap: round; }
+.anim .hP { fill: #8e4787; }
+
+.anim .phase { font: 700 14px var(--sans); }
+.anim .phase-code, .anim .phase-cons { fill: #8e4787; }
+.anim .phase-ex, .anim .phase-mi { fill: #2b5f9e; }
+/* coding reads the library as it stands: dashed, to match the import convention */
+.anim .flowR { fill: none; stroke: #2b5f9e; stroke-width: 2; stroke-linecap: round;
+               stroke-dasharray: 5 4.4; }
+.anim .refnote { fill: #2b5f9e; font: 600 12px var(--sans); text-anchor: end; }
+.anim .imports { fill: #4a4d52; font: 500 13px var(--sans); text-anchor: end; }
+.anim .dash { stroke: #4a4d52; stroke-width: 1.2; stroke-dasharray: 4 3; }
+
+/* --- state machine --- */
+/* Every app owns ONE chip set. Migration restyles the shared chips in place, so a
+   chip can never change colour between steps. Chips marked local stay solid.
+   Timing rule: outgoing elements exit fast (.28s, no delay); incoming elements
+   enter slower and slightly delayed, so steps never cross-fade into each other. */
+
+.anim .code, .anim .req, .anim .codeflow, .anim .flowB, .anim .lchip,
+.anim .flowR, .anim .refnote,
+.anim .phase, .anim .chips, .anim .dupchips, .anim .imports,
+.anim .dash, .anim .own rect, .anim .chip {
+  transition: opacity .28s ease, transform .45s ease, fill .45s ease,
+              stroke-dasharray .45s ease, fill-opacity .45s ease;
+}
+.anim .code.c3, .anim .req, .anim .codeflow, .anim .flowB, .anim .l3,
+.anim .flowR, .anim .refnote, .anim .phase, .anim .dupchips { opacity: 0; }
+/* arrows rest slightly displaced against their travel direction */
+.anim .codeflow, .anim .flowR { transform: translateY(-8px); }
+.anim .up .flowB { transform: translateY(10px); }
+.anim .down .flowB { transform: translateY(-10px); }
+
+/* 1 — a request arrives */
+.anim[data-step="1"] .req { opacity: 1; transition: opacity .5s ease .3s; }
+
+/* 2 — coding turns it into c3, which repeats a block internally */
+.anim[data-step="2"] .req { opacity: 1; }
+/* both inputs first: the task request and the library as it stands */
+.anim[data-step="2"] .codeflow,
+.anim[data-step="2"] .phase-code,
+.anim[data-step="2"] .flowR,
+.anim[data-step="2"] .refnote {
+  opacity: 1; transform: none;
+  transition: opacity .35s ease .1s, transform .5s ease .1s;
+}
+/* then the code they produce */
+.anim[data-step="2"] .code.c3,
+.anim[data-step="2"] .dupchips {
+  opacity: 1;
+  transition: opacity .5s ease .55s;
+}
+
+/* 3 — local consolidation folds that repetition inside c3 */
+.anim[data-step="3"] .code.c3 { opacity: 1; }
+.anim[data-step="3"] .phase-cons { opacity: 1; transition: opacity .4s ease .1s; }
+.anim[data-step="3"] .dupchips {
+  opacity: 0; transform: translateY(-26px);
+  transition: opacity .55s ease .4s, transform .6s ease .4s;
+}
+
+/* 4 — the repeated component is extracted; the library gains Chart */
+.anim[data-step="4"] .code.c3 { opacity: 1; }
+.anim[data-step="4"] .phase-ex { opacity: 1; transition: opacity .4s ease .1s; }
+.anim[data-step="4"] .up .flowB { opacity: 1; transform: none; }
+.anim[data-step="4"] .up2 { transition: opacity .35s ease .15s, transform .55s ease .15s; }
+.anim[data-step="4"] .up3 { transition: opacity .35s ease .25s, transform .55s ease .25s; }
+.anim[data-step="4"] .upm { transition: opacity .35s ease .2s, transform .55s ease .2s; }
+/* the two contributing copies dim as their shared symbol moves up */
+.anim[data-step="4"] .c2 .chip.chart,
+.anim[data-step="4"] .c3 .chips .chip.chart { fill-opacity: .35; transition: fill-opacity .4s ease .3s; }
+.anim[data-step="4"] .l3 { opacity: 1; transition: opacity .5s ease .85s; }
+
+/* 5 — apps migrate; only the shared chips become imports */
+.anim[data-step="5"] .code.c3, .anim[data-step="5"] .l3 { opacity: 1; }
+.anim[data-step="5"] .phase-mi { opacity: 1; transition: opacity .4s ease .1s; }
+.anim[data-step="5"] .down .flowB { opacity: 1; transform: none; }
+.anim[data-step="5"] .down .flowB:nth-of-type(1) { transition: opacity .35s ease .15s, transform .5s ease .15s; }
+.anim[data-step="5"] .down .flowB:nth-of-type(2) { transition: opacity .35s ease .3s, transform .5s ease .3s; }
+.anim[data-step="5"] .down .flowB:nth-of-type(3) { transition: opacity .35s ease .45s, transform .5s ease .45s; }
+.anim .chip.imported,
+.anim[data-step="5"] .chip.pending {
+  stroke-dasharray: 3.5 2.5;
+  stroke-width: 1.7;
+  fill-opacity: .45;
+}
+.anim[data-step="5"] .chip.pending {
+  transition: opacity .28s ease, stroke-dasharray .5s ease .7s, fill-opacity .5s ease .7s;
+}
+/* c1 already imported everything it could in earlier rounds — it does not change */
+.anim[data-step="5"] .code.c2 .own rect,
+.anim[data-step="5"] .code.c3 .own rect { transform: scaleY(.55); transition: transform .6s ease .8s; }
+
+.anim-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.6rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+}
+.anim-steps li {
+  position: relative;
+  border-top: 2px solid var(--line);
+  padding: 0.5rem 0.1rem 0;
+  cursor: pointer;
+  color: var(--ink-3);
+}
+.anim-steps li b { display: block; font-size: 0.92rem; color: var(--ink-2); }
+.anim-steps li span { display: block; font-size: 0.83rem; }
+.anim-steps li:hover { border-top-color: var(--ink-3); }
+.anim-steps li:hover b { color: var(--ink); }
+.anim-steps li:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.anim-steps li.on { border-top-color: var(--accent-soft); }
+.anim-steps li.on b { color: var(--accent); }
+.anim-steps li.on span { color: var(--ink-2); }
+/* dwell progress: fills the active item's top rule while autoplaying;
+   sits still while paused (hover / click / off-screen) */
+.anim-steps li.on::after {
+  content: "";
+  position: absolute;
+  top: -2px; left: 0;
+  height: 2px; width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: anim-dwell var(--dwell, 2600ms) linear forwards;
+}
+.anim.anim-paused .anim-steps li.on::after { animation-play-state: paused; }
+@keyframes anim-dwell { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.anim-hint {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+@media (max-width: 620px) { .anim-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (prefers-reduced-motion: reduce) {
+  .anim svg *, .anim svg { transition: none !important; }
+  .anim .codeflow, .anim .flowR, .anim .up .flowB, .anim .down .flowB { transform: none; }
+  .anim-steps li.on::after { animation: none; transform: scaleX(1); }
+  .anim-hint { visibility: hidden; }
+}
+
+/* ---------- library browser ---------- */
+
+.browser {
+  display: grid;
+  grid-template-columns: minmax(230px, 300px) 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  margin-top: 1.6rem;
+}
+.tree {
+  border-right: 1px solid var(--line);
+  background: var(--surface-2);
+  max-height: 30rem;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+}
+.tree-group {
+  font-size: 0.74rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 0.7rem 1rem 0.3rem;
+}
+.tree button {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-left: 3px solid transparent;
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 0.87rem;
+  padding: 0.32rem 1rem 0.32rem 0.85rem;
+  cursor: pointer;
+}
+.tree button:hover { background: var(--surface); color: var(--ink); }
+.tree button[aria-selected="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+.tree .fname { font-family: var(--mono); font-size: 0.83rem; }
+.reuse {
+  margin-left: auto;
+  font-size: 0.74rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+  white-space: nowrap;
+}
+.reuse.zero { color: var(--ink-3); background: var(--surface-2); }
+
+.viewer { min-width: 0; display: flex; flex-direction: column; }
+.viewer-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-3);
+}
+.viewer-head .fname { font-family: var(--mono); color: var(--ink); font-size: 0.85rem; }
+.viewer-head .sym { margin-left: auto; }
+
+pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 0.795rem;
+  line-height: 1.6;
+  tab-size: 2;
+  max-height: 26rem;
+}
+code { font-family: var(--mono); }
+
+/* minimal token colors */
+.t-com { color: var(--ink-3); font-style: italic; }
+.t-str { color: var(--add); }
+.t-key { color: var(--accent); font-weight: 600; }
+.t-tag { color: var(--del); }
+.t-num { color: var(--del); }
+
+/* ---------- before / after ---------- */
+
+.ba {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  margin-top: 1.2rem;
+}
+.ba-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-3);
+}
+.ba-head .fname { font-family: var(--mono); color: var(--ink); }
+/* its children join .ba-head's flex row, so .drop's margin-left:auto works */
+#diff-meta { display: contents; }
+.ba-head b { color: var(--ink); font-variant-numeric: tabular-nums; font-weight: 600; }
+.ba-head .drop {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.ba-cols { display: grid; grid-template-columns: 1fr 1fr; }
+.ba-col { min-width: 0; border-left: 1px solid var(--line); }
+.ba-col:first-child { border-left: 0; }
+.ba-label {
+  padding: 0.45rem 1rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.ba-after .ba-label { color: var(--accent); background: var(--accent-soft); }
+.ba-col pre { max-height: 32rem; font-size: 0.755rem; padding: 0.6rem 0; }
+/* the code element sizes to its widest line, so every row's highlight spans the
+   full scrollable width instead of stopping at the visible edge */
+.ba-col pre > code { display: inline-block; min-width: 100%; }
+.ln {
+  display: block;
+  white-space: pre;
+  padding: 0 1rem 0 0;
+}
+.ln i {
+  display: inline-block;
+  width: 2.4rem;
+  padding-right: 0.7rem;
+  text-align: right;
+  color: var(--ink-3);
+  opacity: 0.55;
+  font-style: normal;
+  user-select: none;
+}
+.ln.del { background: var(--del-bg); }
+.ln.add { background: var(--add-bg); }
+.ln.fold {
+  padding: 0.25rem 1rem 0.25rem 3.1rem;
+  color: var(--ink-3);
+  background: var(--surface-2);
+  font-style: italic;
+  border-top: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+  margin: 0.15rem 0;
+}
+
+/* ---------- tables ---------- */
+
+.table-scroll { overflow-x: auto; margin-top: 1.4rem; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 640px;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+caption {
+  caption-side: bottom;
+  text-align: left;
+  color: var(--ink-3);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding-top: 0.7rem;
+}
+th, td { padding: 0.45rem 0.7rem; text-align: right; }
+th:first-child, td:first-child { text-align: left; white-space: nowrap; }
+thead th {
+  border-bottom: 1px solid var(--ink-3);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+/* group header row: an underline that spans exactly the group's columns, so
+   the reader can see which metrics sit under Functionality vs Maintainability */
+thead tr:first-child th {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-bottom: 0;
+  padding-bottom: 0.15rem;
+}
+thead tr:first-child th.grp {
+  text-align: center;
+  color: var(--accent);
+  font-weight: 650;
+  border-bottom: 2px solid var(--accent);
+  background: var(--accent-soft);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/* vertical rule where one group ends and the next begins */
+th.gstart, td.gstart { border-left: 1px solid var(--line); }
+thead tr:first-child th.gstart { border-left: 0; }
+th.gstart, td.gstart { padding-left: 0.95rem; }
+tbody tr { border-bottom: 1px solid var(--line); }
+tbody tr.ours { background: var(--accent-soft); }
+tbody tr.ours td { font-weight: 600; }
+td.best { color: var(--accent); font-weight: 700; }
+tbody tr.delta { color: var(--ink-3); font-style: italic; }
+tbody tr.delta td { border-top: 1px solid var(--line); }
+
+.tabs { display: flex; gap: 0.4rem; margin-top: 1.4rem; }
+.tabs button {
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.tabs button[aria-selected="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+/* ---------- misc ---------- */
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.two-col.split { align-items: stretch; gap: 1.6rem; margin: 1.4rem 0 1.8rem; }
+.two-col.split .fig-flush { display: flex; flex-direction: column; justify-content: center; }
+.payoff {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.payoff-head {
+  margin: 0 0 0.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 650;
+  color: var(--accent);
+}
+/* a vertical ledger reads better beside a wide figure than a 2x2 grid */
+.ledger { list-style: none; margin: 0; padding: 0; }
+.ledger li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+}
+.ledger li:first-child { border-top: 0; padding-top: 0; }
+.ledger li > b {
+  flex: 0 0 6.2rem;
+  text-align: right;
+  font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+.ledger li.parity > b { color: var(--ink-2); font-size: clamp(1.1rem, 1.6vw, 1.35rem); }
+.ledger li > span { display: block; font-size: 0.86rem; color: var(--ink-3); }
+.ledger li em {
+  display: block;
+  font-style: normal;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.1rem;
+}
+.ledger li i { font-style: normal; font-variant-numeric: tabular-nums; }
+.payoff-foot {
+  margin: 0.85rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
+/* the table carries the detail here, so give it the wider column */
+.two-col.abs { grid-template-columns: 0.78fr 1.22fr;
+               align-items: start; gap: 1.6rem; margin-top: 1.4rem; }
+.two-col.abs .table-scroll {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow-x: auto;
+}
+.two-col.abs table { width: 100%; }
+.two-col.abs table { min-width: 0; width: 100%; font-size: 0.83rem; table-layout: fixed; }
+.two-col.abs thead th {
+  overflow-wrap: anywhere;
+  background: var(--surface-2);
+  color: var(--ink);
+  font-weight: 650;
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--ink-3);
+  vertical-align: bottom;
+}
+.two-col.abs tbody td { padding: 0.6rem 0.6rem; overflow-wrap: anywhere; }
+.two-col.abs tbody tr:last-child { border-bottom: 0; }
+.two-col.abs tbody td:first-child { font-weight: 600; color: var(--ink); }
+.two-col.abs td.sym code {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+.two-col.abs tr.ours td.sym code { color: var(--ink); }
+.two-col.abs td, .two-col.abs th { text-align: left; vertical-align: top; }
+.two-col.abs caption { padding: 0.7rem 0.8rem 0.8rem; margin: 0; }
+
+.cause {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 1.1rem 1.2rem 1rem;
+}
+.cause-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 0.35rem;
+}
+.cause > b { display: block; font-size: 1rem; margin-bottom: 0.4rem; }
+.cause p { font-size: 0.93rem; color: var(--ink-2); margin: 0; max-width: none; }
+ul.plain { max-width: none; padding-left: 1.1rem; color: var(--ink-2); }
+ul.plain li { margin-bottom: 0.5rem; }
+ul.plain b { color: var(--ink); }
+
+.bibtex-wrap { position: relative; margin-top: 1.2rem; }
+.bibtex-wrap pre {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  max-height: none;
+}
+.copy {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.copy:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .two-col.split { gap: 1.2rem; }
+  .ba-cols { grid-template-columns: 1fr; }
+  .ba-col { border-left: 0; border-top: 1px solid var(--line); }
+  .mapping { grid-template-columns: 1fr; gap: 0.6rem; }
+  .rail { text-align: left; padding-top: 0.6rem; }
+  .rail-arrow { display: none; }
+  .arrow { text-align: left; }
+  .arrow + .arrow { display: none; }
+  .pipeline { grid-template-columns: repeat(2, 1fr); }
+  .pipeline li + li::before { display: none; }
+  .browser { grid-template-columns: 1fr; }
+  .tree { border-right: 0; border-bottom: 1px solid var(--line); max-height: 14rem; }
+  .two-col { grid-template-columns: 1fr; gap: 1.2rem; }
+  /* the widened abstraction split must collapse like every other two-col */
+  .two-col.abs { grid-template-columns: 1fr; }
+  .two-col.abs .table-scroll { overflow-x: auto; }
+  /* wide enough that the symbol names stay whole; the box scrolls */
+  .two-col.abs table { min-width: 35rem; }
+  .two-col.abs tbody td { overflow-wrap: normal; }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .pipeline { grid-template-columns: 1fr; }
+  .nav-links { gap: 0.85rem; font-size: 0.84rem; }
+  .nav-mark { display: none; }
+  section { padding: 2.5rem 0; }
+
+  /* the link row scrolls; fade the trailing edge so it reads as scrollable
+     rather than truncated, and keep the last item off the screen edge */
+  .nav-inner { padding-left: 1rem; padding-right: 0; }
+  .nav-links { padding-right: 1rem; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.6rem), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 1.6rem), transparent);
+  }
+
+  /* a caption inside a horizontally scrolling table inherits the table's
+     width and gets clipped; pin it to the viewport instead */
+  .table-scroll caption {
+    position: sticky;
+    left: 0;
+    width: calc(var(--page) - 3rem);
+    box-sizing: border-box;
+  }
+
+  /* centred text reads as ragged once the lines are this short */
+  figcaption { text-align: left; }
+  .anim-steps li { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

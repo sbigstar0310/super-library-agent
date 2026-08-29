@@ -1,0 +1,35 @@
+{
+ "per_app": {
+  "adaptive-pruning": {
+   "app_nll": 10987.4725,
+   "library_nll": 233.9457,
+   "app_tokens": 21859,
+   "library_tokens": 676
+  },
+  "mechanistic-understanding": {
+   "app_nll": 6810.3864,
+   "library_nll": 233.9457,
+   "app_tokens": 14561,
+   "library_tokens": 676
+  },
+  "stay-on-topic-with-classifier-free-guidance": {
+   "app_nll": 9808.5391,
+   "library_nll": 233.9457,
+   "app_tokens": 21268,
+   "library_tokens": 676
+  },
+  "what-will-my-model-forget": {
+   "app_nll": 8300.8836,
+   "library_nll": 233.9457,
+   "app_tokens": 15409,
+   "library_tokens": 676
+  }
+ },
+ "summary": {
+  "sum_app_nll": 35907.2816,
+  "avg_library_nll": 233.9457,
+  "mdl_nll": 36141.2273,
+  "total_tokens": 73773,
+  "total_apps": 4
+ }
+}

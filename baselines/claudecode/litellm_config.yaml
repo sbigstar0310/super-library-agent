@@ -1,0 +1,20 @@
+# deepseek-v4-flash routing for Claude Code — fairness params pinned to match
+# el-agent _factory.py (temperature=0, reasoning_effort=high, provider=deepseek).
+model_list:
+  - model_name: deepseek-cc
+    litellm_params:
+      model: openrouter/deepseek/deepseek-v4-flash
+      api_key: os.environ/OPENROUTER_API_KEY
+      api_base: https://openrouter.ai/api/v1
+      temperature: 0
+      reasoning_effort: high
+      extra_body:
+        provider:
+          only: ["deepseek"]
+          allow_fallbacks: false
+litellm_settings:
+  drop_params: true
+  # Claude Code sends response_format on some internal calls; the pinned native
+  # deepseek endpoint rejects it (400 "response_format type unavailable"). App
+  # generation uses tool calls, not structured output, so drop it globally.
+  additional_drop_params: ["response_format"]

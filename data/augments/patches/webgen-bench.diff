@@ -1,0 +1,229 @@
+diff --git a/src/grade_appearance_webgen/eval_appearance.py b/src/grade_appearance_webgen/eval_appearance.py
+index 3d086ee..c7cfbee 100644
+--- a/src/grade_appearance_webgen/eval_appearance.py
++++ b/src/grade_appearance_webgen/eval_appearance.py
+@@ -130,7 +130,7 @@ def main():
+         ports = start_services(in_dir, commands)
+         print(ports)
+         
+-        time.sleep(1)
++        time.sleep(5)
+ 
+         for app in ports.keys():
+             port = ports[app]
+diff --git a/src/grade_appearance_webgen/start_service.py b/src/grade_appearance_webgen/start_service.py
+index 7d59b85..68ca670 100644
+--- a/src/grade_appearance_webgen/start_service.py
++++ b/src/grade_appearance_webgen/start_service.py
+@@ -7,8 +7,10 @@ import sys
+ import shlex
+ 
+ WRAPPER_FILENAME = "start-wrapper.cjs"
+-DETECTION_TIMEOUT = 60  # seconds
+-PM2_LOG_DIR = os.path.expanduser("~/.pm2/logs")
++DETECTION_TIMEOUT = 240  # seconds
++PM2_LOG_DIR = os.path.join(
++    os.environ.get("PM2_HOME", os.path.expanduser("~/.pm2")), "logs"
++)
+ 
+ WRAPPER_TEMPLATE = """
+ const {{ spawn }} = require('child_process');
+@@ -109,9 +111,10 @@ def run_command(cmd):
+     subprocess.run(cmd, **kwargs)
+ 
+ 
+-def start_pm2(ecosystem_file):
++def start_pm2(ecosystem_file, apps):
+     print("🚀 Starting apps with PM2...")
+-    run_command("pm2 delete all")
++    for app in apps:
++        run_command(f"pm2 delete {shlex.quote(app)}")
+     run_command(f"pm2 start {ecosystem_file}")
+ 
+ 
+@@ -150,7 +153,13 @@ def detect_ports_from_pm2_logs(apps):
+ 
+ 
+ def start_services(base_dir, commands):
+-    remove_files_in_dir(PM2_LOG_DIR)
++    apps = list(commands.keys())
++    if os.path.isdir(PM2_LOG_DIR):
++        for app in apps:
++            for suffix in ("-out.log", "-error.log"):
++                fp = os.path.join(PM2_LOG_DIR, f"{app.replace('_', '-')}{suffix}")
++                if os.path.isfile(fp):
++                    os.remove(fp)
+     if not os.path.exists(base_dir):
+         print(f"❌ Path does not exist: {base_dir}")
+         return
+@@ -187,7 +196,7 @@ def start_services(base_dir, commands):
+     config = generate_ecosystem_config(apps, base_dir, commands)
+     write_ecosystem_file(config, ecosystem_path)
+ 
+-    start_pm2(ecosystem_path)
++    start_pm2(ecosystem_path, apps)
+ 
+     ports = detect_ports_from_pm2_logs(apps)
+ 
+diff --git a/src/grade_appearance_webgen/vlm_eval.py b/src/grade_appearance_webgen/vlm_eval.py
+index 024443f..d831ac3 100644
+--- a/src/grade_appearance_webgen/vlm_eval.py
++++ b/src/grade_appearance_webgen/vlm_eval.py
+@@ -7,18 +7,30 @@ from typing import List
+ import openai
+ from openai import OpenAI
+ 
+-openai_client = OpenAI(
+-    api_key="API_KEY",  
+-    base_url="https://BASE_URL/v1"
++_OPENAI_KEY = (
++    os.environ.get("OPENAILIKE_VLM_API_KEY")
++    or os.environ.get("OPENAILIKE_API_KEY")
++    or os.environ.get("OPENAI_API_KEY")
++    or "API_KEY"
+ )
++_OPENAI_BASE = (
++    os.environ.get("OPENAILIKE_VLM_BASE_URL")
++    or os.environ.get("OPENAILIKE_BASE_URL")
++    or os.environ.get("OPENAI_BASE_URL")
++    or "https://api.openai.com/v1"
++)
++openai_client = OpenAI(api_key=_OPENAI_KEY, base_url=_OPENAI_BASE)
+ 
+ # --- Anthropic (Claude) ------------------------------------------------------
+ import anthropic
+ 
+-anthropic_client = anthropic.Anthropic(
+-    api_key="API_KEY",  
+-    base_url="https://BASE_URL/v1"
++_ANTHROPIC_KEY = (
++    os.environ.get("ANTHROPIC_VLM_API_KEY")
++    or os.environ.get("ANTHROPIC_API_KEY")
++    or "API_KEY"
+ )
++_ANTHROPIC_BASE = os.environ.get("ANTHROPIC_BASE_URL", "https://api.anthropic.com")
++anthropic_client = anthropic.Anthropic(api_key=_ANTHROPIC_KEY, base_url=_ANTHROPIC_BASE)
+ 
+ # -----------------------------------------------------------------------------
+ 
+diff --git a/src/ui_test_webgen/start_service.py b/src/ui_test_webgen/start_service.py
+index 7d59b85..ce6750d 100644
+--- a/src/ui_test_webgen/start_service.py
++++ b/src/ui_test_webgen/start_service.py
+@@ -7,8 +7,10 @@ import sys
+ import shlex
+ 
+ WRAPPER_FILENAME = "start-wrapper.cjs"
+-DETECTION_TIMEOUT = 60  # seconds
+-PM2_LOG_DIR = os.path.expanduser("~/.pm2/logs")
++DETECTION_TIMEOUT = 180  # seconds
++PM2_LOG_DIR = os.path.join(
++    os.environ.get("PM2_HOME", os.path.expanduser("~/.pm2")), "logs"
++)
+ 
+ WRAPPER_TEMPLATE = """
+ const {{ spawn }} = require('child_process');
+@@ -109,9 +111,10 @@ def run_command(cmd):
+     subprocess.run(cmd, **kwargs)
+ 
+ 
+-def start_pm2(ecosystem_file):
++def start_pm2(ecosystem_file, apps):
+     print("🚀 Starting apps with PM2...")
+-    run_command("pm2 delete all")
++    for app in apps:
++        run_command(f"pm2 delete {shlex.quote(app)}")
+     run_command(f"pm2 start {ecosystem_file}")
+ 
+ 
+@@ -150,7 +153,13 @@ def detect_ports_from_pm2_logs(apps):
+ 
+ 
+ def start_services(base_dir, commands):
+-    remove_files_in_dir(PM2_LOG_DIR)
++    apps = list(commands.keys())
++    if os.path.isdir(PM2_LOG_DIR):
++        for app in apps:
++            for suffix in ("-out.log", "-error.log"):
++                fp = os.path.join(PM2_LOG_DIR, f"{app.replace('_', '-')}{suffix}")
++                if os.path.isfile(fp):
++                    os.remove(fp)
+     if not os.path.exists(base_dir):
+         print(f"❌ Path does not exist: {base_dir}")
+         return
+@@ -187,7 +196,7 @@ def start_services(base_dir, commands):
+     config = generate_ecosystem_config(apps, base_dir, commands)
+     write_ecosystem_file(config, ecosystem_path)
+ 
+-    start_pm2(ecosystem_path)
++    start_pm2(ecosystem_path, apps)
+ 
+     ports = detect_ports_from_pm2_logs(apps)
+ 
+diff --git a/webvoyager/run.py b/webvoyager/run.py
+index d085b55..98275ce 100644
+--- a/webvoyager/run.py
++++ b/webvoyager/run.py
+@@ -171,18 +171,31 @@ def format_msg_text_only(it, init_msg, pdf_obs, warn_obs, ac_tree):
+         return curr_msg
+ 
+ 
++def _is_reasoning_model(model: str) -> bool:
++    m = model.lower()
++    return m.startswith(("gpt-5", "o1", "o3", "o4"))
++
++
+ def call_gpt4v_api(args, openai_client, messages):
+     retry_times = 0
+     while True:
+         try:
+             logging.info("Calling %s API…", args.api_model)
+-            openai_response = openai_client.chat.completions.create(
++            create_kwargs = dict(
+                 model=args.api_model,
+                 messages=messages,
+-                max_tokens=1000,
+                 seed=args.seed,
+                 timeout=60,
+             )
++            if _is_reasoning_model(args.api_model):
++                # GPT-5 / o-series reject `max_tokens`; budget is split with
++                # hidden reasoning tokens, so bump 4×.
++                create_kwargs["max_completion_tokens"] = 4000
++                if args.reasoning_effort:
++                    create_kwargs["reasoning_effort"] = args.reasoning_effort
++            else:
++                create_kwargs["max_tokens"] = 1000
++            openai_response = openai_client.chat.completions.create(**create_kwargs)
+ 
+             prompt_tokens = openai_response.usage.prompt_tokens
+             completion_tokens = openai_response.usage.completion_tokens
+@@ -317,7 +330,7 @@ def run_single_task(task: Dict[str, Any], args_dict: Dict[str, Any]):
+     logging.info("########## TASK%s ##########", task["id"])
+ 
+     # Per‑process OpenAI client
+-    client = OpenAI(api_key=args.api_key, base_url="http://PI_ADDRESS:PORT/v1")
++    client = OpenAI(api_key=args.api_key, base_url=args.api_base)
+ 
+     options = driver_config(args)
+     driver_task = webdriver.Chrome(options=options)
+@@ -566,7 +579,19 @@ def main():
+     parser.add_argument("--test_file", type=str, default="data/test.json")
+     parser.add_argument("--max_iter", type=int, default=5)
+     parser.add_argument("--api_key", default="key", type=str, help="YOUR_OPENAI_API_KEY")
++    parser.add_argument(
++        "--api_base",
++        default=os.environ.get("WEBVOYAGER_API_BASE", "http://127.0.0.1:8000/v1"),
++        type=str,
++        help="OpenAI-compatible API base URL (env: WEBVOYAGER_API_BASE)",
++    )
+     parser.add_argument("--api_model", default="gpt-4-vision-preview", type=str)
++    parser.add_argument(
++        "--reasoning_effort",
++        default=None,
++        choices=[None, "minimal", "low", "medium", "high"],
++        help="Reasoning effort for GPT-5/o-series models (omit for non-reasoning models)",
++    )
+     parser.add_argument("--output_dir", type=str, default="results")
+     parser.add_argument("--seed", type=int, default=None)
+     parser.add_argument("--max_attached_imgs", type=int, default=1)

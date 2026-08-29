@@ -1,0 +1,62 @@
+{
+  "maint_tag": "librarian-c13-t1",
+  "protocol": "b",
+  "source_tag": "librarian-c13-t1",
+  "cost": {
+    "llm_calls": 85,
+    "cost_usd": 0.05479011999999999,
+    "sessions": 1
+  },
+  "static_checks": {
+    "violations": [],
+    "clean": true
+  },
+  "touched_files": 39,
+  "files": [
+    "lib/src/index.js",
+    "lib/src/utils/moderation.js",
+    "tasks/000027/submission/src/components/BrowseScreen.jsx",
+    "tasks/000027/submission/src/components/PromotionCard.css",
+    "tasks/000027/submission/src/components/PromotionCard.jsx",
+    "tasks/000027/submission/src/components/ShareScreen.css",
+    "tasks/000027/submission/src/components/ShareScreen.jsx",
+    "tasks/000051/submission/src/App.css",
+    "tasks/000051/submission/src/App.jsx",
+    "tasks/000051/submission/src/pages/Clients.jsx",
+    "tasks/000051/submission/src/pages/JobApply.jsx",
+    "tasks/000051/submission/src/pages/Jobs.jsx",
+    "tasks/000051/submission/src/pages/PostJob.jsx",
+    "tasks/000051/submission/src/pages/Profile.jsx",
+    "tasks/000052/submission/src/pages/JobsPage.css",
+    "tasks/000052/submission/src/pages/JobsPage.jsx",
+    "tasks/000053/submission/src/App.css",
+    "tasks/000053/submission/src/components/InternshipCard/InternshipCard.css",
+    "tasks/000053/submission/src/components/InternshipCard/InternshipCard.jsx",
+    "tasks/000053/submission/src/data/store.js",
+    "tasks/000053/submission/src/pages/CompanyApplications.jsx",
+    "tasks/000053/submission/src/pages/StudentApplyForm.jsx",
+    "tasks/000053/submission/src/pages/StudentBrowse.jsx",
+    "tasks/000053/submission/src/pages/StudentMyApplications.jsx",
+    "tasks/000077/submission/src/App.jsx",
+    "tasks/000077/submission/src/pages/DetailPage.css",
+    "tasks/000077/submission/src/pages/DetailPage.jsx",
+    "tasks/000077/submission/src/pages/HomePage.css",
+    "tasks/000077/submission/src/pages/HomePage.jsx",
+    "tasks/000090/submission/src/components/Feed.css",
+    "tasks/000090/submission/src/components/Feed.jsx",
+    "tasks/000091/submission/src/App.css",
+    "tasks/000091/submission/src/components/ProfileDetailScreen.jsx",
+    "tasks/000091/submission/src/components/RegisterScreen.jsx",
+    "tasks/000091/submission/src/components/SearchScreen.jsx",
+    "tasks/000092/submission/src/App.css",
+    "tasks/000092/submission/src/components/Browse.jsx",
+    "tasks/000092/submission/src/components/Join.jsx",
+    "tasks/000092/submission/src/components/Search.jsx"
+  ],
+  "added_loc_by_location": {
+    "lib": 32,
+    "apps": 562,
+    "other": 0
+  },
+  "patch_location": "lib + apps"
+}

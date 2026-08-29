@@ -1,0 +1,296 @@
+{
+ "source": {
+  "tag": "sla-ours-c2-t3",
+  "suite": 1,
+  "cluster": 2,
+  "trial": 3,
+  "round": 4,
+  "note": "representative trial from WebGen suite 1 — not the best-scoring run",
+  "reuseRatesFrom": "paper Appendix I, export listing for this cell",
+  "nApps": 8
+ },
+ "totals": {
+  "files": 22,
+  "modules": 12,
+  "stylesheets": 10,
+  "exportedSymbols": 11,
+  "moduleLines": 532,
+  "lines": 1078
+ },
+ "files": [
+  {
+   "path": "components/Footer.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "Footer",
+     "reusePct": 100,
+     "reuseApps": 8
+    }
+   ],
+   "reusePct": 100,
+   "reuseApps": 8,
+   "lines": 26,
+   "code": "import './Footer.css';\n\n/**\n * A simple footer displaying a copyright notice with an optional tagline.\n *\n * @param {object}   props\n * @param {string}   props.companyName  - Company name used in the copyright line.\n * @param {string}   [props.tagline]    - Optional tagline shown after the copyright.\n * @param {string}   [props.className]  - Extra class appended to root.\n * @param {object}   [props.style]      - Inline styles merged into root.\n */\nexport default function Footer({\n  companyName,\n  tagline,\n  className = '',\n  style,\n}) {\n  return (\n    <footer className={`footer${className ? ' ' + className : ''}`} style={style}>\n      <div className=\"footer-inner\">\n        <span className=\"footer-copy\">&copy; 2026 {companyName}</span>\n        {tagline && <span className=\"footer-tagline\">{tagline}</span>}\n      </div>\n    </footer>\n  );\n}\n"
+  },
+  {
+   "path": "components/ContactForm.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "ContactForm",
+     "reusePct": 75,
+     "reuseApps": 6
+    }
+   ],
+   "reusePct": 75,
+   "reuseApps": 6,
+   "lines": 133,
+   "code": "import { useState } from 'react';\nimport FormField from './FormField.jsx';\nimport { validateRequiredFields } from '../utils/validate.js';\nimport './ContactForm.css';\n\n/**\n * A self-contained contact form with name/email/message fields,\n * required-field validation, and a confirmation on success.\n *\n * @param {object}   props\n * @param {Array<{name:string,label:string,type?:string,multiline?:boolean}>} [props.fields]\n *        Field descriptors. Defaults to name, email, message.\n * @param {Record<string,string>} [props.labels]      - Custom labels keyed by field name.\n * @param {(data:Record<string,string>) => void} [props.onSubmit]\n *        Called with trimmed field values after successful validation.\n * @param {string}   [props.confirmationMessage]      - Message shown after submission.\n * @param {boolean}  [props.showConfirmation=true]     - Whether to show the confirmation banner.\n * @param {string}   [props.submitLabel='Send message'] - Text for the submit button.\n * @param {string}   [props.sendAnotherLabel='Send another'] - Text for the \"send another\" button.\n * @param {string}   [props.className]                - Extra class appended to root.\n * @param {object}   [props.style]                    - Inline styles merged into root.\n */\nexport default function ContactForm({\n  fields: fieldsProp,\n  labels,\n  onSubmit,\n  confirmationMessage = 'Thank you! Your message has been sent.',\n  showConfirmation = true,\n  submitLabel = 'Send message',\n  sendAnotherLabel = 'Send another',\n  className = '',\n  style,\n}) {\n  const defaultFields = [\n    { name: 'name', label: 'Name', type: 'text' },\n    { name: 'email', label: 'Email', type: 'email' },\n    { name: 'message', label: 'Message', multiline: true },\n  ];\n\n  const fields = fieldsProp || defaultFields;\n\n  // Build initial state from field names\n  const initialFormData = {};\n  fields.forEach((f) => { initialFormData[f.name] = ''; });\n\n  const [formData, setFormData] = useState(initialFormData);\n  const [errors, setErrors] = useState({});\n  const [submitted, setSubmitted] = useState(false);\n\n  const handleChange = (e) => {\n    const { name, value } = e.target;\n    setFormData((prev) => ({ ...prev, [name]: value }));\n    // Clear error for this field on edit\n    if (errors[name]) {\n      setErrors((prev) => {\n        const next = { ...prev };\n        delete next[name];\n        return next;\n      });\n    }\n    // Reset submitted state on any edit\n    if (submitted) setSubmitted(false);\n  };\n\n  const handleSubmit = (e) => {\n    e.preventDefault();\n\n    // Build field-value map and labels\n    const fieldValues = {};\n    const errorLabels = {};\n    fields.forEach((f) => {\n      fieldValues[f.name] = formData[f.name] || '';\n      errorLabels[f.name] = labels?.[f.name] || f.label || f.name.charAt(0).toUpperCase() + f.name.slice(1);\n    });\n\n    const validationErrors = validateRequiredFields(fieldValues, errorLabels);\n    setErrors(validationErrors);\n\n    if (Object.keys(validationErrors).length > 0) return;\n\n    // Trim values\n    const trimmed = {};\n    fields.forEach((f) => { trimmed[f.name] = (formData[f.name] || '').trim(); });\n\n    if (onSubmit) onSubmit(trimmed);\n\n    // Reset form\n    setFormData(initialFormData);\n    setSubmitted(true);\n  };\n\n  const handleSendAnother = () => {\n    setSubmitted(false);\n  };\n\n  const rootCls = ['contact-form', className].filter(Boolean).join(' ');\n\n  return (\n    <div className={rootCls} style={style}>\n      {submitted && showConfirmation && (\n        <div className=\"contact-form-confirmation\">\n          <span className=\"contact-form-confirmation-text\">{confirmationMessage}</span>\n          <button\n            type=\"button\"\n            className=\"contact-form-send-another-btn\"\n            onClick={handleSendAnother}\n          >\n            {sendAnotherLabel}\n          </button>\n        </div>\n      )}\n\n      <form onSubmit={handleSubmit} noValidate>\n        {fields.map((field) => (\n          <FormField\n            key={field.name}\n            label={field.label}\n            id={`contact-form-${field.name}`}\n            name={field.name}\n            type={field.type || 'text'}\n            value={formData[field.name] || ''}\n            onChange={handleChange}\n            error={errors[field.name]}\n            multiline={field.multiline || false}\n          />\n        ))}\n        <button type=\"submit\" className=\"contact-form-submit-btn\">\n          {submitLabel}\n        </button>\n      </form>\n    </div>\n  );\n}\n"
+  },
+  {
+   "path": "components/Header.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "Header",
+     "reusePct": 62,
+     "reuseApps": 5
+    }
+   ],
+   "reusePct": 62,
+   "reuseApps": 5,
+   "lines": 38,
+   "code": "import './Header.css';\n\n/**\n * A controlled header with a brand wordmark and mapped navigation buttons.\n *\n * @param {object}   props\n * @param {string}   props.brand        - Wordmark / logo text displayed on the left.\n * @param {string[]} props.pages        - Page names used as button labels and identifiers.\n * @param {string}   props.currentPage  - Currently active page name.\n * @param {(page: string) => void} props.onNavigate - Called with the page name on click.\n * @param {string}   [props.className]  - Extra class appended to root.\n * @param {object}   [props.style]      - Inline styles merged into root.\n */\nexport default function Header({\n  brand,\n  pages,\n  currentPage,\n  onNavigate,\n  className = '',\n  style,\n}) {\n  return (\n    <header className={`header${className ? ' ' + className : ''}`} style={style}>\n      <span className=\"header-brand\">{brand}</span>\n      <nav className=\"header-nav\">\n        {pages.map((page) => (\n          <button\n            key={page}\n            className={`header-btn${currentPage === page ? ' header-btn-active' : ''}`}\n            onClick={() => onNavigate(page)}\n          >\n            {page}\n          </button>\n        ))}\n      </nav>\n    </header>\n  );\n}\n"
+  },
+  {
+   "path": "components/Section.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "Section",
+     "reusePct": 62,
+     "reuseApps": 5
+    }
+   ],
+   "reusePct": 62,
+   "reuseApps": 5,
+   "lines": 41,
+   "code": "import './Section.css';\n\n/**\n * A reusable section wrapper with a heading, optional description,\n * and an alternate styling variant.\n *\n * @param {object}   props\n * @param {string}   [props.id]          - DOM id for anchor linking.\n * @param {string}   props.heading       - Section heading text.\n * @param {string}   [props.description] - Optional paragraph below heading.\n * @param {boolean}  [props.alt]         - Alternate (darker) background variant.\n * @param {string}   [props.className]   - Extra class appended to root.\n * @param {object}   [props.style]       - Inline styles merged into root.\n * @param {ReactNode} props.children\n */\nexport default function Section({\n  id,\n  heading,\n  description,\n  alt,\n  className = '',\n  style,\n  children,\n}) {\n  const cls = [\n    'section',\n    alt ? 'section-alt' : '',\n    className,\n  ]\n    .filter(Boolean)\n    .join(' ');\n  return (\n    <section id={id} className={cls} style={style}>\n      <h2 className=\"section-heading\">{heading}</h2>\n      {description != null && (\n        <p className=\"section-desc\">{description}</p>\n      )}\n      {children}\n    </section>\n  );\n}\n"
+  },
+  {
+   "path": "components/PillNav.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "PillNav",
+     "reusePct": 50,
+     "reuseApps": 4
+    }
+   ],
+   "reusePct": 50,
+   "reuseApps": 4,
+   "lines": 39,
+   "code": "import './PillNav.css';\n\n/**\n * A row of pill-shaped buttons where exactly one item is active.\n * Each option can be a plain string (used as both value and label)\n * or an object `{ value, label }`.\n *\n * @param {object}   props\n * @param {Array<string|{value:string,label:string}>} props.options  - Pill labels/values.\n * @param {string}   props.active   - Currently selected value.\n * @param {(value: string) => void} props.onChange - Called with the clicked pill's value.\n * @param {string}   [props.className] - Extra class appended to root.\n * @param {object}   [props.style]     - Inline styles merged into root.\n */\nexport default function PillNav({\n  options,\n  active,\n  onChange,\n  className = '',\n  style,\n}) {\n  return (\n    <div className={`pill-nav${className ? ' ' + className : ''}`} style={style}>\n      {options.map((option) => {\n        const value = typeof option === 'string' ? option : option.value;\n        const label = typeof option === 'string' ? option : option.label;\n        return (\n          <button\n            key={value}\n            className={`pill-nav-btn${active === value ? ' pill-nav-active' : ''}`}\n            onClick={() => onChange(value)}\n          >\n            {label}\n          </button>\n        );\n      })}\n    </div>\n  );\n}\n"
+  },
+  {
+   "path": "components/Timeline.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "Timeline",
+     "reusePct": 50,
+     "reuseApps": 4
+    }
+   ],
+   "reusePct": 50,
+   "reuseApps": 4,
+   "lines": 42,
+   "code": "import './Timeline.css';\n\n/**\n * A vertical timeline that renders a list of dated entries.\n * Each entry can have a date, title, subtitle (e.g., institution/company),\n * and an optional description.\n *\n * @param {object}   props\n * @param {Array<{\n *   date: string,\n *   title: string,\n *   subtitle?: string,\n *   description?: string,\n * }>} props.items  - Timeline entries to render.\n * @param {string}   [props.className]  - Extra class appended to root.\n * @param {object}   [props.style]      - Inline styles merged into root.\n */\nexport default function Timeline({\n  items,\n  className = '',\n  style,\n}) {\n  const rootCls = ['timeline', className].filter(Boolean).join(' ');\n\n  if (!items || items.length === 0) return null;\n\n  return (\n    <div className={rootCls} style={style}>\n      {items.map((item, index) => (\n        <div className=\"timeline-entry\" key={index}>\n          <div className=\"timeline-marker\" />\n          <div className=\"timeline-content\">\n            {item.date && <span className=\"timeline-date\">{item.date}</span>}\n            <h4 className=\"timeline-title\">{item.title}</h4>\n            {item.subtitle && <span className=\"timeline-subtitle\">{item.subtitle}</span>}\n            {item.description && <p className=\"timeline-desc\">{item.description}</p>}\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}\n"
+  },
+  {
+   "path": "hooks/useLocalStorage.js",
+   "kind": "hooks",
+   "symbols": [
+    {
+     "name": "useLocalStorage",
+     "reusePct": 50,
+     "reuseApps": 4
+    }
+   ],
+   "reusePct": 50,
+   "reuseApps": 4,
+   "lines": 36,
+   "code": "import { useState, useEffect } from 'react';\n\n/**\n * useState-like hook that persists state to localStorage.\n * On mount, reads the stored value (with JSON parse error handling).\n * On every update, writes the new value (with JSON stringify).\n *\n * @param {string} key          - localStorage key to read/write.\n * @param {unknown} initialValue - Fallback value if nothing is stored or parsing fails.\n * @returns {[unknown, (value: unknown) => void]} A stateful value and setter.\n *\n * @example\n * const [cart, setCart] = useLocalStorage('my-app-cart', []);\n * // cart is initialised from localStorage('my-app-cart') or []\n * // setCart(newCart) updates both state and localStorage\n */\nexport function useLocalStorage(key, initialValue) {\n  const [storedValue, setStoredValue] = useState(() => {\n    try {\n      const raw = localStorage.getItem(key);\n      return raw !== null ? JSON.parse(raw) : initialValue;\n    } catch {\n      return initialValue;\n    }\n  });\n\n  useEffect(() => {\n    try {\n      localStorage.setItem(key, JSON.stringify(storedValue));\n    } catch {\n      // Storage full or unavailable — silently ignore so the app keeps working\n    }\n  }, [key, storedValue]);\n\n  return [storedValue, setStoredValue];\n}\n"
+  },
+  {
+   "path": "components/NewsCard.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "NewsCard",
+     "reusePct": 38,
+     "reuseApps": 3
+    }
+   ],
+   "reusePct": 38,
+   "reuseApps": 3,
+   "lines": 42,
+   "code": "import './NewsCard.css';\n\n/**\n * A card for displaying a news article or similar item with title,\n * date, summary, and an optional action button.\n *\n * @param {object}   props\n * @param {string}   props.title          - Article / item title.\n * @param {string}   [props.date]         - Publication date string.\n * @param {string}   [props.summary]      - Short description or excerpt.\n * @param {() => void} [props.onClick]    - Called when the action button is clicked.\n * @param {string}   [props.actionLabel]  - Text for the action button (default \"Read more\").\n * @param {string}   [props.category]     - Optional category/tag label.\n * @param {string}   [props.className]    - Extra class appended to root.\n * @param {object}   [props.style]        - Inline styles merged into root.\n */\nexport default function NewsCard({\n  title,\n  date,\n  summary,\n  onClick,\n  actionLabel = 'Read more',\n  category,\n  className = '',\n  style,\n}) {\n  const rootCls = ['news-card', className].filter(Boolean).join(' ');\n\n  return (\n    <div className={rootCls} style={style}>\n      {category && <span className=\"news-card-category\">{category}</span>}\n      <h3 className=\"news-card-title\">{title}</h3>\n      {date && <span className=\"news-card-date\">{date}</span>}\n      {summary && <p className=\"news-card-summary\">{summary}</p>}\n      {onClick && (\n        <button className=\"news-card-action\" onClick={onClick}>\n          {actionLabel}\n        </button>\n      )}\n    </div>\n  );\n}\n"
+  },
+  {
+   "path": "components/SkillBar.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "SkillBar",
+     "reusePct": 25,
+     "reuseApps": 2
+    }
+   ],
+   "reusePct": 25,
+   "reuseApps": 2,
+   "lines": 34,
+   "code": "import './SkillBar.css';\n\n/**\n * A labelled progress bar that visually represents a skill percentage.\n *\n * @param {object}   props\n * @param {string}   props.label   - Skill name displayed above the bar.\n * @param {number}   props.percent - Percentage value (0–100). Clamped internally.\n * @param {string}   [props.className] - Extra class appended to root.\n * @param {object}   [props.style]     - Inline styles merged into root.\n */\nexport default function SkillBar({\n  label,\n  percent,\n  className = '',\n  style,\n}) {\n  const clamped = Math.min(100, Math.max(0, Number(percent) || 0));\n\n  return (\n    <div className={`skill-bar${className ? ' ' + className : ''}`} style={style}>\n      <div className=\"skill-bar-header\">\n        <span className=\"skill-bar-label\">{label}</span>\n        <span className=\"skill-bar-pct\">{clamped}%</span>\n      </div>\n      <div className=\"skill-bar-track\">\n        <div\n          className=\"skill-bar-fill\"\n          style={{ width: `${clamped}%` }}\n        />\n      </div>\n    </div>\n  );\n}\n"
+  },
+  {
+   "path": "components/FormField.jsx",
+   "kind": "components",
+   "symbols": [
+    {
+     "name": "FormField",
+     "reusePct": 12,
+     "reuseApps": 1
+    }
+   ],
+   "reusePct": 12,
+   "reuseApps": 1,
+   "lines": 48,
+   "code": "import './FormField.css';\n\n/**\n * A labelled form field that renders either an <input> or a <textarea>\n * based on the `multiline` prop (or `type === 'textarea'`).\n *\n * @param {object}   props\n * @param {string}   props.label       - Label text displayed above the input.\n * @param {string}   props.id          - HTML id attribute for the input/textarea.\n * @param {string}   [props.name]      - Name attribute for the input/textarea.\n * @param {string}   [props.type]      - Input type (default 'text'). Use 'textarea' for a textarea.\n * @param {string}   props.value       - Controlled value.\n * @param {(e: React.ChangeEvent) => void} props.onChange - Change handler.\n * @param {string}   [props.error]     - Error message displayed below the field.\n * @param {boolean}  [props.multiline] - Alternative to type=\"textarea\"; when true renders a textarea.\n * @param {string}   [props.className] - Extra class appended to root.\n * @param {object}   [props.style]     - Inline styles merged into root.\n */\nexport default function FormField({\n  label,\n  id,\n  name,\n  type = 'text',\n  value,\n  onChange,\n  error,\n  multiline = false,\n  className = '',\n  style,\n}) {\n  const isMultiline = multiline || type === 'textarea';\n  const Tag = isMultiline ? 'textarea' : 'input';\n\n  return (\n    <div className={`form-field${className ? ' ' + className : ''}`} style={style}>\n      <label htmlFor={id} className=\"form-field-label\">{label}</label>\n      <Tag\n        id={id}\n        name={name}\n        type={isMultiline ? undefined : type}\n        value={value}\n        onChange={onChange}\n        className=\"form-field-input\"\n      />\n      {error && <div className=\"form-field-error\">{error}</div>}\n    </div>\n  );\n}\n"
+  },
+  {
+   "path": "utils/validate.js",
+   "kind": "utils",
+   "symbols": [
+    {
+     "name": "validateRequiredFields",
+     "reusePct": 12,
+     "reuseApps": 1
+    }
+   ],
+   "reusePct": 12,
+   "reuseApps": 1,
+   "lines": 29,
+   "code": "/**\n * Validates required fields and returns an object of error messages.\n * Fields whose trimmed value is empty get an error message.\n *\n * @param {Record<string, string>} fields - Object mapping field names to their values.\n * @param {Record<string, string>} [labels] - Optional custom labels for error messages.\n * @returns {Record<string, string>} Error messages keyed by field name.\n *\n * @example\n * const errors = validateRequiredFields({ name: '', email: 'a@b.com' });\n * // => { name: 'Name is required.' }\n *\n * @example\n * const errors = validateRequiredFields(\n *   { name: '', email: '' },\n *   { name: 'Full name', email: 'Email address' }\n * );\n * // => { name: 'Full name is required.', email: 'Email address is required.' }\n */\nexport function validateRequiredFields(fields, labels) {\n  const errors = {};\n  for (const [key, value] of Object.entries(fields)) {\n    if (!value || !value.trim()) {\n      const label = (labels && labels[key]) || key.charAt(0).toUpperCase() + key.slice(1);\n      errors[key] = `${label} is required.`;\n    }\n  }\n  return errors;\n}\n"
+  },
+  {
+   "path": "index.js",
+   "kind": "barrel",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 24,
+   "code": "/* ===== Library barrel =====\n * Every public symbol is re-exported as a NAMED export.\n * Apps must import only from this barrel.\n */\n\n// ── Components ──────────────────────────────────────────────────────────────\nexport { default as Section }       from './components/Section.jsx';\nexport { default as Header }        from './components/Header.jsx';\nexport { default as Footer }        from './components/Footer.jsx';\nexport { default as FormField }     from './components/FormField.jsx';\nexport { default as PillNav }       from './components/PillNav.jsx';\nexport { default as SkillBar }      from './components/SkillBar.jsx';\nexport { default as ContactForm }   from './components/ContactForm.jsx';\nexport { default as NewsCard }      from './components/NewsCard.jsx';\nexport { default as Timeline }      from './components/Timeline.jsx';\n\n// ── Hooks ───────────────────────────────────────────────────────────────────\nexport { useLocalStorage }          from './hooks/useLocalStorage.js';\n\n// ── Utilities ───────────────────────────────────────────────────────────────\nexport { validateRequiredFields }   from './utils/validate.js';\n\n// ── CSS resources (side-effect imports for consuming apps) ──────────────────\n// import '@shared-lib/src/utils/reset.css';  // used by consuming app\n"
+  },
+  {
+   "path": "components/ContactForm.css",
+   "kind": "styles",
+   "owner": "ContactForm",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 72,
+   "code": "/* ===== ContactForm ===== */\n\n.contact-form {\n  max-width: 640px;\n}\n\n.contact-form form {\n  display: flex;\n  flex-direction: column;\n  gap: 0.25rem;\n}\n\n.contact-form-confirmation {\n  background-color: #2e7d32;\n  color: #fff;\n  padding: 1rem 1.5rem;\n  border-radius: 8px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 1rem;\n  flex-wrap: wrap;\n  margin-bottom: 1.25rem;\n}\n\n.contact-form-confirmation-text {\n  font-size: 0.95rem;\n  font-weight: 500;\n}\n\n.contact-form-send-another-btn {\n  background-color: #fff;\n  color: #2e7d32;\n  border: 2px solid #fff;\n  padding: 0.45rem 1rem;\n  border-radius: 6px;\n  font-weight: 600;\n  font-size: 0.85rem;\n  cursor: pointer;\n  transition: opacity 0.2s ease;\n}\n\n.contact-form-send-another-btn:hover {\n  opacity: 0.9;\n}\n\n.contact-form-submit-btn {\n  padding: 0.75rem 2rem;\n  border: none;\n  border-radius: 6px;\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: background-color 0.2s ease;\n  align-self: flex-start;\n}\n\n.contact-form-submit-btn:hover {\n  opacity: 0.9;\n}\n\n@media (max-width: 640px) {\n  .contact-form-confirmation {\n    flex-direction: column;\n    text-align: center;\n  }\n\n  .contact-form-submit-btn {\n    width: 100%;\n    text-align: center;\n  }\n}\n"
+  },
+  {
+   "path": "components/Footer.css",
+   "kind": "styles",
+   "owner": "Footer",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 29,
+   "code": "/* ===== Footer ===== */\n\n.footer {\n  padding: 1rem 2rem;\n  margin-top: auto;\n  width: 100%;\n}\n\n.footer-inner {\n  max-width: 1100px;\n  margin: 0 auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 0.5rem;\n}\n\n.footer-copy,\n.footer-tagline {\n  font-size: 0.85rem;\n}\n\n@media (max-width: 640px) {\n  .footer-inner {\n    justify-content: center;\n    text-align: center;\n  }\n}\n"
+  },
+  {
+   "path": "components/FormField.css",
+   "kind": "styles",
+   "owner": "FormField",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 40,
+   "code": "/* ===== FormField ===== */\n\n.form-field {\n  margin-bottom: 1rem;\n  display: flex;\n  flex-direction: column;\n  gap: 0.3rem;\n}\n\n.form-field-label {\n  font-weight: 600;\n  font-size: 0.9rem;\n  display: block;\n}\n\n.form-field-input {\n  width: 100%;\n  padding: 0.65rem 0.75rem;\n  border: 1px solid #ccc;\n  border-radius: 6px;\n  font-family: inherit;\n  font-size: 1rem;\n  transition: border-color 0.2s ease;\n  outline: none;\n}\n\n.form-field-input:focus {\n  border-color: #888;\n}\n\n.form-field textarea.form-field-input {\n  min-height: 120px;\n  resize: vertical;\n}\n\n.form-field-error {\n  color: #d32f2f;\n  font-size: 0.85rem;\n  margin-top: -0.15rem;\n}\n"
+  },
+  {
+   "path": "components/Header.css",
+   "kind": "styles",
+   "owner": "Header",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 59,
+   "code": "/* ===== Header ===== */\n\n.header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 1rem 2rem;\n  position: sticky;\n  top: 0;\n  z-index: 100;\n  flex-wrap: wrap;\n  gap: 0.75rem;\n}\n\n.header-brand {\n  font-size: 1.3rem;\n  font-weight: 700;\n  letter-spacing: -0.02em;\n  line-height: 1.2;\n}\n\n.header-nav {\n  display: flex;\n  gap: 0.25rem;\n  flex-wrap: wrap;\n}\n\n.header-btn {\n  background: transparent;\n  border: none;\n  padding: 0.5rem 1rem;\n  border-radius: 6px;\n  font-size: 0.95rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background-color 0.2s ease;\n}\n\n.header-btn:hover {\n  background-color: rgba(255, 255, 255, 0.15);\n}\n\n.header-btn-active {\n  background-color: rgba(255, 255, 255, 0.25);\n  font-weight: 700;\n}\n\n@media (max-width: 640px) {\n  .header {\n    flex-direction: column;\n    align-items: center;\n    text-align: center;\n    padding: 0.75rem 1rem;\n  }\n\n  .header-nav {\n    justify-content: center;\n  }\n}\n"
+  },
+  {
+   "path": "components/NewsCard.css",
+   "kind": "styles",
+   "owner": "NewsCard",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 76,
+   "code": "/* ===== NewsCard ===== */\n\n.news-card {\n  border: 1px solid #ddd;\n  border-radius: 8px;\n  padding: 1.25rem;\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n  background-color: #fff;\n  transition: box-shadow 0.2s ease;\n}\n\n.news-card:hover {\n  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);\n}\n\n.news-card-category {\n  display: inline-block;\n  font-size: 0.75rem;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n  padding: 0.2rem 0.6rem;\n  border-radius: 4px;\n  align-self: flex-start;\n}\n\n.news-card-title {\n  font-size: 1.1rem;\n  font-weight: 700;\n  margin: 0;\n  line-height: 1.3;\n}\n\n.news-card-date {\n  font-size: 0.85rem;\n  opacity: 0.7;\n}\n\n.news-card-summary {\n  font-size: 0.9rem;\n  line-height: 1.5;\n  margin: 0;\n  opacity: 0.85;\n}\n\n.news-card-action {\n  padding: 0.5rem 1.25rem;\n  border: 1px solid currentColor;\n  border-radius: 6px;\n  background: transparent;\n  font-size: 0.85rem;\n  font-weight: 600;\n  cursor: pointer;\n  align-self: flex-start;\n  transition: background-color 0.2s ease, color 0.2s ease;\n}\n\n.news-card-action:hover {\n  opacity: 0.85;\n}\n\n@media (max-width: 640px) {\n  .news-card {\n    padding: 1rem;\n  }\n\n  .news-card-title {\n    font-size: 1rem;\n  }\n\n  .news-card-summary {\n    font-size: 0.85rem;\n  }\n}\n"
+  },
+  {
+   "path": "components/PillNav.css",
+   "kind": "styles",
+   "owner": "PillNav",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 39,
+   "code": "/* ===== PillNav ===== */\n\n.pill-nav {\n  display: flex;\n  gap: 0.5rem;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n\n.pill-nav-btn {\n  padding: 0.5rem 1.25rem;\n  border-radius: 999px;\n  border: 1px solid currentColor;\n  background: transparent;\n  font-size: 0.9rem;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background-color 0.2s ease, color 0.2s ease;\n}\n\n.pill-nav-btn:hover {\n  opacity: 0.85;\n}\n\n.pill-nav-active {\n  font-weight: 700;\n  color: #fff;\n}\n\n@media (max-width: 640px) {\n  .pill-nav {\n    gap: 0.35rem;\n  }\n\n  .pill-nav-btn {\n    padding: 0.4rem 0.9rem;\n    font-size: 0.85rem;\n  }\n}\n"
+  },
+  {
+   "path": "components/Section.css",
+   "kind": "styles",
+   "owner": "Section",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 42,
+   "code": "/* ===== Section ===== */\n\n.section {\n  padding: 2.5rem 1.5rem;\n  max-width: 1100px;\n  margin: 0 auto;\n}\n\n.section.section-alt {\n  background-color: #e8e8e8;\n  width: 100%;\n  max-width: 100%;\n}\n\n.section-heading {\n  text-align: center;\n  font-size: 1.6rem;\n  margin-bottom: 1rem;\n}\n\n.section-desc {\n  text-align: center;\n  max-width: 640px;\n  margin: 0 auto 2rem;\n  font-size: 1rem;\n  color: #444;\n}\n\n/* Responsive: tighten padding on small screens */\n@media (max-width: 640px) {\n  .section {\n    padding: 1.75rem 1rem;\n  }\n\n  .section-heading {\n    font-size: 1.3rem;\n  }\n\n  .section-desc {\n    font-size: 0.95rem;\n  }\n}\n"
+  },
+  {
+   "path": "components/SkillBar.css",
+   "kind": "styles",
+   "owner": "SkillBar",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 48,
+   "code": "/* ===== SkillBar ===== */\n\n.skill-bar {\n  margin-bottom: 1rem;\n}\n\n.skill-bar-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 0.35rem;\n}\n\n.skill-bar-label {\n  font-weight: 600;\n  font-size: 0.9rem;\n}\n\n.skill-bar-pct {\n  font-size: 0.85rem;\n  font-weight: 500;\n  opacity: 0.8;\n}\n\n.skill-bar-track {\n  width: 100%;\n  height: 10px;\n  border-radius: 999px;\n  background-color: #e0e0e0;\n  overflow: hidden;\n}\n\n.skill-bar-fill {\n  height: 100%;\n  border-radius: 999px;\n  background-color: currentColor;\n  transition: width 0.5s ease;\n}\n\n@media (max-width: 640px) {\n  .skill-bar-label {\n    font-size: 0.85rem;\n  }\n\n  .skill-bar-track {\n    height: 8px;\n  }\n}\n"
+  },
+  {
+   "path": "components/Timeline.css",
+   "kind": "styles",
+   "owner": "Timeline",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 89,
+   "code": "/* ===== Timeline ===== */\n\n.timeline {\n  position: relative;\n  padding-left: 2rem;\n}\n\n/* Vertical line */\n.timeline::before {\n  content: '';\n  position: absolute;\n  left: 0.5rem;\n  top: 0;\n  bottom: 0;\n  width: 2px;\n  background-color: currentColor;\n  opacity: 0.2;\n}\n\n.timeline-entry {\n  position: relative;\n  padding-bottom: 1.75rem;\n}\n\n.timeline-entry:last-child {\n  padding-bottom: 0;\n}\n\n.timeline-marker {\n  position: absolute;\n  left: -1.5rem;\n  top: 0.25rem;\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background-color: currentColor;\n  border: 2px solid #fff;\n  box-shadow: 0 0 0 2px currentColor;\n}\n\n.timeline-content {\n  display: flex;\n  flex-direction: column;\n  gap: 0.15rem;\n}\n\n.timeline-date {\n  font-size: 0.8rem;\n  font-weight: 600;\n  opacity: 0.7;\n  text-transform: uppercase;\n  letter-spacing: 0.04em;\n}\n\n.timeline-title {\n  font-size: 1rem;\n  font-weight: 700;\n  margin: 0;\n  line-height: 1.3;\n}\n\n.timeline-subtitle {\n  font-size: 0.9rem;\n  font-weight: 500;\n  opacity: 0.8;\n}\n\n.timeline-desc {\n  font-size: 0.88rem;\n  line-height: 1.5;\n  margin: 0.25rem 0 0;\n  opacity: 0.8;\n}\n\n@media (max-width: 640px) {\n  .timeline {\n    padding-left: 1.5rem;\n  }\n\n  .timeline-marker {\n    left: -1rem;\n    width: 10px;\n    height: 10px;\n  }\n\n  .timeline-title {\n    font-size: 0.95rem;\n  }\n}\n"
+  },
+  {
+   "path": "utils/reset.css",
+   "kind": "styles",
+   "owner": "every app (global reset)",
+   "symbols": [],
+   "reusePct": null,
+   "reuseApps": null,
+   "lines": 52,
+   "code": "/* ===== Global CSS Reset =====\n * Apply this at the root of your app:\n *   import '@shared-lib/src/utils/reset.css';\n *\n * Normalises box-sizing, spacing, typography, and full-height layout.\n * Does NOT set any brand colours — override them in your own App.css.\n */\n\n*,\n*::before,\n*::after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  font-family: system-ui, -apple-system, 'Segoe UI', Roboto,\n    Oxygen, Ubuntu, Cantarell, sans-serif;\n  line-height: 1.5;\n  min-height: 100vh;\n}\n\n#root {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\nbutton {\n  cursor: pointer;\n  font-family: inherit;\n  font-size: inherit;\n}\n\nimg {\n  max-width: 100%;\n  display: block;\n}\n\nul, ol {\n  list-style: none;\n}\n"
+  }
+ ]
+}

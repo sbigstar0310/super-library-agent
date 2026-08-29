@@ -1,0 +1,1335 @@
+{
+  "model": "text-embedding-3-small",
+  "linkage": "ward",
+  "metric": "euclidean",
+  "n_clusters": 14,
+  "clusters": [
+    {
+      "id": 2,
+      "size": 14,
+      "tasks": [
+        "000019",
+        "000075",
+        "000015",
+        "000016",
+        "000040",
+        "000072",
+        "000071",
+        "000064",
+        "000030",
+        "000020",
+        "000074",
+        "000017",
+        "000021",
+        "000014"
+      ],
+      "centroid_distances": [
+        0.08595585823059082,
+        0.10465896129608154,
+        0.10570031404495239,
+        0.10831260681152344,
+        0.11364221572875977,
+        0.12502551078796387,
+        0.12625354528427124,
+        0.1276712417602539,
+        0.1311432123184204,
+        0.13517522811889648,
+        0.14929378032684326,
+        0.15244609117507935,
+        0.15574157238006592,
+        0.17719298601150513
+      ],
+      "members": [
+        {
+          "task_id": "000019",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Dynamic Content Rendering"
+          ]
+        },
+        {
+          "task_id": "000075",
+          "application_type": "Personal Portfolio Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000015",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000016",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Dynamic Content Rendering"
+          ]
+        },
+        {
+          "task_id": "000040",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Dynamic Content Rendering",
+            "Form Systems"
+          ]
+        },
+        {
+          "task_id": "000072",
+          "application_type": "Personal Portfolio Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000071",
+          "application_type": "Personal Portfolio Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Media Display"
+          ]
+        },
+        {
+          "task_id": "000064",
+          "application_type": "News and Information Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Static Page Generation",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000030",
+          "application_type": "Discussion Forums",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "User Interaction"
+          ]
+        },
+        {
+          "task_id": "000020",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "User Interaction"
+          ]
+        },
+        {
+          "task_id": "000074",
+          "application_type": "Personal Portfolio Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000017",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000021",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Dynamic Content Rendering",
+            "Media Display"
+          ]
+        },
+        {
+          "task_id": "000014",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "E-commerce",
+            "Data Visualization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "size": 14,
+      "tasks": [
+        "000085",
+        "000022",
+        "000046",
+        "000083",
+        "000047",
+        "000044",
+        "000023",
+        "000080",
+        "000045",
+        "000025",
+        "000050",
+        "000073",
+        "000049",
+        "000048"
+      ],
+      "centroid_distances": [
+        0.11180192232131958,
+        0.11655950546264648,
+        0.12274551391601562,
+        0.12285828590393066,
+        0.1285417675971985,
+        0.13473081588745117,
+        0.1347680687904358,
+        0.13968002796173096,
+        0.14723604917526245,
+        0.14961904287338257,
+        0.1569749116897583,
+        0.17392992973327637,
+        0.17884564399719238,
+        0.18610644340515137
+      ],
+      "members": [
+        {
+          "task_id": "000085",
+          "application_type": "Project Management Tools",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "Big Data"
+          ]
+        },
+        {
+          "task_id": "000022",
+          "application_type": "CRM Systems",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "User Interaction"
+          ]
+        },
+        {
+          "task_id": "000046",
+          "application_type": "ERP Platforms",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "Big Data"
+          ]
+        },
+        {
+          "task_id": "000083",
+          "application_type": "Project Management Tools",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "Big Data"
+          ]
+        },
+        {
+          "task_id": "000047",
+          "application_type": "ERP Platforms",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "File Handling"
+          ]
+        },
+        {
+          "task_id": "000044",
+          "application_type": "ERP Platforms",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "Big Data",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000023",
+          "application_type": "CRM Systems",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "Big Data"
+          ]
+        },
+        {
+          "task_id": "000080",
+          "application_type": "Productivity Applications",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "User Interaction"
+          ]
+        },
+        {
+          "task_id": "000045",
+          "application_type": "ERP Platforms",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "Big Data"
+          ]
+        },
+        {
+          "task_id": "000025",
+          "application_type": "CRM Systems",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "Big Data",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000050",
+          "application_type": "Internal Tools",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Data Management"
+          ]
+        },
+        {
+          "task_id": "000073",
+          "application_type": "Personal Portfolio Sites",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "File Handling"
+          ]
+        },
+        {
+          "task_id": "000049",
+          "application_type": "Internal Tools",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration"
+          ]
+        },
+        {
+          "task_id": "000048",
+          "application_type": "Internal Tools",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "size": 12,
+      "tasks": [
+        "000034",
+        "000066",
+        "000036",
+        "000063",
+        "000001",
+        "000041",
+        "000065",
+        "000038",
+        "000028",
+        "000039",
+        "000088",
+        "000078"
+      ],
+      "centroid_distances": [
+        0.12163746356964111,
+        0.12785416841506958,
+        0.12827831506729126,
+        0.13875699043273926,
+        0.14018595218658447,
+        0.14131951332092285,
+        0.15076768398284912,
+        0.15078204870224,
+        0.15648967027664185,
+        0.16071933507919312,
+        0.17405438423156738,
+        0.18403077125549316
+      ],
+      "members": [
+        {
+          "task_id": "000034",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000066",
+          "application_type": "News and Information Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Data Visualization",
+            "Media Display"
+          ]
+        },
+        {
+          "task_id": "000036",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "API Integration",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000063",
+          "application_type": "News and Information Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Data Visualization",
+            "Media Display"
+          ]
+        },
+        {
+          "task_id": "000001",
+          "application_type": "Analytics Platforms/Dashboards",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000041",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "CRUD Operations",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000065",
+          "application_type": "News and Information Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Data Visualization",
+            "Media Display"
+          ]
+        },
+        {
+          "task_id": "000038",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Form Systems",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000028",
+          "application_type": "Discussion Forums",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000039",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "File Handling"
+          ]
+        },
+        {
+          "task_id": "000088",
+          "application_type": "Publishing/Blogging Platforms",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "Big Data"
+          ]
+        },
+        {
+          "task_id": "000078",
+          "application_type": "Productivity Applications",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Data Visualization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 0,
+      "size": 12,
+      "tasks": [
+        "000029",
+        "000058",
+        "000060",
+        "000062",
+        "000033",
+        "000031",
+        "000081",
+        "000056",
+        "000008",
+        "000026",
+        "000055",
+        "000079"
+      ],
+      "centroid_distances": [
+        0.10570883750915527,
+        0.11615300178527832,
+        0.11798357963562012,
+        0.12075400352478027,
+        0.12376737594604492,
+        0.14591693878173828,
+        0.14682996273040771,
+        0.14847898483276367,
+        0.15954738855361938,
+        0.16576987504959106,
+        0.18538451194763184,
+        0.18813782930374146
+      ],
+      "members": [
+        {
+          "task_id": "000029",
+          "application_type": "Discussion Forums",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Authentication",
+            "Real-time Features"
+          ]
+        },
+        {
+          "task_id": "000058",
+          "application_type": "Learning Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Real-time Features",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000060",
+          "application_type": "Learning Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Data Visualization",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000062",
+          "application_type": "Learning Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "AI Integration",
+            "Data Management"
+          ]
+        },
+        {
+          "task_id": "000033",
+          "application_type": "Discussion Forums",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "AI Integration",
+            "Authentication"
+          ]
+        },
+        {
+          "task_id": "000031",
+          "application_type": "Discussion Forums",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Authentication",
+            "Real-time Features"
+          ]
+        },
+        {
+          "task_id": "000081",
+          "application_type": "Productivity Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "AI Integration",
+            "Data Management"
+          ]
+        },
+        {
+          "task_id": "000056",
+          "application_type": "Learning Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Authentication",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000008",
+          "application_type": "Browser-Based Games",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Real-time Features",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000026",
+          "application_type": "Discussion Forums",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000055",
+          "application_type": "Learning Platforms",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "AI Integration",
+            "Form Systems"
+          ]
+        },
+        {
+          "task_id": "000079",
+          "application_type": "Productivity Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Real-time Features",
+            "Form Systems",
+            "AI Integration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "size": 8,
+      "tasks": [
+        "000093",
+        "000032",
+        "000082",
+        "000018",
+        "000057",
+        "000059",
+        "000084",
+        "000068"
+      ],
+      "centroid_distances": [
+        0.08868229389190674,
+        0.08913075923919678,
+        0.10460686683654785,
+        0.10585886240005493,
+        0.11500823497772217,
+        0.1156688928604126,
+        0.12978529930114746,
+        0.14509183168411255
+      ],
+      "members": [
+        {
+          "task_id": "000093",
+          "application_type": "Social Media Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Real-time Features",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000032",
+          "application_type": "Discussion Forums",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Real-time Features",
+            "Dynamic Content Rendering"
+          ]
+        },
+        {
+          "task_id": "000082",
+          "application_type": "Project Management Tools",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Authentication",
+            "CRUD Operations"
+          ]
+        },
+        {
+          "task_id": "000018",
+          "application_type": "Company Brochure Sites",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Form Systems",
+            "Authentication"
+          ]
+        },
+        {
+          "task_id": "000057",
+          "application_type": "Learning Platforms",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000059",
+          "application_type": "Learning Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Real-time Features",
+            "E-commerce",
+            "Authentication"
+          ]
+        },
+        {
+          "task_id": "000084",
+          "application_type": "Project Management Tools",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "Data Visualization",
+            "API Integration"
+          ]
+        },
+        {
+          "task_id": "000068",
+          "application_type": "News and Information Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Data Visualization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "size": 8,
+      "tasks": [
+        "000052",
+        "000090",
+        "000051",
+        "000077",
+        "000092",
+        "000053",
+        "000091",
+        "000027"
+      ],
+      "centroid_distances": [
+        0.07004106044769287,
+        0.07898318767547607,
+        0.09446406364440918,
+        0.10903358459472656,
+        0.10910689830780029,
+        0.1139104962348938,
+        0.11483937501907349,
+        0.11537826061248779
+      ],
+      "members": [
+        {
+          "task_id": "000052",
+          "application_type": "Job Search Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "E-commerce",
+            "Authentication"
+          ]
+        },
+        {
+          "task_id": "000090",
+          "application_type": "Social Media Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Authentication",
+            "Form Systems",
+            "E-commerce"
+          ]
+        },
+        {
+          "task_id": "000051",
+          "application_type": "Job Search Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Authentication",
+            "E-commerce"
+          ]
+        },
+        {
+          "task_id": "000077",
+          "application_type": "Productivity Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Authentication",
+            "Dynamic Content Rendering",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000092",
+          "application_type": "Social Media Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Authentication",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000053",
+          "application_type": "Job Search Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "E-commerce",
+            "Authentication"
+          ]
+        },
+        {
+          "task_id": "000091",
+          "application_type": "Social Media Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Authentication",
+            "Form Systems",
+            "Real-time Features"
+          ]
+        },
+        {
+          "task_id": "000027",
+          "application_type": "Discussion Forums",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "CRUD Operations",
+            "Data Visualization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "size": 6,
+      "tasks": [
+        "000009",
+        "000013",
+        "000011",
+        "000007",
+        "000010",
+        "000061"
+      ],
+      "centroid_distances": [
+        0.09783661365509033,
+        0.10201501846313477,
+        0.1171959638595581,
+        0.12387293577194214,
+        0.1381024718284607,
+        0.16595590114593506
+      ],
+      "members": [
+        {
+          "task_id": "000009",
+          "application_type": "Browser-Based Games",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Real-time Features",
+            "Form Systems",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000013",
+          "application_type": "Browser-Based Games",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Real-time Features",
+            "Form Systems"
+          ]
+        },
+        {
+          "task_id": "000011",
+          "application_type": "Browser-Based Games",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Real-time Features",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000007",
+          "application_type": "Browser-Based Games",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Real-time Features",
+            "Form Systems",
+            "Authentication"
+          ]
+        },
+        {
+          "task_id": "000010",
+          "application_type": "Browser-Based Games",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Real-time Features",
+            "CRUD Operations",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000061",
+          "application_type": "Learning Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "AI Integration",
+            "Real-time Features"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "size": 6,
+      "tasks": [
+        "000096",
+        "000099",
+        "000101",
+        "000100",
+        "000098",
+        "000097"
+      ],
+      "centroid_distances": [
+        0.08514773845672607,
+        0.09081989526748657,
+        0.09360277652740479,
+        0.09832406044006348,
+        0.1177254319190979,
+        0.11827701330184937
+      ],
+      "members": [
+        {
+          "task_id": "000096",
+          "application_type": "Travel Booking Portals",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "API Integration",
+            "CRUD Operations"
+          ]
+        },
+        {
+          "task_id": "000099",
+          "application_type": "Travel Booking Portals",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Authentication",
+            "Real-time Features"
+          ]
+        },
+        {
+          "task_id": "000101",
+          "application_type": "Travel Booking Portals",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "API Integration",
+            "File Handling"
+          ]
+        },
+        {
+          "task_id": "000100",
+          "application_type": "Travel Booking Portals",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Form Systems",
+            "CRUD Operations"
+          ]
+        },
+        {
+          "task_id": "000098",
+          "application_type": "Travel Booking Portals",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Form Systems",
+            "Data Management"
+          ]
+        },
+        {
+          "task_id": "000097",
+          "application_type": "Travel Booking Portals",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Form Systems",
+            "Data Visualization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "size": 5,
+      "tasks": [
+        "000069",
+        "000086",
+        "000089",
+        "000070",
+        "000067"
+      ],
+      "centroid_distances": [
+        0.08235394954681396,
+        0.0875542163848877,
+        0.11216992139816284,
+        0.14310336112976074,
+        0.1752239465713501
+      ],
+      "members": [
+        {
+          "task_id": "000069",
+          "application_type": "Personal Blog Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Data Visualization",
+            "Static Page Generation"
+          ]
+        },
+        {
+          "task_id": "000086",
+          "application_type": "Publishing/Blogging Platforms",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Dynamic Content Rendering",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000089",
+          "application_type": "Publishing/Blogging Platforms",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "User Interaction"
+          ]
+        },
+        {
+          "task_id": "000070",
+          "application_type": "Personal Blog Sites",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Dynamic Content Rendering",
+            "Static Page Generation",
+            "User Interaction"
+          ]
+        },
+        {
+          "task_id": "000067",
+          "application_type": "News and Information Sites",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "Data Visualization",
+            "API Integration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "size": 4,
+      "tasks": [
+        "000002",
+        "000006",
+        "000005",
+        "000003"
+      ],
+      "centroid_distances": [
+        0.09341424703598022,
+        0.1002923846244812,
+        0.1087145209312439,
+        0.13480401039123535
+      ],
+      "members": [
+        {
+          "task_id": "000002",
+          "application_type": "Analytics Platforms/Dashboards",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Data Visualization",
+            "Static Page Generation"
+          ]
+        },
+        {
+          "task_id": "000006",
+          "application_type": "Analytics Platforms/Dashboards",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Data Visualization",
+            "Dynamic Content Rendering"
+          ]
+        },
+        {
+          "task_id": "000005",
+          "application_type": "Analytics Platforms/Dashboards",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Data Visualization",
+            "Static Page Generation"
+          ]
+        },
+        {
+          "task_id": "000003",
+          "application_type": "Analytics Platforms/Dashboards",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "Big Data",
+            "Data Visualization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "size": 4,
+      "tasks": [
+        "000004",
+        "000012",
+        "000076",
+        "000054"
+      ],
+      "centroid_distances": [
+        0.10113918781280518,
+        0.10186225175857544,
+        0.12428915500640869,
+        0.12511730194091797
+      ],
+      "members": [
+        {
+          "task_id": "000004",
+          "application_type": "Analytics Platforms/Dashboards",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "Data Visualization",
+            "API Integration",
+            "Big Data"
+          ]
+        },
+        {
+          "task_id": "000012",
+          "application_type": "Browser-Based Games",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "Big Data",
+            "AI Integration"
+          ]
+        },
+        {
+          "task_id": "000076",
+          "application_type": "Personal Portfolio Sites",
+          "primary_category": "Data Management",
+          "subcategories": [
+            "CRUD Operations",
+            "Big Data",
+            "Data Visualization"
+          ]
+        },
+        {
+          "task_id": "000054",
+          "application_type": "Job Search Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Authentication",
+            "Real-time Features"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "size": 3,
+      "tasks": [
+        "000037",
+        "000024",
+        "000035"
+      ],
+      "centroid_distances": [
+        0.10675865411758423,
+        0.11707592010498047,
+        0.12434637546539307
+      ],
+      "members": [
+        {
+          "task_id": "000037",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "AI Integration",
+            "Form Systems"
+          ]
+        },
+        {
+          "task_id": "000024",
+          "application_type": "CRM Systems",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "AI Integration",
+            "Form Systems",
+            "Real-time Features"
+          ]
+        },
+        {
+          "task_id": "000035",
+          "application_type": "E-commerce Web Applications",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "E-commerce",
+            "Authentication",
+            "API Integration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "size": 3,
+      "tasks": [
+        "000087",
+        "000095",
+        "000094"
+      ],
+      "centroid_distances": [
+        0.09822958707809448,
+        0.09960043430328369,
+        0.1233510971069336
+      ],
+      "members": [
+        {
+          "task_id": "000087",
+          "application_type": "Publishing/Blogging Platforms",
+          "primary_category": "Content Presentation",
+          "subcategories": [
+            "Static Page Generation",
+            "Media Display",
+            "User Interaction"
+          ]
+        },
+        {
+          "task_id": "000095",
+          "application_type": "Streaming and Interactive Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "E-commerce",
+            "Data Management"
+          ]
+        },
+        {
+          "task_id": "000094",
+          "application_type": "Streaming and Interactive Platforms",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "AI Integration",
+            "Real-time Features",
+            "E-commerce"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "size": 2,
+      "tasks": [
+        "000042",
+        "000043"
+      ],
+      "centroid_distances": [
+        0.06718891859054565,
+        0.06718891859054565
+      ],
+      "members": [
+        {
+          "task_id": "000042",
+          "application_type": "Email Clients",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "File Handling",
+            "E-commerce"
+          ]
+        },
+        {
+          "task_id": "000043",
+          "application_type": "Email Clients",
+          "primary_category": "User Interaction",
+          "subcategories": [
+            "Form Systems",
+            "Real-time Features",
+            "Data Management"
+          ]
+        }
+      ]
+    }
+  ]
+}

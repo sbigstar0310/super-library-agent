@@ -1,0 +1,35 @@
+{
+ "per_app": {
+  "all-in-one": {
+   "app_nll": 7140.8992,
+   "library_nll": 1051.0503,
+   "app_tokens": 17034,
+   "library_tokens": 2416
+  },
+  "bridging-data-gaps": {
+   "app_nll": 9835.8984,
+   "library_nll": 1051.0503,
+   "app_tokens": 19953,
+   "library_tokens": 2416
+  },
+  "sequential-neural-score-estimation": {
+   "app_nll": 5956.9917,
+   "library_nll": 1051.0503,
+   "app_tokens": 12451,
+   "library_tokens": 2416
+  },
+  "stochastic-interpolants": {
+   "app_nll": 5460.2258,
+   "library_nll": 1051.0503,
+   "app_tokens": 13297,
+   "library_tokens": 2416
+  }
+ },
+ "summary": {
+  "sum_app_nll": 28394.0151,
+  "avg_library_nll": 1051.0503,
+  "mdl_nll": 29445.0654,
+  "total_tokens": 65151,
+  "total_apps": 4
+ }
+}
