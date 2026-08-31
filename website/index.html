@@ -38,13 +38,13 @@
   <div class="nav-inner">
     <span class="nav-mark">Super Library Agent</span>
     <div class="nav-links">
-      <a href="#pipeline">How it works</a>
+      <a href="#motivation">Motivation</a>
       <a href="#problem">Problem</a>
       <a href="#method">Method</a>
       <a href="#results">Results</a>
-      <a href="#library">The library</a>
-      <a href="#limits">Limits</a>
-      <a href="#cite">Cite</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#limits">Limitations</a>
+      <a href="#cite">Citation</a>
     </div>
   </div>
 </nav>
@@ -65,231 +65,264 @@
     <a class="btn" href="#cite">BibTeX</a>
   </div>
 
+  <div class="hero-message">
+    <p class="hero-hook">Shared logic should not be rebuilt for every application.</p>
+    <p class="hero-overview">
+      Super Library Agent jointly generates related applications and a reusable library,
+      preserving functionality while reducing redundant code and portfolio-wide maintenance effort.
+    </p>
+
+    <div class="hero-proof">
+      <div class="hero-stats" aria-label="Key results on WebGen-Bench">
+        <div>
+          <span><small>Verbosity</small>Redundant code</span>
+          <strong>&minus;38%</strong>
+        </div>
+        <div>
+          <span><small>Joint codebase</small>Total LOC</span>
+          <strong>&minus;9%</strong>
+        </div>
+        <div>
+          <span><small>Patch size</small>Maintenance edits</span>
+          <strong>3.7&times; <em>smaller</em></strong>
+        </div>
+      </div>
+      <div class="hero-animation">
+        <p class="hero-animation-title">One Round of Our SLA-Full</p>
+        <figure class="anim anim-hero" id="sla-anim" data-step="1">
+          <svg viewBox="0 0 1000 344" role="img" aria-labelledby="anim-title anim-desc">
+          <title id="anim-title">One round of our SLA-Full</title>
+            <desc id="anim-desc">A new request becomes an application, written against the Super
+              Library as it currently stands, so whatever the library already covers is imported
+              rather than rewritten. What the new application still shares with earlier ones is
+              extracted, the library grows by one symbol, and every application written so far is
+              migrated to import from it. Dashed white blocks mark library imports. Gray regions
+              hold local implementations, with white spaces appearing as code is consolidated and migrated.</desc>
+
+            <!-- Super Library -->
+            <g class="lib" transform="translate(316,20)">
+              <rect class="libbox" width="368" height="82" rx="10"/>
+              <text class="libtitle" x="184" y="30">Super Lib. <tspan class="lsub">L</tspan></text>
+              <g class="lchip l1"><rect class="chip ui"    x="34"  y="44" width="86" height="26" rx="5"/><text class="chiplab" x="77"  y="62">UI</text></g>
+              <g class="lchip l2"><rect class="chip state" x="141" y="44" width="86" height="26" rx="5"/><text class="chiplab" x="184" y="62">State</text></g>
+              <g class="lchip l3"><rect class="chip chart" x="248" y="44" width="86" height="26" rx="5"/><text class="chiplab" x="291" y="62">Chart</text></g>
+            </g>
+
+            <!-- request -->
+            <g class="req" transform="translate(772,120)">
+              <rect class="bubble" width="46" height="32" rx="7"/>
+              <circle cx="14" cy="16" r="2.6"/><circle cx="23" cy="16" r="2.6"/><circle cx="32" cy="16" r="2.6"/>
+              <text class="reqlab" x="56" y="22">Request x₃</text>
+            </g>
+            <path class="codeflow" d="M795 156 C795 178 760 180 736 192" marker-end="url(#arP)"/>
+            <text class="phase phase-code" x="970" y="182">1. CODING</text>
+
+            <!-- coding reads the library as it stands -->
+            <path class="flowR" d="M620 104 C622 140 660 172 690 192" marker-end="url(#arB)"/>
+            <text class="refnote" x="618" y="148">reads L</text>
+
+            <!-- extract arrows -->
+            <g class="up">
+              <path class="flowB up2" d="M494 278 C494 190 560 145 604 118"/>
+              <path class="flowB up3" d="M680 278 C680 190 644 145 616 118"/>
+              <path class="flowB upm" d="M610 118 L607 108" marker-end="url(#arB)"/>
+              <circle class="flow-junction" cx="610" cy="118" r="3"/>
+            </g>
+            <text class="phase phase-cons" x="970" y="170">2. CONSOLIDATE</text>
+            <text class="phase phase-ex" x="26" y="150">3. EXTRACT</text>
+            <text class="phase phase-mi" x="26" y="178">4. MIGRATE</text>
+
+            <!-- migrate arrows -->
+            <g class="down">
+              <path class="flowB" d="M420 104 C400 150 338 150 338 192" marker-end="url(#arB)"/>
+              <path class="flowB" d="M490 104 C500 150 534 150 534 192" marker-end="url(#arB)"/>
+              <path class="flowB" d="M560 104 C620 150 730 150 730 192" marker-end="url(#arB)"/>
+            </g>
+            <g class="anim-legend" transform="translate(26,220)">
+              <text class="legend-title" x="0" y="0">CODEBASE BLOCKS</text>
+              <rect class="legend-import" x="0" y="14" width="30" height="16" rx="3"/>
+              <text class="legend-label" x="40" y="27">Library import</text>
+              <rect class="legend-local" x="0" y="40" width="30" height="16" rx="3"/>
+              <text class="legend-label" x="40" y="53">Local implementation</text>
+            </g>
+
+            <g class="code c1" transform="translate(250,196)">
+              <rect class="cbox" width="184" height="132" rx="9"/>
+              <text class="ctitle" x="92" y="24">Code c₁</text>
+              <g class="own">
+                <rect class="local-base" x="12" y="68" width="160" height="50" rx="5"/>
+                <rect class="chip form localonly" x="24" y="81" width="48" height="24" rx="4"/>
+              </g>
+              <g class="chips">
+                <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
+                <rect class="chip state shared imported" x="62" y="36" width="42" height="22" rx="4"/>
+              </g>
+            </g>
+            <g class="code c2" transform="translate(446,196)">
+              <rect class="cbox" width="184" height="132" rx="9"/>
+              <text class="ctitle" x="92" y="24">Code c₂</text>
+              <g class="own">
+                <rect class="local-base" x="12" y="68" width="160" height="50" rx="5"/>
+                <rect class="empty-slot extract-hole" x="24" y="81" width="48" height="24" rx="4"/>
+                <rect class="chip chart local-chart c2-chart" x="24" y="81" width="48" height="24" rx="4"/>
+              </g>
+              <g class="chips">
+                <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
+                <rect class="chip state shared imported" x="62" y="36" width="42" height="22" rx="4"/>
+                <rect class="chip chart shared pending import-chart" x="110" y="36" width="42" height="22" rx="4"/>
+              </g>
+            </g>
+            <g class="code c3" transform="translate(642,196)">
+              <rect class="cbox" width="184" height="132" rx="9"/>
+              <text class="ctitle" x="92" y="24">Code c₃</text>
+              <g class="own">
+                <rect class="local-base" x="12" y="68" width="160" height="50" rx="5"/>
+                <rect class="empty-slot extract-hole" x="19" y="81" width="44" height="24" rx="4"/>
+                <rect class="empty-slot consolidate-hole hole-2" x="70" y="81" width="44" height="24" rx="4"/>
+                <rect class="empty-slot consolidate-hole hole-3" x="121" y="81" width="44" height="24" rx="4"/>
+                <rect class="chip chart local-chart chart-1" x="19" y="81" width="44" height="24" rx="4"/>
+                <rect class="chip chart local-chart chart-2" x="70" y="81" width="44" height="24" rx="4"/>
+                <rect class="chip chart local-chart chart-3" x="121" y="81" width="44" height="24" rx="4"/>
+              </g>
+              <g class="chips">
+                <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
+                <rect class="chip chart shared pending import-chart" x="62" y="36" width="42" height="22" rx="4"/>
+              </g>
+            </g>
+
+            <defs>
+              <marker id="arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="hB"/></marker>
+              <marker id="arP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="hP"/></marker>
+            </defs>
+          </svg>
+
+          <figcaption>
+            <ol class="anim-steps">
+              <li data-step="1"><b>Request</b><span>a new task arrives</span></li>
+              <li data-step="2"><b>Coding</b><span>c₃ written against&nbsp;L</span></li>
+              <li data-step="3"><b>Consolidate</b><span>repetition <em>inside</em> the new app</span></li>
+              <li data-step="4"><b>Extract</b><span>what repeats joins the library</span></li>
+              <li data-step="5"><b>Migrate</b><span>every application imports it</span></li>
+            </ol>
+            <p class="anim-hint">Plays on its own. Hover to pause, click a step to inspect it.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
 </header>
 
 <main class="wrap">
 
-<section id="pipeline">
-  <p class="kicker">How it works</p>
-  <h2>One round of SLA, end to end</h2>
 
-  <figure class="anim" id="sla-anim" data-step="1">
-    <svg viewBox="0 0 1000 344" role="img" aria-labelledby="anim-title anim-desc">
-      <title id="anim-title">One round of the Super Library Agent</title>
-      <desc id="anim-desc">A new request becomes an application, written against the Super
-        Library as it currently stands, so whatever the library already covers is imported
-        rather than rewritten. What the new application still shares with earlier ones is
-        extracted, the library grows by one symbol, and every application written so far is
-        migrated to import from it.</desc>
+<section id="motivation">
+  <p class="kicker">Motivation</p>
+  <h2>The Cost of Building Related Applications in Isolation</h2>
 
-      <!-- Super Library -->
-      <g class="lib" transform="translate(316,20)">
-        <rect class="libbox" width="368" height="82" rx="10"/>
-        <text class="libtitle" x="184" y="30">Super Lib. <tspan class="lsub">L</tspan></text>
-        <g class="lchip l1"><rect class="chip ui"    x="34"  y="44" width="86" height="26" rx="5"/><text class="chiplab" x="77"  y="62">UI</text></g>
-        <g class="lchip l2"><rect class="chip state" x="141" y="44" width="86" height="26" rx="5"/><text class="chiplab" x="184" y="62">State</text></g>
-        <g class="lchip l3"><rect class="chip chart" x="248" y="44" width="86" height="26" rx="5"/><text class="chiplab" x="291" y="62">Chart</text></g>
-      </g>
+  <div class="two-col split motivation">
+    <div class="motivation-copy">
+      <p>
+        Organizations maintain <strong>application portfolios</strong> whose independently deployable
+        applications share domain logic, interface patterns, and operational conventions. Generating
+        each application in isolation duplicates these concerns and forces common updates to be repeated
+        across the portfolio. SLA instead builds the portfolio sequentially while maintaining one reusable library.
+      </p>
+    </div>
 
-      <!-- request -->
-      <g class="req" transform="translate(772,120)">
-        <rect class="bubble" width="46" height="32" rx="7"/>
-        <circle cx="14" cy="16" r="2.6"/><circle cx="23" cy="16" r="2.6"/><circle cx="32" cy="16" r="2.6"/>
-        <text class="reqlab" x="56" y="22">Request x₃</text>
-      </g>
-      <path class="codeflow" d="M795 156 C795 178 760 180 736 192" marker-end="url(#arP)"/>
-      <text class="phase phase-code" x="838" y="182">1. CODING</text>
-
-      <!-- coding reads the library as it stands -->
-      <path class="flowR" d="M620 104 C622 140 660 172 690 192" marker-end="url(#arB)"/>
-      <text class="refnote" x="618" y="148">reads L</text>
-
-      <!-- extract arrows -->
-      <g class="up">
-        <path class="flowB up2" d="M568 192 C568 152 588 132 604 118"/>
-        <path class="flowB up3" d="M716 192 C716 152 660 130 616 118"/>
-        <path class="flowB upm" d="M610 118 L607 108" marker-end="url(#arB)"/>
-      </g>
-      <text class="phase phase-cons" x="838" y="206">2. CONSOLIDATE</text>
-      <text class="phase phase-ex" x="120" y="150">3. EXTRACT</text>
-      <text class="phase phase-mi" x="120" y="174">4. MIGRATE</text>
-
-      <!-- migrate arrows -->
-      <g class="down">
-        <path class="flowB" d="M420 104 C400 150 338 150 338 192" marker-end="url(#arB)"/>
-        <path class="flowB" d="M490 104 C500 150 534 150 534 192" marker-end="url(#arB)"/>
-        <path class="flowB" d="M560 104 C620 150 730 150 730 192" marker-end="url(#arB)"/>
-      </g>
-      <text class="imports" x="172" y="252">Imports</text>
-      <path class="dash" d="M180 248 L244 248"/>
-
-      <g class="code c1" transform="translate(250,196)">
-        <rect class="cbox" width="176" height="118" rx="9"/>
-        <text class="ctitle" x="88" y="24">Code c₁</text>
-        <g class="own"><rect x="14" y="90" width="148" height="16" rx="4"/></g>
-        <g class="chips">
-          <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
-          <rect class="chip state shared imported" x="62" y="36" width="42" height="22" rx="4"/>
-          <rect class="chip form localonly" x="110" y="36" width="42" height="22" rx="4"/>
-        </g>
-      </g>
-      <g class="code c2" transform="translate(446,196)">
-        <rect class="cbox" width="176" height="118" rx="9"/>
-        <text class="ctitle" x="88" y="24">Code c₂</text>
-        <g class="own"><rect x="14" y="90" width="148" height="16" rx="4"/></g>
-        <g class="chips">
-          <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
-          <rect class="chip state shared imported" x="62" y="36" width="42" height="22" rx="4"/>
-          <rect class="chip chart shared pending" x="110" y="36" width="42" height="22" rx="4"/>
-        </g>
-      </g>
-      <g class="code c3" transform="translate(642,196)">
-        <rect class="cbox" width="176" height="118" rx="9"/>
-        <text class="ctitle" x="88" y="24">Code c₃</text>
-        <g class="own"><rect x="14" y="90" width="148" height="16" rx="4"/></g>
-        <g class="chips">
-          <rect class="chip ui shared imported" x="14" y="36" width="42" height="22" rx="4"/>
-          <rect class="chip chart shared pending" x="62" y="36" width="42" height="22" rx="4"/>
-        </g>
-        <g class="dupchips">
-          <rect class="chip chart shared" x="14" y="62" width="42" height="22" rx="4"/>
-          <rect class="chip chart shared" x="62" y="62" width="42" height="22" rx="4"/>
-          <text class="dupnote" x="120" y="78">×3 alike</text>
-        </g>
-      </g>
-
-      <defs>
-        <marker id="arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="hB"/></marker>
-        <marker id="arP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="hP"/></marker>
-      </defs>
-    </svg>
-
-    <figcaption>
-      <ol class="anim-steps">
-        <li data-step="1"><b>Request</b><span>a new task arrives</span></li>
-        <li data-step="2"><b>Coding</b><span>c₃ written against&nbsp;L</span></li>
-        <li data-step="3"><b>Consolidate</b><span>repetition <em>inside</em> the new app</span></li>
-        <li data-step="4"><b>Extract</b><span>what repeats joins the library</span></li>
-        <li data-step="5"><b>Migrate</b><span>every application imports it</span></li>
-      </ol>
-      <p class="anim-hint">Plays on its own. Hover to pause, click a step to inspect it.</p>
-    </figcaption>
-  </figure>
-</section>
-
-<section id="problem">
-  <p class="kicker">The problem</p>
-  <h2>N isolated agents write the same logic N different ways.</h2>
-
-  <div class="two-col split">
     <figure class="fig-flush">
       <picture>
         <source srcset="static/img/problem.webp" type="image/webp">
         <img src="static/img/problem.png" width="2048" height="1205"
-             alt="Left: each application is generated on its own and the same header, form validation and storage logic is written again in every codebase. Right: the shared logic is factored into one Super Library that all applications import.">
+             alt="Independent generation duplicates shared logic across applications, while the Super Library Agent factors shared logic into one reusable library.">
       </picture>
-      <figcaption>We introduce the <strong>Super Library Agent</strong> problem: sequentially generate
-      <em>N</em> related applications while maintaining one shared library they all use.</figcaption>
+      <figcaption>Figure 1. Independent generation compared with sequential portfolio construction using a shared Super Library.</figcaption>
     </figure>
-
-    <div class="payoff">
-      <p class="payoff-head">What SLA changes</p>
-      <ul class="ledger">
-        <li class="parity">
-          <b>no loss</b>
-          <span><em>task accuracy</em><i data-src="webgen:Zero-Shot:Acc">76.04</i> &rarr; <i data-src="webgen:SLA-Full:Acc">77.21</i></span>
-        </li>
-        <li>
-          <b data-src="webgen:SLA-Full:Verb:delta">&minus;38%</b>
-          <span><em>redundant code</em>verbosity: duplicated blocks and rule-flagged patterns</span>
-        </li>
-        <li>
-          <b data-src="webgen:SLA-Full:LOC:delta">&minus;9.0%</b>
-          <span><em>lines of code</em>the apps plus the shared library</span>
-        </li>
-        <li>
-          <b>3.7&times;</b>
-          <span><em>smaller maintenance patch</em><i data-src="maint:Zero-Shot:Total">936</i> &rarr; <i data-src="maint:SLA-Full:Total">256</i> patched lines</span>
-        </li>
-      </ul>
-      <p class="payoff-foot">WebGen-Bench, against the same eight applications generated independently.</p>
-    </div>
   </div>
 
-  <p>
-    Organizations maintain <strong>portfolios</strong>: independently deployable codebases
-    sharing domain logic, interface patterns and operational conventions. Generate each
-    member on its own and those shared concerns get duplicated, twice over.
+</section>
+
+<section id="problem">
+  <p class="kicker">Problem Definition</p>
+  <h2>Super Library Agent Problem</h2>
+  <p class="formula-intro">
+    Requests arrive one at a time. At each step, the agent generates the new application, updates
+    the Super Library, and patches earlier applications when they should use the new shared code.
   </p>
 
-  <div class="two-col">
-    <div class="cause">
-      <p class="cause-tag">Failure 1</p>
-      <b>The same logic is duplicated across codebases</b>
-      <p>
-        Writing each member on its own violates DRY and creates an inconsistency surface:
-        every bug fix, design change and policy update has to be propagated by hand across
-        near-duplicates.
-      </p>
+  <div class="formula-stack">
+    <div class="formula-block">
+      <div class="formula-expression">
+        <span class="formula-label">Step <var>t</var></span>
+        <div class="equation" role="math" aria-label="c sub t, C prime less than t, and L sub t equal A of x sub t, C less than t, and L sub t minus one">
+          (<var>c</var><sub>t</sub>, <b>C</b>&prime;<sub>&lt;t</sub>, ℒ<sub>t</sub>)
+          = 𝒜(<var>x</var><sub>t</sub>, <b>C</b><sub>&lt;t</sub>, ℒ<sub>t&minus;1</sub>)
+        </div>
+      </div>
+      <p>Generate the next codebase and update both the previous portfolio and its shared library.</p>
     </div>
-    <div class="cause">
-      <p class="cause-tag">Failure 2</p>
-      <b>Isolated agents compound slop</b>
-      <p>
-        Prolonged agentic coding produces <em>slop</em>: still correct, but increasingly
-        verbose and convoluted. With <em>N</em> isolated agents each re-derives shared logic
-        differently, accumulates its own dead code and drifts further from its siblings.
-      </p>
+
+    <div class="formula-block">
+      <div class="formula-expression">
+        <span class="formula-label">Shared components</span>
+        <div class="equation" role="math" aria-label="L star sub t is the set of u such that the sum from i equals one to t of use of u in c sub i is at least two">
+          ℒ<sup>★</sup><sub>t</sub>
+          = { <var>u</var> &mid;
+          <span class="sum"><span>t</span>&sum;<span><var>i</var>=1</span></span>
+          𝟙[use(<var>u</var>, <var>c</var><sub>i</sub>)] &ge; 2 }
+        </div>
+      </div>
+      <p>The ideal library contains components used by at least two applications.</p>
+    </div>
+
+    <div class="formula-block formula-goal">
+      <div class="formula-expression">
+        <span class="formula-label">Objective</span>
+        <div class="equation" role="math" aria-label="maximize over A functionality and maintainability scores">
+          max<sub>𝒜</sub>
+          ( <var>S</var><sub>func</sub>(<b>C</b><sub>N</sub>, <b>X</b>),
+          <var>S</var><sub>maint</sub>(<b>C</b><sub>N</sub>, ℒ<sub>N</sub>) )
+        </div>
+      </div>
+      <p>Seek a favorable Pareto trade-off between application functionality and joint-codebase maintainability.</p>
     </div>
   </div>
 
-  <div class="goal">
-    <p class="goal-tag">Our goal</p>
-    <p class="goal-claim">
-      Build the portfolio and <strong>one shared library</strong> together, so it stays
-      <strong>easier to maintain</strong> at <strong>no cost to accuracy</strong>.
-    </p>
-  </div>
+  <details class="notation">
+    <summary>Notation</summary>
+    <dl>
+      <div><dt><b>X</b></dt><dd>the sequence of application requests</dd></div>
+      <div><dt><var>c</var><sub>t</sub></dt><dd>the application generated at step <var>t</var></dd></div>
+      <div><dt><b>C</b><sub>&lt;t</sub></dt><dd>the applications generated before step <var>t</var></dd></div>
+      <div><dt>ℒ<sub>t</sub></dt><dd>the Super Library after step <var>t</var></dd></div>
+      <div><dt>𝒜</dt><dd>the agentic workflow that jointly generates and maintains the portfolio</dd></div>
+    </dl>
+  </details>
 </section>
 
 <section id="method">
   <p class="kicker">Method</p>
-  <h2>One round of SLA-Full</h2>
-  <p class="lede">Every round: write, consolidate, extract, migrate.</p>
+  <h2>Super Library Agent</h2>
+  <p class="section-intro">
+    SLA-Full turns shared-library construction into an explicit part of sequential application
+    generation. It separates reuse discovery from dependency migration and gives each agent
+    structured context for deciding what to extract and how to update every affected codebase.
+  </p>
 
-  <ol class="pipeline">
-    <li>
-      <span class="pnum">1</span>
-      <b>Coding</b>
-      <span>Write this round's new applications, then index their code blocks.</span>
-    </li>
-    <li>
-      <span class="pnum">2</span>
-      <b>Consolidate</b>
-      <span>Clean up repetition <em>inside</em> each new application.</span>
-    </li>
-    <li>
-      <span class="pnum">3</span>
-      <b>Library extract</b>
-      <span>Grow the shared library, recording an extraction trace.</span>
-    </li>
-    <li>
-      <span class="pnum">4</span>
-      <b>Migrate</b>
-      <span>Move every application so far onto the new library symbols.</span>
-    </li>
-  </ol>
-
-  <figure class="fig-wide">
+  <figure class="fig-wide method-overview">
     <picture>
       <source srcset="static/img/method.webp" type="image/webp">
       <img src="static/img/method.png" width="2048" height="622" loading="lazy"
-           alt="Two workflows side by side. Left, SLA-Naive: one agent is handed all applications and asked to extract shared code and update callers. Right, SLA-Full: codebases are chunked and summarized, a selector proposes candidates, extraction records which local blocks each library symbol replaced, and migration receives that trace plus call-graph neighbors.">
+           alt="Minimal Scaffold on the left and SLA-Full on the right. SLA-Full uses code summaries, candidate selection, extraction traces, and call-graph context.">
     </picture>
-    <figcaption><strong>SLA-Naive</strong> (left) versus <strong>SLA-Full</strong> (right).</figcaption>
+    <figcaption>
+      Figure 2. Minimal Scaffold (left) and SLA-Full (right). SLA-Full provides structured
+      context for discovering reusable components and migrating their dependencies.
+    </figcaption>
   </figure>
 
-  <h3>Two failures of the naive scaffold, and our fix for each</h3>
+
+  <h3>How SLA-Full Addresses the Challenges</h3>
 
   <div class="mapping">
     <p class="rail rail-problem">Naive scaffold</p>
@@ -340,14 +373,19 @@
   </div>
 </section>
 
-<section id="results">
-  <p class="kicker">Results</p>
-  <h2>Building the portfolio, then maintaining it</h2>
 
-  <h3>1 &middot; Initial construction</h3>
-  <p>
-    Each method writes a suite of related applications from scratch, one after another.
-  </p>
+<section id="results">
+  <p class="kicker">Results 01</p>
+  <h2>Initial Portfolio Construction</h2>
+
+  <article class="experiment-card">
+    <span class="experiment-number">Experimental setup</span>
+    <p>
+      We group related benchmark tasks into suites and process each suite sequentially. Every method
+      builds the same WebGen-Bench and PaperBench portfolios, which we compare for functionality and
+      joint-codebase maintainability.
+    </p>
+  </article>
 
   <div class="tabs" role="tablist" aria-label="Benchmark">
     <button role="tab" aria-selected="true" data-bench="webgen">WebGen-Bench</button>
@@ -528,11 +566,19 @@
     </table>
   </div>
 
-  <h3 id="maintenance">2 &middot; Post-construction maintenance</h3>
-  <p>
-    Each finished portfolio then absorbs one policy update that changes behavior shared by
-    several applications.
-  </p>
+ </section>
+
+<section id="maintenance">
+  <p class="kicker">Results 02</p>
+  <h2>Post-Construction Maintenance</h2>
+
+  <article class="experiment-card">
+    <span class="experiment-number">Experimental setup</span>
+    <p>
+      We request one shared update for each completed WebGen-Bench suite. The same edit agent applies
+      it to every method, allowing us to compare preserved functionality and patch size.
+    </p>
+  </article>
 
   <div class="table-scroll">
     <table>
@@ -562,13 +608,14 @@
   </div>
 </section>
 
-<section id="library">
-  <p class="kicker">What actually comes out</p>
-  <h2>The Super Library, for real</h2>
+<section id="analysis">
+  <p class="kicker">Analysis</p>
+  <h2>Library Reuse and Abstraction Quality</h2>
+
+  <h3>01 &middot; A Real Super Library from an Eight-Application Suite</h3>
   <p>
-    Not an illustration. A whole library SLA-Full extracted from one 8-application suite,
-    exactly as it exists in the run. Badges show how many of the 8 applications import each
-    symbol.
+    Extracted by SLA-Full from an eight-application suite. Badges indicate the number of
+    applications importing each symbol.
   </p>
 
   <div class="browser">
@@ -584,7 +631,10 @@
   </div>
   <p class="stat-note" style="margin-top:0.8rem" id="lib-source"></p>
 
-  <h3>Applications after dependency migration</h3>
+  <h3>02 &middot; Applications after Dependency Migration</h3>
+  <p>
+    Representative applications after SLA-Full migrates shared dependencies into the Super Library.
+  </p>
 
   <div class="ba">
     <div class="ba-head">
@@ -602,7 +652,10 @@
       </div>
     </div>
   </div>
-  <h3>SLA-Full extracts higher-level abstractions</h3>
+  <h3>03 &middot; Higher-Level Abstractions Extracted by SLA-Full</h3>
+  <p>
+    Highly reused symbols show that SLA-Full extracts task-level abstractions, not only low-level utilities.
+  </p>
   <div class="two-col abs">
     <figure class="fig-flush">
       <picture>
@@ -659,8 +712,7 @@
 </section>
 
 <section id="limits">
-  <p class="kicker">Limits</p>
-  <h2>Our limitations</h2>
+  <h2>Limitations</h2>
   <ul class="plain">
     <li>
       <b>No benchmark is built for this setting.</b> We adapt single-task coding benchmarks
@@ -682,8 +734,7 @@
 </section>
 
 <section id="cite">
-  <p class="kicker">Cite</p>
-  <h2>BibTeX</h2>
+  <h2>Citation</h2>
   <p class="stat-note">Provisional. <code>pages</code> and the Anthology <code>url</code> follow publication.</p>
   <div class="bibtex-wrap">
     <button class="copy" id="copy-bib" type="button">Copy</button>

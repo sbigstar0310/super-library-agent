@@ -21,6 +21,7 @@
     "Liberation Mono", monospace;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans KR", sans-serif;
+  --display: "Avenir Next", Avenir, "Segoe UI Variable", "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 
@@ -94,7 +95,12 @@ section:first-of-type { border-top: 0; }
 
 h1, h2, h3 { line-height: 1.25; letter-spacing: -0.015em; }
 h2 { font-size: clamp(1.3rem, 2.05vw, 1.9rem); margin: 0 0 0.5rem; }
-h3 { font-size: 1.35rem; margin: 2.1rem 0 0.5rem; }
+h3 {
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: var(--ink-2);
+  margin: 2rem 0 0.5rem;
+}
 /* h4 groups content inside an h3 section, so it must read a step down from it */
 h4 { font-size: 1.02rem; font-weight: 650; line-height: 1.3; margin: 1.7rem 0 0.6rem; }
 
@@ -113,12 +119,120 @@ h4 { font-size: 1.02rem; font-weight: 650; line-height: 1.3; margin: 1.7rem 0 0.
 
 /* ---------- hero ---------- */
 
-.hero { padding: 3.2rem 0 2.5rem; text-align: center; }
+.hero { padding: 4.2rem 0 3.2rem; text-align: center; }
 .hero h1 {
   font-size: clamp(1.5rem, 2.55vw, 2rem);
+  font-weight: 700;
+  color: var(--ink);
   margin: 0.7rem auto 1.2rem;
   max-width: 54ch;
   text-wrap: balance;
+}
+.hero-message {
+  --hero-copy-width: 64rem;
+  margin: 2.8rem auto 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+.hero-hook {
+  width: min(100%, var(--hero-copy-width));
+  margin: 0 auto;
+  color: var(--accent);
+  font-size: clamp(1.5rem, 2.55vw, 2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  text-align: center;
+  white-space: nowrap;
+}
+.hero-overview {
+  width: min(100%, var(--hero-copy-width));
+  margin: 1.35rem auto 0;
+  color: var(--ink-2);
+  font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+  line-height: 1.65;
+  text-align: center;
+  text-wrap: balance;
+}
+.hero-proof {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.58fr) minmax(0, 1.42fr);
+  align-items: center;
+  gap: 1.8rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  text-align: left;
+}
+.hero-stats {
+  margin: 0;
+  padding-right: 1.35rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  border-right: 1px solid var(--line);
+}
+.hero-stats > div {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.6rem;
+  padding: 0.9rem 1rem 0.85rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
+  border-radius: var(--radius);
+  background:
+    linear-gradient(115deg, var(--surface) 52%, color-mix(in srgb, var(--accent-soft) 72%, var(--surface)) 100%);
+  box-shadow: 0 12px 28px -25px color-mix(in srgb, var(--accent) 65%, transparent);
+}
+.hero-stats > div::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--accent);
+}
+.hero-stats strong {
+  color: var(--accent);
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  text-align: right;
+  white-space: nowrap;
+}
+.hero-stats span {
+  display: grid;
+  gap: 0.18rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 620;
+  line-height: 1.25;
+}
+.hero-stats small {
+  color: var(--ink-3);
+  font-size: 0.64rem;
+  font-weight: 720;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.hero-stats strong em {
+  display: block;
+  color: var(--ink-3);
+  font-size: 0.43em;
+  font-style: normal;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+.hero-animation { min-width: 0; }
+.hero-animation-title {
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 700;
+  text-align: center;
 }
 .badge {
   display: inline-block;
@@ -171,6 +285,176 @@ h4 { font-size: 1.02rem; font-weight: 650; line-height: 1.3; margin: 1.7rem 0 0.
 }
 .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn[aria-disabled="true"] { opacity: 0.45; pointer-events: none; }
+
+/* ---------- narrative sections ---------- */
+
+.section-intro,
+.formula-intro,
+.method-round > p {
+  max-width: 76ch;
+  color: var(--ink-2);
+  margin: 0.65rem 0 0;
+}
+.motivation { align-items: center; margin-top: 1.35rem; }
+.motivation-copy p { color: var(--ink-2); }
+.motivation .fig-flush img {
+  width: auto;
+  max-width: min(100%, 430px);
+  max-height: 270px;
+}
+
+.formula-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.formula-block {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(16rem, 1.05fr);
+  align-items: center;
+  gap: 1.4rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.formula-block + .formula-block { border-top: 1px solid var(--line); }
+.formula-block.formula-goal {
+  background: var(--accent-soft);
+}
+.formula-expression { min-width: 0; }
+.formula-label,
+.experiment-number,
+.challenge-number {
+  display: block;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.equation {
+  margin: 0.28rem 0 0;
+  overflow-x: auto;
+  color: var(--ink);
+  font-family: "Latin Modern Math", "STIX Two Math", "Cambria Math", "Computer Modern", serif;
+  font-size: clamp(1.08rem, 1.9vw, 1.32rem);
+  font-kerning: normal;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-align: left;
+}
+.equation sub,
+.equation sup { font-size: 0.65em; }
+.equation var { font-family: inherit; font-style: italic; }
+.equation b { font-family: inherit; font-weight: 700; }
+.formula-block > p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+.sum {
+  display: inline-grid;
+  grid-template-rows: 0.65em 1em 0.65em;
+  align-items: center;
+  justify-items: center;
+  margin-inline: 0.12em;
+  vertical-align: middle;
+  line-height: 1;
+}
+.sum > span { font-size: 0.5em; font-family: var(--sans); }
+.notation {
+  margin-top: 0.7rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.notation summary {
+  padding: 0.65rem 0;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  font-weight: 620;
+  cursor: pointer;
+}
+.notation summary:hover { color: var(--accent); }
+.notation dl { margin: 0 0 1rem; }
+.notation dl > div {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1rem;
+  padding: 0.45rem 0;
+}
+.notation dt {
+  color: var(--ink);
+  font-family: "Latin Modern Math", "STIX Two Math", "Cambria Math", "Computer Modern", serif;
+  font-size: clamp(1.08rem, 1.9vw, 1.32rem);
+  font-kerning: normal;
+  line-height: 1.5;
+}
+.notation dt sub,
+.notation dt sup { font-size: 0.65em; }
+.notation dt var { font-family: inherit; font-style: italic; }
+.notation dt b { font-family: inherit; font-weight: 700; }
+.notation dd {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.method-overview { margin-top: 2rem; }
+.method-round { margin-top: 3.25rem; }
+.method-round h3 { margin-top: 0; }
+.challenge-list { margin-top: 1.35rem; border-top: 1px solid var(--line); }
+.challenge-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.challenge-row h4 { margin: 0.35rem 0 0.55rem; }
+.challenge-row p { margin: 0; color: var(--ink-2); font-size: 0.94rem; }
+.challenge-answer {
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+.challenge-answer h4 { color: var(--accent); margin-top: 0; }
+
+.experiment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.experiment-grid article {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.experiment-grid h3 { margin: 0.45rem 0 0.55rem; font-size: 1.08rem; }
+.experiment-grid p { margin: 0; color: var(--ink-2); font-size: 0.94rem; }
+.experiment-card {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.experiment-card p {
+  margin: 0.45rem 0 0;
+  color: var(--ink-2);
+  font-size: 0.94rem;
+}
+.evaluation-details p { margin: 0 0 1rem; color: var(--ink-2); }
 
 /* ---------- figures ---------- */
 
@@ -342,6 +626,14 @@ figcaption {
    the paper's two static snapshots L2 and L3. */
 
 .anim { margin: 1.4rem 0 0; }
+.anim.anim-compact {
+  width: min(100%, 860px);
+  margin: 1.5rem auto 0;
+}
+.anim.anim-hero {
+  width: 100%;
+  margin: 0 auto;
+}
 .anim svg {
   display: block;
   width: 100%;
@@ -351,13 +643,16 @@ figcaption {
   background: var(--surface);
 }
 
-.anim .cbox { fill: #fff; stroke: #9aa3ab; stroke-width: 1.5; }
-.anim .code.c3 .cbox { stroke: #8e4787; stroke-width: 2.4; }
-.anim .ctitle { fill: #17181a; font: 700 14px var(--sans); text-anchor: middle; }
-.anim .own rect { fill: #d5d7d9; transform-box: fill-box; transform-origin: 50% 100%; }
+.anim .cbox { fill: #fff; stroke: #8c969f; stroke-width: 1.8; }
+.anim .code.c3 .cbox { stroke: #8e4787; stroke-width: 2.8; }
+.anim .ctitle { fill: #17181a; font: 700 20px var(--display); text-anchor: middle; }
+.anim .local-base { fill: #c7cacf; }
+.anim .empty-slot { fill: #fff; stroke: #fff; stroke-width: 2; opacity: 0; }
+.anim .local-chart { transform-box: fill-box; transform-origin: center; }
+.anim .import-chart { opacity: 0; }
 
 .anim .libbox { fill: #d9dbdd; stroke: #17181a; stroke-width: 2.2; }
-.anim .libtitle { fill: #17181a; font: 700 15px var(--sans); text-anchor: middle; }
+.anim .libtitle { fill: #17181a; font: 700 21px var(--display); text-anchor: middle; }
 .anim .lsub { font-style: italic; }
 
 .anim .chip { stroke-width: 1.2; }
@@ -365,27 +660,29 @@ figcaption {
 .anim .chip.state { fill: #f8ded0; stroke: #cf8f6c; }
 .anim .chip.chart { fill: #c9edcf; stroke: #74b57c; }
 .anim .chip.form  { fill: #f0d4ef; stroke: #b57cb0; }
-.anim .dupnote { fill: #8e4787; font: 600 11px var(--sans); }
-.anim .chiplab { fill: #17181a; font: 600 12px var(--sans); text-anchor: middle; }
+.anim .chiplab { fill: #17181a; font: 650 15px var(--sans); text-anchor: middle; }
 
 .anim .bubble { fill: #7c8087; }
 .anim .req circle { fill: #fff; }
-.anim .reqlab { fill: #17181a; font: 700 14px var(--sans); }
+.anim .reqlab { fill: #17181a; font: 700 22px var(--display); }
 
-.anim .flowB { fill: none; stroke: #2b5f9e; stroke-width: 2.4; stroke-linecap: round; }
+.anim .flowB { fill: none; stroke: #23588f; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 .anim .hB { fill: #2b5f9e; }
-.anim .codeflow { fill: none; stroke: #8e4787; stroke-width: 2.4; stroke-linecap: round; }
+.anim .codeflow { fill: none; stroke: #8e4787; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 .anim .hP { fill: #8e4787; }
+.anim .flow-junction { fill: #23588f; }
 
-.anim .phase { font: 700 14px var(--sans); }
-.anim .phase-code, .anim .phase-cons { fill: #8e4787; }
+.anim .phase { font: 700 24px var(--display); letter-spacing: .015em; }
+.anim .phase-code, .anim .phase-cons { fill: #8e4787; text-anchor: end; }
 .anim .phase-ex, .anim .phase-mi { fill: #2b5f9e; }
 /* coding reads the library as it stands: dashed, to match the import convention */
 .anim .flowR { fill: none; stroke: #2b5f9e; stroke-width: 2; stroke-linecap: round;
                stroke-dasharray: 5 4.4; }
-.anim .refnote { fill: #2b5f9e; font: 600 12px var(--sans); text-anchor: end; }
-.anim .imports { fill: #4a4d52; font: 500 13px var(--sans); text-anchor: end; }
-.anim .dash { stroke: #4a4d52; stroke-width: 1.2; stroke-dasharray: 4 3; }
+.anim .refnote { fill: #2b5f9e; font: 650 17px var(--display); text-anchor: end; }
+.anim .legend-title { fill: #737980; font: 750 11px var(--sans); letter-spacing: .07em; }
+.anim .legend-label { fill: #2f3337; font: 650 15px var(--sans); }
+.anim .legend-import { fill: #fff; stroke: #4a4d52; stroke-width: 1.8; stroke-dasharray: 4 3; }
+.anim .legend-local { fill: #c7cacf; stroke: #aeb3b8; stroke-width: 1; }
 
 /* --- state machine --- */
 /* Every app owns ONE chip set. Migration restyles the shared chips in place, so a
@@ -395,13 +692,14 @@ figcaption {
 
 .anim .code, .anim .req, .anim .codeflow, .anim .flowB, .anim .lchip,
 .anim .flowR, .anim .refnote,
-.anim .phase, .anim .chips, .anim .dupchips, .anim .imports,
-.anim .dash, .anim .own rect, .anim .chip {
+.anim .phase, .anim .chips, .anim .flow-junction,
+.anim .empty-slot, .anim .chip {
   transition: opacity .28s ease, transform .45s ease, fill .45s ease,
               stroke-dasharray .45s ease, fill-opacity .45s ease;
 }
 .anim .code.c3, .anim .req, .anim .codeflow, .anim .flowB, .anim .l3,
-.anim .flowR, .anim .refnote, .anim .phase, .anim .dupchips { opacity: 0; }
+.anim .flowR, .anim .refnote, .anim .phase,
+.anim .flow-junction { opacity: 0; }
 /* arrows rest slightly displaced against their travel direction */
 .anim .codeflow, .anim .flowR { transform: translateY(-8px); }
 .anim .up .flowB { transform: translateY(10px); }
@@ -410,7 +708,7 @@ figcaption {
 /* 1 — a request arrives */
 .anim[data-step="1"] .req { opacity: 1; transition: opacity .5s ease .3s; }
 
-/* 2 — coding turns it into c3, which repeats a block internally */
+/* 2 — coding turns the request into c3 with three repeated local blocks */
 .anim[data-step="2"] .req { opacity: 1; }
 /* both inputs first: the task request and the library as it stands */
 .anim[data-step="2"] .codeflow,
@@ -421,51 +719,71 @@ figcaption {
   transition: opacity .35s ease .1s, transform .5s ease .1s;
 }
 /* then the code they produce */
-.anim[data-step="2"] .code.c3,
-.anim[data-step="2"] .dupchips {
+.anim[data-step="2"] .code.c3 {
   opacity: 1;
   transition: opacity .5s ease .55s;
 }
 
-/* 3 — local consolidation folds that repetition inside c3 */
+/* 3 — three local Chart blocks consolidate into one inside c3 */
 .anim[data-step="3"] .code.c3 { opacity: 1; }
 .anim[data-step="3"] .phase-cons { opacity: 1; transition: opacity .4s ease .1s; }
-.anim[data-step="3"] .dupchips {
-  opacity: 0; transform: translateY(-26px);
-  transition: opacity .55s ease .4s, transform .6s ease .4s;
+.anim[data-step="3"] .c3 .chart-2,
+.anim[data-step="3"] .c3 .chart-3 {
+  opacity: 0;
+  transition: opacity .35s ease .45s, transform .6s ease .2s;
+}
+.anim[data-step="3"] .c3 .chart-2 { transform: translateX(-51px); }
+.anim[data-step="3"] .c3 .chart-3 { transform: translateX(-102px); }
+.anim[data-step="3"] .c3 .consolidate-hole {
+  opacity: 1;
+  transition: opacity .4s ease .65s;
 }
 
 /* 4 — the repeated component is extracted; the library gains Chart */
 .anim[data-step="4"] .code.c3 { opacity: 1; }
 .anim[data-step="4"] .phase-ex { opacity: 1; transition: opacity .4s ease .1s; }
 .anim[data-step="4"] .up .flowB { opacity: 1; transform: none; }
+.anim[data-step="4"] .flow-junction { opacity: 1; transition: opacity .35s ease .2s; }
 .anim[data-step="4"] .up2 { transition: opacity .35s ease .15s, transform .55s ease .15s; }
 .anim[data-step="4"] .up3 { transition: opacity .35s ease .25s, transform .55s ease .25s; }
 .anim[data-step="4"] .upm { transition: opacity .35s ease .2s, transform .55s ease .2s; }
-/* the two contributing copies dim as their shared symbol moves up */
-.anim[data-step="4"] .c2 .chip.chart,
-.anim[data-step="4"] .c3 .chips .chip.chart { fill-opacity: .35; transition: fill-opacity .4s ease .3s; }
+.anim[data-step="4"] .c3 .chart-2,
+.anim[data-step="4"] .c3 .chart-3 {
+  opacity: 0;
+}
+.anim[data-step="4"] .c3 .consolidate-hole {
+  opacity: 1;
+}
 .anim[data-step="4"] .l3 { opacity: 1; transition: opacity .5s ease .85s; }
 
-/* 5 — apps migrate; only the shared chips become imports */
+/* 5 — migration replaces local Chart code with imports */
+.anim[data-step="5"] .c2 .local-chart,
+.anim[data-step="5"] .c3 .local-chart {
+  opacity: 0;
+  transition: opacity .4s ease .35s, transform .5s ease .2s;
+}
+.anim[data-step="5"] .c2 .extract-hole,
+.anim[data-step="5"] .c3 .empty-slot {
+  opacity: 1;
+  transition: opacity .45s ease .6s;
+}
 .anim[data-step="5"] .code.c3, .anim[data-step="5"] .l3 { opacity: 1; }
 .anim[data-step="5"] .phase-mi { opacity: 1; transition: opacity .4s ease .1s; }
 .anim[data-step="5"] .down .flowB { opacity: 1; transform: none; }
 .anim[data-step="5"] .down .flowB:nth-of-type(1) { transition: opacity .35s ease .15s, transform .5s ease .15s; }
 .anim[data-step="5"] .down .flowB:nth-of-type(2) { transition: opacity .35s ease .3s, transform .5s ease .3s; }
 .anim[data-step="5"] .down .flowB:nth-of-type(3) { transition: opacity .35s ease .45s, transform .5s ease .45s; }
+.anim[data-step="5"] .import-chart { opacity: 1; }
 .anim .chip.imported,
 .anim[data-step="5"] .chip.pending {
   stroke-dasharray: 3.5 2.5;
-  stroke-width: 1.7;
-  fill-opacity: .45;
+  stroke-width: 2;
+  fill: #fff;
+  fill-opacity: 1;
 }
 .anim[data-step="5"] .chip.pending {
   transition: opacity .28s ease, stroke-dasharray .5s ease .7s, fill-opacity .5s ease .7s;
 }
-/* c1 already imported everything it could in earlier rounds — it does not change */
-.anim[data-step="5"] .code.c2 .own rect,
-.anim[data-step="5"] .code.c3 .own rect { transform: scaleY(.55); transition: transform .6s ease .8s; }
 
 .anim-steps {
   list-style: none;
@@ -482,8 +800,8 @@ figcaption {
   cursor: pointer;
   color: var(--ink-3);
 }
-.anim-steps li b { display: block; font-size: 0.92rem; color: var(--ink-2); }
-.anim-steps li span { display: block; font-size: 0.83rem; }
+.anim-steps li b { display: block; font-size: 1rem; color: var(--ink-2); }
+.anim-steps li span { display: block; font-size: 0.9rem; line-height: 1.35; }
 .anim-steps li:hover { border-top-color: var(--ink-3); }
 .anim-steps li:hover b { color: var(--ink); }
 .anim-steps li:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
@@ -894,14 +1212,14 @@ ul.plain b { color: var(--ink); }
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
+  .hero-hook { white-space: normal; text-wrap: balance; }
+  .formula-stack,
+  .experiment-grid { grid-template-columns: 1fr; }
+  .formula-block.formula-goal { grid-column: auto; }
+  .challenge-row { grid-template-columns: 1fr; gap: 0.9rem; }
   .two-col.split { gap: 1.2rem; }
   .ba-cols { grid-template-columns: 1fr; }
   .ba-col { border-left: 0; border-top: 1px solid var(--line); }
-  .mapping { grid-template-columns: 1fr; gap: 0.6rem; }
-  .rail { text-align: left; padding-top: 0.6rem; }
-  .rail-arrow { display: none; }
-  .arrow { text-align: left; }
-  .arrow + .arrow { display: none; }
   .pipeline { grid-template-columns: repeat(2, 1fr); }
   .pipeline li + li::before { display: none; }
   .browser { grid-template-columns: 1fr; }
@@ -917,6 +1235,24 @@ ul.plain b { color: var(--ink); }
 
 @media (max-width: 620px) {
   body { font-size: 16px; }
+  .hero { padding-top: 3.25rem; }
+  .hero-proof { grid-template-columns: 1fr; }
+  .hero-stats {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-stats > div { display: flex; padding: 0.85rem 1rem; text-align: left; }
+  .hero-stats strong { font-size: 1.75rem; }
+  .notation dl > div { grid-template-columns: 4rem 1fr; }
+  .formula-block { grid-template-columns: 1fr; gap: 0.35rem; }
+  .equation { text-align: left; }
+  .mapping { grid-template-columns: 1fr; gap: 0.6rem; }
+  .rail { text-align: left; padding-top: 0.6rem; }
+  .rail-arrow { display: none; }
+  .arrow { text-align: left; }
+  .arrow + .arrow { display: none; }
   .pipeline { grid-template-columns: 1fr; }
   .nav-links { gap: 0.85rem; font-size: 0.84rem; }
   .nav-mark { display: none; }
